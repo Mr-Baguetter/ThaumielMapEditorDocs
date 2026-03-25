@@ -1,0 +1,263 @@
+.markdown hr {
+  display: none;
+}
+
+
+.markdown h2:has(+ h3:has(code)) {
+  margin: 2.5rem 0 0;
+  padding: 0.65rem 1.1rem;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ct-header-text, #1a1d2e) !important;
+  font-family: "IBM Plex Sans", "Fira Sans", system-ui, sans-serif;
+
+  background: var(--ct-header-bg, #f0f2fa);
+  border: 1px solid var(--ct-border-color, #e0e4ef);
+  border-bottom: none;
+  border-radius: var(--ct-radius, 10px) var(--ct-radius, 10px) 0 0;
+  box-shadow: 0 -3px 20px rgba(0, 0, 0, 0.06);
+}
+
+.markdown h2:has(+ h3:has(code)) .hash-link,
+.markdown h2:has(+ h3:has(code)) a[aria-label] {
+  display: none;
+}
+
+.markdown h3:has(code) {
+  position: relative;
+  margin: 0;
+  padding: 0.72rem 1.1rem 0.72rem 1.5rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  font-weight: 500;
+  background: var(--ct-bg, #ffffff);
+  border: 1px solid var(--ct-border-color, #e0e4ef);
+  border-top: none;
+  transition: background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.markdown h3:has(code):nth-of-type(even) {
+  background: var(--ct-bg-alt, #f7f8fc);
+}
+
+.markdown h3:has(code):hover {
+  background: var(--ct-row-hover-bg, rgba(0, 112, 243, 0.04)) !important;
+  box-shadow: var(--ct-row-hover-ring, 0 0 0 1px rgba(0, 112, 243, 0.1) inset);
+}
+
+.markdown h3:has(code)::before {
+  content: "";
+  position: absolute;
+  left: 0.55rem;
+  top: 25%;
+  height: 50%;
+  width: 2.5px;
+  border-radius: 2px;
+  background: var(--ct-accent-bar, rgba(0, 112, 243, 0.45));
+  opacity: 0;
+  transition: opacity 0.18s ease;
+}
+
+.markdown h3:has(code):hover::before {
+  opacity: 1;
+}
+
+.markdown h3:has(code) .hash-link,
+.markdown h3:has(code) a[aria-label] {
+  display: none;
+}
+
+.markdown h3:has(code) code {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+
+  color: var(--ct-accent-color, #0070f3) !important;
+  font-size: 1em;
+  font-weight: 700;
+  font-family: "IBM Plex Mono", "Fira Code", monospace;
+  text-shadow: 0 0 14px var(--ct-accent-glow, rgba(0, 112, 243, 0.16));
+}
+
+.markdown h3:has(code) + p {
+  margin: 0;
+  padding: 0.42rem 1.1rem 0.52rem 1.5rem;
+  background: var(--ct-bg, #ffffff);
+  border: 1px solid var(--ct-border-color, #e0e4ef);
+  border-top: none;
+  font-size: 0.82rem;
+  color: var(--ct-text, #2d3148);
+  line-height: 1.55;
+}
+
+.markdown h3:has(code):nth-of-type(even) + p {
+  background: var(--ct-bg-alt, #f7f8fc);
+}
+
+.markdown h3:has(code) + p > strong {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ct-text-muted, #9098b8);
+  font-family: "IBM Plex Sans", "Fira Sans", system-ui, sans-serif;
+}
+
+.markdown h3:has(code) + p code {
+  background: var(--ct-code-bg, #eef1fb) !important;
+  color: var(--ct-code-color, #4a5080) !important;
+  border: 1px solid var(--ct-code-border, #dde2f5) !important;
+  border-radius: 5px;
+  padding: 0.1em 0.45em !important;
+  font-size: 0.78rem;
+  font-weight: 600;
+  font-family: "IBM Plex Mono", "Fira Code", monospace;
+}
+
+.markdown h3:has(code) + p em {
+  color: var(--ct-text-muted, #9098b8);
+  font-size: 0.8rem;
+}
+
+.markdown h3:has(code) + div:has(pre),
+.markdown h3:has(code) + p + div:has(pre) {
+  margin: 0 !important;
+  border: 1px solid var(--ct-border-color, #e0e4ef) !important;
+  border-top: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.markdown h3:has(code) + div:has(pre) [class*="codeBlockTitle"],
+.markdown h3:has(code) + p + div:has(pre) [class*="codeBlockTitle"] {
+  background: var(--ct-header-bg, #f0f2fa) !important;
+  border-bottom-color: var(--ct-border-color, #e0e4ef) !important;
+  color: var(--ct-text-muted, #9098b8) !important;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+}
+
+.markdown p:has(> code:first-child):not(:has(+ h3:has(code))) {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.25rem 0 1.25rem;
+  padding: 0.45rem 0.9rem;
+  background: var(--ct-header-bg, #f0f2fa);
+  border: 1px solid var(--ct-border-color, #e0e4ef);
+  border-radius: var(--ct-radius, 10px);
+  font-size: 0.82rem;
+}
+
+.markdown p:has(> code:first-child):not(:has(+ h3:has(code))) > code:first-child {
+  background: var(--ct-accent-color, #0070f3) !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 5px;
+  padding: 0.15em 0.55em !important;
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-family: "IBM Plex Sans", "Fira Sans", system-ui, sans-serif;
+  letter-spacing: 0.06em;
+  text-transform: lowercase;
+}
+
+.markdown table {
+  border-collapse: separate !important;
+  border-spacing: 0 0.35rem !important;
+  width: 100%;
+}
+
+.markdown table thead tr th {
+  padding: 0.55rem 1rem;
+  background: var(--ct-header-bg, #f0f2fa);
+  border-bottom: 1px solid var(--ct-border-color, #e0e4ef);
+}
+
+.markdown table tbody tr td {
+  padding: 0.55rem 1rem;
+  background: var(--ct-bg, #ffffff);
+  border-top: 1px solid var(--ct-border-color, #e0e4ef);
+  border-bottom: 1px solid var(--ct-border-color, #e0e4ef);
+}
+
+.markdown table tbody tr td:first-child {
+  border-left: 1px solid var(--ct-border-color, #e0e4ef);
+  border-radius: var(--ct-radius, 8px) 0 0 var(--ct-radius, 8px);
+}
+
+.markdown table tbody tr td:last-child {
+  border-right: 1px solid var(--ct-border-color, #e0e4ef);
+  border-radius: 0 var(--ct-radius, 8px) var(--ct-radius, 8px) 0;
+}
+
+.markdown table tbody tr:nth-child(even) td {
+  background: var(--ct-bg-alt, #f7f8fc);
+}
+
+.markdown h3:has(code) + h3:has(code),
+.markdown h3:has(code) + p + h3:has(code),
+.markdown h3:has(code) + div:has(pre) + h3:has(code),
+.markdown h3:has(code) + p + div:has(pre) + h3:has(code) {
+  margin-top: 0.45rem;
+  border-top: 1px solid var(--ct-border-color, #e0e4ef);
+}
+
+.markdown h3:has(code):has(+ h3:has(code)),
+.markdown h3:has(code) + p:has(+ h3:has(code)),
+.markdown h3:has(code) + div:has(pre):has(+ h3:has(code)),
+.markdown h3:has(code) + p + div:has(pre):has(+ h3:has(code)) {
+  border-bottom-left-radius: var(--ct-radius, 10px);
+  border-bottom-right-radius: var(--ct-radius, 10px);
+}
+
+.markdown > *:last-child {
+  border-bottom-left-radius: var(--ct-radius, 10px);
+  border-bottom-right-radius: var(--ct-radius, 10px);
+}
+
+.markdown h3:has(code):has(+ h2:has(+ h3:has(code))),
+.markdown h3:has(code):has(+ hr + h2:has(+ h3:has(code))) {
+  border-bottom-left-radius: var(--ct-radius, 10px);
+  border-bottom-right-radius: var(--ct-radius, 10px);
+}
+
+.markdown h3:has(code) + p:has(+ h2:has(+ h3:has(code))),
+.markdown h3:has(code) + p:has(+ hr + h2:has(+ h3:has(code))) {
+  border-bottom-left-radius: var(--ct-radius, 10px);
+  border-bottom-right-radius: var(--ct-radius, 10px);
+}
+
+.markdown h3:has(code) + div:has(pre):has(+ h2:has(+ h3:has(code))),
+.markdown h3:has(code) + div:has(pre):has(+ hr + h2:has(+ h3:has(code))),
+.markdown h3:has(code) + p + div:has(pre):has(+ h2:has(+ h3:has(code))),
+.markdown h3:has(code) + p + div:has(pre):has(+ hr + h2:has(+ h3:has(code))) {
+  border-bottom-left-radius: var(--ct-radius, 10px) !important;
+  border-bottom-right-radius: var(--ct-radius, 10px) !important;
+}
+
+[data-theme='dark'] .markdown h2:has(+ h3:has(code)) {
+  box-shadow: 0 -3px 20px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme='dark'] .markdown h3:has(code) code {
+  text-shadow: 0 0 16px var(--ct-accent-glow, rgba(56, 189, 248, 0.22));
+}
+
+@media (max-width: 600px) {
+  .markdown h2:has(+ h3:has(code)) {
+    padding: 0.6rem 0.75rem;
+  }
+
+  .markdown h3:has(code) {
+    padding: 0.65rem 0.75rem 0.65rem 1.1rem;
+  }
+
+  .markdown h3:has(code) + p {
+    padding: 0.38rem 0.75rem 0.48rem 1.1rem;
+  }
+}

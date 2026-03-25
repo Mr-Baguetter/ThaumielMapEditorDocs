@@ -37,11 +37,11 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
-          routeBasePath: '/',   // serve docs at the root instead of /docs/
+          routeBasePath: '/',
         },
-        blog: false,            // disable the blog entirely
+        blog: false,
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: ['./src/css/custom.css', './src/css/Tables.css', './src/css/apidoc.css'],
         },
       }),
     ],

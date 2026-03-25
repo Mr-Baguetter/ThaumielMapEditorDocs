@@ -1,0 +1,248 @@
+:root {
+  --ct-radius: 10px;
+  --ct-border-color: #e0e4ef;
+
+  --ct-bg: #ffffff;
+  --ct-bg-alt: #f7f8fc;
+  --ct-header-bg: #f0f2fa;
+  --ct-header-text: #1a1d2e;
+  --ct-header-size: 0.72rem;
+
+  --ct-text: #2d3148;
+  --ct-text-muted: #9098b8;
+
+  /* Code/monospace inside cells */
+  --ct-code-bg: #eef1fb;
+  --ct-code-color: #4a5080;
+  --ct-code-border: #dde2f5;
+
+  /* First-column accent */
+  --ct-accent-color: #0070f3;
+  --ct-accent-glow: rgba(0, 112, 243, 0.16);
+  --ct-accent-bar: rgba(0, 112, 243, 0.45);
+
+  /* Links inside tables */
+  --ct-link-color: #0070f3;
+  --ct-link-underline: rgba(0, 112, 243, 0.3);
+
+  /* Row hover */
+  --ct-row-hover-bg: rgba(0, 112, 243, 0.04);
+  --ct-row-hover-ring: 0 0 0 1px rgba(0, 112, 243, 0.1) inset;
+
+  /* Shadow around the table card */
+  --ct-shadow:
+    0 2px 16px rgba(0, 0, 0, 0.06),
+    0 0 0 1px var(--ct-border-color);
+}
+
+[data-theme='dark'] {
+  --ct-border-color: #1e2d45;
+
+  --ct-bg: #111827;
+  --ct-bg-alt: #141c2b;
+  --ct-header-bg: #0d1526;
+  --ct-header-text: #c8d6f0;
+
+  --ct-text: #c0cce8;
+  --ct-text-muted: #4a5980;
+
+  --ct-code-bg: rgba(56, 189, 248, 0.07);
+  --ct-code-color: #93c5fd;
+  --ct-code-border: #1e2d45;
+
+  --ct-accent-color: #38bdf8;
+  --ct-accent-glow: rgba(56, 189, 248, 0.22);
+  --ct-accent-bar: rgba(56, 189, 248, 0.5);
+
+  --ct-link-color: #38bdf8;
+  --ct-link-underline: rgba(56, 189, 248, 0.3);
+
+  --ct-row-hover-bg: rgba(56, 189, 248, 0.04);
+  --ct-row-hover-ring: 0 0 0 1px rgba(56, 189, 248, 0.1) inset;
+
+  --ct-shadow:
+    0 4px 32px rgba(0, 0, 0, 0.4),
+    0 0 0 1px var(--ct-border-color);
+}
+
+.markdown table,
+article table,
+main table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  font-family: "IBM Plex Sans", "Fira Sans", system-ui, sans-serif;
+  background: var(--ct-bg);
+  color: var(--ct-text);
+
+  border-radius: var(--ct-radius);
+  box-shadow: var(--ct-shadow);
+  overflow: hidden;
+  margin: 1.75rem 0;
+
+  border: none;
+}
+
+.markdown table:not(:first-child),
+.markdown div > table {
+  margin-top: 0;
+}
+
+.markdown table thead tr,
+article table thead tr,
+main table thead tr {
+  background: var(--ct-header-bg) !important;
+  border-bottom: 1px solid var(--ct-border-color);
+}
+
+.markdown table th,
+article table th,
+main table th {
+  background: var(--ct-header-bg);
+  color: var(--ct-header-text);
+  font-size: var(--ct-header-size);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.7rem 1.1rem;
+  text-align: left;
+  border: none;
+  border-bottom: 1px solid var(--ct-border-color);
+  white-space: nowrap;
+}
+
+.markdown table tbody tr,
+article table tbody tr,
+main table tbody tr {
+  border-bottom: 1px solid var(--ct-border-color);
+  transition: background 0.15s ease, box-shadow 0.15s ease;
+  background: var(--ct-bg);
+}
+
+.markdown table tbody tr:last-child,
+article table tbody tr:last-child,
+main table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.markdown table tbody tr:nth-child(even),
+article table tbody tr:nth-child(even),
+main table tbody tr:nth-child(even) {
+  background: var(--ct-bg-alt);
+}
+
+.markdown table tbody tr:hover,
+article table tbody tr:hover,
+main table tbody tr:hover {
+  background: var(--ct-row-hover-bg) !important;
+  box-shadow: var(--ct-row-hover-ring);
+}
+
+.markdown table td,
+article table td,
+main table td {
+  padding: 0.75rem 1.1rem;
+  color: var(--ct-text);
+  vertical-align: middle;
+  border: none;
+  border-bottom: 1px solid var(--ct-border-color);
+}
+
+.markdown table tbody tr:last-child td,
+article table tbody tr:last-child td,
+main table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.markdown table td:first-child,
+article table td:first-child,
+main table td:first-child {
+  padding-left: 1.4rem;
+  position: relative;
+  white-space: nowrap;
+}
+
+.markdown table td:first-child::before,
+article table td:first-child::before,
+main table td:first-child::before {
+  content: "";
+  position: absolute;
+  left: 0.55rem;
+  top: 26%;
+  height: 48%;
+  width: 2.5px;
+  background: var(--ct-accent-bar);
+  border-radius: 2px;
+  opacity: 0;
+  transition: opacity 0.18s ease;
+}
+
+.markdown table tbody tr:hover td:first-child::before,
+article table tbody tr:hover td:first-child::before,
+main table tbody tr:hover td:first-child::before {
+  opacity: 1;
+}
+
+.markdown table code,
+article table code,
+main table code {
+  background: var(--ct-code-bg);
+  color: var(--ct-code-color);
+  border: 1px solid var(--ct-code-border);
+  border-radius: 5px;
+  padding: 0.15em 0.55em;
+  font-family: "IBM Plex Mono", "Fira Code", monospace;
+  font-size: 0.8rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.markdown table a,
+article table a,
+main table a {
+  color: var(--ct-link-color);
+  text-decoration: none;
+  border-bottom: 1px solid var(--ct-link-underline);
+  transition: border-color 0.15s ease, text-shadow 0.15s ease;
+}
+
+.markdown table a:hover,
+article table a:hover,
+main table a:hover {
+  border-bottom-color: var(--ct-accent-color);
+  text-shadow: 0 0 10px var(--ct-accent-glow);
+}
+
+.markdown table a code,
+article table a code,
+main table a code {
+  color: var(--ct-accent-color);
+  text-shadow: 0 0 10px var(--ct-accent-glow);
+  background: var(--ct-code-bg);
+}
+
+.markdown table em,
+article table em,
+main table em {
+  color: var(--ct-text-muted);
+  font-style: italic;
+  font-size: 0.82rem;
+}
+
+@media (max-width: 600px) {
+  .markdown table th,
+  .markdown table td,
+  article table th,
+  article table td,
+  main table th,
+  main table td {
+    padding: 0.6rem 0.75rem;
+  }
+
+  .markdown table td:first-child,
+  article table td:first-child,
+  main table td:first-child {
+    padding-left: 1.1rem;
+  }
+}
