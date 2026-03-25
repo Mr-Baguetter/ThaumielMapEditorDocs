@@ -1,62 +1,100 @@
 ---
 title: AnimationController
+sidebar_label: 🔷 AnimationController
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import Badge from '@site/src/components/Badge';
 
-# AnimationController
+# 🔷 AnimationController
 
-> **class** &nbsp;·&nbsp; `ThaumielMapEditor.API.Animation`
+<Badge color="blue">class</Badge> <Badge color="secondary">`ThaumielMapEditor.API.Animation`</Badge>
 
-## Properties
+## Overview
+
+### Properties
 
 | Name | Type | Access | Description |
-|------|------|--------|-------------|
-| `IsPlaying` | `bool` | get | _No description_ |
-| `Schematic` | `SchematicData` | get | _No description_ |
+|------|------|:------:|-------------|
+| [`IsPlaying`](#isplaying) | `bool` | `get` | _No description_ |
+| [`Schematic`](#schematic) | `SchematicData` | `get` | _No description_ |
 
-## Fields
+### Fields
 
 | Name | Type | Description |
 |------|------|-------------|
-| `AnimationSchematics` | `Dictionary<SchematicData, AnimationController>` | _No description_ |
+| [`AnimationSchematics`](#animationschematics) | `Dictionary<SchematicData, AnimationController>` | _No description_ |
+
+### Methods
+
+| Signature | Returns | Description |
+|-----------|---------|-------------|
+| [`Destroy()`](#destroy) | `void` | _No description_ |
+| [`GetOrCreate(SchematicData)`](#getorcreate) | `AnimationController` | _No description_ |
+| [`Play(string)`](#play) | `void` | Plays an animator state by name. Call SetController first. |
+| [`SetController(RuntimeAnimatorController)`](#setcontroller) | `void` | _No description_ |
+| [`Stop()`](#stop) | `void` | _No description_ |
+
+## Properties
+
+### `IsPlaying`
+
+**Type:** `bool`&emsp;**Access:** `get`
+
+---
+
+### `Schematic`
+
+**Type:** `SchematicData`&emsp;**Access:** `get`
+
+---
+
+## Fields
+
+### `AnimationSchematics`
+
+**Type:** `Dictionary<SchematicData, AnimationController>`
+
+---
 
 ## Methods
 
-### Destroy
+### `Destroy`
 
-```csharp
+```csharp title="Destroy"
 public void Destroy()
 ```
 
 ---
 
-### GetOrCreate
+### `GetOrCreate`
 
-```csharp
+```csharp title="GetOrCreate"
 public AnimationController GetOrCreate(SchematicData schematic)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
 | `schematic` | `SchematicData` |  |
 
-**Returns**
+#### Returns
 
 `AnimationController`
 
 ---
 
-### Play
+### `Play`
 
-```csharp
+```csharp title="Play"
 public void Play(string stateName)
 ```
 
-**Parameters**
+Plays an animator state by name. Call SetController first.
+
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -64,13 +102,13 @@ public void Play(string stateName)
 
 ---
 
-### SetController
+### `SetController`
 
-```csharp
+```csharp title="SetController"
 public void SetController(RuntimeAnimatorController controller)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -78,9 +116,9 @@ public void SetController(RuntimeAnimatorController controller)
 
 ---
 
-### Stop
+### `Stop`
 
-```csharp
+```csharp title="Stop"
 public void Stop()
 ```
 

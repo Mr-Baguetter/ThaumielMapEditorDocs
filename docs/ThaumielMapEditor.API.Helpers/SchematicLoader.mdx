@@ -1,41 +1,118 @@
 ---
 title: SchematicLoader
+sidebar_label: 🔷 SchematicLoader
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import Badge from '@site/src/components/Badge';
 
-# SchematicLoader
+# 🔷 SchematicLoader
 
-> **class** &nbsp;·&nbsp; `ThaumielMapEditor.API.Helpers`
+<Badge color="blue">class</Badge> <Badge color="secondary">`ThaumielMapEditor.API.Helpers`</Badge>
 
-## Properties
+## Overview
+
+### Properties
 
 | Name | Type | Access | Description |
-|------|------|--------|-------------|
-| `Deserializer` | `IDeserializer` | get | _No description_ |
-| `MapsById` | `Dictionary<Guid, MapData>` | get / set | _No description_ |
-| `SchematicsById` | `Dictionary<UInt32, SchematicData>` | get / set | _No description_ |
-| `Serializer` | `ISerializer` | get | _No description_ |
-| `SpawnedMaps` | `IEnumerable<MapData>` | get | _No description_ |
-| `SpawnedSchematics` | `IEnumerable<SchematicData>` | get | _No description_ |
+|------|------|:------:|-------------|
+| [`Deserializer`](#deserializer) | `IDeserializer` | `get` | _No description_ |
+| [`MapsById`](#mapsbyid) | `Dictionary<Guid, MapData>` | `get` `set` | _No description_ |
+| [`SchematicsById`](#schematicsbyid) | `Dictionary<UInt32, SchematicData>` | `get` `set` | _No description_ |
+| [`Serializer`](#serializer) | `ISerializer` | `get` | _No description_ |
+| [`SpawnedMaps`](#spawnedmaps) | `IEnumerable<MapData>` | `get` | _No description_ |
+| [`SpawnedSchematics`](#spawnedschematics) | `IEnumerable<SchematicData>` | `get` | _No description_ |
 
-## Fields
+### Fields
 
 | Name | Type | Description |
 |------|------|-------------|
-| `LoadedMaps` | `List<SerializableMap>` | _No description_ |
-| `LoadedSchematics` | `List<SerializableSchematic>` | _No description_ |
+| [`LoadedMaps`](#loadedmaps) | `List<SerializableMap>` | This list contains all the maps loaded by Use  to get the spawned maps. |
+| [`LoadedSchematics`](#loadedschematics) | `List<SerializableSchematic>` | This list contains all the schematics loaded by Use  to get the spawned schemati… |
+
+### Methods
+
+| Signature | Returns | Description |
+|-----------|---------|-------------|
+| [`CreateCollisionMesh(PrimitiveObject)`](#createcollisionmesh) | `void` | _No description_ |
+| [`GenerateExampleSchematic()`](#generateexampleschematic) | `void` | _No description_ |
+| [`GetId()`](#getid) | `UInt32` | _No description_ |
+| [`GetSchematicById(UInt32)`](#getschematicbyid) | `SchematicData` | _No description_ |
+| [`Init()`](#init) | `void` | _No description_ |
+| [`LoadMaps()`](#loadmaps) | `void` | _No description_ |
+| [`LoadSchematics()`](#loadschematics) | `void` | _No description_ |
+| [`ReloadSchematics()`](#reloadschematics) | `void` | _No description_ |
+| [`SaveMap(MapData)`](#savemap) | `SerializableMap` | _No description_ |
+| [`SpawnMap(SerializableMap)`](#spawnmap) | `MapData` | _No description_ |
+| [`SpawnSchematic(SerializableSchematic, Vector3)`](#spawnschematic) | `SchematicData` | _No description_ |
+| [`TryGetSchematicById(UInt32, SchematicData&)`](#trygetschematicbyid) | `bool` | _No description_ |
+
+## Properties
+
+### `Deserializer`
+
+**Type:** `IDeserializer`&emsp;**Access:** `get`
+
+---
+
+### `MapsById`
+
+**Type:** `Dictionary<Guid, MapData>`&emsp;**Access:** `get` `set`
+
+---
+
+### `SchematicsById`
+
+**Type:** `Dictionary<UInt32, SchematicData>`&emsp;**Access:** `get` `set`
+
+---
+
+### `Serializer`
+
+**Type:** `ISerializer`&emsp;**Access:** `get`
+
+---
+
+### `SpawnedMaps`
+
+**Type:** `IEnumerable<MapData>`&emsp;**Access:** `get`
+
+---
+
+### `SpawnedSchematics`
+
+**Type:** `IEnumerable<SchematicData>`&emsp;**Access:** `get`
+
+---
+
+## Fields
+
+### `LoadedMaps`
+
+**Type:** `List<SerializableMap>`
+
+This list contains all the maps loaded by Use  to get the spawned maps.
+
+---
+
+### `LoadedSchematics`
+
+**Type:** `List<SerializableSchematic>`
+
+This list contains all the schematics loaded by Use  to get the spawned schematics.
+
+---
 
 ## Methods
 
-### CreateCollisionMesh
+### `CreateCollisionMesh`
 
-```csharp
+```csharp title="CreateCollisionMesh"
 public void CreateCollisionMesh(PrimitiveObject primitive)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -43,145 +120,151 @@ public void CreateCollisionMesh(PrimitiveObject primitive)
 
 ---
 
-### GenerateExampleSchematic
+### `GenerateExampleSchematic`
 
-```csharp
+```csharp title="GenerateExampleSchematic"
 public void GenerateExampleSchematic()
 ```
 
 ---
 
-### GetId
+### `GetId`
 
-```csharp
+```csharp title="GetId"
 public UInt32 GetId()
 ```
 
-**Returns**
+#### Returns
 
 `UInt32`
 
 ---
 
-### GetSchematicById
+### `GetSchematicById`
 
-```csharp
+```csharp title="GetSchematicById"
 public SchematicData GetSchematicById(UInt32 id)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
 | `id` | `UInt32` |  |
 
-**Returns**
+#### Returns
 
 `SchematicData`
 
 ---
 
-### Init
+### `Init`
 
-```csharp
+```csharp title="Init"
 public void Init()
 ```
 
 ---
 
-### LoadMaps
+### `LoadMaps`
 
-```csharp
+```csharp title="LoadMaps"
 public void LoadMaps()
 ```
 
 ---
 
-### LoadSchematics
+### `LoadSchematics`
 
-```csharp
+```csharp title="LoadSchematics"
 public void LoadSchematics()
 ```
 
 ---
 
-### ReloadSchematics
+### `ReloadSchematics`
 
-```csharp
+```csharp title="ReloadSchematics"
 public void ReloadSchematics()
 ```
 
 ---
 
-### SaveMap
+### `SaveMap`
 
-```csharp
+```csharp title="SaveMap"
 public SerializableMap SaveMap(MapData data)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
 | `data` | `MapData` |  |
 
-**Returns**
+#### Returns
 
 `SerializableMap`
 
 ---
 
-### SpawnMap
+### `SpawnMap`
 
-```csharp
+```csharp title="SpawnMap"
 public MapData SpawnMap(SerializableMap map)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
 | `map` | `SerializableMap` |  |
 
-**Returns**
+#### Returns
 
 `MapData`
 
 ---
 
-### SpawnSchematic
+### `SpawnSchematic`
 
-```csharp
-public SchematicData SpawnSchematic(SerializableSchematic schematic, Vector3 position)
+```csharp title="SpawnSchematic"
+public SchematicData SpawnSchematic(
+    SerializableSchematic schematic,
+    Vector3 position
+)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
 | `schematic` | `SerializableSchematic` |  |
 | `position` | `Vector3` |  |
 
-**Returns**
+#### Returns
 
 `SchematicData`
 
 ---
 
-### TryGetSchematicById
+### `TryGetSchematicById`
 
-```csharp
-public bool TryGetSchematicById(UInt32 id, SchematicData& schematic)
+```csharp title="TryGetSchematicById"
+public bool TryGetSchematicById(
+    UInt32 id,
+    SchematicData& schematic
+)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
 | `id` | `UInt32` |  |
 | `schematic` | `SchematicData&` |  |
 
-**Returns**
+#### Returns
 
 `bool`
 

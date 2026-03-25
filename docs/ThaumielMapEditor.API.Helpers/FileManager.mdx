@@ -1,23 +1,43 @@
 ---
 title: FileManager
+sidebar_label: 🔷 FileManager
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import Badge from '@site/src/components/Badge';
 
-# FileManager
+# 🔷 FileManager
 
-> **class** &nbsp;·&nbsp; `ThaumielMapEditor.API.Helpers`
+<Badge color="blue">class</Badge> <Badge color="secondary">`ThaumielMapEditor.API.Helpers`</Badge>
+
+## Overview
+
+### Methods
+
+| Signature | Returns | Description |
+|-----------|---------|-------------|
+| [`CreateDefaultFile(string, string)`](#createdefaultfile) | `void` | _No description_ |
+| [`CreateDefaultFiles(string, List<ValueTuple<string, T>>)`](#createdefaultfiles) | `void` | _No description_ |
+| [`Dir()`](#dir) | `string` | _No description_ |
+| [`Dir(string[])`](#dir) | `string` | _No description_ |
+| [`GetFilesInDirectory(string, string)`](#getfilesindirectory) | `string[]` | _No description_ |
+| [`ParseYamlFiles(string, Action<T>)`](#parseyamlfiles) | `void` | _No description_ |
+| [`TryCreateDirectory(string)`](#trycreatedirectory) | `void` | _No description_ |
+| [`TryCreateDirectory(string[])`](#trycreatedirectory) | `void` | _No description_ |
 
 ## Methods
 
-### CreateDefaultFile
+### `CreateDefaultFile`
 
-```csharp
-public void CreateDefaultFile(string name, string fileName)
+```csharp title="CreateDefaultFile"
+public void CreateDefaultFile(
+    string name,
+    string fileName
+)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -26,13 +46,16 @@ public void CreateDefaultFile(string name, string fileName)
 
 ---
 
-### CreateDefaultFiles
+### `CreateDefaultFiles`
 
-```csharp
-public void CreateDefaultFiles(string name, List<ValueTuple<string, T>> items)
+```csharp title="CreateDefaultFiles"
+public void CreateDefaultFiles(
+    string name,
+    List<ValueTuple<string, T>> items
+)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -41,62 +64,68 @@ public void CreateDefaultFiles(string name, List<ValueTuple<string, T>> items)
 
 ---
 
-### Dir
+### `Dir`
 
-```csharp
+```csharp title="Dir"
 public string Dir()
 ```
 
-**Returns**
+#### Returns
 
 `string`
 
 ---
 
-### Dir
+### `Dir`
 
-```csharp
+```csharp title="Dir"
 public string Dir(string[] path)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
 | `path` | `string[]` |  |
 
-**Returns**
+#### Returns
 
 `string`
 
 ---
 
-### GetFilesInDirectory
+### `GetFilesInDirectory`
 
-```csharp
-public string[] GetFilesInDirectory(string name, string filter)
+```csharp title="GetFilesInDirectory"
+public string[] GetFilesInDirectory(
+    string name,
+    string filter
+)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
 | `name` | `string` |  |
 | `filter` | `string` |  |
 
-**Returns**
+#### Returns
 
 `string[]`
 
 ---
 
-### ParseYamlFiles
+### `ParseYamlFiles`
 
-```csharp
-public void ParseYamlFiles(string name, Action<T> onParsed)
+```csharp title="ParseYamlFiles"
+public void ParseYamlFiles(
+    string name,
+    Action<T> onParsed
+)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -105,13 +134,13 @@ public void ParseYamlFiles(string name, Action<T> onParsed)
 
 ---
 
-### TryCreateDirectory
+### `TryCreateDirectory`
 
-```csharp
+```csharp title="TryCreateDirectory"
 public void TryCreateDirectory(string name)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -119,13 +148,13 @@ public void TryCreateDirectory(string name)
 
 ---
 
-### TryCreateDirectory
+### `TryCreateDirectory`
 
-```csharp
+```csharp title="TryCreateDirectory"
 public void TryCreateDirectory(string[] path)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|

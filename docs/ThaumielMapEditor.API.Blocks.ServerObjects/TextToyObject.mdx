@@ -1,32 +1,69 @@
 ---
 title: TextToyObject
+sidebar_label: 🔷 TextToyObject
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import Badge from '@site/src/components/Badge';
 
-# TextToyObject
+# 🔷 TextToyObject
 
-> **class** &nbsp;·&nbsp; `ThaumielMapEditor.API.Blocks.ServerObjects`
+<Badge color="blue">class</Badge> <Badge color="secondary">`ThaumielMapEditor.API.Blocks.ServerObjects`</Badge>
+
+## Overview
+
+### Properties
+
+| Name | Type | Access | Description |
+|------|------|:------:|-------------|
+| [`Base`](#base) | `TextToy` | `get` | _No description_ |
+| [`DisplaySize`](#displaysize) | `Vector2` | `get` `set` | _No description_ |
+| [`ObjectType`](#objecttype) | `ObjectType` | `get` `set` | _No description_ |
+| [`TextFormat`](#textformat) | `string` | `get` `set` | _No description_ |
+
+### Methods
+
+| Signature | Returns | Description |
+|-----------|---------|-------------|
+| [`ParseValues(SerializableObject)`](#parsevalues) | `void` | _No description_ |
+| [`SpawnObject(SerializableObject, SchematicData)`](#spawnobject) | `void` | _No description_ |
 
 ## Properties
 
-| Name | Type | Access | Description |
-|------|------|--------|-------------|
-| `Base` | `TextToy` | get | _No description_ |
-| `DisplaySize` | `Vector2` | get / set | _No description_ |
-| `ObjectType` | `ObjectType` | get / set | _No description_ |
-| `TextFormat` | `string` | get / set | _No description_ |
+### `Base`
+
+**Type:** `TextToy`&emsp;**Access:** `get`
+
+---
+
+### `DisplaySize`
+
+**Type:** `Vector2`&emsp;**Access:** `get` `set`
+
+---
+
+### `ObjectType`
+
+**Type:** `ObjectType`&emsp;**Access:** `get` `set`
+
+---
+
+### `TextFormat`
+
+**Type:** `string`&emsp;**Access:** `get` `set`
+
+---
 
 ## Methods
 
-### ParseValues
+### `ParseValues`
 
-```csharp
+```csharp title="ParseValues"
 public void ParseValues(SerializableObject serializable)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -34,13 +71,16 @@ public void ParseValues(SerializableObject serializable)
 
 ---
 
-### SpawnObject
+### `SpawnObject`
 
-```csharp
-public void SpawnObject(SerializableObject serializable, SchematicData schematic)
+```csharp title="SpawnObject"
+public void SpawnObject(
+    SerializableObject serializable,
+    SchematicData schematic
+)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|

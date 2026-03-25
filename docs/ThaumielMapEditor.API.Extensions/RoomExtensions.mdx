@@ -1,69 +1,91 @@
 ---
 title: RoomExtensions
+sidebar_label: 📄 RoomExtensions
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import Badge from '@site/src/components/Badge';
 
-# RoomExtensions
+# 📄 RoomExtensions
 
-> **static class** &nbsp;·&nbsp; `ThaumielMapEditor.API.Extensions`
+<Badge color="gray">static class</Badge> <Badge color="secondary">`ThaumielMapEditor.API.Extensions`</Badge>
+
+## Overview
+
+### Methods
+
+| Signature | Returns | Description |
+|-----------|---------|-------------|
+| [`GetClosestRoomToPosition(Vector3)`](#getclosestroomtoposition) | `RoomIdentifier` | _No description_ |
+| [`LocalPosition(Room, Vector3)`](#localposition) | `Vector3` | Returns the local space position, based on a world space position. |
+| [`WorldPosition(Room, Vector3)`](#worldposition) | `Vector3` | Returns the World position, based on a local space position. |
 
 ## Methods
 
-### GetClosestRoomToPosition
+### `GetClosestRoomToPosition`
 
-```csharp
+```csharp title="GetClosestRoomToPosition"
 public RoomIdentifier GetClosestRoomToPosition(Vector3 pos)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
 | `pos` | `Vector3` |  |
 
-**Returns**
+#### Returns
 
 `RoomIdentifier`
 
 ---
 
-### LocalPosition
+### `LocalPosition`
 
-```csharp
-public Vector3 LocalPosition(Room room, Vector3 position)
+```csharp title="LocalPosition"
+public Vector3 LocalPosition(
+    Room room,
+    Vector3 position
+)
 ```
 
-**Parameters**
+Returns the local space position, based on a world space position.
+
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `room` | `Room` |  |
-| `position` | `Vector3` |  |
+| `room` | `Room` | The room instance this method extends. |
+| `position` | `Vector3` | World position. |
 
-**Returns**
+#### Returns
 
-`Vector3`
+`Vector3` — Local position, based on the room.
 
 ---
 
-### WorldPosition
+### `WorldPosition`
 
-```csharp
-public Vector3 WorldPosition(Room room, Vector3 offset)
+```csharp title="WorldPosition"
+public Vector3 WorldPosition(
+    Room room,
+    Vector3 offset
+)
 ```
 
-**Parameters**
+Returns the World position, based on a local space position.
+
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `room` | `Room` |  |
-| `offset` | `Vector3` |  |
+| `room` | `Room` | The room instance this method extends. |
+| `offset` | `Vector3` | Local position. |
 
-**Returns**
+#### Returns
 
-`Vector3`
+`Vector3` — World position, based on the room.
 
 ---
 

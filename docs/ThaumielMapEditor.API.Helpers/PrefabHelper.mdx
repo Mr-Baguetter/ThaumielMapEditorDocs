@@ -1,72 +1,344 @@
 ---
 title: PrefabHelper
+sidebar_label: 🔷 PrefabHelper
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import Badge from '@site/src/components/Badge';
 
-# PrefabHelper
+# 🔷 PrefabHelper
 
-> **class** &nbsp;·&nbsp; `ThaumielMapEditor.API.Helpers`
+<Badge color="blue">class</Badge> <Badge color="secondary">`ThaumielMapEditor.API.Helpers`</Badge>
 
-## Properties
+## Overview
+
+### Properties
 
 | Name | Type | Access | Description |
-|------|------|--------|-------------|
-| `AngledFences` | `GameObject` | get | _No description_ |
-| `BoxesLadder` | `GameObject` | get | _No description_ |
-| `BrokenElectricalBox` | `GameObject` | get | _No description_ |
-| `BrownCandyTantrum` | `GameObject` | get | _No description_ |
-| `CameraEz` | `Scp079CameraToy` | get | _No description_ |
-| `CameraEzArm` | `Scp079CameraToy` | get | _No description_ |
-| `CameraHcz` | `Scp079CameraToy` | get | _No description_ |
-| `CameraLcz` | `Scp079CameraToy` | get | _No description_ |
-| `CameraSz` | `Scp079CameraToy` | get | _No description_ |
-| `Capybara` | `CapybaraToy` | get | _No description_ |
-| `CullingParent` | `SpawnableCullingParent` | get | _No description_ |
-| `CullingParentAssetId` | `UInt32` | get | _No description_ |
-| `DoorEz` | `DoorVariant` | get | _No description_ |
-| `DoorGate` | `DoorVariant` | get | _No description_ |
-| `DoorHcz` | `DoorVariant` | get | _No description_ |
-| `DoorHeavyBulk` | `DoorVariant` | get | _No description_ |
-| `DoorLcz` | `DoorVariant` | get | _No description_ |
-| `HugeOrangePipes` | `GameObject` | get | _No description_ |
-| `Interactable` | `InvisibleInteractableToy` | get | _No description_ |
-| `LightAssetId` | `UInt32` | get | _No description_ |
-| `LightSource` | `LightSourceToy` | get | _No description_ |
-| `LockerAdrenalineMedkit` | `Locker` | get | _No description_ |
-| `LockerExperimentalWeapon` | `Locker` | get | _No description_ |
-| `LockerLargeGun` | `Locker` | get | _No description_ |
-| `LockerMisc` | `Locker` | get | _No description_ |
-| `LockerRegularMedkit` | `Locker` | get | _No description_ |
-| `LockerRifleRack` | `Locker` | get | _No description_ |
-| `Pedestal` | `Locker` | get | _No description_ |
-| `PipesLong` | `GameObject` | get | _No description_ |
-| `PipesShort` | `GameObject` | get | _No description_ |
-| `PrimitiveAssetId` | `UInt32` | get | _No description_ |
-| `PrimitiveObject` | `PrimitiveObjectToy` | get | _No description_ |
-| `PrismaticCloud` | `GameObject` | get | _No description_ |
-| `ShootingTargetBinary` | `ShootingTarget` | get | _No description_ |
-| `ShootingTargetDBoy` | `ShootingTarget` | get | _No description_ |
-| `ShootingTargetSport` | `ShootingTarget` | get | _No description_ |
-| `SimpleBoxes` | `GameObject` | get | _No description_ |
-| `TankSupportedShelf` | `GameObject` | get | _No description_ |
-| `TextToy` | `TextToy` | get | _No description_ |
-| `TextToyAssetId` | `UInt32` | get | _No description_ |
-| `WaypointToy` | `WaypointToy` | get | _No description_ |
-| `Workstation` | `WorkstationController` | get | _No description_ |
+|------|------|:------:|-------------|
+| [`AngledFences`](#angledfences) | `GameObject` | `get` | _No description_ |
+| [`BoxesLadder`](#boxesladder) | `GameObject` | `get` | _No description_ |
+| [`BrokenElectricalBox`](#brokenelectricalbox) | `GameObject` | `get` | _No description_ |
+| [`BrownCandyTantrum`](#browncandytantrum) | `GameObject` | `get` | _No description_ |
+| [`CameraEz`](#cameraez) | `Scp079CameraToy` | `get` | _No description_ |
+| [`CameraEzArm`](#cameraezarm) | `Scp079CameraToy` | `get` | _No description_ |
+| [`CameraHcz`](#camerahcz) | `Scp079CameraToy` | `get` | _No description_ |
+| [`CameraLcz`](#cameralcz) | `Scp079CameraToy` | `get` | _No description_ |
+| [`CameraSz`](#camerasz) | `Scp079CameraToy` | `get` | _No description_ |
+| [`Capybara`](#capybara) | `CapybaraToy` | `get` | _No description_ |
+| [`CullingParent`](#cullingparent) | `SpawnableCullingParent` | `get` | _No description_ |
+| [`CullingParentAssetId`](#cullingparentassetid) | `UInt32` | `get` | _No description_ |
+| [`DoorEz`](#doorez) | `DoorVariant` | `get` | _No description_ |
+| [`DoorGate`](#doorgate) | `DoorVariant` | `get` | _No description_ |
+| [`DoorHcz`](#doorhcz) | `DoorVariant` | `get` | _No description_ |
+| [`DoorHeavyBulk`](#doorheavybulk) | `DoorVariant` | `get` | _No description_ |
+| [`DoorLcz`](#doorlcz) | `DoorVariant` | `get` | _No description_ |
+| [`HugeOrangePipes`](#hugeorangepipes) | `GameObject` | `get` | _No description_ |
+| [`Interactable`](#interactable) | `InvisibleInteractableToy` | `get` | _No description_ |
+| [`LightAssetId`](#lightassetid) | `UInt32` | `get` | _No description_ |
+| [`LightSource`](#lightsource) | `LightSourceToy` | `get` | _No description_ |
+| [`LockerAdrenalineMedkit`](#lockeradrenalinemedkit) | `Locker` | `get` | _No description_ |
+| [`LockerExperimentalWeapon`](#lockerexperimentalweapon) | `Locker` | `get` | _No description_ |
+| [`LockerLargeGun`](#lockerlargegun) | `Locker` | `get` | _No description_ |
+| [`LockerMisc`](#lockermisc) | `Locker` | `get` | _No description_ |
+| [`LockerRegularMedkit`](#lockerregularmedkit) | `Locker` | `get` | _No description_ |
+| [`LockerRifleRack`](#lockerriflerack) | `Locker` | `get` | _No description_ |
+| [`Pedestal`](#pedestal) | `Locker` | `get` | _No description_ |
+| [`PipesLong`](#pipeslong) | `GameObject` | `get` | _No description_ |
+| [`PipesShort`](#pipesshort) | `GameObject` | `get` | _No description_ |
+| [`PrimitiveAssetId`](#primitiveassetid) | `UInt32` | `get` | _No description_ |
+| [`PrimitiveObject`](#primitiveobject) | `PrimitiveObjectToy` | `get` | _No description_ |
+| [`PrismaticCloud`](#prismaticcloud) | `GameObject` | `get` | _No description_ |
+| [`ShootingTargetBinary`](#shootingtargetbinary) | `ShootingTarget` | `get` | _No description_ |
+| [`ShootingTargetDBoy`](#shootingtargetdboy) | `ShootingTarget` | `get` | _No description_ |
+| [`ShootingTargetSport`](#shootingtargetsport) | `ShootingTarget` | `get` | _No description_ |
+| [`SimpleBoxes`](#simpleboxes) | `GameObject` | `get` | _No description_ |
+| [`TankSupportedShelf`](#tanksupportedshelf) | `GameObject` | `get` | _No description_ |
+| [`TextToy`](#texttoy) | `TextToy` | `get` | _No description_ |
+| [`TextToyAssetId`](#texttoyassetid) | `UInt32` | `get` | _No description_ |
+| [`WaypointToy`](#waypointtoy) | `WaypointToy` | `get` | _No description_ |
+| [`Workstation`](#workstation) | `WorkstationController` | `get` | _No description_ |
 
-## Fields
+### Fields
 
 | Name | Type | Description |
 |------|------|-------------|
-| `RanRegister` | `bool` | _No description_ |
+| [`RanRegister`](#ranregister) | `bool` | _No description_ |
+
+### Methods
+
+| Signature | Returns | Description |
+|-----------|---------|-------------|
+| [`RegisterPrefabs()`](#registerprefabs) | `void` | _No description_ |
+
+## Properties
+
+### `AngledFences`
+
+**Type:** `GameObject`&emsp;**Access:** `get`
+
+---
+
+### `BoxesLadder`
+
+**Type:** `GameObject`&emsp;**Access:** `get`
+
+---
+
+### `BrokenElectricalBox`
+
+**Type:** `GameObject`&emsp;**Access:** `get`
+
+---
+
+### `BrownCandyTantrum`
+
+**Type:** `GameObject`&emsp;**Access:** `get`
+
+---
+
+### `CameraEz`
+
+**Type:** `Scp079CameraToy`&emsp;**Access:** `get`
+
+---
+
+### `CameraEzArm`
+
+**Type:** `Scp079CameraToy`&emsp;**Access:** `get`
+
+---
+
+### `CameraHcz`
+
+**Type:** `Scp079CameraToy`&emsp;**Access:** `get`
+
+---
+
+### `CameraLcz`
+
+**Type:** `Scp079CameraToy`&emsp;**Access:** `get`
+
+---
+
+### `CameraSz`
+
+**Type:** `Scp079CameraToy`&emsp;**Access:** `get`
+
+---
+
+### `Capybara`
+
+**Type:** `CapybaraToy`&emsp;**Access:** `get`
+
+---
+
+### `CullingParent`
+
+**Type:** `SpawnableCullingParent`&emsp;**Access:** `get`
+
+---
+
+### `CullingParentAssetId`
+
+**Type:** `UInt32`&emsp;**Access:** `get`
+
+---
+
+### `DoorEz`
+
+**Type:** `DoorVariant`&emsp;**Access:** `get`
+
+---
+
+### `DoorGate`
+
+**Type:** `DoorVariant`&emsp;**Access:** `get`
+
+---
+
+### `DoorHcz`
+
+**Type:** `DoorVariant`&emsp;**Access:** `get`
+
+---
+
+### `DoorHeavyBulk`
+
+**Type:** `DoorVariant`&emsp;**Access:** `get`
+
+---
+
+### `DoorLcz`
+
+**Type:** `DoorVariant`&emsp;**Access:** `get`
+
+---
+
+### `HugeOrangePipes`
+
+**Type:** `GameObject`&emsp;**Access:** `get`
+
+---
+
+### `Interactable`
+
+**Type:** `InvisibleInteractableToy`&emsp;**Access:** `get`
+
+---
+
+### `LightAssetId`
+
+**Type:** `UInt32`&emsp;**Access:** `get`
+
+---
+
+### `LightSource`
+
+**Type:** `LightSourceToy`&emsp;**Access:** `get`
+
+---
+
+### `LockerAdrenalineMedkit`
+
+**Type:** `Locker`&emsp;**Access:** `get`
+
+---
+
+### `LockerExperimentalWeapon`
+
+**Type:** `Locker`&emsp;**Access:** `get`
+
+---
+
+### `LockerLargeGun`
+
+**Type:** `Locker`&emsp;**Access:** `get`
+
+---
+
+### `LockerMisc`
+
+**Type:** `Locker`&emsp;**Access:** `get`
+
+---
+
+### `LockerRegularMedkit`
+
+**Type:** `Locker`&emsp;**Access:** `get`
+
+---
+
+### `LockerRifleRack`
+
+**Type:** `Locker`&emsp;**Access:** `get`
+
+---
+
+### `Pedestal`
+
+**Type:** `Locker`&emsp;**Access:** `get`
+
+---
+
+### `PipesLong`
+
+**Type:** `GameObject`&emsp;**Access:** `get`
+
+---
+
+### `PipesShort`
+
+**Type:** `GameObject`&emsp;**Access:** `get`
+
+---
+
+### `PrimitiveAssetId`
+
+**Type:** `UInt32`&emsp;**Access:** `get`
+
+---
+
+### `PrimitiveObject`
+
+**Type:** `PrimitiveObjectToy`&emsp;**Access:** `get`
+
+---
+
+### `PrismaticCloud`
+
+**Type:** `GameObject`&emsp;**Access:** `get`
+
+---
+
+### `ShootingTargetBinary`
+
+**Type:** `ShootingTarget`&emsp;**Access:** `get`
+
+---
+
+### `ShootingTargetDBoy`
+
+**Type:** `ShootingTarget`&emsp;**Access:** `get`
+
+---
+
+### `ShootingTargetSport`
+
+**Type:** `ShootingTarget`&emsp;**Access:** `get`
+
+---
+
+### `SimpleBoxes`
+
+**Type:** `GameObject`&emsp;**Access:** `get`
+
+---
+
+### `TankSupportedShelf`
+
+**Type:** `GameObject`&emsp;**Access:** `get`
+
+---
+
+### `TextToy`
+
+**Type:** `TextToy`&emsp;**Access:** `get`
+
+---
+
+### `TextToyAssetId`
+
+**Type:** `UInt32`&emsp;**Access:** `get`
+
+---
+
+### `WaypointToy`
+
+**Type:** `WaypointToy`&emsp;**Access:** `get`
+
+---
+
+### `Workstation`
+
+**Type:** `WorkstationController`&emsp;**Access:** `get`
+
+---
+
+## Fields
+
+### `RanRegister`
+
+**Type:** `bool`
+
+---
 
 ## Methods
 
-### RegisterPrefabs
+### `RegisterPrefabs`
 
-```csharp
+```csharp title="RegisterPrefabs"
 public void RegisterPrefabs()
 ```
 

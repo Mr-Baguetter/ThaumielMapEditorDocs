@@ -1,58 +1,98 @@
 ---
 title: LockerObject
+sidebar_label: 🔷 LockerObject
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import Badge from '@site/src/components/Badge';
 
-# LockerObject
+# 🔷 LockerObject
 
-> **class** &nbsp;·&nbsp; `ThaumielMapEditor.API.Blocks.ServerObjects.Lockers`
+<Badge color="blue">class</Badge> <Badge color="secondary">`ThaumielMapEditor.API.Blocks.ServerObjects.Lockers`</Badge>
+
+## Overview
+
+### Properties
+
+| Name | Type | Access | Description |
+|------|------|:------:|-------------|
+| [`Base`](#base) | `Locker` | `get` | _No description_ |
+| [`Chambers`](#chambers) | `List<LockerChamber>` | `get` | _No description_ |
+| [`ObjectType`](#objecttype) | `ObjectType` | `get` `set` | _No description_ |
+| [`Type`](#type) | `LockerType` | `get` | _No description_ |
+
+### Methods
+
+| Signature | Returns | Description |
+|-----------|---------|-------------|
+| [`ClearChambers()`](#clearchambers) | `void` | _No description_ |
+| [`GetPrefabFromType(LockerType)`](#getprefabfromtype) | `Locker` | _No description_ |
+| [`ParseValues(SerializableObject)`](#parsevalues) | `void` | _No description_ |
+| [`PopulateChambers()`](#populatechambers) | `void` | _No description_ |
+| [`SpawnObject(SchematicData, SerializableObject)`](#spawnobject) | `void` | _No description_ |
 
 ## Properties
 
-| Name | Type | Access | Description |
-|------|------|--------|-------------|
-| `Base` | `Locker` | get | _No description_ |
-| `Chambers` | `List<LockerChamber>` | get | _No description_ |
-| `ObjectType` | `ObjectType` | get / set | _No description_ |
-| `Type` | `LockerType` | get | _No description_ |
+### `Base`
+
+**Type:** `Locker`&emsp;**Access:** `get`
+
+---
+
+### `Chambers`
+
+**Type:** `List<LockerChamber>`&emsp;**Access:** `get`
+
+---
+
+### `ObjectType`
+
+**Type:** `ObjectType`&emsp;**Access:** `get` `set`
+
+---
+
+### `Type`
+
+**Type:** `LockerType`&emsp;**Access:** `get`
+
+---
 
 ## Methods
 
-### ClearChambers
+### `ClearChambers`
 
-```csharp
+```csharp title="ClearChambers"
 public void ClearChambers()
 ```
 
 ---
 
-### GetPrefabFromType
+### `GetPrefabFromType`
 
-```csharp
+```csharp title="GetPrefabFromType"
 public Locker GetPrefabFromType(LockerType type)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
 | `type` | `LockerType` |  |
 
-**Returns**
+#### Returns
 
 `Locker`
 
 ---
 
-### ParseValues
+### `ParseValues`
 
-```csharp
+```csharp title="ParseValues"
 public void ParseValues(SerializableObject serializable)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -60,21 +100,24 @@ public void ParseValues(SerializableObject serializable)
 
 ---
 
-### PopulateChambers
+### `PopulateChambers`
 
-```csharp
+```csharp title="PopulateChambers"
 public void PopulateChambers()
 ```
 
 ---
 
-### SpawnObject
+### `SpawnObject`
 
-```csharp
-public void SpawnObject(SchematicData schematic, SerializableObject serializable)
+```csharp title="SpawnObject"
+public void SpawnObject(
+    SchematicData schematic,
+    SerializableObject serializable
+)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|

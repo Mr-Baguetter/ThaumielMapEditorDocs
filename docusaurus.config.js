@@ -12,7 +12,7 @@ const config = {
   },
 
   // Your Cloudflare Pages URL — change this once deployed
-  url: 'https://thaumiel-map-editor-docs.pages.dev',
+  url: 'https://thaumielmapeditordocs.thaumiel-servers.workers.dev/',
   baseUrl: '/',
 
   organizationName: 'Mr-Baguetter',   // your GitHub username
@@ -37,10 +37,9 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
-          routeBasePath: '/',
+          routeBasePath: '/',   // serve docs at the root instead of /docs/
         },
-
-        blog: false,
+        blog: false,            // disable the blog entirely
         theme: {
           customCss: './src/css/custom.css',
         },

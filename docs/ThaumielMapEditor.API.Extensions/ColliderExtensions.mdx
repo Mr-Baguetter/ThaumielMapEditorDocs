@@ -1,48 +1,62 @@
 ---
 title: ColliderExtensions
+sidebar_label: 📄 ColliderExtensions
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import Badge from '@site/src/components/Badge';
 
-# ColliderExtensions
+# 📄 ColliderExtensions
 
-> **static class** &nbsp;·&nbsp; `ThaumielMapEditor.API.Extensions`
+<Badge color="gray">static class</Badge> <Badge color="secondary">`ThaumielMapEditor.API.Extensions`</Badge>
+
+## Overview
+
+### Methods
+
+| Signature | Returns | Description |
+|-----------|---------|-------------|
+| [`GetPlayer(Collider)`](#getplayer) | `Player` | _No description_ |
+| [`TryGetPlayer(Collider, Player&)`](#trygetplayer) | `bool` | _No description_ |
 
 ## Methods
 
-### GetPlayer
+### `GetPlayer`
 
-```csharp
+```csharp title="GetPlayer"
 public Player GetPlayer(Collider collider)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
 | `collider` | `Collider` |  |
 
-**Returns**
+#### Returns
 
 `Player`
 
 ---
 
-### TryGetPlayer
+### `TryGetPlayer`
 
-```csharp
-public bool TryGetPlayer(Collider collider, Player& player)
+```csharp title="TryGetPlayer"
+public bool TryGetPlayer(
+    Collider collider,
+    Player& player
+)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
 | `collider` | `Collider` |  |
 | `player` | `Player&` |  |
 
-**Returns**
+#### Returns
 
 `bool`
 

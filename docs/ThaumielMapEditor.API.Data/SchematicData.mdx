@@ -1,56 +1,232 @@
 ---
 title: SchematicData
+sidebar_label: 🔷 SchematicData
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import Badge from '@site/src/components/Badge';
 
-# SchematicData
+# 🔷 SchematicData
 
-> **class** &nbsp;·&nbsp; `ThaumielMapEditor.API.Data`
+<Badge color="blue">class</Badge> <Badge color="secondary">`ThaumielMapEditor.API.Data`</Badge>
 
-## Properties
+## Overview
+
+### Properties
 
 | Name | Type | Access | Description |
-|------|------|--------|-------------|
-| `Cameras` | `IEnumerable<CameraObject>` | get | _No description_ |
-| `Capybaras` | `IEnumerable<CapybaraObject>` | get | _No description_ |
-| `Clutter` | `IEnumerable<ClutterObject>` | get | _No description_ |
-| `ContainsAnimator` | `bool` | get / set | _No description_ |
-| `Doors` | `IEnumerable<DoorObject>` | get | _No description_ |
-| `Interactables` | `IEnumerable<InteractionObject>` | get | _No description_ |
-| `Lights` | `IEnumerable<LightObject>` | get | _No description_ |
-| `Pickups` | `IEnumerable<PickupObject>` | get | _No description_ |
-| `Position` | `Vector3` | get / set | _No description_ |
-| `Primitives` | `IEnumerable<PrimitiveObject>` | get | _No description_ |
-| `RootObjectId` | `int` | get | _No description_ |
-| `Rotation` | `Quaternion` | get / set | _No description_ |
-| `Scale` | `Vector3` | get / set | _No description_ |
-| `TargetDummies` | `IEnumerable<TargetDummyObject>` | get | _No description_ |
-| `TextToys` | `IEnumerable<TextToyObject>` | get | _No description_ |
-| `Waypoints` | `IEnumerable<WaypointObject>` | get | _No description_ |
-| `Workstations` | `IEnumerable<WorkstationObject>` | get | _No description_ |
+|------|------|:------:|-------------|
+| [`Cameras`](#cameras) | `IEnumerable<CameraObject>` | `get` | Gets all spawned s belonging to this schematic. |
+| [`Capybaras`](#capybaras) | `IEnumerable<CapybaraObject>` | `get` | Gets all spawned s belonging to this schematic. |
+| [`Clutter`](#clutter) | `IEnumerable<ClutterObject>` | `get` | Gets all spawned s belonging to this schematic. |
+| [`ContainsAnimator`](#containsanimator) | `bool` | `get` `set` | _No description_ |
+| [`Doors`](#doors) | `IEnumerable<DoorObject>` | `get` | Gets all spawned s belonging to this schematic. |
+| [`Interactables`](#interactables) | `IEnumerable<InteractionObject>` | `get` | Gets all spawned s belonging to this schematic. |
+| [`Lights`](#lights) | `IEnumerable<LightObject>` | `get` | Gets all spawned s belonging to this schematic. |
+| [`Pickups`](#pickups) | `IEnumerable<PickupObject>` | `get` | Gets all spawned s belonging to this schematic. |
+| [`Position`](#position) | `Vector3` | `get` `set` | _No description_ |
+| [`Primitives`](#primitives) | `IEnumerable<PrimitiveObject>` | `get` | Gets all spawned s belonging to this schematic. |
+| [`RootObjectId`](#rootobjectid) | `int` | `get` | _No description_ |
+| [`Rotation`](#rotation) | `Quaternion` | `get` `set` | _No description_ |
+| [`Scale`](#scale) | `Vector3` | `get` `set` | _No description_ |
+| [`TargetDummies`](#targetdummies) | `IEnumerable<TargetDummyObject>` | `get` | Gets all spawned s belonging to this schematic. |
+| [`TextToys`](#texttoys) | `IEnumerable<TextToyObject>` | `get` | Gets all spawned s belonging to this schematic. |
+| [`Waypoints`](#waypoints) | `IEnumerable<WaypointObject>` | `get` | Gets all spawned s belonging to this schematic. |
+| [`Workstations`](#workstations) | `IEnumerable<WorkstationObject>` | `get` | Gets all spawned s belonging to this schematic. |
 
-## Fields
+### Fields
 
 | Name | Type | Description |
 |------|------|-------------|
-| `FileName` | `string` | _No description_ |
-| `Id` | `UInt32` | _No description_ |
-| `Primitive` | `PrimitiveObjectToy` | _No description_ |
-| `SpawnedAreas` | `List<AreaObject>` | _No description_ |
-| `SpawnedClientObjects` | `List<ClientSideObjectBase>` | _No description_ |
-| `SpawnedServerObjects` | `List<ServerObject>` | _No description_ |
+| [`FileName`](#filename) | `string` | _No description_ |
+| [`Id`](#id) | `UInt32` | _No description_ |
+| [`Primitive`](#primitive) | `PrimitiveObjectToy` | _No description_ |
+| [`SpawnedAreas`](#spawnedareas) | `List<AreaObject>` | _No description_ |
+| [`SpawnedClientObjects`](#spawnedclientobjects) | `List<ClientSideObjectBase>` | _No description_ |
+| [`SpawnedServerObjects`](#spawnedserverobjects) | `List<ServerObject>` | _No description_ |
+
+### Methods
+
+| Signature | Returns | Description |
+|-----------|---------|-------------|
+| [`SyncWithPlayer(Player)`](#syncwithplayer) | `void` | _No description_ |
+
+## Properties
+
+### `Cameras`
+
+**Type:** `IEnumerable<CameraObject>`&emsp;**Access:** `get`
+
+Gets all spawned s belonging to this schematic.
+
+---
+
+### `Capybaras`
+
+**Type:** `IEnumerable<CapybaraObject>`&emsp;**Access:** `get`
+
+Gets all spawned s belonging to this schematic.
+
+---
+
+### `Clutter`
+
+**Type:** `IEnumerable<ClutterObject>`&emsp;**Access:** `get`
+
+Gets all spawned s belonging to this schematic.
+
+---
+
+### `ContainsAnimator`
+
+**Type:** `bool`&emsp;**Access:** `get` `set`
+
+---
+
+### `Doors`
+
+**Type:** `IEnumerable<DoorObject>`&emsp;**Access:** `get`
+
+Gets all spawned s belonging to this schematic.
+
+---
+
+### `Interactables`
+
+**Type:** `IEnumerable<InteractionObject>`&emsp;**Access:** `get`
+
+Gets all spawned s belonging to this schematic.
+
+---
+
+### `Lights`
+
+**Type:** `IEnumerable<LightObject>`&emsp;**Access:** `get`
+
+Gets all spawned s belonging to this schematic.
+
+---
+
+### `Pickups`
+
+**Type:** `IEnumerable<PickupObject>`&emsp;**Access:** `get`
+
+Gets all spawned s belonging to this schematic.
+
+---
+
+### `Position`
+
+**Type:** `Vector3`&emsp;**Access:** `get` `set`
+
+---
+
+### `Primitives`
+
+**Type:** `IEnumerable<PrimitiveObject>`&emsp;**Access:** `get`
+
+Gets all spawned s belonging to this schematic.
+
+---
+
+### `RootObjectId`
+
+**Type:** `int`&emsp;**Access:** `get`
+
+---
+
+### `Rotation`
+
+**Type:** `Quaternion`&emsp;**Access:** `get` `set`
+
+---
+
+### `Scale`
+
+**Type:** `Vector3`&emsp;**Access:** `get` `set`
+
+---
+
+### `TargetDummies`
+
+**Type:** `IEnumerable<TargetDummyObject>`&emsp;**Access:** `get`
+
+Gets all spawned s belonging to this schematic.
+
+---
+
+### `TextToys`
+
+**Type:** `IEnumerable<TextToyObject>`&emsp;**Access:** `get`
+
+Gets all spawned s belonging to this schematic.
+
+---
+
+### `Waypoints`
+
+**Type:** `IEnumerable<WaypointObject>`&emsp;**Access:** `get`
+
+Gets all spawned s belonging to this schematic.
+
+---
+
+### `Workstations`
+
+**Type:** `IEnumerable<WorkstationObject>`&emsp;**Access:** `get`
+
+Gets all spawned s belonging to this schematic.
+
+---
+
+## Fields
+
+### `FileName`
+
+**Type:** `string`
+
+---
+
+### `Id`
+
+**Type:** `UInt32`
+
+---
+
+### `Primitive`
+
+**Type:** `PrimitiveObjectToy`
+
+---
+
+### `SpawnedAreas`
+
+**Type:** `List<AreaObject>`
+
+---
+
+### `SpawnedClientObjects`
+
+**Type:** `List<ClientSideObjectBase>`
+
+---
+
+### `SpawnedServerObjects`
+
+**Type:** `List<ServerObject>`
+
+---
 
 ## Methods
 
-### SyncWithPlayer
+### `SyncWithPlayer`
 
-```csharp
+```csharp title="SyncWithPlayer"
 public void SyncWithPlayer(Player player)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|

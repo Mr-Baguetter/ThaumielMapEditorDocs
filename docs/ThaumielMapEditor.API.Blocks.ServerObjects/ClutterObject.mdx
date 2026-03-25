@@ -1,50 +1,100 @@
 ---
 title: ClutterObject
+sidebar_label: 🔷 ClutterObject
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import Badge from '@site/src/components/Badge';
 
-# ClutterObject
+# 🔷 ClutterObject
 
-> **class** &nbsp;·&nbsp; `ThaumielMapEditor.API.Blocks.ServerObjects`
+<Badge color="blue">class</Badge> <Badge color="secondary">`ThaumielMapEditor.API.Blocks.ServerObjects`</Badge>
+
+## Overview
+
+### Properties
+
+| Name | Type | Access | Description |
+|------|------|:------:|-------------|
+| [`Base`](#base) | `SpawnableClutterConnector` | `get` | Gets the  component attached to the . |
+| [`ClutterGameObject`](#cluttergameobject) | `GameObject` | `get` | Gets the underlying  of this clutter object. |
+| [`ObjectType`](#objecttype) | `ObjectType` | `get` `set` | _No description_ |
+| [`Type`](#type) | `ClutterType` | `get` | Gets the  of this clutter object. |
+
+### Methods
+
+| Signature | Returns | Description |
+|-----------|---------|-------------|
+| [`GetClutterPrefab(ClutterType)`](#getclutterprefab) | `GameObject` | _No description_ |
+| [`SpawnObject(SchematicData, SerializableObject)`](#spawnobject) | `void` | _No description_ |
 
 ## Properties
 
-| Name | Type | Access | Description |
-|------|------|--------|-------------|
-| `Base` | `SpawnableClutterConnector` | get | _No description_ |
-| `ClutterGameObject` | `GameObject` | get | _No description_ |
-| `ObjectType` | `ObjectType` | get / set | _No description_ |
-| `Type` | `ClutterType` | get | _No description_ |
+### `Base`
+
+**Type:** `SpawnableClutterConnector`&emsp;**Access:** `get`
+
+Gets the  component attached to the .
+
+:::note
+This will be  if the clutter type does not have a  component, such as .
+:::
+
+---
+
+### `ClutterGameObject`
+
+**Type:** `GameObject`&emsp;**Access:** `get`
+
+Gets the underlying  of this clutter object.
+
+---
+
+### `ObjectType`
+
+**Type:** `ObjectType`&emsp;**Access:** `get` `set`
+
+---
+
+### `Type`
+
+**Type:** `ClutterType`&emsp;**Access:** `get`
+
+Gets the  of this clutter object.
+
+---
 
 ## Methods
 
-### GetClutterPrefab
+### `GetClutterPrefab`
 
-```csharp
+```csharp title="GetClutterPrefab"
 public GameObject GetClutterPrefab(ClutterType type)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
 | `type` | `ClutterType` |  |
 
-**Returns**
+#### Returns
 
 `GameObject`
 
 ---
 
-### SpawnObject
+### `SpawnObject`
 
-```csharp
-public void SpawnObject(SchematicData schematic, SerializableObject serializable)
+```csharp title="SpawnObject"
+public void SpawnObject(
+    SchematicData schematic,
+    SerializableObject serializable
+)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|

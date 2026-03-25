@@ -1,36 +1,100 @@
 ---
 title: ServerObject
+sidebar_label: 🔷 ServerObject
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import Badge from '@site/src/components/Badge';
 
-# ServerObject
+# 🔷 ServerObject
 
-> **class** &nbsp;·&nbsp; `ThaumielMapEditor.API.Blocks`
+<Badge color="blue">class</Badge> <Badge color="secondary">`ThaumielMapEditor.API.Blocks`</Badge>
+
+## Overview
+
+### Properties
+
+| Name | Type | Access | Description |
+|------|------|:------:|-------------|
+| [`IsStatic`](#isstatic) | `bool` | `get` `set` | _No description_ |
+| [`MovementSmoothing`](#movementsmoothing) | `byte` | `get` `set` | _No description_ |
+| [`NetId`](#netid) | `UInt32` | `get` `set` | _No description_ |
+| [`Object`](#object) | `GameObject` | `get` `set` | _No description_ |
+| [`ObjectType`](#objecttype) | `ObjectType` | `get` `set` | _No description_ |
+| [`Position`](#position) | `Vector3` | `get` `set` | _No description_ |
+| [`Rotation`](#rotation) | `Quaternion` | `get` `set` | _No description_ |
+| [`Scale`](#scale) | `Vector3` | `get` `set` | _No description_ |
+
+### Methods
+
+| Signature | Returns | Description |
+|-----------|---------|-------------|
+| [`DestroyObject(SchematicData)`](#destroyobject) | `void` | _No description_ |
+| [`GetValue(SerializableObject, string)`](#getvalue) | `T` | _No description_ |
+| [`SetWorldTransform(SchematicData)`](#setworldtransform) | `void` | _No description_ |
+| [`SpawnObject(SchematicData, SerializableObject)`](#spawnobject) | `void` | _No description_ |
+| [`UpdateObject(SchematicData, bool)`](#updateobject) | `void` | _No description_ |
 
 ## Properties
 
-| Name | Type | Access | Description |
-|------|------|--------|-------------|
-| `IsStatic` | `bool` | get / set | _No description_ |
-| `MovementSmoothing` | `byte` | get / set | _No description_ |
-| `NetId` | `UInt32` | get / set | _No description_ |
-| `Object` | `GameObject` | get / set | _No description_ |
-| `ObjectType` | `ObjectType` | get / set | _No description_ |
-| `Position` | `Vector3` | get / set | _No description_ |
-| `Rotation` | `Quaternion` | get / set | _No description_ |
-| `Scale` | `Vector3` | get / set | _No description_ |
+### `IsStatic`
+
+**Type:** `bool`&emsp;**Access:** `get` `set`
+
+---
+
+### `MovementSmoothing`
+
+**Type:** `byte`&emsp;**Access:** `get` `set`
+
+---
+
+### `NetId`
+
+**Type:** `UInt32`&emsp;**Access:** `get` `set`
+
+---
+
+### `Object`
+
+**Type:** `GameObject`&emsp;**Access:** `get` `set`
+
+---
+
+### `ObjectType`
+
+**Type:** `ObjectType`&emsp;**Access:** `get` `set`
+
+---
+
+### `Position`
+
+**Type:** `Vector3`&emsp;**Access:** `get` `set`
+
+---
+
+### `Rotation`
+
+**Type:** `Quaternion`&emsp;**Access:** `get` `set`
+
+---
+
+### `Scale`
+
+**Type:** `Vector3`&emsp;**Access:** `get` `set`
+
+---
 
 ## Methods
 
-### DestroyObject
+### `DestroyObject`
 
-```csharp
+```csharp title="DestroyObject"
 public void DestroyObject(SchematicData schematic)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -38,32 +102,35 @@ public void DestroyObject(SchematicData schematic)
 
 ---
 
-### GetValue
+### `GetValue`
 
-```csharp
-public T GetValue(SerializableObject serializable, string key)
+```csharp title="GetValue"
+public T GetValue(
+    SerializableObject serializable,
+    string key
+)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
 | `serializable` | `SerializableObject` |  |
 | `key` | `string` |  |
 
-**Returns**
+#### Returns
 
 `T`
 
 ---
 
-### SetWorldTransform
+### `SetWorldTransform`
 
-```csharp
+```csharp title="SetWorldTransform"
 public void SetWorldTransform(SchematicData schematic)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -71,13 +138,16 @@ public void SetWorldTransform(SchematicData schematic)
 
 ---
 
-### SpawnObject
+### `SpawnObject`
 
-```csharp
-public void SpawnObject(SchematicData schematic, SerializableObject serializable)
+```csharp title="SpawnObject"
+public void SpawnObject(
+    SchematicData schematic,
+    SerializableObject serializable
+)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -86,13 +156,16 @@ public void SpawnObject(SchematicData schematic, SerializableObject serializable
 
 ---
 
-### UpdateObject
+### `UpdateObject`
 
-```csharp
-public void UpdateObject(SchematicData schematic, bool respawn)
+```csharp title="UpdateObject"
+public void UpdateObject(
+    SchematicData schematic,
+    bool respawn
+)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|

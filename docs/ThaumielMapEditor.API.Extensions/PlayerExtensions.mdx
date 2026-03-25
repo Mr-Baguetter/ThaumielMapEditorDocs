@@ -1,23 +1,41 @@
 ---
 title: PlayerExtensions
+sidebar_label: 📄 PlayerExtensions
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import Badge from '@site/src/components/Badge';
 
-# PlayerExtensions
+# 📄 PlayerExtensions
 
-> **static class** &nbsp;·&nbsp; `ThaumielMapEditor.API.Extensions`
+<Badge color="gray">static class</Badge> <Badge color="secondary">`ThaumielMapEditor.API.Extensions`</Badge>
+
+## Overview
+
+### Methods
+
+| Signature | Returns | Description |
+|-----------|---------|-------------|
+| [`SendFakeRPC(Player, UInt32, Type, string, int, object[])`](#sendfakerpc) | `void` | _No description_ |
+| [`TryGet(ReferenceHub, Player&)`](#tryget) | `bool` | _No description_ |
 
 ## Methods
 
-### SendFakeRPC
+### `SendFakeRPC`
 
-```csharp
-public void SendFakeRPC(Player player, UInt32 netId, Type type, string functionName, int componentIndex, object[] objects)
+```csharp title="SendFakeRPC"
+public void SendFakeRPC(
+    Player player,
+    UInt32 netId,
+    Type type,
+    string functionName,
+    int componentIndex,
+    object[] objects
+)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -30,20 +48,23 @@ public void SendFakeRPC(Player player, UInt32 netId, Type type, string functionN
 
 ---
 
-### TryGet
+### `TryGet`
 
-```csharp
-public bool TryGet(ReferenceHub hub, Player& player)
+```csharp title="TryGet"
+public bool TryGet(
+    ReferenceHub hub,
+    Player& player
+)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
 | `hub` | `ReferenceHub` |  |
 | `player` | `Player&` |  |
 
-**Returns**
+#### Returns
 
 `bool`
 

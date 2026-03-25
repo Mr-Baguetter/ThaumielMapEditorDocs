@@ -1,30 +1,57 @@
 ---
 title: WorkstationObject
+sidebar_label: 🔷 WorkstationObject
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import Badge from '@site/src/components/Badge';
 
-# WorkstationObject
+# 🔷 WorkstationObject
 
-> **class** &nbsp;·&nbsp; `ThaumielMapEditor.API.Blocks.ServerObjects`
+<Badge color="blue">class</Badge> <Badge color="secondary">`ThaumielMapEditor.API.Blocks.ServerObjects`</Badge>
+
+## Overview
+
+### Properties
+
+| Name | Type | Access | Description |
+|------|------|:------:|-------------|
+| [`Base`](#base) | `WorkstationController` | `get` | _No description_ |
+| [`ObjectType`](#objecttype) | `ObjectType` | `get` `set` | _No description_ |
+
+### Methods
+
+| Signature | Returns | Description |
+|-----------|---------|-------------|
+| [`SpawnObject(SchematicData, SerializableObject)`](#spawnobject) | `void` | _No description_ |
 
 ## Properties
 
-| Name | Type | Access | Description |
-|------|------|--------|-------------|
-| `Base` | `WorkstationController` | get | _No description_ |
-| `ObjectType` | `ObjectType` | get / set | _No description_ |
+### `Base`
+
+**Type:** `WorkstationController`&emsp;**Access:** `get`
+
+---
+
+### `ObjectType`
+
+**Type:** `ObjectType`&emsp;**Access:** `get` `set`
+
+---
 
 ## Methods
 
-### SpawnObject
+### `SpawnObject`
 
-```csharp
-public void SpawnObject(SchematicData schematic, SerializableObject serializable)
+```csharp title="SpawnObject"
+public void SpawnObject(
+    SchematicData schematic,
+    SerializableObject serializable
+)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|

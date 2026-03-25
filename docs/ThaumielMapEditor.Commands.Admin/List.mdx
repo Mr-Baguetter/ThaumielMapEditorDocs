@@ -1,34 +1,86 @@
 ---
 title: List
+sidebar_label: 🔷 List
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import Badge from '@site/src/components/Badge';
 
-# List
+# 🔷 List
 
-> **class** &nbsp;·&nbsp; `ThaumielMapEditor.Commands.Admin`
+<Badge color="blue">class</Badge> <Badge color="secondary">`ThaumielMapEditor.Commands.Admin`</Badge>
+
+## Overview
+
+### Properties
+
+| Name | Type | Access | Description |
+|------|------|:------:|-------------|
+| [`Aliases`](#aliases) | `string[]` | `get` | _No description_ |
+| [`Description`](#description) | `string` | `get` | _No description_ |
+| [`Name`](#name) | `string` | `get` | _No description_ |
+| [`RequiredArgsCount`](#requiredargscount) | `int` | `get` | _No description_ |
+| [`RequiredPermission`](#requiredpermission) | `string` | `get` | _No description_ |
+| [`VisibleArgs`](#visibleargs) | `string` | `get` | _No description_ |
+
+### Methods
+
+| Signature | Returns | Description |
+|-----------|---------|-------------|
+| [`Execute(List<string>, ICommandSender, String&)`](#execute) | `bool` | _No description_ |
 
 ## Properties
 
-| Name | Type | Access | Description |
-|------|------|--------|-------------|
-| `Aliases` | `string[]` | get | _No description_ |
-| `Description` | `string` | get | _No description_ |
-| `Name` | `string` | get | _No description_ |
-| `RequiredArgsCount` | `int` | get | _No description_ |
-| `RequiredPermission` | `string` | get | _No description_ |
-| `VisibleArgs` | `string` | get | _No description_ |
+### `Aliases`
+
+**Type:** `string[]`&emsp;**Access:** `get`
+
+---
+
+### `Description`
+
+**Type:** `string`&emsp;**Access:** `get`
+
+---
+
+### `Name`
+
+**Type:** `string`&emsp;**Access:** `get`
+
+---
+
+### `RequiredArgsCount`
+
+**Type:** `int`&emsp;**Access:** `get`
+
+---
+
+### `RequiredPermission`
+
+**Type:** `string`&emsp;**Access:** `get`
+
+---
+
+### `VisibleArgs`
+
+**Type:** `string`&emsp;**Access:** `get`
+
+---
 
 ## Methods
 
-### Execute
+### `Execute`
 
-```csharp
-public bool Execute(List<string> arguments, ICommandSender sender, String& response)
+```csharp title="Execute"
+public bool Execute(
+    List<string> arguments,
+    ICommandSender sender,
+    String& response
+)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -36,7 +88,7 @@ public bool Execute(List<string> arguments, ICommandSender sender, String& respo
 | `sender` | `ICommandSender` |  |
 | `response` | `String&` |  |
 
-**Returns**
+#### Returns
 
 `bool`
 

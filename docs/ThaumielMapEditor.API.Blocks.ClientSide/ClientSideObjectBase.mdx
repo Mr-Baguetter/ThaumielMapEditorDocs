@@ -1,37 +1,103 @@
 ---
 title: ClientSideObjectBase
+sidebar_label: 📄 ClientSideObjectBase
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import Badge from '@site/src/components/Badge';
 
-# ClientSideObjectBase
+# 📄 ClientSideObjectBase
 
-> **abstract class** &nbsp;·&nbsp; `ThaumielMapEditor.API.Blocks.ClientSide`
+<Badge color="gray">abstract class</Badge> <Badge color="secondary">`ThaumielMapEditor.API.Blocks.ClientSide`</Badge>
+
+## Overview
+
+### Properties
+
+| Name | Type | Access | Description |
+|------|------|:------:|-------------|
+| [`AssetId`](#assetid) | `UInt32` | `get` `set` | _No description_ |
+| [`IsStatic`](#isstatic) | `bool` | `get` `set` | _No description_ |
+| [`MovementSmoothing`](#movementsmoothing) | `byte` | `get` `set` | _No description_ |
+| [`NetId`](#netid) | `UInt32` | `get` `set` | _No description_ |
+| [`ObjectType`](#objecttype) | `ObjectType` | `get` `set` | _No description_ |
+| [`Position`](#position) | `Vector3` | `get` `set` | _No description_ |
+| [`Rotation`](#rotation) | `Quaternion` | `get` `set` | _No description_ |
+| [`Scale`](#scale) | `Vector3` | `get` `set` | _No description_ |
+| [`SpawnedPlayers`](#spawnedplayers) | `HashSet<Player>` | `get` `set` | _No description_ |
+
+### Methods
+
+| Signature | Returns | Description |
+|-----------|---------|-------------|
+| [`SpawnForPlayer(Player)`](#spawnforplayer) | `void` | _No description_ |
 
 ## Properties
 
-| Name | Type | Access | Description |
-|------|------|--------|-------------|
-| `AssetId` | `UInt32` | get / set | _No description_ |
-| `IsStatic` | `bool` | get / set | _No description_ |
-| `MovementSmoothing` | `byte` | get / set | _No description_ |
-| `NetId` | `UInt32` | get / set | _No description_ |
-| `ObjectType` | `ObjectType` | get / set | _No description_ |
-| `Position` | `Vector3` | get / set | _No description_ |
-| `Rotation` | `Quaternion` | get / set | _No description_ |
-| `Scale` | `Vector3` | get / set | _No description_ |
-| `SpawnedPlayers` | `HashSet<Player>` | get / set | _No description_ |
+### `AssetId`
+
+**Type:** `UInt32`&emsp;**Access:** `get` `set`
+
+---
+
+### `IsStatic`
+
+**Type:** `bool`&emsp;**Access:** `get` `set`
+
+---
+
+### `MovementSmoothing`
+
+**Type:** `byte`&emsp;**Access:** `get` `set`
+
+---
+
+### `NetId`
+
+**Type:** `UInt32`&emsp;**Access:** `get` `set`
+
+---
+
+### `ObjectType`
+
+**Type:** `ObjectType`&emsp;**Access:** `get` `set`
+
+---
+
+### `Position`
+
+**Type:** `Vector3`&emsp;**Access:** `get` `set`
+
+---
+
+### `Rotation`
+
+**Type:** `Quaternion`&emsp;**Access:** `get` `set`
+
+---
+
+### `Scale`
+
+**Type:** `Vector3`&emsp;**Access:** `get` `set`
+
+---
+
+### `SpawnedPlayers`
+
+**Type:** `HashSet<Player>`&emsp;**Access:** `get` `set`
+
+---
 
 ## Methods
 
-### SpawnForPlayer
+### `SpawnForPlayer`
 
-```csharp
+```csharp title="SpawnForPlayer"
 public void SpawnForPlayer(Player player)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|

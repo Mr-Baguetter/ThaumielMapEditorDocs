@@ -1,51 +1,97 @@
 ---
 title: PickupObject
+sidebar_label: 🔷 PickupObject
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import Badge from '@site/src/components/Badge';
 
-# PickupObject
+# 🔷 PickupObject
 
-> **class** &nbsp;·&nbsp; `ThaumielMapEditor.API.Blocks.ServerObjects`
+<Badge color="blue">class</Badge> <Badge color="secondary">`ThaumielMapEditor.API.Blocks.ServerObjects`</Badge>
+
+## Overview
+
+### Properties
+
+| Name | Type | Access | Description |
+|------|------|:------:|-------------|
+| [`IsInfinite`](#isinfinite) | `bool` | `get` | _No description_ |
+| [`ItemToSpawn`](#itemtospawn) | `ItemType` | `get` | _No description_ |
+| [`MaxAmount`](#maxamount) | `UInt32` | `get` | _No description_ |
+| [`ObjectType`](#objecttype) | `ObjectType` | `get` `set` | _No description_ |
+| [`SpawnPercentage`](#spawnpercentage) | `float` | `get` | _No description_ |
+
+### Methods
+
+| Signature | Returns | Description |
+|-----------|---------|-------------|
+| [`ParseValues(SerializableObject)`](#parsevalues) | `bool` | _No description_ |
+| [`SpawnObject(SchematicData, SerializableObject)`](#spawnobject) | `void` | _No description_ |
 
 ## Properties
 
-| Name | Type | Access | Description |
-|------|------|--------|-------------|
-| `IsInfinite` | `bool` | get | _No description_ |
-| `ItemToSpawn` | `ItemType` | get | _No description_ |
-| `MaxAmount` | `UInt32` | get | _No description_ |
-| `ObjectType` | `ObjectType` | get / set | _No description_ |
-| `SpawnPercentage` | `float` | get | _No description_ |
+### `IsInfinite`
+
+**Type:** `bool`&emsp;**Access:** `get`
+
+---
+
+### `ItemToSpawn`
+
+**Type:** `ItemType`&emsp;**Access:** `get`
+
+---
+
+### `MaxAmount`
+
+**Type:** `UInt32`&emsp;**Access:** `get`
+
+---
+
+### `ObjectType`
+
+**Type:** `ObjectType`&emsp;**Access:** `get` `set`
+
+---
+
+### `SpawnPercentage`
+
+**Type:** `float`&emsp;**Access:** `get`
+
+---
 
 ## Methods
 
-### ParseValues
+### `ParseValues`
 
-```csharp
+```csharp title="ParseValues"
 public bool ParseValues(SerializableObject serializable)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
 | `serializable` | `SerializableObject` |  |
 
-**Returns**
+#### Returns
 
 `bool`
 
 ---
 
-### SpawnObject
+### `SpawnObject`
 
-```csharp
-public void SpawnObject(SchematicData schematic, SerializableObject serializable)
+```csharp title="SpawnObject"
+public void SpawnObject(
+    SchematicData schematic,
+    SerializableObject serializable
+)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|

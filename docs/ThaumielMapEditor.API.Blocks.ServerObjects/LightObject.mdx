@@ -1,39 +1,118 @@
 ---
 title: LightObject
+sidebar_label: 🔷 LightObject
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import Badge from '@site/src/components/Badge';
 
-# LightObject
+# 🔷 LightObject
 
-> **class** &nbsp;·&nbsp; `ThaumielMapEditor.API.Blocks.ServerObjects`
+<Badge color="blue">class</Badge> <Badge color="secondary">`ThaumielMapEditor.API.Blocks.ServerObjects`</Badge>
+
+## Overview
+
+### Properties
+
+| Name | Type | Access | Description |
+|------|------|:------:|-------------|
+| [`Base`](#base) | `LightSourceToy` | `get` | _No description_ |
+| [`InnerSpotAngle`](#innerspotangle) | `float` | `get` `set` | _No description_ |
+| [`LightColor`](#lightcolor) | `Color` | `get` `set` | _No description_ |
+| [`LightIntensity`](#lightintensity) | `float` | `get` `set` | _No description_ |
+| [`LightRange`](#lightrange) | `float` | `get` `set` | _No description_ |
+| [`LightShape`](#lightshape) | `LightShape` | `get` `set` | _No description_ |
+| [`LightType`](#lighttype) | `LightType` | `get` `set` | _No description_ |
+| [`ObjectType`](#objecttype) | `ObjectType` | `get` `set` | _No description_ |
+| [`ShadowStrength`](#shadowstrength) | `float` | `get` `set` | _No description_ |
+| [`ShadowType`](#shadowtype) | `LightShadows` | `get` `set` | _No description_ |
+| [`SpotAngle`](#spotangle) | `float` | `get` `set` | _No description_ |
+
+### Methods
+
+| Signature | Returns | Description |
+|-----------|---------|-------------|
+| [`DeserializeValues(SerializableObject)`](#deserializevalues) | `void` | _No description_ |
+| [`SpawnObject(SerializableObject, SchematicData)`](#spawnobject) | `void` | _No description_ |
 
 ## Properties
 
-| Name | Type | Access | Description |
-|------|------|--------|-------------|
-| `Base` | `LightSourceToy` | get | _No description_ |
-| `InnerSpotAngle` | `float` | get / set | _No description_ |
-| `LightColor` | `Color` | get / set | _No description_ |
-| `LightIntensity` | `float` | get / set | _No description_ |
-| `LightRange` | `float` | get / set | _No description_ |
-| `LightShape` | `LightShape` | get / set | _No description_ |
-| `LightType` | `LightType` | get / set | _No description_ |
-| `ObjectType` | `ObjectType` | get / set | _No description_ |
-| `ShadowStrength` | `float` | get / set | _No description_ |
-| `ShadowType` | `LightShadows` | get / set | _No description_ |
-| `SpotAngle` | `float` | get / set | _No description_ |
+### `Base`
+
+**Type:** `LightSourceToy`&emsp;**Access:** `get`
+
+---
+
+### `InnerSpotAngle`
+
+**Type:** `float`&emsp;**Access:** `get` `set`
+
+---
+
+### `LightColor`
+
+**Type:** `Color`&emsp;**Access:** `get` `set`
+
+---
+
+### `LightIntensity`
+
+**Type:** `float`&emsp;**Access:** `get` `set`
+
+---
+
+### `LightRange`
+
+**Type:** `float`&emsp;**Access:** `get` `set`
+
+---
+
+### `LightShape`
+
+**Type:** `LightShape`&emsp;**Access:** `get` `set`
+
+---
+
+### `LightType`
+
+**Type:** `LightType`&emsp;**Access:** `get` `set`
+
+---
+
+### `ObjectType`
+
+**Type:** `ObjectType`&emsp;**Access:** `get` `set`
+
+---
+
+### `ShadowStrength`
+
+**Type:** `float`&emsp;**Access:** `get` `set`
+
+---
+
+### `ShadowType`
+
+**Type:** `LightShadows`&emsp;**Access:** `get` `set`
+
+---
+
+### `SpotAngle`
+
+**Type:** `float`&emsp;**Access:** `get` `set`
+
+---
 
 ## Methods
 
-### DeserializeValues
+### `DeserializeValues`
 
-```csharp
+```csharp title="DeserializeValues"
 public void DeserializeValues(SerializableObject serializable)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -41,13 +120,16 @@ public void DeserializeValues(SerializableObject serializable)
 
 ---
 
-### SpawnObject
+### `SpawnObject`
 
-```csharp
-public void SpawnObject(SerializableObject serializable, SchematicData schematic)
+```csharp title="SpawnObject"
+public void SpawnObject(
+    SerializableObject serializable,
+    SchematicData schematic
+)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|

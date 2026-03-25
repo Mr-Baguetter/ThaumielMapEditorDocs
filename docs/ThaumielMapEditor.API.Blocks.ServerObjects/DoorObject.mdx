@@ -1,38 +1,114 @@
 ---
 title: DoorObject
+sidebar_label: 🔷 DoorObject
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import Badge from '@site/src/components/Badge';
 
-# DoorObject
+# 🔷 DoorObject
 
-> **class** &nbsp;·&nbsp; `ThaumielMapEditor.API.Blocks.ServerObjects`
+<Badge color="blue">class</Badge> <Badge color="secondary">`ThaumielMapEditor.API.Blocks.ServerObjects`</Badge>
+
+## Overview
+
+### Properties
+
+| Name | Type | Access | Description |
+|------|------|:------:|-------------|
+| [`Base`](#base) | `DoorVariant` | `get` | _No description_ |
+| [`Bypass2176`](#bypass2176) | `bool` | `get` `set` | _No description_ |
+| [`DoorType`](#doortype) | `DoorType` | `get` `set` | _No description_ |
+| [`Health`](#health) | `float` | `get` `set` | _No description_ |
+| [`IsLocked`](#islocked) | `bool` | `get` `set` | _No description_ |
+| [`IsOpen`](#isopen) | `bool` | `get` `set` | _No description_ |
+| [`MaxHealth`](#maxhealth) | `float` | `get` `set` | _No description_ |
+| [`ObjectType`](#objecttype) | `ObjectType` | `get` `set` | _No description_ |
+| [`Permissions`](#permissions) | `DoorPermissionFlags` | `get` `set` | _No description_ |
+| [`RequireAllPermissions`](#requireallpermissions) | `bool` | `get` `set` | _No description_ |
+
+### Methods
+
+| Signature | Returns | Description |
+|-----------|---------|-------------|
+| [`ApplyProperties(GameObject)`](#applyproperties) | `void` | _No description_ |
+| [`GetDoorFromType(DoorType)`](#getdoorfromtype) | `DoorVariant` | _No description_ |
+| [`ParseValues(SerializableObject)`](#parsevalues) | `void` | _No description_ |
+| [`SpawnObject(SchematicData, SerializableObject)`](#spawnobject) | `void` | _No description_ |
+| [`ToString()`](#tostring) | `string` | _No description_ |
 
 ## Properties
 
-| Name | Type | Access | Description |
-|------|------|--------|-------------|
-| `Base` | `DoorVariant` | get | _No description_ |
-| `Bypass2176` | `bool` | get / set | _No description_ |
-| `DoorType` | `DoorType` | get / set | _No description_ |
-| `Health` | `float` | get / set | _No description_ |
-| `IsLocked` | `bool` | get / set | _No description_ |
-| `IsOpen` | `bool` | get / set | _No description_ |
-| `MaxHealth` | `float` | get / set | _No description_ |
-| `ObjectType` | `ObjectType` | get / set | _No description_ |
-| `Permissions` | `DoorPermissionFlags` | get / set | _No description_ |
-| `RequireAllPermissions` | `bool` | get / set | _No description_ |
+### `Base`
+
+**Type:** `DoorVariant`&emsp;**Access:** `get`
+
+---
+
+### `Bypass2176`
+
+**Type:** `bool`&emsp;**Access:** `get` `set`
+
+---
+
+### `DoorType`
+
+**Type:** `DoorType`&emsp;**Access:** `get` `set`
+
+---
+
+### `Health`
+
+**Type:** `float`&emsp;**Access:** `get` `set`
+
+---
+
+### `IsLocked`
+
+**Type:** `bool`&emsp;**Access:** `get` `set`
+
+---
+
+### `IsOpen`
+
+**Type:** `bool`&emsp;**Access:** `get` `set`
+
+---
+
+### `MaxHealth`
+
+**Type:** `float`&emsp;**Access:** `get` `set`
+
+---
+
+### `ObjectType`
+
+**Type:** `ObjectType`&emsp;**Access:** `get` `set`
+
+---
+
+### `Permissions`
+
+**Type:** `DoorPermissionFlags`&emsp;**Access:** `get` `set`
+
+---
+
+### `RequireAllPermissions`
+
+**Type:** `bool`&emsp;**Access:** `get` `set`
+
+---
 
 ## Methods
 
-### ApplyProperties
+### `ApplyProperties`
 
-```csharp
+```csharp title="ApplyProperties"
 public void ApplyProperties(GameObject prefab)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -40,31 +116,31 @@ public void ApplyProperties(GameObject prefab)
 
 ---
 
-### GetDoorFromType
+### `GetDoorFromType`
 
-```csharp
+```csharp title="GetDoorFromType"
 public DoorVariant GetDoorFromType(DoorType type)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
 | `type` | `DoorType` |  |
 
-**Returns**
+#### Returns
 
 `DoorVariant`
 
 ---
 
-### ParseValues
+### `ParseValues`
 
-```csharp
+```csharp title="ParseValues"
 public void ParseValues(SerializableObject serializable)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -72,13 +148,16 @@ public void ParseValues(SerializableObject serializable)
 
 ---
 
-### SpawnObject
+### `SpawnObject`
 
-```csharp
-public void SpawnObject(SchematicData schematic, SerializableObject serializable)
+```csharp title="SpawnObject"
+public void SpawnObject(
+    SchematicData schematic,
+    SerializableObject serializable
+)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -87,13 +166,13 @@ public void SpawnObject(SchematicData schematic, SerializableObject serializable
 
 ---
 
-### ToString
+### `ToString`
 
-```csharp
+```csharp title="ToString"
 public string ToString()
 ```
 
-**Returns**
+#### Returns
 
 `string`
 

@@ -1,29 +1,52 @@
 ---
 title: LogManager
+sidebar_label: 🔷 LogManager
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import Badge from '@site/src/components/Badge';
 
-# LogManager
+# 🔷 LogManager
 
-> **class** &nbsp;·&nbsp; `ThaumielMapEditor.API.Helpers`
+<Badge color="blue">class</Badge> <Badge color="secondary">`ThaumielMapEditor.API.Helpers`</Badge>
 
-## Fields
+## Overview
+
+### Fields
 
 | Name | Type | Description |
 |------|------|-------------|
-| `Logs` | `List<Log>` | _No description_ |
+| [`Logs`](#logs) | `List<Log>` | _No description_ |
+
+### Methods
+
+| Signature | Returns | Description |
+|-----------|---------|-------------|
+| [`Debug(string)`](#debug) | `void` | _No description_ |
+| [`Error(string, bool)`](#error) | `void` | _No description_ |
+| [`Info(string)`](#info) | `void` | _No description_ |
+| [`SendLogsCoroutine(LogLevel)`](#sendlogscoroutine) | `IEnumerator<float>` | _No description_ |
+| [`UploadToEndPointCoroutine(Log)`](#uploadtoendpointcoroutine) | `IEnumerator<float>` | _No description_ |
+| [`Warn(string)`](#warn) | `void` | _No description_ |
+
+## Fields
+
+### `Logs`
+
+**Type:** `List<Log>`
+
+---
 
 ## Methods
 
-### Debug
+### `Debug`
 
-```csharp
+```csharp title="Debug"
 public void Debug(string message)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -31,13 +54,16 @@ public void Debug(string message)
 
 ---
 
-### Error
+### `Error`
 
-```csharp
-public void Error(string message, bool sendlog)
+```csharp title="Error"
+public void Error(
+    string message,
+    bool sendlog
+)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -46,13 +72,13 @@ public void Error(string message, bool sendlog)
 
 ---
 
-### Info
+### `Info`
 
-```csharp
+```csharp title="Info"
 public void Info(string message)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -60,49 +86,49 @@ public void Info(string message)
 
 ---
 
-### SendLogsCoroutine
+### `SendLogsCoroutine`
 
-```csharp
+```csharp title="SendLogsCoroutine"
 public IEnumerator<float> SendLogsCoroutine(LogLevel level)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
 | `level` | `LogLevel` |  |
 
-**Returns**
+#### Returns
 
 `IEnumerator<float>`
 
 ---
 
-### UploadToEndPointCoroutine
+### `UploadToEndPointCoroutine`
 
-```csharp
+```csharp title="UploadToEndPointCoroutine"
 public IEnumerator<float> UploadToEndPointCoroutine(Log log)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
 | `log` | `Log` |  |
 
-**Returns**
+#### Returns
 
 `IEnumerator<float>`
 
 ---
 
-### Warn
+### `Warn`
 
-```csharp
+```csharp title="Warn"
 public void Warn(string message)
 ```
 
-**Parameters**
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
