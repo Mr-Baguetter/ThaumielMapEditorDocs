@@ -1,0 +1,145 @@
+---
+title: PrimitiveObject
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# PrimitiveObject
+
+> **class** &nbsp;·&nbsp; `ThaumielMapEditor.API.Blocks.ClientSide`
+
+## Properties
+
+| Name | Type | Access | Description |
+|------|------|--------|-------------|
+| `AssetId` | `UInt32` | get / set | _No description_ |
+| `Color` | `Color` | get / set | _No description_ |
+| `IsStatic` | `bool` | get / set | _No description_ |
+| `MovementSmoothing` | `byte` | get / set | _No description_ |
+| `Name` | `string` | get / set | _No description_ |
+| `NetId` | `UInt32` | get / set | _No description_ |
+| `ObjectType` | `ObjectType` | get / set | _No description_ |
+| `Parent` | `GameObject` | get / set | _No description_ |
+| `ParentId` | `UInt32` | get / set | _No description_ |
+| `Position` | `Vector3` | get / set | _No description_ |
+| `PrimitiveFlags` | `PrimitiveFlags` | get / set | _No description_ |
+| `PrimitiveType` | `PrimitiveType` | get / set | _No description_ |
+| `Rotation` | `Quaternion` | get / set | _No description_ |
+| `Scale` | `Vector3` | get / set | _No description_ |
+| `Schematic` | `SchematicData` | get / set | _No description_ |
+| `ServerCollider` | `MeshCollider` | get / set | _No description_ |
+
+## Fields
+
+| Name | Type | Description |
+|------|------|-------------|
+| `Spawned` | `bool` | _No description_ |
+
+## Methods
+
+### DeserializeValues
+
+```csharp
+public void DeserializeValues(SerializableObject serializable)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `serializable` | `SerializableObject` |  |
+
+---
+
+### DespawnForAllPlayers
+
+```csharp
+public UInt32 DespawnForAllPlayers()
+```
+
+**Returns**
+
+`UInt32`
+
+---
+
+### DespawnForPlayer
+
+```csharp
+public void DespawnForPlayer(Player player)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `player` | `Player` |  |
+
+---
+
+### FlushSync
+
+```csharp
+public void FlushSync()
+```
+
+---
+
+### HideForPlayer
+
+```csharp
+public void HideForPlayer(Player player)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `player` | `Player` |  |
+
+---
+
+### SetParent
+
+```csharp
+public void SetParent(Player player, UInt32 parentId)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `player` | `Player` |  |
+| `parentId` | `UInt32` |  |
+
+---
+
+### ShowForPlayer
+
+```csharp
+public void ShowForPlayer(Player player)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `player` | `Player` |  |
+
+---
+
+### SpawnForPlayer
+
+```csharp
+public void SpawnForPlayer(Player player)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `player` | `Player` |  |
+
+---
+

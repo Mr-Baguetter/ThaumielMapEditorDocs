@@ -1,0 +1,112 @@
+---
+title: LogManager
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# LogManager
+
+> **class** &nbsp;·&nbsp; `ThaumielMapEditor.API.Helpers`
+
+## Fields
+
+| Name | Type | Description |
+|------|------|-------------|
+| `Logs` | `List<Log>` | _No description_ |
+
+## Methods
+
+### Debug
+
+```csharp
+public void Debug(string message)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `message` | `string` |  |
+
+---
+
+### Error
+
+```csharp
+public void Error(string message, bool sendlog)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `message` | `string` |  |
+| `sendlog` | `bool` |  |
+
+---
+
+### Info
+
+```csharp
+public void Info(string message)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `message` | `string` |  |
+
+---
+
+### SendLogsCoroutine
+
+```csharp
+public IEnumerator<float> SendLogsCoroutine(LogLevel level)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `level` | `LogLevel` |  |
+
+**Returns**
+
+`IEnumerator<float>`
+
+---
+
+### UploadToEndPointCoroutine
+
+```csharp
+public IEnumerator<float> UploadToEndPointCoroutine(Log log)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `log` | `Log` |  |
+
+**Returns**
+
+`IEnumerator<float>`
+
+---
+
+### Warn
+
+```csharp
+public void Warn(string message)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `message` | `string` |  |
+
+---
+

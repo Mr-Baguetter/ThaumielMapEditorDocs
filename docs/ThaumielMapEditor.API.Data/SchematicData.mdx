@@ -1,0 +1,60 @@
+---
+title: SchematicData
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# SchematicData
+
+> **class** &nbsp;·&nbsp; `ThaumielMapEditor.API.Data`
+
+## Properties
+
+| Name | Type | Access | Description |
+|------|------|--------|-------------|
+| `Cameras` | `IEnumerable<CameraObject>` | get | _No description_ |
+| `Capybaras` | `IEnumerable<CapybaraObject>` | get | _No description_ |
+| `Clutter` | `IEnumerable<ClutterObject>` | get | _No description_ |
+| `ContainsAnimator` | `bool` | get / set | _No description_ |
+| `Doors` | `IEnumerable<DoorObject>` | get | _No description_ |
+| `Interactables` | `IEnumerable<InteractionObject>` | get | _No description_ |
+| `Lights` | `IEnumerable<LightObject>` | get | _No description_ |
+| `Pickups` | `IEnumerable<PickupObject>` | get | _No description_ |
+| `Position` | `Vector3` | get / set | _No description_ |
+| `Primitives` | `IEnumerable<PrimitiveObject>` | get | _No description_ |
+| `RootObjectId` | `int` | get | _No description_ |
+| `Rotation` | `Quaternion` | get / set | _No description_ |
+| `Scale` | `Vector3` | get / set | _No description_ |
+| `TargetDummies` | `IEnumerable<TargetDummyObject>` | get | _No description_ |
+| `TextToys` | `IEnumerable<TextToyObject>` | get | _No description_ |
+| `Waypoints` | `IEnumerable<WaypointObject>` | get | _No description_ |
+| `Workstations` | `IEnumerable<WorkstationObject>` | get | _No description_ |
+
+## Fields
+
+| Name | Type | Description |
+|------|------|-------------|
+| `FileName` | `string` | _No description_ |
+| `Id` | `UInt32` | _No description_ |
+| `Primitive` | `PrimitiveObjectToy` | _No description_ |
+| `SpawnedAreas` | `List<AreaObject>` | _No description_ |
+| `SpawnedClientObjects` | `List<ClientSideObjectBase>` | _No description_ |
+| `SpawnedServerObjects` | `List<ServerObject>` | _No description_ |
+
+## Methods
+
+### SyncWithPlayer
+
+```csharp
+public void SyncWithPlayer(Player player)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `player` | `Player` |  |
+
+---
+

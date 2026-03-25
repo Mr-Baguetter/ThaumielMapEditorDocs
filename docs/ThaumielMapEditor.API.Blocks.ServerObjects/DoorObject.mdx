@@ -1,0 +1,101 @@
+---
+title: DoorObject
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# DoorObject
+
+> **class** &nbsp;·&nbsp; `ThaumielMapEditor.API.Blocks.ServerObjects`
+
+## Properties
+
+| Name | Type | Access | Description |
+|------|------|--------|-------------|
+| `Base` | `DoorVariant` | get | _No description_ |
+| `Bypass2176` | `bool` | get / set | _No description_ |
+| `DoorType` | `DoorType` | get / set | _No description_ |
+| `Health` | `float` | get / set | _No description_ |
+| `IsLocked` | `bool` | get / set | _No description_ |
+| `IsOpen` | `bool` | get / set | _No description_ |
+| `MaxHealth` | `float` | get / set | _No description_ |
+| `ObjectType` | `ObjectType` | get / set | _No description_ |
+| `Permissions` | `DoorPermissionFlags` | get / set | _No description_ |
+| `RequireAllPermissions` | `bool` | get / set | _No description_ |
+
+## Methods
+
+### ApplyProperties
+
+```csharp
+public void ApplyProperties(GameObject prefab)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `prefab` | `GameObject` |  |
+
+---
+
+### GetDoorFromType
+
+```csharp
+public DoorVariant GetDoorFromType(DoorType type)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `type` | `DoorType` |  |
+
+**Returns**
+
+`DoorVariant`
+
+---
+
+### ParseValues
+
+```csharp
+public void ParseValues(SerializableObject serializable)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `serializable` | `SerializableObject` |  |
+
+---
+
+### SpawnObject
+
+```csharp
+public void SpawnObject(SchematicData schematic, SerializableObject serializable)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `schematic` | `SchematicData` |  |
+| `serializable` | `SerializableObject` |  |
+
+---
+
+### ToString
+
+```csharp
+public string ToString()
+```
+
+**Returns**
+
+`string`
+
+---
+

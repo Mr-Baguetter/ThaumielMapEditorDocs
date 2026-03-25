@@ -1,0 +1,56 @@
+---
+title: PickupObject
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# PickupObject
+
+> **class** &nbsp;·&nbsp; `ThaumielMapEditor.API.Blocks.ServerObjects`
+
+## Properties
+
+| Name | Type | Access | Description |
+|------|------|--------|-------------|
+| `IsInfinite` | `bool` | get | _No description_ |
+| `ItemToSpawn` | `ItemType` | get | _No description_ |
+| `MaxAmount` | `UInt32` | get | _No description_ |
+| `ObjectType` | `ObjectType` | get / set | _No description_ |
+| `SpawnPercentage` | `float` | get | _No description_ |
+
+## Methods
+
+### ParseValues
+
+```csharp
+public bool ParseValues(SerializableObject serializable)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `serializable` | `SerializableObject` |  |
+
+**Returns**
+
+`bool`
+
+---
+
+### SpawnObject
+
+```csharp
+public void SpawnObject(SchematicData schematic, SerializableObject serializable)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `schematic` | `SchematicData` |  |
+| `serializable` | `SerializableObject` |  |
+
+---
+

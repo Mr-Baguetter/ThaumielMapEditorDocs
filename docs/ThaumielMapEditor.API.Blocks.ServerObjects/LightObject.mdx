@@ -1,0 +1,58 @@
+---
+title: LightObject
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# LightObject
+
+> **class** &nbsp;·&nbsp; `ThaumielMapEditor.API.Blocks.ServerObjects`
+
+## Properties
+
+| Name | Type | Access | Description |
+|------|------|--------|-------------|
+| `Base` | `LightSourceToy` | get | _No description_ |
+| `InnerSpotAngle` | `float` | get / set | _No description_ |
+| `LightColor` | `Color` | get / set | _No description_ |
+| `LightIntensity` | `float` | get / set | _No description_ |
+| `LightRange` | `float` | get / set | _No description_ |
+| `LightShape` | `LightShape` | get / set | _No description_ |
+| `LightType` | `LightType` | get / set | _No description_ |
+| `ObjectType` | `ObjectType` | get / set | _No description_ |
+| `ShadowStrength` | `float` | get / set | _No description_ |
+| `ShadowType` | `LightShadows` | get / set | _No description_ |
+| `SpotAngle` | `float` | get / set | _No description_ |
+
+## Methods
+
+### DeserializeValues
+
+```csharp
+public void DeserializeValues(SerializableObject serializable)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `serializable` | `SerializableObject` |  |
+
+---
+
+### SpawnObject
+
+```csharp
+public void SpawnObject(SerializableObject serializable, SchematicData schematic)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `serializable` | `SerializableObject` |  |
+| `schematic` | `SchematicData` |  |
+
+---
+

@@ -1,0 +1,135 @@
+---
+title: FileManager
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# FileManager
+
+> **class** &nbsp;·&nbsp; `ThaumielMapEditor.API.Helpers`
+
+## Methods
+
+### CreateDefaultFile
+
+```csharp
+public void CreateDefaultFile(string name, string fileName)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `name` | `string` |  |
+| `fileName` | `string` |  |
+
+---
+
+### CreateDefaultFiles
+
+```csharp
+public void CreateDefaultFiles(string name, List<ValueTuple<string, T>> items)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `name` | `string` |  |
+| `items` | `List<ValueTuple<string, T>>` |  |
+
+---
+
+### Dir
+
+```csharp
+public string Dir()
+```
+
+**Returns**
+
+`string`
+
+---
+
+### Dir
+
+```csharp
+public string Dir(string[] path)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `path` | `string[]` |  |
+
+**Returns**
+
+`string`
+
+---
+
+### GetFilesInDirectory
+
+```csharp
+public string[] GetFilesInDirectory(string name, string filter)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `name` | `string` |  |
+| `filter` | `string` |  |
+
+**Returns**
+
+`string[]`
+
+---
+
+### ParseYamlFiles
+
+```csharp
+public void ParseYamlFiles(string name, Action<T> onParsed)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `name` | `string` |  |
+| `onParsed` | `Action<T>` |  |
+
+---
+
+### TryCreateDirectory
+
+```csharp
+public void TryCreateDirectory(string name)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `name` | `string` |  |
+
+---
+
+### TryCreateDirectory
+
+```csharp
+public void TryCreateDirectory(string[] path)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `path` | `string[]` |  |
+
+---
+

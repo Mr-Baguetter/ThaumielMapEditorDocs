@@ -1,0 +1,51 @@
+---
+title: PlayerExtensions
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# PlayerExtensions
+
+> **static class** &nbsp;·&nbsp; `ThaumielMapEditor.API.Extensions`
+
+## Methods
+
+### SendFakeRPC
+
+```csharp
+public void SendFakeRPC(Player player, UInt32 netId, Type type, string functionName, int componentIndex, object[] objects)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `player` | `Player` |  |
+| `netId` | `UInt32` |  |
+| `type` | `Type` |  |
+| `functionName` | `string` |  |
+| `componentIndex` | `int` |  |
+| `objects` | `object[]` |  |
+
+---
+
+### TryGet
+
+```csharp
+public bool TryGet(ReferenceHub hub, Player& player)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `hub` | `ReferenceHub` |  |
+| `player` | `Player&` |  |
+
+**Returns**
+
+`bool`
+
+---
+

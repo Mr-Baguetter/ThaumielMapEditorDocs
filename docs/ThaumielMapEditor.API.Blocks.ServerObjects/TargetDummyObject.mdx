@@ -1,0 +1,68 @@
+---
+title: TargetDummyObject
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# TargetDummyObject
+
+> **class** &nbsp;·&nbsp; `ThaumielMapEditor.API.Blocks.ServerObjects`
+
+## Properties
+
+| Name | Type | Access | Description |
+|------|------|--------|-------------|
+| `Base` | `ShootingTarget` | get | _No description_ |
+| `ObjectType` | `ObjectType` | get / set | _No description_ |
+| `Type` | `TargetType` | get | _No description_ |
+
+## Methods
+
+### GetPrefab
+
+```csharp
+public ShootingTarget GetPrefab(TargetType type)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `type` | `TargetType` |  |
+
+**Returns**
+
+`ShootingTarget`
+
+---
+
+### ParseValues
+
+```csharp
+public void ParseValues(SerializableObject serializable)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `serializable` | `SerializableObject` |  |
+
+---
+
+### SpawnObject
+
+```csharp
+public void SpawnObject(SchematicData schematic, SerializableObject serializable)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `schematic` | `SchematicData` |  |
+| `serializable` | `SerializableObject` |  |
+
+---
+

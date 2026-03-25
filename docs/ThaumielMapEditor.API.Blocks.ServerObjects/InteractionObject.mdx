@@ -1,0 +1,53 @@
+---
+title: InteractionObject
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# InteractionObject
+
+> **class** &nbsp;·&nbsp; `ThaumielMapEditor.API.Blocks.ServerObjects`
+
+## Properties
+
+| Name | Type | Access | Description |
+|------|------|--------|-------------|
+| `Base` | `InvisibleInteractableToy` | get | _No description_ |
+| `CanSearch` | `bool` | get | _No description_ |
+| `InteractionDuration` | `float` | get / set | _No description_ |
+| `IsLocked` | `bool` | get / set | _No description_ |
+| `ObjectType` | `ObjectType` | get / set | _No description_ |
+| `Shape` | `ColliderShape` | get / set | _No description_ |
+
+## Methods
+
+### ParseValues
+
+```csharp
+public void ParseValues(SerializableObject serializable)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `serializable` | `SerializableObject` |  |
+
+---
+
+### SpawnObject
+
+```csharp
+public void SpawnObject(SchematicData schematic, SerializableObject serializable)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `schematic` | `SchematicData` |  |
+| `serializable` | `SerializableObject` |  |
+
+---
+

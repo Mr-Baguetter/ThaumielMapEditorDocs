@@ -1,0 +1,189 @@
+---
+title: SchematicLoader
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# SchematicLoader
+
+> **class** &nbsp;·&nbsp; `ThaumielMapEditor.API.Helpers`
+
+## Properties
+
+| Name | Type | Access | Description |
+|------|------|--------|-------------|
+| `Deserializer` | `IDeserializer` | get | _No description_ |
+| `MapsById` | `Dictionary<Guid, MapData>` | get / set | _No description_ |
+| `SchematicsById` | `Dictionary<UInt32, SchematicData>` | get / set | _No description_ |
+| `Serializer` | `ISerializer` | get | _No description_ |
+| `SpawnedMaps` | `IEnumerable<MapData>` | get | _No description_ |
+| `SpawnedSchematics` | `IEnumerable<SchematicData>` | get | _No description_ |
+
+## Fields
+
+| Name | Type | Description |
+|------|------|-------------|
+| `LoadedMaps` | `List<SerializableMap>` | _No description_ |
+| `LoadedSchematics` | `List<SerializableSchematic>` | _No description_ |
+
+## Methods
+
+### CreateCollisionMesh
+
+```csharp
+public void CreateCollisionMesh(PrimitiveObject primitive)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `primitive` | `PrimitiveObject` |  |
+
+---
+
+### GenerateExampleSchematic
+
+```csharp
+public void GenerateExampleSchematic()
+```
+
+---
+
+### GetId
+
+```csharp
+public UInt32 GetId()
+```
+
+**Returns**
+
+`UInt32`
+
+---
+
+### GetSchematicById
+
+```csharp
+public SchematicData GetSchematicById(UInt32 id)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `id` | `UInt32` |  |
+
+**Returns**
+
+`SchematicData`
+
+---
+
+### Init
+
+```csharp
+public void Init()
+```
+
+---
+
+### LoadMaps
+
+```csharp
+public void LoadMaps()
+```
+
+---
+
+### LoadSchematics
+
+```csharp
+public void LoadSchematics()
+```
+
+---
+
+### ReloadSchematics
+
+```csharp
+public void ReloadSchematics()
+```
+
+---
+
+### SaveMap
+
+```csharp
+public SerializableMap SaveMap(MapData data)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `data` | `MapData` |  |
+
+**Returns**
+
+`SerializableMap`
+
+---
+
+### SpawnMap
+
+```csharp
+public MapData SpawnMap(SerializableMap map)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `map` | `SerializableMap` |  |
+
+**Returns**
+
+`MapData`
+
+---
+
+### SpawnSchematic
+
+```csharp
+public SchematicData SpawnSchematic(SerializableSchematic schematic, Vector3 position)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `schematic` | `SerializableSchematic` |  |
+| `position` | `Vector3` |  |
+
+**Returns**
+
+`SchematicData`
+
+---
+
+### TryGetSchematicById
+
+```csharp
+public bool TryGetSchematicById(UInt32 id, SchematicData& schematic)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `id` | `UInt32` |  |
+| `schematic` | `SchematicData&` |  |
+
+**Returns**
+
+`bool`
+
+---
+

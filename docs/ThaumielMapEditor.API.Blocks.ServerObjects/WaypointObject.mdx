@@ -1,0 +1,53 @@
+---
+title: WaypointObject
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# WaypointObject
+
+> **class** &nbsp;·&nbsp; `ThaumielMapEditor.API.Blocks.ServerObjects`
+
+## Properties
+
+| Name | Type | Access | Description |
+|------|------|--------|-------------|
+| `Base` | `WaypointToy` | get | _No description_ |
+| `BoundsSize` | `Vector3` | get / set | _No description_ |
+| `ObjectType` | `ObjectType` | get / set | _No description_ |
+| `Priority` | `float` | get / set | _No description_ |
+| `VisualizeBounds` | `bool` | get / set | _No description_ |
+| `WaypointId` | `byte` | get | _No description_ |
+
+## Methods
+
+### ParseValues
+
+```csharp
+public void ParseValues(SerializableObject serializable)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `serializable` | `SerializableObject` |  |
+
+---
+
+### SpawnObject
+
+```csharp
+public void SpawnObject(SchematicData schematic, SerializableObject serializable)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `schematic` | `SchematicData` |  |
+| `serializable` | `SerializableObject` |  |
+
+---
+

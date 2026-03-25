@@ -1,0 +1,92 @@
+---
+title: DictionaryExtensions
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# DictionaryExtensions
+
+> **static class** &nbsp;·&nbsp; `ThaumielMapEditor.API.Extensions`
+
+## Methods
+
+### GetConvertedValueOrDefault
+
+```csharp
+public T GetConvertedValueOrDefault(Dictionary<TKey, TValue> dict, TKey key, T defaultValue)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `dict` | `Dictionary<TKey, TValue>` |  |
+| `key` | `TKey` |  |
+| `defaultValue` | `T` |  |
+
+**Returns**
+
+`T`
+
+---
+
+### GetConvertValue
+
+```csharp
+public T GetConvertValue(Dictionary<string, object> dict, string key)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `dict` | `Dictionary<string, object>` |  |
+| `key` | `string` |  |
+
+**Returns**
+
+`T`
+
+---
+
+### TryConvertValue
+
+```csharp
+public bool TryConvertValue(Dictionary<TKey, TValue> dict, TKey key, T& result)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `dict` | `Dictionary<TKey, TValue>` |  |
+| `key` | `TKey` |  |
+| `result` | `T&` |  |
+
+**Returns**
+
+`bool`
+
+---
+
+### TryConvertValue
+
+```csharp
+public bool TryConvertValue(Dictionary<string, object> dict, string key, T& result)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `dict` | `Dictionary<string, object>` |  |
+| `key` | `string` |  |
+| `result` | `T&` |  |
+
+**Returns**
+
+`bool`
+
+---
+

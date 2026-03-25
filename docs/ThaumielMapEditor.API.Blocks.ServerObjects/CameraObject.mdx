@@ -1,0 +1,73 @@
+---
+title: CameraObject
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# CameraObject
+
+> **class** &nbsp;·&nbsp; `ThaumielMapEditor.API.Blocks.ServerObjects`
+
+## Properties
+
+| Name | Type | Access | Description |
+|------|------|--------|-------------|
+| `Base` | `Scp079CameraToy` | get | _No description_ |
+| `HorizontalConstraint` | `Vector2` | get / set | _No description_ |
+| `Label` | `string` | get / set | _No description_ |
+| `ObjectType` | `ObjectType` | get / set | _No description_ |
+| `Room` | `Room` | get / set | _No description_ |
+| `Type` | `CameraType` | get | _No description_ |
+| `VerticalConstraint` | `Vector2` | get / set | _No description_ |
+| `ZoomConstraint` | `Vector2` | get / set | _No description_ |
+
+## Methods
+
+### GetCameraPrefab
+
+```csharp
+public Scp079CameraToy GetCameraPrefab(CameraType type)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `type` | `CameraType` |  |
+
+**Returns**
+
+`Scp079CameraToy`
+
+---
+
+### ParseValues
+
+```csharp
+public void ParseValues(SerializableObject serializable)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `serializable` | `SerializableObject` |  |
+
+---
+
+### SpawnObject
+
+```csharp
+public void SpawnObject(SchematicData schematic, SerializableObject serializable)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `schematic` | `SchematicData` |  |
+| `serializable` | `SerializableObject` |  |
+
+---
+

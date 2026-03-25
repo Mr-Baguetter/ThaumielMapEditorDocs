@@ -1,0 +1,41 @@
+---
+title: ClientSideObjectBase
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# ClientSideObjectBase
+
+> **abstract class** &nbsp;·&nbsp; `ThaumielMapEditor.API.Blocks.ClientSide`
+
+## Properties
+
+| Name | Type | Access | Description |
+|------|------|--------|-------------|
+| `AssetId` | `UInt32` | get / set | _No description_ |
+| `IsStatic` | `bool` | get / set | _No description_ |
+| `MovementSmoothing` | `byte` | get / set | _No description_ |
+| `NetId` | `UInt32` | get / set | _No description_ |
+| `ObjectType` | `ObjectType` | get / set | _No description_ |
+| `Position` | `Vector3` | get / set | _No description_ |
+| `Rotation` | `Quaternion` | get / set | _No description_ |
+| `Scale` | `Vector3` | get / set | _No description_ |
+| `SpawnedPlayers` | `HashSet<Player>` | get / set | _No description_ |
+
+## Methods
+
+### SpawnForPlayer
+
+```csharp
+public void SpawnForPlayer(Player player)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `player` | `Player` |  |
+
+---
+

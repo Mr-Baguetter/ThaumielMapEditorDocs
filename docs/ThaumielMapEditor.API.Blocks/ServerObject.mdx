@@ -1,0 +1,103 @@
+---
+title: ServerObject
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# ServerObject
+
+> **class** &nbsp;·&nbsp; `ThaumielMapEditor.API.Blocks`
+
+## Properties
+
+| Name | Type | Access | Description |
+|------|------|--------|-------------|
+| `IsStatic` | `bool` | get / set | _No description_ |
+| `MovementSmoothing` | `byte` | get / set | _No description_ |
+| `NetId` | `UInt32` | get / set | _No description_ |
+| `Object` | `GameObject` | get / set | _No description_ |
+| `ObjectType` | `ObjectType` | get / set | _No description_ |
+| `Position` | `Vector3` | get / set | _No description_ |
+| `Rotation` | `Quaternion` | get / set | _No description_ |
+| `Scale` | `Vector3` | get / set | _No description_ |
+
+## Methods
+
+### DestroyObject
+
+```csharp
+public void DestroyObject(SchematicData schematic)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `schematic` | `SchematicData` |  |
+
+---
+
+### GetValue
+
+```csharp
+public T GetValue(SerializableObject serializable, string key)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `serializable` | `SerializableObject` |  |
+| `key` | `string` |  |
+
+**Returns**
+
+`T`
+
+---
+
+### SetWorldTransform
+
+```csharp
+public void SetWorldTransform(SchematicData schematic)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `schematic` | `SchematicData` |  |
+
+---
+
+### SpawnObject
+
+```csharp
+public void SpawnObject(SchematicData schematic, SerializableObject serializable)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `schematic` | `SchematicData` |  |
+| `serializable` | `SerializableObject` |  |
+
+---
+
+### UpdateObject
+
+```csharp
+public void UpdateObject(SchematicData schematic, bool respawn)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `schematic` | `SchematicData` |  |
+| `respawn` | `bool` |  |
+
+---
+

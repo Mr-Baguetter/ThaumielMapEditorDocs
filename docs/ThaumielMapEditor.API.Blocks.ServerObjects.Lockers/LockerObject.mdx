@@ -1,0 +1,85 @@
+---
+title: LockerObject
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# LockerObject
+
+> **class** &nbsp;·&nbsp; `ThaumielMapEditor.API.Blocks.ServerObjects.Lockers`
+
+## Properties
+
+| Name | Type | Access | Description |
+|------|------|--------|-------------|
+| `Base` | `Locker` | get | _No description_ |
+| `Chambers` | `List<LockerChamber>` | get | _No description_ |
+| `ObjectType` | `ObjectType` | get / set | _No description_ |
+| `Type` | `LockerType` | get | _No description_ |
+
+## Methods
+
+### ClearChambers
+
+```csharp
+public void ClearChambers()
+```
+
+---
+
+### GetPrefabFromType
+
+```csharp
+public Locker GetPrefabFromType(LockerType type)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `type` | `LockerType` |  |
+
+**Returns**
+
+`Locker`
+
+---
+
+### ParseValues
+
+```csharp
+public void ParseValues(SerializableObject serializable)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `serializable` | `SerializableObject` |  |
+
+---
+
+### PopulateChambers
+
+```csharp
+public void PopulateChambers()
+```
+
+---
+
+### SpawnObject
+
+```csharp
+public void SpawnObject(SchematicData schematic, SerializableObject serializable)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `schematic` | `SchematicData` |  |
+| `serializable` | `SerializableObject` |  |
+
+---
+

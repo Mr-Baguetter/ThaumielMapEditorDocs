@@ -1,0 +1,88 @@
+---
+title: AnimationController
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# AnimationController
+
+> **class** &nbsp;·&nbsp; `ThaumielMapEditor.API.Animation`
+
+## Properties
+
+| Name | Type | Access | Description |
+|------|------|--------|-------------|
+| `IsPlaying` | `bool` | get | _No description_ |
+| `Schematic` | `SchematicData` | get | _No description_ |
+
+## Fields
+
+| Name | Type | Description |
+|------|------|-------------|
+| `AnimationSchematics` | `Dictionary<SchematicData, AnimationController>` | _No description_ |
+
+## Methods
+
+### Destroy
+
+```csharp
+public void Destroy()
+```
+
+---
+
+### GetOrCreate
+
+```csharp
+public AnimationController GetOrCreate(SchematicData schematic)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `schematic` | `SchematicData` |  |
+
+**Returns**
+
+`AnimationController`
+
+---
+
+### Play
+
+```csharp
+public void Play(string stateName)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `stateName` | `string` |  |
+
+---
+
+### SetController
+
+```csharp
+public void SetController(RuntimeAnimatorController controller)
+```
+
+**Parameters**
+
+| Name | Type | Description |
+|------|------|-------------|
+| `controller` | `RuntimeAnimatorController` |  |
+
+---
+
+### Stop
+
+```csharp
+public void Stop()
+```
+
+---
+
