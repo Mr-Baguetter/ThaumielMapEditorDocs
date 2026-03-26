@@ -3,15 +3,6 @@ const path = require("path");
 
 const DOCS_DIR = path.join(__dirname, "../../docs");
 
-const KindMeta = {
-  class: "blue",
-  interface: "green",
-  struct: "orange",
-  enum: "purple",
-  record: "cyan",
-  delegate: "gray",
-};
-
 function walk(dir, files = []) {
   for (const file of fs.readdirSync(dir)) {
     const full = path.join(dir, file);
@@ -26,7 +17,7 @@ function walk(dir, files = []) {
 }
 
 function transform(content) {
-  if (content.includes("<KindIcon")) return content;
+
   const iconMap = {
     "📄": "class",
     "🔷": "class",
@@ -37,17 +28,14 @@ function transform(content) {
     "⚙️": "delegate",
   };
 
-  content = content.replace(
-    /^([\p{Emoji_Presentation}\uFE0F])\s+(.+)$/gu,
-    (_match, icon, name) => {
-      const kind = iconMap[icon];
-      return kind
-        ? `<KindIcon kind="${kind}" /> ${name}`
-        : `${icon} ${name}`;
-    }
+  const iconRegex = new RegExp(
+    `(${Object.keys(iconMap).map(k => escapeRegExp(k)).join("|")})\\s+(.+)`, "g"
   );
 
-  return content;
+  return content.replace(iconRegex, (_match, icon, name) => {
+    const kind = iconMap[icon];
+    return kind ? `<KindIcon kind="${kind}" /> ${name}` : `${icon} ${name}`;
+  });
 }
 
 for (const file of walk(DOCS_DIR)) {
