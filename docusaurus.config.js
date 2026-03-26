@@ -37,7 +37,7 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
-          routeBasePath: '/',
+          routeBasePath: '/docs/',
         },
         blog: false,
         theme: {
@@ -81,7 +81,7 @@ const config = {
             label: 'API Docs',
           },
           {
-            href: 'https://github.com/Mr-Baguetter/ThaumielMapEditorDocs',
+            href: 'https://github.com/Mr-Baguetter/ThaumielMapEditor',
             label: 'GitHub',
             position: 'right',
           },

@@ -1,0 +1,28 @@
+.menu__link {
+    border-radius: 999px;
+    position: relative;
+}
+
+.menu__link:hover::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--ifm-color-emphasis-200);
+    border-radius: 999px;
+    z-index: -1;
+}
+
+.menu__link:hover {
+    background: var(--ifm-color-emphasis-200);
+    border-radius: 999px;
+}
+
+.menu__link--active {
+    background: var(--ifm-color-primary-lightest);
+    color: var(--ifm-color-primary-darkest);
+    border-radius: 999px;
+}
+
+.menu__list-item {
+    margin: 2px 0;
+}

@@ -1,3 +1,11 @@
+body {
+  background-image: radial-gradient(
+    rgba(0, 0, 0, 0.02) 1px,
+    transparent 1px
+  );
+  background-size: 18px 18px;
+}
+
 .markdown hr {
   display: none;
 }
@@ -179,8 +187,9 @@
 }
 
 .markdown table {
-  width: 100%;
-  table-layout: fixed;
+  display: block;
+  overflow-x: auto;
+  white-space: normal;
 }
 
 .markdown table td,
