@@ -37,16 +37,14 @@ function getCleanLabel(content) {
 // Extract frontmatter value by key
 // ----------------------------
 function getFrontmatterValue(content, key) {
-  const fmMatch = content.match(/^---\n([\s\S]*?)\n---/);
-  if (!fmMatch) return null;
+  const fmMatch = content.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+  if (!fmMatch) {
+    return null;
+  }
 
-  const line = fmMatch[1]
-    .split("\n")
-    .find((l) => l.startsWith(`${key}:`));
-
+  const line = fmMatch[1].split(/\r?\n/).find((l) => l.startsWith(`${key}:`));
   return line ? line.replace(`${key}:`, "").trim() : null;
 }
-
 // ----------------------------
 // Extract namespace from file
 // ----------------------------
