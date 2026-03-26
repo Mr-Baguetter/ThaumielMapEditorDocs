@@ -18,23 +18,23 @@ import Badge from '@site/src/components/Badge';
 | Name | Type | Access | Description |
 |------|------|:------:|-------------|
 | [`Base`](#base) | `LightSourceToy` | `get` | The underlying networked light toy instance created from the prefab. |
-| [`InnerSpotAngle`](#innerspotangle) | `float` | `get` `set` | The inner spot angle for spot lights. Setting this updates the `ThaumielMapEdito… |
-| [`LightColor`](#lightcolor) | `Color` | `get` `set` | The color of the light. Setting this updates the `ThaumielMapEditor.API.Blocks.S… |
-| [`LightIntensity`](#lightintensity) | `float` | `get` `set` | The intensity of the light. Setting this updates the `ThaumielMapEditor.API.Bloc… |
-| [`LightRange`](#lightrange) | `float` | `get` `set` | The range of the light. Setting this updates the `ThaumielMapEditor.API.Blocks.S… |
-| [`LightShape`](#lightshape) | `LightShape` | `get` `set` | The legacy light shape setting. Setting this updates the `ThaumielMapEditor.API.… |
-| [`LightType`](#lighttype) | `LightType` | `get` `set` | The general type of the light (e.g. Point, Spot). Setting this updates the `Thau… |
+| [`InnerSpotAngle`](#innerspotangle) | `float` | `get` `set` | The inner spot angle for spot lights. Setting this updates the `ThaumielMapEditor.API.Blocks.ServerObjects.LightObject.Base` instance if present. |
+| [`LightColor`](#lightcolor) | `Color` | `get` `set` | The color of the light. Setting this updates the `ThaumielMapEditor.API.Blocks.ServerObjects.LightObject.Base` instance if present. |
+| [`LightIntensity`](#lightintensity) | `float` | `get` `set` | The intensity of the light. Setting this updates the `ThaumielMapEditor.API.Blocks.ServerObjects.LightObject.Base` instance if present. |
+| [`LightRange`](#lightrange) | `float` | `get` `set` | The range of the light. Setting this updates the `ThaumielMapEditor.API.Blocks.ServerObjects.LightObject.Base` instance if present. |
+| [`LightShape`](#lightshape) | `LightShape` | `get` `set` | The legacy light shape setting. Setting this updates the `ThaumielMapEditor.API.Blocks.ServerObjects.LightObject.Base` instance if present. |
+| [`LightType`](#lighttype) | `LightType` | `get` `set` | The general type of the light (e.g. Point, Spot). Setting this updates the `ThaumielMapEditor.API.Blocks.ServerObjects.LightObject.Base` instance if present. |
 | [`ObjectType`](#objecttype) | `ObjectType` | `get` `set` | _No description_ |
-| [`ShadowStrength`](#shadowstrength) | `float` | `get` `set` | The strength of shadows produced by the light. Setting this updates the `Thaumie… |
-| [`ShadowType`](#shadowtype) | `LightShadows` | `get` `set` | The shadow type used by the light. Setting this updates the `ThaumielMapEditor.A… |
-| [`SpotAngle`](#spotangle) | `float` | `get` `set` | The outer spot angle for spot lights. Setting this updates the `ThaumielMapEdito… |
+| [`ShadowStrength`](#shadowstrength) | `float` | `get` `set` | The strength of shadows produced by the light. Setting this updates the `ThaumielMapEditor.API.Blocks.ServerObjects.LightObject.Base` instance if present. |
+| [`ShadowType`](#shadowtype) | `LightShadows` | `get` `set` | The shadow type used by the light. Setting this updates the `ThaumielMapEditor.API.Blocks.ServerObjects.LightObject.Base` instance if present. |
+| [`SpotAngle`](#spotangle) | `float` | `get` `set` | The outer spot angle for spot lights. Setting this updates the `ThaumielMapEditor.API.Blocks.ServerObjects.LightObject.Base` instance if present. |
 
 ### Methods
 
 | Signature | Returns | Description |
 |-----------|---------|-------------|
 | [`DeserializeValues(SerializableObject)`](#deserializevalues) | `void` | Reads expected light properties from the provided `ThaumielMapEditor.API.Seriali… |
-| [`SpawnObject(SerializableObject, SchematicData)`](#spawnobject) | `void` | _No description_ |
+| [`SpawnObject(SchematicData, SerializableObject)`](#spawnobject) | `void` | _No description_ |
 
 ## Properties
 
@@ -150,8 +150,8 @@ Reads expected light properties from the provided `ThaumielMapEditor.API.Seriali
 
 ```csharp title="SpawnObject"
 public void SpawnObject(
-    SerializableObject serializable,
-    SchematicData schematic
+    SchematicData schematic,
+    SerializableObject serializable
 )
 ```
 
@@ -159,8 +159,8 @@ public void SpawnObject(
 
 | Name | Type | Description |
 |------|------|-------------|
-| `serializable` | `SerializableObject` |  |
 | `schematic` | `SchematicData` |  |
+| `serializable` | `SerializableObject` |  |
 
 ---
 

@@ -18,7 +18,7 @@ import Badge from '@site/src/components/Badge';
 | Name | Type | Access | Description |
 |------|------|:------:|-------------|
 | [`Base`](#base) | `TextToy` | `get` | The instantiated runtime `AdminToys.TextToy` associated with this server object. |
-| [`DisplaySize`](#displaysize) | `Vector2` | `get` `set` | The display size (width, height) used by the `AdminToys.TextToy` when rendering… |
+| [`DisplaySize`](#displaysize) | `Vector2` | `get` `set` | The display size (width, height) used by the `AdminToys.TextToy` when rendering text. |
 | [`ObjectType`](#objecttype) | `ObjectType` | `get` `set` | _No description_ |
 | [`TextFormat`](#textformat) | `string` | `get` `set` | The text format string used by the `AdminToys.TextToy` for rendering text. |
 
@@ -27,7 +27,7 @@ import Badge from '@site/src/components/Badge';
 | Signature | Returns | Description |
 |-----------|---------|-------------|
 | [`ParseValues(SerializableObject)`](#parsevalues) | `void` | Parses values from the provided `ThaumielMapEditor.API.Serialization.Serializabl… |
-| [`SpawnObject(SerializableObject, SchematicData)`](#spawnobject) | `void` | _No description_ |
+| [`SpawnObject(SchematicData, SerializableObject)`](#spawnobject) | `void` | _No description_ |
 
 ## Properties
 
@@ -50,8 +50,7 @@ It will be null until `ThaumielMapEditor.API.Blocks.ServerObjects.TextToyObject.
 The display size (width, height) used by the `AdminToys.TextToy` when rendering text.
 
 :::note
-Setting this property updates the underlying `ThaumielMapEditor.API.Blocks.ServerObjects.TextToyObject.Base` instance's `DisplaySize` if the
-runtime object has already been created.
+Setting this property updates the underlying `ThaumielMapEditor.API.Blocks.ServerObjects.TextToyObject.Base` instance's `DisplaySize` if the runtime object has already been created.
 :::
 
 ---
@@ -69,8 +68,7 @@ runtime object has already been created.
 The text format string used by the `AdminToys.TextToy` for rendering text.
 
 :::note
-Setting this property updates the underlying `ThaumielMapEditor.API.Blocks.ServerObjects.TextToyObject.Base` instance's `TextFormat` if the
-runtime object has already been created.
+Setting this property updates the underlying `ThaumielMapEditor.API.Blocks.ServerObjects.TextToyObject.Base` instance's `TextFormat` if the runtime object has already been created.
 :::
 
 ---
@@ -97,8 +95,8 @@ Parses values from the provided `ThaumielMapEditor.API.Serialization.Serializabl
 
 ```csharp title="SpawnObject"
 public void SpawnObject(
-    SerializableObject serializable,
-    SchematicData schematic
+    SchematicData schematic,
+    SerializableObject serializable
 )
 ```
 
@@ -106,8 +104,8 @@ public void SpawnObject(
 
 | Name | Type | Description |
 |------|------|-------------|
-| `serializable` | `SerializableObject` |  |
 | `schematic` | `SchematicData` |  |
+| `serializable` | `SerializableObject` |  |
 
 ---
 

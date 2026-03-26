@@ -17,21 +17,16 @@ import Badge from '@site/src/components/Badge';
 
 | Name | Type | Access | Description |
 |------|------|:------:|-------------|
-| [`Base`](#base) | `DoorVariant` | `get` | Reference to the underlying game `Interactables.Interobjects.DoorUtils.DoorVaria… |
-| [`Bypass2176`](#bypass2176) | `bool` | `get` `set` | If `true`, SCP-2176 (Ghostlight) can bypass this door's permissions.
-Syncs to th… |
+| [`Base`](#base) | `DoorVariant` | `get` | Reference to the underlying game `Interactables.Interobjects.DoorUtils.DoorVariant` object. |
+| [`Bypass2176`](#bypass2176) | `bool` | `get` `set` | If `true`, SCP-2176 (Ghostlight) can bypass this door's permissions. Syncs to the live door object when changed after spawning. |
 | [`DoorType`](#doortype) | `DoorType` | `get` `set` | The visual and functional type of this door (e.g. LCZ, HCZ, EZ, Gate, Bulkhead). |
-| [`Health`](#health) | `float` | `get` `set` | The current remaining health of this door. Only applies to doors that extend `In… |
-| [`IsLocked`](#islocked) | `bool` | `get` `set` | Whether the door is locked via admin command.
-Syncs to the live door object when… |
-| [`IsOpen`](#isopen) | `bool` | `get` `set` | Whether the door is currently open.
-Setting this triggers the proper `Interactab… |
-| [`MaxHealth`](#maxhealth) | `float` | `get` `set` | The maximum health of this door. Only applies to doors that extend `Interactable… |
-| [`ObjectType`](#objecttype) | `ObjectType` | `get` `set` | The object type identifier for this server object. Always `ThaumielMapEditor.API… |
-| [`Permissions`](#permissions) | `DoorPermissionFlags` | `get` `set` | The keycard permission flags required to interact with this door.
-Syncs to the l… |
-| [`RequireAllPermissions`](#requireallpermissions) | `bool` | `get` `set` | If `true`, the player must hold all listed permissions rather than just one.
-Syn… |
+| [`Health`](#health) | `float` | `get` `set` | The current remaining health of this door. Only applies to doors that extend `Interactables.Interobjects.BreakableDoor`. Silently ignored for non-breakable door types. Syncs to the live door object when changed after spawning. |
+| [`IsLocked`](#islocked) | `bool` | `get` `set` | Whether the door is locked via admin command. Syncs to the live door object when changed after spawning. |
+| [`IsOpen`](#isopen) | `bool` | `get` `set` | Whether the door is currently open. Setting this triggers the proper `Interactables.Interobjects.DoorUtils.DoorAction.Opened` or `Interactables.Interobjects.DoorUtils.DoorAction.Closed` event rather than forcing the state directly. |
+| [`MaxHealth`](#maxhealth) | `float` | `get` `set` | The maximum health of this door. Only applies to doors that extend `Interactables.Interobjects.BreakableDoor`. Silently ignored for non-breakable door types. Syncs to the live door object when changed after spawning. |
+| [`ObjectType`](#objecttype) | `ObjectType` | `get` `set` | The object type identifier for this server object. Always `ThaumielMapEditor.API.Enums.ObjectType.Door`. |
+| [`Permissions`](#permissions) | `DoorPermissionFlags` | `get` `set` | The keycard permission flags required to interact with this door. Syncs to the live door object when changed after spawning. |
+| [`RequireAllPermissions`](#requireallpermissions) | `bool` | `get` `set` | If `true`, the player must hold all listed permissions rather than just one. Syncs to the live door object when changed after spawning. |
 
 ### Methods
 
@@ -57,8 +52,7 @@ Reference to the underlying game `Interactables.Interobjects.DoorUtils.DoorVaria
 
 **Type:** `bool`&emsp;**Access:** `get` `set`
 
-If `true`, SCP-2176 (Ghostlight) can bypass this door's permissions.
-Syncs to the live door object when changed after spawning.
+If `true`, SCP-2176 (Ghostlight) can bypass this door's permissions. Syncs to the live door object when changed after spawning.
 
 ---
 
@@ -74,9 +68,7 @@ The visual and functional type of this door (e.g. LCZ, HCZ, EZ, Gate, Bulkhead).
 
 **Type:** `float`&emsp;**Access:** `get` `set`
 
-The current remaining health of this door. Only applies to doors that extend `Interactables.Interobjects.BreakableDoor`.
-Silently ignored for non-breakable door types.
-Syncs to the live door object when changed after spawning.
+The current remaining health of this door. Only applies to doors that extend `Interactables.Interobjects.BreakableDoor`. Silently ignored for non-breakable door types. Syncs to the live door object when changed after spawning.
 
 ---
 
@@ -84,8 +76,7 @@ Syncs to the live door object when changed after spawning.
 
 **Type:** `bool`&emsp;**Access:** `get` `set`
 
-Whether the door is locked via admin command.
-Syncs to the live door object when changed after spawning.
+Whether the door is locked via admin command. Syncs to the live door object when changed after spawning.
 
 ---
 
@@ -93,9 +84,7 @@ Syncs to the live door object when changed after spawning.
 
 **Type:** `bool`&emsp;**Access:** `get` `set`
 
-Whether the door is currently open.
-Setting this triggers the proper `Interactables.Interobjects.DoorUtils.DoorAction.Opened` or `Interactables.Interobjects.DoorUtils.DoorAction.Closed` event
-rather than forcing the state directly.
+Whether the door is currently open. Setting this triggers the proper `Interactables.Interobjects.DoorUtils.DoorAction.Opened` or `Interactables.Interobjects.DoorUtils.DoorAction.Closed` event rather than forcing the state directly.
 
 ---
 
@@ -103,9 +92,7 @@ rather than forcing the state directly.
 
 **Type:** `float`&emsp;**Access:** `get` `set`
 
-The maximum health of this door. Only applies to doors that extend `Interactables.Interobjects.BreakableDoor`.
-Silently ignored for non-breakable door types.
-Syncs to the live door object when changed after spawning.
+The maximum health of this door. Only applies to doors that extend `Interactables.Interobjects.BreakableDoor`. Silently ignored for non-breakable door types. Syncs to the live door object when changed after spawning.
 
 ---
 
@@ -121,8 +108,7 @@ The object type identifier for this server object. Always `ThaumielMapEditor.API
 
 **Type:** `DoorPermissionFlags`&emsp;**Access:** `get` `set`
 
-The keycard permission flags required to interact with this door.
-Syncs to the live door object when changed after spawning.
+The keycard permission flags required to interact with this door. Syncs to the live door object when changed after spawning.
 
 ---
 
@@ -130,8 +116,7 @@ Syncs to the live door object when changed after spawning.
 
 **Type:** `bool`&emsp;**Access:** `get` `set`
 
-If `true`, the player must hold all listed permissions rather than just one.
-Syncs to the live door object when changed after spawning.
+If `true`, the player must hold all listed permissions rather than just one. Syncs to the live door object when changed after spawning.
 
 ---
 
@@ -143,9 +128,7 @@ Syncs to the live door object when changed after spawning.
 public void ApplyProperties(GameObject prefab)
 ```
 
-Applies all current property values to the given door prefab `UnityEngine.GameObject`.
-This includes health, lock state, open state, and permissions.
-Called internally during `ThaumielMapEditor.API.Blocks.ServerObjects.DoorObject.SpawnObject(ThaumielMapEditor.API.Data.SchematicData,ThaumielMapEditor.API.Serialization.SerializableObject)`.
+Applies all current property values to the given door prefab `UnityEngine.GameObject`. This includes health, lock state, open state, and permissions. Called internally during `ThaumielMapEditor.API.Blocks.ServerObjects.DoorObject.SpawnObject(ThaumielMapEditor.API.Data.SchematicData,ThaumielMapEditor.API.Serialization.SerializableObject)`.
 
 #### Parameters
 
@@ -187,16 +170,13 @@ Returns the `Interactables.Interobjects.DoorUtils.DoorVariant` prefab that corre
 public void ParseValues(SerializableObject serializable)
 ```
 
-Reads and parses all door properties from the provided `ThaumielMapEditor.API.Serialization.SerializableObject`.
-Logs a warning and returns early if the object type is incorrect or any field fails to parse.
+Reads and parses all door properties from the provided `ThaumielMapEditor.API.Serialization.SerializableObject`. Logs a warning and returns early if the object type is incorrect or any field fails to parse.
 
 #### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `serializable` | `SerializableObject` | The serializable object containing a `Values` dictionary with door property data.
-Expected keys: `DoorType`, `Permissions`, `RequireAllPermissions`,
-`Bypass2176`, `MaxHealth`, `Health`, `IsOpen`, `IsLocked`. |
+| `serializable` | `SerializableObject` | The serializable object containing a `Values` dictionary with door property data. Expected keys: `DoorType`, `Permissions`, `RequireAllPermissions`, `Bypass2176`, `MaxHealth`, `Health`, `IsOpen`, `IsLocked`. |
 
 ---
 
@@ -209,14 +189,10 @@ public void SpawnObject(
 )
 ```
 
-Instantiates the door prefab in the game world using the schematic's transform.
-Looks up the correct prefab from `ThaumielMapEditor.API.Blocks.ServerObjects.DoorObject.DoorType`, applies all configured properties,
-then registers the door with the network server.
+Instantiates the door prefab in the game world using the schematic's transform. Looks up the correct prefab from `ThaumielMapEditor.API.Blocks.ServerObjects.DoorObject.DoorType`, applies all configured properties, then registers the door with the network server.
 
 :::info Remarks
-If the prefab lookup fails, a warning is logged and spawning is aborted.
-HCZ doors automatically have their room connector bitmask set to `3`
-to ensure correct wall rendering.
+If the prefab lookup fails, a warning is logged and spawning is aborted. HCZ doors automatically have their room connector bitmask set to `3` to ensure correct wall rendering.
 :::
 
 #### Parameters

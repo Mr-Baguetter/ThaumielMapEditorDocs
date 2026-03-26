@@ -17,11 +17,9 @@ import Badge from '@site/src/components/Badge';
 
 | Name | Type | Access | Description |
 |------|------|:------:|-------------|
-| [`Base`](#base) | `ShootingTarget` | `get` | The instantiated `AdminToys.ShootingTarget` component for the spawned object.
-Th… |
+| [`Base`](#base) | `ShootingTarget` | `get` | The instantiated `AdminToys.ShootingTarget` component for the spawned object. This value is null until `ThaumielMapEditor.API.Blocks.ServerObjects.TargetDummyObject.SpawnObject(ThaumielMapEditor.API.Data.SchematicData,ThaumielMapEditor.API.Serialization.SerializableObject)` is called. |
 | [`ObjectType`](#objecttype) | `ObjectType` | `get` `set` | _No description_ |
-| [`Type`](#type) | `TargetType` | `get` | The configured `ThaumielMapEditor.API.Enums.TargetType` for this target.
-Determi… |
+| [`Type`](#type) | `TargetType` | `get` | The configured `ThaumielMapEditor.API.Enums.TargetType` for this target. Determined by parsing serialized data before spawning. |
 
 ### Methods
 
@@ -37,8 +35,7 @@ Determi… |
 
 **Type:** `ShootingTarget`&emsp;**Access:** `get`
 
-The instantiated `AdminToys.ShootingTarget` component for the spawned object.
-This value is null until `ThaumielMapEditor.API.Blocks.ServerObjects.TargetDummyObject.SpawnObject(ThaumielMapEditor.API.Data.SchematicData,ThaumielMapEditor.API.Serialization.SerializableObject)` is called.
+The instantiated `AdminToys.ShootingTarget` component for the spawned object. This value is null until `ThaumielMapEditor.API.Blocks.ServerObjects.TargetDummyObject.SpawnObject(ThaumielMapEditor.API.Data.SchematicData,ThaumielMapEditor.API.Serialization.SerializableObject)` is called.
 
 ---
 
@@ -52,8 +49,7 @@ This value is null until `ThaumielMapEditor.API.Blocks.ServerObjects.TargetDummy
 
 **Type:** `TargetType`&emsp;**Access:** `get`
 
-The configured `ThaumielMapEditor.API.Enums.TargetType` for this target.
-Determined by parsing serialized data before spawning.
+The configured `ThaumielMapEditor.API.Enums.TargetType` for this target. Determined by parsing serialized data before spawning.
 
 ---
 
@@ -91,9 +87,7 @@ Returns the prefab `AdminToys.ShootingTarget` that corresponds to the provided `
 public void ParseValues(SerializableObject serializable)
 ```
 
-Parses and applies values from a `ThaumielMapEditor.API.Serialization.SerializableObject` to this instance.
-Validates that the serializable represents a target and extracts the `ThaumielMapEditor.API.Enums.TargetType`.
-Logs warnings when parsing fails or the object type does not match.
+Parses and applies values from a `ThaumielMapEditor.API.Serialization.SerializableObject` to this instance. Validates that the serializable represents a target and extracts the `ThaumielMapEditor.API.Enums.TargetType`. Logs warnings when parsing fails or the object type does not match.
 
 #### Parameters
 

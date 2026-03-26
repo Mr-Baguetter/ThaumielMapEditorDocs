@@ -17,7 +17,7 @@ import Badge from '@site/src/components/Badge';
 
 | Name | Type | Access | Description |
 |------|------|:------:|-------------|
-| [`Base`](#base) | `SpawnableClutterConnector` | `get` | Gets the `MapGeneration.RoomConnectors.SpawnableClutterConnector` component atta… |
+| [`Base`](#base) | `SpawnableClutterConnector` | `get` | Gets the `MapGeneration.RoomConnectors.SpawnableClutterConnector` component attached to the `ThaumielMapEditor.API.Blocks.ServerObjects.ClutterObject.ClutterGameObject`. |
 | [`ClutterGameObject`](#cluttergameobject) | `GameObject` | `get` | Gets the underlying `UnityEngine.GameObject` of this clutter object. |
 | [`ObjectType`](#objecttype) | `ObjectType` | `get` `set` | _No description_ |
 | [`Type`](#type) | `ClutterType` | `get` | Gets the `ThaumielMapEditor.API.Enums.ClutterType` of this clutter object. |
@@ -38,8 +38,7 @@ import Badge from '@site/src/components/Badge';
 Gets the `MapGeneration.RoomConnectors.SpawnableClutterConnector` component attached to the `ThaumielMapEditor.API.Blocks.ServerObjects.ClutterObject.ClutterGameObject`.
 
 :::note
-This will be `null` if the clutter type does not have a `MapGeneration.RoomConnectors.SpawnableClutterConnector` component,
-such as `ThaumielMapEditor.API.Enums.ClutterType.BrokenElectricalBox`.
+This will be `null` if the clutter type does not have a `MapGeneration.RoomConnectors.SpawnableClutterConnector` component, such as `ThaumielMapEditor.API.Enums.ClutterType.BrokenElectricalBox`.
 :::
 
 ---

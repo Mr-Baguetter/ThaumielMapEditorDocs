@@ -18,10 +18,10 @@ import Badge from '@site/src/components/Badge';
 | Name | Type | Access | Description |
 |------|------|:------:|-------------|
 | [`Base`](#base) | `InvisibleInteractableToy` | `get` | The runtime instance of the underlying `AdminToys.InvisibleInteractableToy`. |
-| [`CanSearch`](#cansearch) | `bool` | `get` | Returns true if the underlying interactable toy can currently be searched by pla… |
+| [`CanSearch`](#cansearch) | `bool` | `get` | Returns true if the underlying interactable toy can currently be searched by players. |
 | [`InteractionDuration`](#interactionduration) | `float` | `get` `set` | How long (in seconds) a player must hold the interaction for held interactions. |
 | [`IsLocked`](#islocked) | `bool` | `get` `set` | Whether the interactable is locked and cannot be searched by players. |
-| [`ObjectType`](#objecttype) | `ObjectType` | `get` `set` | The type of this server object. Always `ThaumielMapEditor.API.Enums.ObjectType.I… |
+| [`ObjectType`](#objecttype) | `ObjectType` | `get` `set` | The type of this server object. Always `ThaumielMapEditor.API.Enums.ObjectType.Interactable`. |
 | [`Shape`](#shape) | `ColliderShape` | `get` `set` | The collider shape used by the interactable toy. |
 
 ### Methods
@@ -56,8 +56,7 @@ Returns true if the underlying interactable toy can currently be searched by pla
 How long (in seconds) a player must hold the interaction for held interactions.
 
 :::note
-Setting this property updates the underlying `AdminToys.InvisibleInteractableToy.InteractionDuration`.
-A value of 0 represents an instant interaction and will trigger `ThaumielMapEditor.API.Blocks.ServerObjects.InteractionObject.OnInteracted`.
+Setting this property updates the underlying `AdminToys.InvisibleInteractableToy.InteractionDuration`. A value of 0 represents an instant interaction and will trigger `ThaumielMapEditor.API.Blocks.ServerObjects.InteractionObject.OnInteracted`.
 :::
 
 ---
@@ -105,9 +104,7 @@ public void ParseValues(SerializableObject serializable)
 Parses configuration values from a `ThaumielMapEditor.API.Serialization.SerializableObject` into this instance.
 
 :::info Remarks
-If the `ThaumielMapEditor.API.Serialization.SerializableObject.ObjectType` is not `ThaumielMapEditor.API.Enums.ObjectType.Interactable`, the method logs a warning.
-Each individual value is parsed via `ThaumielMapEditor.API.Extensions.DictionaryExtensions.TryConvertValue``1(System.Collections.Generic.Dictionary{System.String,System.Object},System.String,``0@)` and will log a warning and abort
-on failure to parse any expected value.
+If the `ThaumielMapEditor.API.Serialization.SerializableObject.ObjectType` is not `ThaumielMapEditor.API.Enums.ObjectType.Interactable`, the method logs a warning. Each individual value is parsed via `ThaumielMapEditor.API.Extensions.DictionaryExtensions.TryConvertValue``1(System.Collections.Generic.Dictionary{System.String,System.Object},System.String,``0@)` and will log a warning and abort on failure to parse any expected value.
 :::
 
 #### Parameters

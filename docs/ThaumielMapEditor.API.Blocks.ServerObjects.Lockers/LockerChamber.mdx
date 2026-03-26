@@ -12,8 +12,7 @@ import Badge from '@site/src/components/Badge';
 
 <Badge color="blue">class</Badge> <Badge color="secondary">`ThaumielMapEditor.API.Blocks.ServerObjects.Lockers`</Badge>
 
-Represents a single chamber configuration for a locker.
-A locker may contain multiple chambers, each with permissions and item spawn definitions.
+Represents a single chamber configuration for a locker. A locker may contain multiple chambers, each with permissions and item spawn definitions.
 
 ## Overview
 
@@ -21,10 +20,9 @@ A locker may contain multiple chambers, each with permissions and item spawn def
 
 | Name | Type | Access | Description |
 |------|------|:------:|-------------|
-| [`Data`](#data) | `List<ChamberData>` | `get` `set` | Item spawn definitions for this chamber.
-Each `ThaumielMapEditor.API.Blocks.Serv… |
+| [`Data`](#data) | `List<ChamberData>` | `get` `set` | Item spawn definitions for this chamber. Each `ThaumielMapEditor.API.Blocks.ServerObjects.Lockers.ChamberData` entry describes an item type, its spawn probability, and the quantity to spawn. |
 | [`Index`](#index) | `UInt32` | `get` `set` | The zero-based index of this chamber within the parent locker. |
-| [`Permissions`](#permissions) | `DoorPermissionFlags` | `get` `set` | Permissions that control which players or roles can open or interact with this c… |
+| [`Permissions`](#permissions) | `DoorPermissionFlags` | `get` `set` | Permissions that control which players or roles can open or interact with this chamber. |
 
 ## Properties
 
@@ -32,8 +30,7 @@ Each `ThaumielMapEditor.API.Blocks.Serv… |
 
 **Type:** `List<ChamberData>`&emsp;**Access:** `get` `set`
 
-Item spawn definitions for this chamber.
-Each `ThaumielMapEditor.API.Blocks.ServerObjects.Lockers.ChamberData` entry describes an item type, its spawn probability, and the quantity to spawn.
+Item spawn definitions for this chamber. Each `ThaumielMapEditor.API.Blocks.ServerObjects.Lockers.ChamberData` entry describes an item type, its spawn probability, and the quantity to spawn.
 
 ---
 
