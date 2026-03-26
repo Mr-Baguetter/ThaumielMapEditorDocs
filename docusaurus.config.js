@@ -38,6 +38,10 @@ const config = {
         docs: {
           sidebarPath: './sidebars.js',
           routeBasePath: '/',
+          sidebar: {
+            autoCollapseCategories: true,
+            hideable: true,
+          }
         },
         blog: false,
         theme: {

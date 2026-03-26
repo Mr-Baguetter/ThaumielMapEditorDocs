@@ -5,6 +5,7 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
+    "prebuild": "node scripts/generateSidebar.js",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "npm run build && wrangler deploy",
