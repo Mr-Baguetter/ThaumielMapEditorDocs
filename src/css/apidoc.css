@@ -179,12 +179,16 @@
 }
 
 .markdown table {
-  border-collapse: separate !important;
-  border-spacing: 0 0.35rem !important;
   width: 100%;
-  word-break: break-word;
+  table-layout: fixed;
 }
 
+.markdown table td,
+.markdown table th {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  white-space: normal;
+}
 
 .markdown table thead tr th {
   padding: 0.55rem 1rem;
