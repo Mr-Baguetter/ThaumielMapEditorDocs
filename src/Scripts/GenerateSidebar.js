@@ -25,19 +25,31 @@ function walk(dir) {
 }
 
 // ----------------------------
+// Extract frontmatter value by key
+// ----------------------------
+function getFrontmatterValue(content, key) {
+  const fmMatch = content.match(/^---\n([\s\S]*?)\n---/);
+  if (!fmMatch) return null;
+
+  const line = fmMatch[1]
+    .split("\n")
+    .find((l) => l.startsWith(`${key}:`));
+
+  return line ? line.replace(`${key}:`, "").trim() : null;
+}
+
+// ----------------------------
 // Extract namespace from file
 // ----------------------------
 function getNamespace(content) {
-  const match = content.match(
-    /([A-Za-z0-9_]+(\.[A-Za-z0-9_]+)+)/
-  );
+  const match = content.match(/([A-Za-z0-9_]+(\.[A-Za-z0-9_]+)+)/);
   return match ? match[1] : null;
 }
 
 // ----------------------------
 // Insert into tree
 // ----------------------------
-function insert(tree, parts, docId) {
+function insert(tree, parts, docItem) {
   let node = tree;
 
   for (const part of parts) {
@@ -56,7 +68,7 @@ function insert(tree, parts, docId) {
     node = existing.items;
   }
 
-  node.push(docId);
+  node.push(docItem);
 }
 
 // ----------------------------
@@ -74,7 +86,6 @@ function collapseSingleChild(nodes) {
       node.items[0].type === "category"
     ) {
       const child = node.items[0];
-
       node.label = `${node.label}/${child.label}`;
       node.items = child.items;
     }
@@ -116,7 +127,18 @@ function buildSidebar() {
       .replace(/\\/g, "/")
       .replace(/\.mdx?$/, "");
 
-    insert(tree, parts, docId);
+    const kind = getFrontmatterValue(content, "kind");
+
+    // Build a full doc item so we can attach customProps when kind exists
+    const docItem = kind
+      ? {
+          type: "doc",
+          id: docId,
+          customProps: { kind },
+        }
+      : docId; // plain string shorthand when no kind
+
+    insert(tree, parts, docItem);
   }
 
   return tree;
@@ -136,7 +158,7 @@ function generate() {
 };`;
 
   fs.writeFileSync(OUTPUT_FILE, output);
-  console.log("Sidebar generated (DocFX-style + collapsed namespaces)");
+  console.log("Sidebar generated (DocFX-style + collapsed namespaces + kind icons)");
 }
 
 generate();

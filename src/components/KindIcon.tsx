@@ -32,6 +32,7 @@ interface KindIconProps {
     kind: Kind;
     width?: number;
     height?: number;
+    className?: string;
 }
 
 const iconMap = {
@@ -62,7 +63,15 @@ function transform(content: string): string {
         }
     );
 }
-export function KindIcon({ kind, width = 16, height = 16, }: KindIconProps) {
+
+export function KindIcon({ kind, width = 20, height = 20, className }: KindIconProps) {
     const Icon = KindIconMap[kind];
-    return <Icon width={width} height={height} />;
+    return (
+        <Icon
+            width={width}
+            height={height}
+            className={className}
+            style={{ verticalAlign: "middle", display: "inline-block" }}
+        />
+    );
 }

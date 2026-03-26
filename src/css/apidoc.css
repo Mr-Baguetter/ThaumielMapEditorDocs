@@ -190,6 +190,52 @@ body {
   white-space: normal;
 }
 
+.markdown table td code,
+article table td code,
+main table td code {
+  display: inline-block;
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: bottom;
+  white-space: nowrap;
+  cursor: default;
+}
+
+.markdown table td code[data-full],
+article table td code[data-full],
+main table td code[data-full] {
+  position: relative;
+}
+
+.markdown table td code[data-full]::after,
+article table td code[data-full]::after,
+main table td code[data-full]::after {
+  content: attr(data-full);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--ct-header-bg);
+  color: var(--ct-code-color);
+  border: 1px solid var(--ct-border-color);
+  border-radius: var(--ct-radius);
+  padding: 0.35em 0.75em;
+  font-size: 0.78rem;
+  white-space: nowrap;
+  box-shadow: var(--ct-shadow);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  z-index: 100;
+}
+
+.markdown table td code[data-full]:hover::after,
+article table td code[data-full]:hover::after,
+main table td code[data-full]:hover::after {
+  opacity: 1;
+}
+
 .markdown table td,
 .markdown table th {
   overflow-wrap: anywhere;
@@ -230,6 +276,13 @@ body {
 
 [data-theme='dark'] .markdown h3:has(code) code {
   text-shadow: 0 0 16px var(--ct-accent-glow, rgba(56, 189, 248, 0.22));
+}
+
+.kind-icon {
+  width: 1.1em;
+  height: 1.1em;
+  vertical-align: -0.15em;
+  flex-shrink: 0;
 }
 
 @media (max-width: 600px) {

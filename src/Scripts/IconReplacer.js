@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 const DOCS_DIR = path.join(__dirname, "../../docs");
-const KIND_ICON_IMPORT = `import { KindIcon } from "@site/src/components/KindIcon";`;
+const KIND_ICON_IMPORT = `import KindIcon from "@site/src/components/KindIcon";`;
 
 function walk(dir, files = []) {
   for (const file of fs.readdirSync(dir)) {
