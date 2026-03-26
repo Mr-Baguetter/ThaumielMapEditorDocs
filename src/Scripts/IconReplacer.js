@@ -17,6 +17,9 @@ function walk(dir, files = []) {
 }
 
 function transform(content) {
+  if (content.includes("<KindIcon") && !/[📄🔷🟠🟢🟣🔵⚙️]/.test(content)) {
+    return content;
+  }
 
   const iconMap = {
     "📄": "class",
@@ -36,6 +39,10 @@ function transform(content) {
     const kind = iconMap[icon];
     return kind ? `<KindIcon kind="${kind}" /> ${name}` : `${icon} ${name}`;
   });
+}
+
+function escapeRegExp(str) {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
 for (const file of walk(DOCS_DIR)) {
