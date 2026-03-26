@@ -18,10 +18,6 @@ function walk(dir, files = []) {
 }
 
 function transform(content) {
-  if (content.includes("<KindIcon") && !/[📄🔷🟠🟢🟣🔵⚙️]/.test(content)) {
-    return content;
-  }
-
   const iconMap = {
     "📄": "class",
     "🔷": "class",
@@ -37,15 +33,17 @@ function transform(content) {
     "g"
   );
 
-  content = content.replace(iconRegex, (_m, icon, name) => {
+  content = content.replace(iconRegex, (match, icon, name, offset) => {
+    const before = content.slice(0, offset);
+    const inFrontmatter = (before.match(/^---/gm) || []).length === 1;
+    const onTitleLine = match.trimStart().startsWith(icon) && before.split('\n').pop().startsWith('title:');
+    if (inFrontmatter && onTitleLine) return match;
+
     const kind = iconMap[icon];
-    return kind
-      ? `<KindIcon kind="${kind}" /> ${name}`
-      : `${icon} ${name}`;
+    return kind ? `<KindIcon kind="${kind}" /> ${name}` : `${icon} ${name}`;
   });
 
   content = ensureKindIconImport(content);
-
   return content;
 }
 

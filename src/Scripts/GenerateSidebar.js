@@ -24,6 +24,16 @@ function walk(dir) {
   return results;
 }
 
+function getCleanTitle(content) {
+  const fmMatch = content.match(/^---\n([\s\S]*?)\n---/);
+  if (!fmMatch) return null;
+
+  const line = fmMatch[1].split("\n").find((l) => l.startsWith("title:"));
+  if (!line) return null;
+
+  return line.replace("title:", "").trim().replace(/^[\u{1F300}-\u{1FAFF}⚙️📄🔷🟠🟢🟣🔵]\s*/u, "");
+}
+
 // ----------------------------
 // Extract frontmatter value by key
 // ----------------------------
@@ -128,15 +138,16 @@ function buildSidebar() {
       .replace(/\.mdx?$/, "");
 
     const kind = getFrontmatterValue(content, "kind");
+    const title = getCleanTitle(content);
 
-    // Build a full doc item so we can attach customProps when kind exists
     const docItem = kind
       ? {
-          type: "doc",
-          id: docId,
-          customProps: { kind },
-        }
-      : docId; // plain string shorthand when no kind
+        type: "doc",
+        id: docId,
+        label: title ?? docId.split("/").pop(),
+        customProps: { kind },
+      }
+      : docId;
 
     insert(tree, parts, docItem);
   }
