@@ -2,6 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 const DOCS_DIR = path.join(__dirname, "../../docs");
+const KIND_ICON_IMPORT = `import KindIcon from "@site/src/components/KindIcon";`;
 
 function walk(dir, files = []) {
   for (const file of fs.readdirSync(dir)) {
@@ -32,17 +33,48 @@ function transform(content) {
   };
 
   const iconRegex = new RegExp(
-    `(${Object.keys(iconMap).map(k => escapeRegExp(k)).join("|")})\\s+(.+)`, "g"
+    `(${Object.keys(iconMap).join("|")})\\s+(.+)`,
+    "g"
   );
 
-  return content.replace(iconRegex, (_match, icon, name) => {
+  content = content.replace(iconRegex, (_m, icon, name) => {
     const kind = iconMap[icon];
-    return kind ? `<KindIcon kind="${kind}" /> ${name}` : `${icon} ${name}`;
+    return kind
+      ? `<KindIcon kind="${kind}" /> ${name}`
+      : `${icon} ${name}`;
   });
+
+  content = ensureKindIconImport(content);
+
+  return content;
 }
 
 function escapeRegExp(str) {
   return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function ensureKindIconImport(content) {
+  if (content.includes(KIND_ICON_IMPORT))
+    return content;
+
+  const lines = content.split("\n");
+  let insertIndex = 0;
+
+  if (lines[0]?.trim() === "---") {
+    insertIndex = 1;
+    while (insertIndex < lines.length && lines[insertIndex].trim() !== "---") {
+      insertIndex++;
+    }
+    insertIndex++;
+  }
+
+  while (lines[insertIndex]?.startsWith("import ")) {
+    insertIndex++;
+  }
+
+  lines.splice(insertIndex, 0, KIND_ICON_IMPORT, "");
+
+  return lines.join("\n");
 }
 
 for (const file of walk(DOCS_DIR)) {

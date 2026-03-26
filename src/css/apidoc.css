@@ -123,7 +123,6 @@ body {
   border-radius: 0 0 var(--ct-radius, 10px) var(--ct-radius, 10px);
 }
 
-/* Remove bottom radius when an admonition follows */
 .markdown h3:has(code) + p + p:has(+ div[class*="admonition"]),
 .markdown h3:has(code) + p + p:has(+ div[role="alert"]) {
   border-radius: 0;
@@ -187,7 +186,6 @@ body {
 }
 
 .markdown table {
-  display: block;
   overflow-x: auto;
   white-space: normal;
 }
