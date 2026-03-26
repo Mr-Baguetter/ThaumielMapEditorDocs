@@ -5,7 +5,7 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
-    "prebuild": "node src/Scripts/GenerateSidebar.js && node src/Scripts/TransformIcons.js",
+    "prebuild": "node src/Scripts/GenerateSidebar.js && node src/Scripts/IconReplacer.js",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "npm run build && wrangler deploy",
