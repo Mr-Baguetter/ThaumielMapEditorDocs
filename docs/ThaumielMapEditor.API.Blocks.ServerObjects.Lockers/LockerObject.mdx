@@ -18,9 +18,9 @@ import Badge from '@site/src/components/Badge';
 | Name | Type | Access | Description |
 |------|------|:------:|-------------|
 | [`Base`](#base) | `Locker` | `get` | The instantiated `MapGeneration.Distributors.Locker` component in the scene. |
-| [`Chambers`](#chambers) | `List<LockerChamber>` | `get` | Serialized chamber definitions that describe what items and permissions each chamber should have. This list is read from the schematic/serializable data during parsing and used when populating the locker. |
-| [`ObjectType`](#objecttype) | `ObjectType` | `get` `set` | _No description_ |
-| [`Type`](#type) | `LockerType` | `get` | The `ThaumielMapEditor.API.Enums.LockerType` variant for this locker (e.g., Medkit, RifleRack, Misc). Determined during `ThaumielMapEditor.API.Blocks.ServerObjects.Lockers.LockerObject.ParseValues(ThaumielMapEditor.API.Serialization.SerializableObject)`. |
+| [`Chambers`](#chambers) | `List<LockerChamber>` | `get` | Serialized chamber definitions that describe what items and permissions each chamber should have. |
+| [`ObjectType`](#objecttype) | `ObjectType` | `get` `set` | Gets or sets the type of the object represented by this instance. |
+| [`Type`](#type) | `LockerType` | `get` | The `ThaumielMapEditor.API.Enums.LockerType` variant for this locker (e.g., Medkit, RifleRack, Misc). |
 
 ### Methods
 
@@ -30,7 +30,7 @@ import Badge from '@site/src/components/Badge';
 | [`GetPrefabFromType(LockerType)`](#getprefabfromtype) | `Locker` | Maps a `ThaumielMapEditor.API.Enums.LockerType` value to the corresponding locke… |
 | [`ParseValues(SerializableObject)`](#parsevalues) | `void` | Parses values from a `ThaumielMapEditor.API.Serialization.SerializableObject` to… |
 | [`PopulateChambers()`](#populatechambers) | `void` | Populates the runtime locker chambers based on the serialized `ThaumielMapEditor… |
-| [`SpawnObject(SchematicData, SerializableObject)`](#spawnobject) | `void` | _No description_ |
+| [`SpawnObject(SchematicData, SerializableObject)`](#spawnobject) | `void` | Spawns the specified `ThaumielMapEditor.API.Blocks.ServerObject` into the server… |
 
 ## Properties
 
@@ -46,7 +46,7 @@ The instantiated `MapGeneration.Distributors.Locker` component in the scene.
 
 **Type:** `List<LockerChamber>`&emsp;**Access:** `get`
 
-Serialized chamber definitions that describe what items and permissions each chamber should have. This list is read from the schematic/serializable data during parsing and used when populating the locker.
+Serialized chamber definitions that describe what items and permissions each chamber should have.
 
 ---
 
@@ -54,13 +54,15 @@ Serialized chamber definitions that describe what items and permissions each cha
 
 **Type:** `ObjectType`&emsp;**Access:** `get` `set`
 
+Gets or sets the type of the object represented by this instance.
+
 ---
 
 ### `Type`
 
 **Type:** `LockerType`&emsp;**Access:** `get`
 
-The `ThaumielMapEditor.API.Enums.LockerType` variant for this locker (e.g., Medkit, RifleRack, Misc). Determined during `ThaumielMapEditor.API.Blocks.ServerObjects.Lockers.LockerObject.ParseValues(ThaumielMapEditor.API.Serialization.SerializableObject)`.
+The `ThaumielMapEditor.API.Enums.LockerType` variant for this locker (e.g., Medkit, RifleRack, Misc).
 
 ---
 
@@ -136,6 +138,8 @@ public void SpawnObject(
     SerializableObject serializable
 )
 ```
+
+Spawns the specified `ThaumielMapEditor.API.Blocks.ServerObject` into the server and adds it to the provided `ThaumielMapEditor.API.Data.SchematicData`'s `ThaumielMapEditor.API.Data.SchematicData.SpawnedServerObjects` list.
 
 #### Parameters
 

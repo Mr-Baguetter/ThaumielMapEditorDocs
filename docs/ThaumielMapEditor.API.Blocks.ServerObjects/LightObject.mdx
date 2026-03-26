@@ -24,7 +24,7 @@ import Badge from '@site/src/components/Badge';
 | [`LightRange`](#lightrange) | `float` | `get` `set` | The range of the light. Setting this updates the `ThaumielMapEditor.API.Blocks.ServerObjects.LightObject.Base` instance if present. |
 | [`LightShape`](#lightshape) | `LightShape` | `get` `set` | The legacy light shape setting. Setting this updates the `ThaumielMapEditor.API.Blocks.ServerObjects.LightObject.Base` instance if present. |
 | [`LightType`](#lighttype) | `LightType` | `get` `set` | The general type of the light (e.g. Point, Spot). Setting this updates the `ThaumielMapEditor.API.Blocks.ServerObjects.LightObject.Base` instance if present. |
-| [`ObjectType`](#objecttype) | `ObjectType` | `get` `set` | _No description_ |
+| [`ObjectType`](#objecttype) | `ObjectType` | `get` `set` | Gets or sets the type of the object represented by this instance. |
 | [`ShadowStrength`](#shadowstrength) | `float` | `get` `set` | The strength of shadows produced by the light. Setting this updates the `ThaumielMapEditor.API.Blocks.ServerObjects.LightObject.Base` instance if present. |
 | [`ShadowType`](#shadowtype) | `LightShadows` | `get` `set` | The shadow type used by the light. Setting this updates the `ThaumielMapEditor.API.Blocks.ServerObjects.LightObject.Base` instance if present. |
 | [`SpotAngle`](#spotangle) | `float` | `get` `set` | The outer spot angle for spot lights. Setting this updates the `ThaumielMapEditor.API.Blocks.ServerObjects.LightObject.Base` instance if present. |
@@ -34,7 +34,7 @@ import Badge from '@site/src/components/Badge';
 | Signature | Returns | Description |
 |-----------|---------|-------------|
 | [`DeserializeValues(SerializableObject)`](#deserializevalues) | `void` | Reads expected light properties from the provided `ThaumielMapEditor.API.Seriali… |
-| [`SpawnObject(SchematicData, SerializableObject)`](#spawnobject) | `void` | _No description_ |
+| [`SpawnObject(SchematicData, SerializableObject)`](#spawnobject) | `void` | Spawns the specified `ThaumielMapEditor.API.Blocks.ServerObject` into the server… |
 
 ## Properties
 
@@ -102,6 +102,8 @@ The general type of the light (e.g. Point, Spot). Setting this updates the `Thau
 
 **Type:** `ObjectType`&emsp;**Access:** `get` `set`
 
+Gets or sets the type of the object represented by this instance.
+
 ---
 
 ### `ShadowStrength`
@@ -154,6 +156,8 @@ public void SpawnObject(
     SerializableObject serializable
 )
 ```
+
+Spawns the specified `ThaumielMapEditor.API.Blocks.ServerObject` into the server and adds it to the provided `ThaumielMapEditor.API.Data.SchematicData`'s `ThaumielMapEditor.API.Data.SchematicData.SpawnedServerObjects` list.
 
 #### Parameters
 

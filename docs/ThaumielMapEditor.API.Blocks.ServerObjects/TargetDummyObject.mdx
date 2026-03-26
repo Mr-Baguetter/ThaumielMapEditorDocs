@@ -18,7 +18,7 @@ import Badge from '@site/src/components/Badge';
 | Name | Type | Access | Description |
 |------|------|:------:|-------------|
 | [`Base`](#base) | `ShootingTarget` | `get` | The instantiated `AdminToys.ShootingTarget` component for the spawned object. This value is null until `ThaumielMapEditor.API.Blocks.ServerObjects.TargetDummyObject.SpawnObject(ThaumielMapEditor.API.Data.SchematicData,ThaumielMapEditor.API.Serialization.SerializableObject)` is called. |
-| [`ObjectType`](#objecttype) | `ObjectType` | `get` `set` | _No description_ |
+| [`ObjectType`](#objecttype) | `ObjectType` | `get` `set` | Gets or sets the type of the object represented by this instance. |
 | [`Type`](#type) | `TargetType` | `get` | The configured `ThaumielMapEditor.API.Enums.TargetType` for this target. Determined by parsing serialized data before spawning. |
 
 ### Methods
@@ -27,7 +27,7 @@ import Badge from '@site/src/components/Badge';
 |-----------|---------|-------------|
 | [`GetPrefab(TargetType)`](#getprefab) | `ShootingTarget` | Returns the prefab `AdminToys.ShootingTarget` that corresponds to the provided `… |
 | [`ParseValues(SerializableObject)`](#parsevalues) | `void` | Parses and applies values from a `ThaumielMapEditor.API.Serialization.Serializab… |
-| [`SpawnObject(SchematicData, SerializableObject)`](#spawnobject) | `void` | _No description_ |
+| [`SpawnObject(SchematicData, SerializableObject)`](#spawnobject) | `void` | Spawns the specified `ThaumielMapEditor.API.Blocks.ServerObject` into the server… |
 
 ## Properties
 
@@ -42,6 +42,8 @@ The instantiated `AdminToys.ShootingTarget` component for the spawned object. Th
 ### `ObjectType`
 
 **Type:** `ObjectType`&emsp;**Access:** `get` `set`
+
+Gets or sets the type of the object represented by this instance.
 
 ---
 
@@ -105,6 +107,8 @@ public void SpawnObject(
     SerializableObject serializable
 )
 ```
+
+Spawns the specified `ThaumielMapEditor.API.Blocks.ServerObject` into the server and adds it to the provided `ThaumielMapEditor.API.Data.SchematicData`'s `ThaumielMapEditor.API.Data.SchematicData.SpawnedServerObjects` list.
 
 #### Parameters
 

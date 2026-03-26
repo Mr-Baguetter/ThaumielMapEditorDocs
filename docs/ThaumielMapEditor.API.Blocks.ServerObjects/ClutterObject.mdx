@@ -27,7 +27,7 @@ import Badge from '@site/src/components/Badge';
 | Signature | Returns | Description |
 |-----------|---------|-------------|
 | [`GetClutterPrefab(ClutterType)`](#getclutterprefab) | `GameObject` | Gets the `UnityEngine.GameObject` prefab associated with the given `ThaumielMapE… |
-| [`SpawnObject(SchematicData, SerializableObject)`](#spawnobject) | `void` | _No description_ |
+| [`SpawnObject(SchematicData, SerializableObject)`](#spawnobject) | `void` | Spawns the specified `ThaumielMapEditor.API.Blocks.ServerObject` into the server… |
 
 ## Properties
 
@@ -101,6 +101,8 @@ public void SpawnObject(
     SerializableObject serializable
 )
 ```
+
+Spawns the specified `ThaumielMapEditor.API.Blocks.ServerObject` into the server and adds it to the provided `ThaumielMapEditor.API.Data.SchematicData`'s `ThaumielMapEditor.API.Data.SchematicData.SpawnedServerObjects` list.
 
 #### Parameters
 

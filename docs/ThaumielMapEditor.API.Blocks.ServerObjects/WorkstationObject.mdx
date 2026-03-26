@@ -18,13 +18,13 @@ import Badge from '@site/src/components/Badge';
 | Name | Type | Access | Description |
 |------|------|:------:|-------------|
 | [`Base`](#base) | `WorkstationController` | `get` | The instantiated `WorkstationController` that backs this server object. It will be null until `ThaumielMapEditor.API.Blocks.ServerObjects.WorkstationObject.SpawnObject(ThaumielMapEditor.API.Data.SchematicData,ThaumielMapEditor.API.Serialization.SerializableObject)` successfully instantiates the prefab. |
-| [`ObjectType`](#objecttype) | `ObjectType` | `get` `set` | _No description_ |
+| [`ObjectType`](#objecttype) | `ObjectType` | `get` `set` | Gets or sets the type of the object represented by this instance. |
 
 ### Methods
 
 | Signature | Returns | Description |
 |-----------|---------|-------------|
-| [`SpawnObject(SchematicData, SerializableObject)`](#spawnobject) | `void` | _No description_ |
+| [`SpawnObject(SchematicData, SerializableObject)`](#spawnobject) | `void` | Spawns the specified `ThaumielMapEditor.API.Blocks.ServerObject` into the server… |
 
 ## Properties
 
@@ -40,6 +40,8 @@ The instantiated `WorkstationController` that backs this server object. It will 
 
 **Type:** `ObjectType`&emsp;**Access:** `get` `set`
 
+Gets or sets the type of the object represented by this instance.
+
 ---
 
 ## Methods
@@ -52,6 +54,8 @@ public void SpawnObject(
     SerializableObject serializable
 )
 ```
+
+Spawns the specified `ThaumielMapEditor.API.Blocks.ServerObject` into the server and adds it to the provided `ThaumielMapEditor.API.Data.SchematicData`'s `ThaumielMapEditor.API.Data.SchematicData.SpawnedServerObjects` list.
 
 #### Parameters
 

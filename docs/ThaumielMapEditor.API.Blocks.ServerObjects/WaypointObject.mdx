@@ -22,7 +22,7 @@ Represents a server-side waypoint object used by the map editor. Wraps an underl
 |------|------|:------:|-------------|
 | [`Base`](#base) | `WaypointToy` | `get` | Reference to the instantiated `AdminToys.WaypointToy` on the server. |
 | [`BoundsSize`](#boundssize) | `Vector3` | `get` `set` | Size of the waypoint bounds as a `UnityEngine.Vector3` Setting this property updates the underlying `AdminToys.WaypointToy.BoundsSize` when the toy instance is available. |
-| [`ObjectType`](#objecttype) | `ObjectType` | `get` `set` | _No description_ |
+| [`ObjectType`](#objecttype) | `ObjectType` | `get` `set` | Gets or sets the type of the object represented by this instance. |
 | [`Priority`](#priority) | `float` | `get` `set` | Priority value for the waypoint. Higher values can be used to influence ordering or selection logic that consumes waypoint priorities. Setting this property updates the underlying `AdminToys.WaypointToy.Priority` when the toy instance is available. |
 | [`VisualizeBounds`](#visualizebounds) | `bool` | `get` `set` | Whether the waypoint's bounds are visualized in the editor/runtime. Setting this property updates the underlying `AdminToys.WaypointToy.VisualizeBounds` when the toy instance is available. |
 | [`WaypointId`](#waypointid) | `byte` | `get` | Identifier assigned to this waypoint instance. |
@@ -32,7 +32,7 @@ Represents a server-side waypoint object used by the map editor. Wraps an underl
 | Signature | Returns | Description |
 |-----------|---------|-------------|
 | [`ParseValues(SerializableObject)`](#parsevalues) | `void` | Parses values from a `ThaumielMapEditor.API.Serialization.SerializableObject` an… |
-| [`SpawnObject(SchematicData, SerializableObject)`](#spawnobject) | `void` | _No description_ |
+| [`SpawnObject(SchematicData, SerializableObject)`](#spawnobject) | `void` | Spawns the specified `ThaumielMapEditor.API.Blocks.ServerObject` into the server… |
 
 ## Properties
 
@@ -55,6 +55,8 @@ Size of the waypoint bounds as a `UnityEngine.Vector3` Setting this property upd
 ### `ObjectType`
 
 **Type:** `ObjectType`&emsp;**Access:** `get` `set`
+
+Gets or sets the type of the object represented by this instance.
 
 ---
 
@@ -108,6 +110,8 @@ public void SpawnObject(
     SerializableObject serializable
 )
 ```
+
+Spawns the specified `ThaumielMapEditor.API.Blocks.ServerObject` into the server and adds it to the provided `ThaumielMapEditor.API.Data.SchematicData`'s `ThaumielMapEditor.API.Data.SchematicData.SpawnedServerObjects` list.
 
 #### Parameters
 
