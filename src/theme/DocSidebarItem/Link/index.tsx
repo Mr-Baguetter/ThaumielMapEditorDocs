@@ -1,43 +1,42 @@
 import React from "react";
+import clsx from "clsx";
+import { ThemeClassNames } from "@docusaurus/theme-common";
 import Link from "@docusaurus/Link";
+import isInternalUrl from "@docusaurus/isInternalUrl";
+import IconExternalLink from "@theme/Icon/ExternalLink";
 import { KindIcon } from "../../../components/KindIcon";
 import type { Kind } from "../../../components/KindIcon";
-import type { PropSidebarItemLink } from "@docusaurus/plugin-content-docs";
-import clsx from "clsx";
-import styles from "@docusaurus/theme-classic/src/theme/DocSidebarItem/Link/styles.module.css";
+import type { Props } from "@theme/DocSidebarItem/Link";
+import styles from "./styles.module.css";
 
-interface Props {
-    item: PropSidebarItemLink & {
-        customProps?: {
-            kind?: Kind;
-            [key: string]: unknown;
-        };
-    };
-    onItemClick?: (item: PropSidebarItemLink) => void;
-    activePath: string;
-    level: number;
-    index: number;
-}
-
-export default function DocSidebarItemLink({ item, onItemClick, activePath }: Props) {
+export default function DocSidebarItemLink({item, onItemClick, activePath, level, index, ...props }: Props): React.JSX.Element {
     const { href, label, className, autoAddBaseUrl, customProps } = item;
-    const kind = customProps?.kind;
     const isActive = href === activePath;
+    const isInternalLink = isInternalUrl(href);
+    const kind = customProps?.kind as Kind | undefined;
 
     return (
         <li
             className={clsx(
-                styles.menuExternalLink,
+                ThemeClassNames.docs.docSidebarItemLink,
+                ThemeClassNames.docs.docSidebarItemLinkLevel(level),
                 "menu__list-item",
                 className
             )}
+            key={label}
         >
             <Link
-                className={clsx("menu__link", { "menu__link--active": isActive })}
+                className={clsx(
+                    "menu__link",
+                    !isInternalLink && styles.menuExternalLink,
+                    { "menu__link--active": isActive }
+                )}
                 autoAddBaseUrl={autoAddBaseUrl}
                 aria-current={isActive ? "page" : undefined}
                 to={href}
-                onClick={onItemClick ? () => onItemClick(item) : undefined}
+                {...(isInternalLink && {
+                    onClick: onItemClick ? () => onItemClick(item) : undefined,
+                })}
             >
                 {kind ? (
                     <span style={{ display: "flex", alignItems: "center", gap: "6px" }}>
@@ -47,6 +46,7 @@ export default function DocSidebarItemLink({ item, onItemClick, activePath }: Pr
                 ) : (
                     label
                 )}
+                {!isInternalLink && <IconExternalLink />}
             </Link>
         </li>
     );
