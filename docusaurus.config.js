@@ -55,7 +55,7 @@ const config = {
         language: ['en'],
         highlightSearchTermsOnTargetPage: true,
   
-        explicitSearchResultPath: true,
+        explicitSearchResultPath: false,
         indexDocs: true,
         indexBlog: false,
         indexPages: false,
