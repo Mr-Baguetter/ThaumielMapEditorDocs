@@ -37,7 +37,7 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
-          routeBasePath: '/',
+          routeBasePath: '/ThaumielMapEditor.API.Blocks.ServerObjects/LightObject/',
         },
         blog: false,
         theme: {
