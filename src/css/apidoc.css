@@ -279,8 +279,8 @@ main table td code[data-full]:hover::after {
 }
 
 .kind-icon {
-  width: 1.1em;
-  height: 1.1em;
+  width: 1.3em;
+  height: 1.3em;
   vertical-align: -0.15em;
   flex-shrink: 0;
 }
