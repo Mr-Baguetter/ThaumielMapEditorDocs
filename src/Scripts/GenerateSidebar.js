@@ -1,8 +1,8 @@
 const fs = require("fs");
 const path = require("path");
 
-const DOCS_DIR = path.join("/docs");
-const OUTPUT_FILE = path.join("/sidebars.js");
+const DOCS_DIR = path.join(__dirname, "/docs");
+const OUTPUT_FILE = path.join(__dirname, "/sidebars.js");
 
 // ----------------------------
 // Walk markdown files
@@ -26,7 +26,6 @@ function walk(dir) {
 
 // ----------------------------
 // Extract namespace from file
-// (ThaumielMapEditor.API.X)
 // ----------------------------
 function getNamespace(content) {
   const match = content.match(
