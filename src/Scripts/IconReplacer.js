@@ -18,6 +18,10 @@ function walk(dir, files = []) {
 }
 
 function transform(content) {
+  const fmMatch = content.match(/^(---\n[\s\S]*?\n---\n)/);
+  const frontmatter = fmMatch ? fmMatch[1] : "";
+  const body = fmMatch ? content.slice(frontmatter.length) : content;
+
   const iconMap = {
     "📄": "class",
     "🔷": "class",
@@ -33,18 +37,12 @@ function transform(content) {
     "g"
   );
 
-  content = content.replace(iconRegex, (match, icon, name, offset) => {
-    const before = content.slice(0, offset);
-    const inFrontmatter = (before.match(/^---/gm) || []).length === 1;
-    const onTitleLine = match.trimStart().startsWith(icon) && before.split('\n').pop().startsWith('title:');
-    if (inFrontmatter && onTitleLine) return match;
-
+  const updatedBody = body.replace(iconRegex, (_m, icon, name) => {
     const kind = iconMap[icon];
     return kind ? `<KindIcon kind="${kind}" /> ${name}` : `${icon} ${name}`;
   });
 
-  content = ensureKindIconImport(content);
-  return content;
+  return ensureKindIconImport(frontmatter + updatedBody);
 }
 
 function escapeRegExp(str) {

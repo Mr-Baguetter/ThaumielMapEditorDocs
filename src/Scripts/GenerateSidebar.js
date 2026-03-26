@@ -24,16 +24,15 @@ function walk(dir) {
   return results;
 }
 
-function getCleanTitle(content) {
+function getCleanLabel(content) {
   const fmMatch = content.match(/^---\n([\s\S]*?)\n---/);
   if (!fmMatch) return null;
 
   const line = fmMatch[1].split("\n").find((l) => l.startsWith("title:"));
   if (!line) return null;
 
-  return line.replace("title:", "").trim().replace(/^[\u{1F300}-\u{1FAFF}⚙️📄🔷🟠🟢🟣🔵]\s*/u, "");
+  return line.replace("title:", "").trim().replace(/<KindIcon[^/]*\/>\s*/g, "").replace(/^[\u{1F300}-\u{1FAFF}⚙️📄🔷🟠🟢🟣🔵]\s*/u, "").trim();
 }
-
 // ----------------------------
 // Extract frontmatter value by key
 // ----------------------------
@@ -138,13 +137,13 @@ function buildSidebar() {
       .replace(/\.mdx?$/, "");
 
     const kind = getFrontmatterValue(content, "kind");
-    const title = getCleanTitle(content);
+    const label = getCleanLabel(content) ?? docId.split("/").pop();
 
     const docItem = kind
       ? {
         type: "doc",
         id: docId,
-        label: title ?? docId.split("/").pop(),
+        label,
         customProps: { kind },
       }
       : docId;
@@ -169,7 +168,7 @@ function generate() {
 };`;
 
   fs.writeFileSync(OUTPUT_FILE, output);
-  console.log("Sidebar generated (DocFX-style + collapsed namespaces + kind icons)");
+  console.log("Sidebar generated");
 }
 
 generate();
