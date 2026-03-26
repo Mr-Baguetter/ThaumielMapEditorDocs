@@ -64,7 +64,7 @@ function transform(content: string): string {
     );
 }
 
-export function KindIcon({ kind, width = 35, height = 35, className }: KindIconProps) {
+export function KindIcon({ kind, width = 40, height = 40, className }: KindIconProps) {
     const Icon = KindIconMap[kind];
     return (
         <Icon
