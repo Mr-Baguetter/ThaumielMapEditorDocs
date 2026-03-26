@@ -2,7 +2,6 @@
   display: none;
 }
 
-
 .markdown h2:has(+ h3:has(code)) {
   margin: 2.5rem 0 0;
   padding: 0.65rem 1.1rem;
@@ -13,7 +12,6 @@
   text-transform: uppercase;
   color: var(--ct-header-text, #1a1d2e) !important;
   font-family: "IBM Plex Sans", "Fira Sans", system-ui, sans-serif;
-
   background: var(--ct-header-bg, #f0f2fa);
   border: 1px solid var(--ct-border-color, #e0e4ef);
   border-bottom: none;
@@ -28,41 +26,21 @@
 
 .markdown h3:has(code) {
   position: relative;
-  margin: 0;
+  margin: 1.75rem 0 0;
   padding: 0.72rem 1.1rem 0.72rem 1.5rem;
   font-size: 0.9rem;
   line-height: 1.4;
   font-weight: 500;
   background: var(--ct-bg, #ffffff);
   border: 1px solid var(--ct-border-color, #e0e4ef);
-  border-top: none;
+  border-radius: var(--ct-radius, 10px) var(--ct-radius, 10px) 0 0;
   transition: background 0.15s ease, box-shadow 0.15s ease;
 }
 
-.markdown h3:has(code):nth-of-type(even) {
-  background: var(--ct-bg-alt, #f7f8fc);
-}
-
-.markdown h3:has(code):hover {
-  background: var(--ct-row-hover-bg, rgba(0, 112, 243, 0.04)) !important;
-  box-shadow: var(--ct-row-hover-ring, 0 0 0 1px rgba(0, 112, 243, 0.1) inset);
-}
-
-.markdown h3:has(code)::before {
-  content: "";
-  position: absolute;
-  left: 0.55rem;
-  top: 25%;
-  height: 50%;
-  width: 2.5px;
-  border-radius: 2px;
-  background: var(--ct-accent-bar, rgba(0, 112, 243, 0.45));
-  opacity: 0;
-  transition: opacity 0.18s ease;
-}
-
-.markdown h3:has(code):hover::before {
-  opacity: 1;
+.markdown h2:has(+ h3:has(code)) + h3:has(code) {
+  margin-top: 0;
+  border-top: none;
+  border-radius: 0;
 }
 
 .markdown h3:has(code) .hash-link,
@@ -75,7 +53,6 @@
   border: none !important;
   padding: 0 !important;
   box-shadow: none !important;
-
   color: var(--ct-accent-color, #0070f3) !important;
   font-size: 1em;
   font-weight: 700;
@@ -85,17 +62,20 @@
 
 .markdown h3:has(code) + p {
   margin: 0;
-  padding: 0.42rem 1.1rem 0.52rem 1.5rem;
-  background: var(--ct-bg, #ffffff);
+  padding: 0.38rem 1.1rem 0.42rem 1.5rem;
+  background: var(--ct-header-bg, #f0f2fa);
   border: 1px solid var(--ct-border-color, #e0e4ef);
   border-top: none;
   font-size: 0.82rem;
   color: var(--ct-text, #2d3148);
   line-height: 1.55;
+  border-radius: 0 0 var(--ct-radius, 10px) var(--ct-radius, 10px);
 }
 
-.markdown h3:has(code):nth-of-type(even) + p {
-  background: var(--ct-bg-alt, #f7f8fc);
+.markdown h3:has(code) + p:has(+ p),
+.markdown h3:has(code) + p:has(+ div[class*="admonition"]),
+.markdown h3:has(code) + p:has(+ div[role="alert"]) {
+  border-radius: 0;
 }
 
 .markdown h3:has(code) + p > strong {
@@ -123,12 +103,44 @@
   font-size: 0.8rem;
 }
 
+.markdown h3:has(code) + p + p {
+  margin: 0;
+  padding: 0.6rem 1.1rem 0.65rem 1.5rem;
+  background: var(--ct-bg, #ffffff);
+  border: 1px solid var(--ct-border-color, #e0e4ef);
+  border-top: none;
+  font-size: 0.855rem;
+  color: var(--ct-text, #2d3148);
+  line-height: 1.7;
+  border-radius: 0 0 var(--ct-radius, 10px) var(--ct-radius, 10px);
+}
+
+/* Remove bottom radius when an admonition follows */
+.markdown h3:has(code) + p + p:has(+ div[class*="admonition"]),
+.markdown h3:has(code) + p + p:has(+ div[role="alert"]) {
+  border-radius: 0;
+}
+
+.markdown h3:has(code) + p + div[class*="admonition"],
+.markdown h3:has(code) + p + div[role="alert"],
+.markdown h3:has(code) + p + p + div[class*="admonition"],
+.markdown h3:has(code) + p + p + div[role="alert"] {
+  margin: 0 !important;
+  border: 1px solid var(--ct-border-color, #e0e4ef) !important;
+  border-top: 1px dashed var(--ct-border-color, #e0e4ef) !important;
+  border-left: none !important;
+  border-right-width: 1px !important;
+  border-radius: 0 0 var(--ct-radius, 10px) var(--ct-radius, 10px) !important;
+  box-shadow: none !important;
+  padding-left: 1.5rem !important;
+}
+
 .markdown h3:has(code) + div:has(pre),
 .markdown h3:has(code) + p + div:has(pre) {
   margin: 0 !important;
   border: 1px solid var(--ct-border-color, #e0e4ef) !important;
   border-top: none !important;
-  border-radius: 0 !important;
+  border-radius: 0 0 var(--ct-radius, 10px) var(--ct-radius, 10px) !important;
   box-shadow: none !important;
 }
 
@@ -170,7 +182,9 @@
   border-collapse: separate !important;
   border-spacing: 0 0.35rem !important;
   width: 100%;
+  word-break: break-word;
 }
+
 
 .markdown table thead tr th {
   padding: 0.55rem 1rem;
@@ -199,47 +213,6 @@
   background: var(--ct-bg-alt, #f7f8fc);
 }
 
-.markdown h3:has(code) + h3:has(code),
-.markdown h3:has(code) + p + h3:has(code),
-.markdown h3:has(code) + div:has(pre) + h3:has(code),
-.markdown h3:has(code) + p + div:has(pre) + h3:has(code) {
-  margin-top: 0.45rem;
-  border-top: 1px solid var(--ct-border-color, #e0e4ef);
-}
-
-.markdown h3:has(code):has(+ h3:has(code)),
-.markdown h3:has(code) + p:has(+ h3:has(code)),
-.markdown h3:has(code) + div:has(pre):has(+ h3:has(code)),
-.markdown h3:has(code) + p + div:has(pre):has(+ h3:has(code)) {
-  border-bottom-left-radius: var(--ct-radius, 10px);
-  border-bottom-right-radius: var(--ct-radius, 10px);
-}
-
-.markdown > *:last-child {
-  border-bottom-left-radius: var(--ct-radius, 10px);
-  border-bottom-right-radius: var(--ct-radius, 10px);
-}
-
-.markdown h3:has(code):has(+ h2:has(+ h3:has(code))),
-.markdown h3:has(code):has(+ hr + h2:has(+ h3:has(code))) {
-  border-bottom-left-radius: var(--ct-radius, 10px);
-  border-bottom-right-radius: var(--ct-radius, 10px);
-}
-
-.markdown h3:has(code) + p:has(+ h2:has(+ h3:has(code))),
-.markdown h3:has(code) + p:has(+ hr + h2:has(+ h3:has(code))) {
-  border-bottom-left-radius: var(--ct-radius, 10px);
-  border-bottom-right-radius: var(--ct-radius, 10px);
-}
-
-.markdown h3:has(code) + div:has(pre):has(+ h2:has(+ h3:has(code))),
-.markdown h3:has(code) + div:has(pre):has(+ hr + h2:has(+ h3:has(code))),
-.markdown h3:has(code) + p + div:has(pre):has(+ h2:has(+ h3:has(code))),
-.markdown h3:has(code) + p + div:has(pre):has(+ hr + h2:has(+ h3:has(code))) {
-  border-bottom-left-radius: var(--ct-radius, 10px) !important;
-  border-bottom-right-radius: var(--ct-radius, 10px) !important;
-}
-
 [data-theme='dark'] .markdown h2:has(+ h3:has(code)) {
   box-shadow: 0 -3px 20px rgba(0, 0, 0, 0.3);
 }
@@ -257,7 +230,8 @@
     padding: 0.65rem 0.75rem 0.65rem 1.1rem;
   }
 
-  .markdown h3:has(code) + p {
+  .markdown h3:has(code) + p,
+  .markdown h3:has(code) + p + p {
     padding: 0.38rem 0.75rem 0.48rem 1.1rem;
   }
 }
