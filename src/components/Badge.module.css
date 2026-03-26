@@ -40,7 +40,7 @@
   
   .secondary {
     background-color: var(--ifm-color-emphasis-200);
-    color: var(--ifm-color-emphasis-800);
+    color: var(--ifm-color-black);
   }
 
   .outline {
