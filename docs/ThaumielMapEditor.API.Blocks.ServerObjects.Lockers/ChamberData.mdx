@@ -1,5 +1,6 @@
 ---
 title: ChamberData
+description: Describes a single item entry that can be spawned inside a locker chamber.
 sidebar_label: 🔷 ChamberData
 ---
 
@@ -11,15 +12,17 @@ import Badge from '@site/src/components/Badge';
 
 <Badge color="blue">class</Badge> <Badge color="secondary">`ThaumielMapEditor.API.Blocks.ServerObjects.Lockers`</Badge>
 
+Describes a single item entry that can be spawned inside a locker chamber.
+
 ## Overview
 
 ### Properties
 
 | Name | Type | Access | Description |
 |------|------|:------:|-------------|
-| [`AmountToSpawn`](#amounttospawn) | `int` | `get` `set` | _No description_ |
-| [`ItemType`](#itemtype) | `ItemType` | `get` `set` | _No description_ |
-| [`SpawnPercent`](#spawnpercent) | `float` | `get` `set` | _No description_ |
+| [`AmountToSpawn`](#amounttospawn) | `int` | `get` `set` | Number of instances to spawn when this entry is selected. |
+| [`ItemType`](#itemtype) | `ItemType` | `get` `set` | The type of item to spawn. |
+| [`SpawnPercent`](#spawnpercent) | `float` | `get` `set` | The chance this entry is selected when populating the chamber, expressed as a pe… |
 
 ## Properties
 
@@ -27,17 +30,23 @@ import Badge from '@site/src/components/Badge';
 
 **Type:** `int`&emsp;**Access:** `get` `set`
 
+Number of instances to spawn when this entry is selected.
+
 ---
 
 ### `ItemType`
 
 **Type:** `ItemType`&emsp;**Access:** `get` `set`
 
+The type of item to spawn.
+
 ---
 
 ### `SpawnPercent`
 
 **Type:** `float`&emsp;**Access:** `get` `set`
+
+The chance this entry is selected when populating the chamber, expressed as a percentage (e.g., 50.0 = 50%).
 
 ---
 

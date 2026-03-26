@@ -6,21 +6,20 @@ module.exports = {
   apiSidebar: [
     {
       type: 'category',
-      label: 'ThaumielMapEditor',
-      collapsed: false,
-      items: [
-        'ThaumielMapEditor/Config',
-        'ThaumielMapEditor/Main',
-      ],
-    },
-    {
-      type: 'category',
       label: 'ThaumielMapEditor.API.Animation',
       collapsed: false,
       items: [
         'ThaumielMapEditor.API.Animation/AnimationController',
         'ThaumielMapEditor.API.Animation/AssetBundleControllerLoader',
         'ThaumielMapEditor.API.Animation/DummyAnimatable',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'ThaumielMapEditor.API.Attributes',
+      collapsed: false,
+      items: [
+        'ThaumielMapEditor.API.Attributes/DoNotParse',
       ],
     },
     {

@@ -17,19 +17,19 @@ import Badge from '@site/src/components/Badge';
 
 | Name | Type | Access | Description |
 |------|------|:------:|-------------|
-| [`Base`](#base) | `Locker` | `get` | _No description_ |
-| [`Chambers`](#chambers) | `List<LockerChamber>` | `get` | _No description_ |
+| [`Base`](#base) | `Locker` | `get` | The instantiated `MapGeneration.Distributors.Locker` component in the scene. |
+| [`Chambers`](#chambers) | `List<LockerChamber>` | `get` | Serialized chamber definitions that describe what items and permissions each cha… |
 | [`ObjectType`](#objecttype) | `ObjectType` | `get` `set` | _No description_ |
-| [`Type`](#type) | `LockerType` | `get` | _No description_ |
+| [`Type`](#type) | `LockerType` | `get` | The `ThaumielMapEditor.API.Enums.LockerType` variant for this locker (e.g., Medk… |
 
 ### Methods
 
 | Signature | Returns | Description |
 |-----------|---------|-------------|
-| [`ClearChambers()`](#clearchambers) | `void` | _No description_ |
-| [`GetPrefabFromType(LockerType)`](#getprefabfromtype) | `Locker` | _No description_ |
-| [`ParseValues(SerializableObject)`](#parsevalues) | `void` | _No description_ |
-| [`PopulateChambers()`](#populatechambers) | `void` | _No description_ |
+| [`ClearChambers()`](#clearchambers) | `void` | Clears any existing loot and scheduled spawns from the instantiated `ThaumielMap… |
+| [`GetPrefabFromType(LockerType)`](#getprefabfromtype) | `Locker` | Maps a `ThaumielMapEditor.API.Enums.LockerType` value to the corresponding locke… |
+| [`ParseValues(SerializableObject)`](#parsevalues) | `void` | Parses values from a `ThaumielMapEditor.API.Serialization.SerializableObject` to… |
+| [`PopulateChambers()`](#populatechambers) | `void` | Populates the runtime locker chambers based on the serialized `ThaumielMapEditor… |
 | [`SpawnObject(SchematicData, SerializableObject)`](#spawnobject) | `void` | _No description_ |
 
 ## Properties
@@ -38,11 +38,16 @@ import Badge from '@site/src/components/Badge';
 
 **Type:** `Locker`&emsp;**Access:** `get`
 
+The instantiated `MapGeneration.Distributors.Locker` component in the scene.
+
 ---
 
 ### `Chambers`
 
 **Type:** `List<LockerChamber>`&emsp;**Access:** `get`
+
+Serialized chamber definitions that describe what items and permissions each chamber should have.
+This list is read from the schematic/serializable data during parsing and used when populating the locker.
 
 ---
 
@@ -56,6 +61,9 @@ import Badge from '@site/src/components/Badge';
 
 **Type:** `LockerType`&emsp;**Access:** `get`
 
+The `ThaumielMapEditor.API.Enums.LockerType` variant for this locker (e.g., Medkit, RifleRack, Misc).
+Determined during `ThaumielMapEditor.API.Blocks.ServerObjects.Lockers.LockerObject.ParseValues(ThaumielMapEditor.API.Serialization.SerializableObject)`.
+
 ---
 
 ## Methods
@@ -66,6 +74,9 @@ import Badge from '@site/src/components/Badge';
 public void ClearChambers()
 ```
 
+Clears any existing loot and scheduled spawns from the instantiated `ThaumielMapEditor.API.Blocks.ServerObjects.Lockers.LockerObject.Base` locker.
+Destroys spawned item pickups and clears internal lists so the locker can be repopulated.
+
 ---
 
 ### `GetPrefabFromType`
@@ -74,15 +85,23 @@ public void ClearChambers()
 public Locker GetPrefabFromType(LockerType type)
 ```
 
+Maps a `ThaumielMapEditor.API.Enums.LockerType` value to the corresponding locker prefab from `ThaumielMapEditor.API.Helpers.PrefabHelper`.
+
 #### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `type` | `LockerType` |  |
+| `type` | `LockerType` | The locker type to get a prefab for. |
 
 #### Returns
 
-`Locker`
+`Locker` — The matching `MapGeneration.Distributors.Locker` prefab, or throws for unknown types.
+
+#### Exceptions
+
+:::warning
+- ``System.ArgumentOutOfRangeException` — Thrown when an unsupported `ThaumielMapEditor.API.Enums.LockerType` is supplied.`
+:::
 
 ---
 
@@ -92,11 +111,14 @@ public Locker GetPrefabFromType(LockerType type)
 public void ParseValues(SerializableObject serializable)
 ```
 
+Parses values from a `ThaumielMapEditor.API.Serialization.SerializableObject` to populate this object's `ThaumielMapEditor.API.Blocks.ServerObjects.Lockers.LockerObject.Type` and `ThaumielMapEditor.API.Blocks.ServerObjects.Lockers.LockerObject.Chambers`.
+Validates that the supplied `serializable` is of `ThaumielMapEditor.API.Enums.ObjectType.Locker` and logs warnings on failure.
+
 #### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `serializable` | `SerializableObject` |  |
+| `serializable` | `SerializableObject` | The serializable data read from a schematic or saved map. |
 
 ---
 
@@ -105,6 +127,13 @@ public void ParseValues(SerializableObject serializable)
 ```csharp title="PopulateChambers"
 public void PopulateChambers()
 ```
+
+Populates the runtime locker chambers based on the serialized `ThaumielMapEditor.API.Blocks.ServerObjects.Lockers.LockerObject.Chambers` data.
+For each serialized chamber:
+- Matches it to the corresponding runtime chamber by index.
+- Applies required permissions.
+- Iterates configured `ThaumielMapEditor.API.Blocks.ServerObjects.Lockers.ChamberData` entries and spawns items based on their spawn chance and amounts.
+Ensures each serialized chamber only spawns once per population pass.
 
 ---
 

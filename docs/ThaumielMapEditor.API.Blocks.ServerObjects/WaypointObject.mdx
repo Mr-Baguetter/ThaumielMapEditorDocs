@@ -1,5 +1,8 @@
 ---
 title: WaypointObject
+description: Represents a server-side waypoint object used by the map editor.
+Wraps an underlying `AdminToys.WaypointToy` instance and exposes
+serializable properties such as bounds visualization, priority and bounds size.
 sidebar_label: 🔷 WaypointObject
 ---
 
@@ -11,24 +14,31 @@ import Badge from '@site/src/components/Badge';
 
 <Badge color="blue">class</Badge> <Badge color="secondary">`ThaumielMapEditor.API.Blocks.ServerObjects`</Badge>
 
+Represents a server-side waypoint object used by the map editor.
+Wraps an underlying `AdminToys.WaypointToy` instance and exposes
+serializable properties such as bounds visualization, priority and bounds size.
+
 ## Overview
 
 ### Properties
 
 | Name | Type | Access | Description |
 |------|------|:------:|-------------|
-| [`Base`](#base) | `WaypointToy` | `get` | _No description_ |
-| [`BoundsSize`](#boundssize) | `Vector3` | `get` `set` | _No description_ |
+| [`Base`](#base) | `WaypointToy` | `get` | Reference to the instantiated `AdminToys.WaypointToy` on the server. |
+| [`BoundsSize`](#boundssize) | `Vector3` | `get` `set` | Size of the waypoint bounds as a `UnityEngine.Vector3`
+Setting this property upd… |
 | [`ObjectType`](#objecttype) | `ObjectType` | `get` `set` | _No description_ |
-| [`Priority`](#priority) | `float` | `get` `set` | _No description_ |
-| [`VisualizeBounds`](#visualizebounds) | `bool` | `get` `set` | _No description_ |
-| [`WaypointId`](#waypointid) | `byte` | `get` | _No description_ |
+| [`Priority`](#priority) | `float` | `get` `set` | Priority value for the waypoint. Higher values can be used to influence
+ordering… |
+| [`VisualizeBounds`](#visualizebounds) | `bool` | `get` `set` | Whether the waypoint's bounds are visualized in the editor/runtime.
+Setting this… |
+| [`WaypointId`](#waypointid) | `byte` | `get` | Identifier assigned to this waypoint instance. |
 
 ### Methods
 
 | Signature | Returns | Description |
 |-----------|---------|-------------|
-| [`ParseValues(SerializableObject)`](#parsevalues) | `void` | _No description_ |
+| [`ParseValues(SerializableObject)`](#parsevalues) | `void` | Parses values from a `ThaumielMapEditor.API.Serialization.SerializableObject` an… |
 | [`SpawnObject(SchematicData, SerializableObject)`](#spawnobject) | `void` | _No description_ |
 
 ## Properties
@@ -37,11 +47,17 @@ import Badge from '@site/src/components/Badge';
 
 **Type:** `WaypointToy`&emsp;**Access:** `get`
 
+Reference to the instantiated `AdminToys.WaypointToy` on the server.
+
 ---
 
 ### `BoundsSize`
 
 **Type:** `Vector3`&emsp;**Access:** `get` `set`
+
+Size of the waypoint bounds as a `UnityEngine.Vector3`
+Setting this property updates the underlying `AdminToys.WaypointToy.BoundsSize`
+when the toy instance is available.
 
 ---
 
@@ -55,17 +71,28 @@ import Badge from '@site/src/components/Badge';
 
 **Type:** `float`&emsp;**Access:** `get` `set`
 
+Priority value for the waypoint. Higher values can be used to influence
+ordering or selection logic that consumes waypoint priorities.
+Setting this property updates the underlying `AdminToys.WaypointToy.Priority`
+when the toy instance is available.
+
 ---
 
 ### `VisualizeBounds`
 
 **Type:** `bool`&emsp;**Access:** `get` `set`
 
+Whether the waypoint's bounds are visualized in the editor/runtime.
+Setting this property updates the underlying `AdminToys.WaypointToy.VisualizeBounds`
+when the toy instance is available.
+
 ---
 
 ### `WaypointId`
 
 **Type:** `byte`&emsp;**Access:** `get`
+
+Identifier assigned to this waypoint instance.
 
 ---
 
@@ -77,11 +104,13 @@ import Badge from '@site/src/components/Badge';
 public void ParseValues(SerializableObject serializable)
 ```
 
+Parses values from a `ThaumielMapEditor.API.Serialization.SerializableObject` and applies them to this `ThaumielMapEditor.API.Blocks.ServerObjects.WaypointObject` instance.
+
 #### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `serializable` | `SerializableObject` |  |
+| `serializable` | `SerializableObject` | The serialized object containing values to parse. |
 
 ---
 

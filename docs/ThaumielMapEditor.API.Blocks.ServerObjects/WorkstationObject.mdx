@@ -17,7 +17,8 @@ import Badge from '@site/src/components/Badge';
 
 | Name | Type | Access | Description |
 |------|------|:------:|-------------|
-| [`Base`](#base) | `WorkstationController` | `get` | _No description_ |
+| [`Base`](#base) | `WorkstationController` | `get` | The instantiated `WorkstationController` that backs this server object.
+It will… |
 | [`ObjectType`](#objecttype) | `ObjectType` | `get` `set` | _No description_ |
 
 ### Methods
@@ -31,6 +32,9 @@ import Badge from '@site/src/components/Badge';
 ### `Base`
 
 **Type:** `WorkstationController`&emsp;**Access:** `get`
+
+The instantiated `WorkstationController` that backs this server object.
+It will be null until `ThaumielMapEditor.API.Blocks.ServerObjects.WorkstationObject.SpawnObject(ThaumielMapEditor.API.Data.SchematicData,ThaumielMapEditor.API.Serialization.SerializableObject)` successfully instantiates the prefab.
 
 ---
 

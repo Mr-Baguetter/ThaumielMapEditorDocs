@@ -17,16 +17,18 @@ import Badge from '@site/src/components/Badge';
 
 | Name | Type | Access | Description |
 |------|------|:------:|-------------|
-| [`Base`](#base) | `ShootingTarget` | `get` | _No description_ |
+| [`Base`](#base) | `ShootingTarget` | `get` | The instantiated `AdminToys.ShootingTarget` component for the spawned object.
+Th… |
 | [`ObjectType`](#objecttype) | `ObjectType` | `get` `set` | _No description_ |
-| [`Type`](#type) | `TargetType` | `get` | _No description_ |
+| [`Type`](#type) | `TargetType` | `get` | The configured `ThaumielMapEditor.API.Enums.TargetType` for this target.
+Determi… |
 
 ### Methods
 
 | Signature | Returns | Description |
 |-----------|---------|-------------|
-| [`GetPrefab(TargetType)`](#getprefab) | `ShootingTarget` | _No description_ |
-| [`ParseValues(SerializableObject)`](#parsevalues) | `void` | _No description_ |
+| [`GetPrefab(TargetType)`](#getprefab) | `ShootingTarget` | Returns the prefab `AdminToys.ShootingTarget` that corresponds to the provided `… |
+| [`ParseValues(SerializableObject)`](#parsevalues) | `void` | Parses and applies values from a `ThaumielMapEditor.API.Serialization.Serializab… |
 | [`SpawnObject(SchematicData, SerializableObject)`](#spawnobject) | `void` | _No description_ |
 
 ## Properties
@@ -34,6 +36,9 @@ import Badge from '@site/src/components/Badge';
 ### `Base`
 
 **Type:** `ShootingTarget`&emsp;**Access:** `get`
+
+The instantiated `AdminToys.ShootingTarget` component for the spawned object.
+This value is null until `ThaumielMapEditor.API.Blocks.ServerObjects.TargetDummyObject.SpawnObject(ThaumielMapEditor.API.Data.SchematicData,ThaumielMapEditor.API.Serialization.SerializableObject)` is called.
 
 ---
 
@@ -47,6 +52,9 @@ import Badge from '@site/src/components/Badge';
 
 **Type:** `TargetType`&emsp;**Access:** `get`
 
+The configured `ThaumielMapEditor.API.Enums.TargetType` for this target.
+Determined by parsing serialized data before spawning.
+
 ---
 
 ## Methods
@@ -57,15 +65,23 @@ import Badge from '@site/src/components/Badge';
 public ShootingTarget GetPrefab(TargetType type)
 ```
 
+Returns the prefab `AdminToys.ShootingTarget` that corresponds to the provided `type`.
+
 #### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `type` | `TargetType` |  |
+| `type` | `TargetType` | The target variant to resolve a prefab for. |
 
 #### Returns
 
-`ShootingTarget`
+`ShootingTarget` — The matching `AdminToys.ShootingTarget` prefab.
+
+#### Exceptions
+
+:::warning
+- ``System.InvalidOperationException` — Thrown when an unsupported `type` is provided.`
+:::
 
 ---
 
@@ -75,11 +91,15 @@ public ShootingTarget GetPrefab(TargetType type)
 public void ParseValues(SerializableObject serializable)
 ```
 
+Parses and applies values from a `ThaumielMapEditor.API.Serialization.SerializableObject` to this instance.
+Validates that the serializable represents a target and extracts the `ThaumielMapEditor.API.Enums.TargetType`.
+Logs warnings when parsing fails or the object type does not match.
+
 #### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `serializable` | `SerializableObject` |  |
+| `serializable` | `SerializableObject` | The serialized object data to parse. |
 
 ---
 

@@ -17,16 +17,16 @@ import Badge from '@site/src/components/Badge';
 
 | Name | Type | Access | Description |
 |------|------|:------:|-------------|
-| [`Base`](#base) | `SpawnableClutterConnector` | `get` | Gets the  component attached to the . |
-| [`ClutterGameObject`](#cluttergameobject) | `GameObject` | `get` | Gets the underlying  of this clutter object. |
+| [`Base`](#base) | `SpawnableClutterConnector` | `get` | Gets the `MapGeneration.RoomConnectors.SpawnableClutterConnector` component atta… |
+| [`ClutterGameObject`](#cluttergameobject) | `GameObject` | `get` | Gets the underlying `UnityEngine.GameObject` of this clutter object. |
 | [`ObjectType`](#objecttype) | `ObjectType` | `get` `set` | _No description_ |
-| [`Type`](#type) | `ClutterType` | `get` | Gets the  of this clutter object. |
+| [`Type`](#type) | `ClutterType` | `get` | Gets the `ThaumielMapEditor.API.Enums.ClutterType` of this clutter object. |
 
 ### Methods
 
 | Signature | Returns | Description |
 |-----------|---------|-------------|
-| [`GetClutterPrefab(ClutterType)`](#getclutterprefab) | `GameObject` | _No description_ |
+| [`GetClutterPrefab(ClutterType)`](#getclutterprefab) | `GameObject` | Gets the `UnityEngine.GameObject` prefab associated with the given `ThaumielMapE… |
 | [`SpawnObject(SchematicData, SerializableObject)`](#spawnobject) | `void` | _No description_ |
 
 ## Properties
@@ -35,10 +35,11 @@ import Badge from '@site/src/components/Badge';
 
 **Type:** `SpawnableClutterConnector`&emsp;**Access:** `get`
 
-Gets the  component attached to the .
+Gets the `MapGeneration.RoomConnectors.SpawnableClutterConnector` component attached to the `ThaumielMapEditor.API.Blocks.ServerObjects.ClutterObject.ClutterGameObject`.
 
 :::note
-This will be  if the clutter type does not have a  component, such as .
+This will be `null` if the clutter type does not have a `MapGeneration.RoomConnectors.SpawnableClutterConnector` component,
+such as `ThaumielMapEditor.API.Enums.ClutterType.BrokenElectricalBox`.
 :::
 
 ---
@@ -47,7 +48,7 @@ This will be  if the clutter type does not have a  component, such as .
 
 **Type:** `GameObject`&emsp;**Access:** `get`
 
-Gets the underlying  of this clutter object.
+Gets the underlying `UnityEngine.GameObject` of this clutter object.
 
 ---
 
@@ -61,7 +62,7 @@ Gets the underlying  of this clutter object.
 
 **Type:** `ClutterType`&emsp;**Access:** `get`
 
-Gets the  of this clutter object.
+Gets the `ThaumielMapEditor.API.Enums.ClutterType` of this clutter object.
 
 ---
 
@@ -73,6 +74,8 @@ Gets the  of this clutter object.
 public GameObject GetClutterPrefab(ClutterType type)
 ```
 
+Gets the `UnityEngine.GameObject` prefab associated with the given `ThaumielMapEditor.API.Enums.ClutterType`."
+
 #### Parameters
 
 | Name | Type | Description |
@@ -81,7 +84,13 @@ public GameObject GetClutterPrefab(ClutterType type)
 
 #### Returns
 
-`GameObject`
+`GameObject` — `UnityEngine.GameObject`
+
+#### Exceptions
+
+:::warning
+- ``System.ArgumentOutOfRangeException``
+:::
 
 ---
 

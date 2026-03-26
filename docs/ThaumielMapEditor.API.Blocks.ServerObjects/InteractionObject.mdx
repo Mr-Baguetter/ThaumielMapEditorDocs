@@ -17,18 +17,18 @@ import Badge from '@site/src/components/Badge';
 
 | Name | Type | Access | Description |
 |------|------|:------:|-------------|
-| [`Base`](#base) | `InvisibleInteractableToy` | `get` | _No description_ |
-| [`CanSearch`](#cansearch) | `bool` | `get` | _No description_ |
-| [`InteractionDuration`](#interactionduration) | `float` | `get` `set` | _No description_ |
-| [`IsLocked`](#islocked) | `bool` | `get` `set` | _No description_ |
-| [`ObjectType`](#objecttype) | `ObjectType` | `get` `set` | _No description_ |
-| [`Shape`](#shape) | `ColliderShape` | `get` `set` | _No description_ |
+| [`Base`](#base) | `InvisibleInteractableToy` | `get` | The runtime instance of the underlying `AdminToys.InvisibleInteractableToy`. |
+| [`CanSearch`](#cansearch) | `bool` | `get` | Returns true if the underlying interactable toy can currently be searched by pla… |
+| [`InteractionDuration`](#interactionduration) | `float` | `get` `set` | How long (in seconds) a player must hold the interaction for held interactions. |
+| [`IsLocked`](#islocked) | `bool` | `get` `set` | Whether the interactable is locked and cannot be searched by players. |
+| [`ObjectType`](#objecttype) | `ObjectType` | `get` `set` | The type of this server object. Always `ThaumielMapEditor.API.Enums.ObjectType.I… |
+| [`Shape`](#shape) | `ColliderShape` | `get` `set` | The collider shape used by the interactable toy. |
 
 ### Methods
 
 | Signature | Returns | Description |
 |-----------|---------|-------------|
-| [`ParseValues(SerializableObject)`](#parsevalues) | `void` | _No description_ |
+| [`ParseValues(SerializableObject)`](#parsevalues) | `void` | Parses configuration values from a `ThaumielMapEditor.API.Serialization.Serializ… |
 | [`SpawnObject(SchematicData, SerializableObject)`](#spawnobject) | `void` | _No description_ |
 
 ## Properties
@@ -37,11 +37,15 @@ import Badge from '@site/src/components/Badge';
 
 **Type:** `InvisibleInteractableToy`&emsp;**Access:** `get`
 
+The runtime instance of the underlying `AdminToys.InvisibleInteractableToy`.
+
 ---
 
 ### `CanSearch`
 
 **Type:** `bool`&emsp;**Access:** `get`
+
+Returns true if the underlying interactable toy can currently be searched by players.
 
 ---
 
@@ -49,11 +53,24 @@ import Badge from '@site/src/components/Badge';
 
 **Type:** `float`&emsp;**Access:** `get` `set`
 
+How long (in seconds) a player must hold the interaction for held interactions.
+
+:::note
+Setting this property updates the underlying `AdminToys.InvisibleInteractableToy.InteractionDuration`.
+A value of 0 represents an instant interaction and will trigger `ThaumielMapEditor.API.Blocks.ServerObjects.InteractionObject.OnInteracted`.
+:::
+
 ---
 
 ### `IsLocked`
 
 **Type:** `bool`&emsp;**Access:** `get` `set`
+
+Whether the interactable is locked and cannot be searched by players.
+
+:::note
+Setting this property updates the underlying `AdminToys.InvisibleInteractableToy.IsLocked`.
+:::
 
 ---
 
@@ -61,11 +78,19 @@ import Badge from '@site/src/components/Badge';
 
 **Type:** `ObjectType`&emsp;**Access:** `get` `set`
 
+The type of this server object. Always `ThaumielMapEditor.API.Enums.ObjectType.Interactable`.
+
 ---
 
 ### `Shape`
 
 **Type:** `ColliderShape`&emsp;**Access:** `get` `set`
+
+The collider shape used by the interactable toy.
+
+:::note
+Setting this property updates the underlying `AdminToys.InvisibleInteractableToy.Shape`.
+:::
 
 ---
 
@@ -77,11 +102,19 @@ import Badge from '@site/src/components/Badge';
 public void ParseValues(SerializableObject serializable)
 ```
 
+Parses configuration values from a `ThaumielMapEditor.API.Serialization.SerializableObject` into this instance.
+
+:::info Remarks
+If the `ThaumielMapEditor.API.Serialization.SerializableObject.ObjectType` is not `ThaumielMapEditor.API.Enums.ObjectType.Interactable`, the method logs a warning.
+Each individual value is parsed via `ThaumielMapEditor.API.Extensions.DictionaryExtensions.TryConvertValue``1(System.Collections.Generic.Dictionary{System.String,System.Object},System.String,``0@)` and will log a warning and abort
+on failure to parse any expected value.
+:::
+
 #### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `serializable` | `SerializableObject` |  |
+| `serializable` | `SerializableObject` | Serializable object expected to have ObjectType = `ThaumielMapEditor.API.Enums.ObjectType.Interactable` and values for "Shape", "Duration", and "Locked". |
 
 ---
 

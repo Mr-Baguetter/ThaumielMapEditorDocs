@@ -17,17 +17,17 @@ import Badge from '@site/src/components/Badge';
 
 | Name | Type | Access | Description |
 |------|------|:------:|-------------|
-| [`IsInfinite`](#isinfinite) | `bool` | `get` | _No description_ |
-| [`ItemToSpawn`](#itemtospawn) | `ItemType` | `get` | _No description_ |
-| [`MaxAmount`](#maxamount) | `UInt32` | `get` | _No description_ |
+| [`IsInfinite`](#isinfinite) | `bool` | `get` | Whether this pickup should be treated as infinite (no depletion). |
+| [`ItemToSpawn`](#itemtospawn) | `ItemType` | `get` | The type of item that this pickup will spawn. |
+| [`MaxAmount`](#maxamount) | `UInt32` | `get` | Maximum stack/amount that the spawned pickup can contain. |
 | [`ObjectType`](#objecttype) | `ObjectType` | `get` `set` | _No description_ |
-| [`SpawnPercentage`](#spawnpercentage) | `float` | `get` | _No description_ |
+| [`SpawnPercentage`](#spawnpercentage) | `float` | `get` | Chance (0-100) that this pickup will actually spawn when processed. |
 
 ### Methods
 
 | Signature | Returns | Description |
 |-----------|---------|-------------|
-| [`ParseValues(SerializableObject)`](#parsevalues) | `bool` | _No description_ |
+| [`ParseValues(SerializableObject)`](#parsevalues) | `bool` | Parse pickup-specific values from a `ThaumielMapEditor.API.Serialization.Seriali… |
 | [`SpawnObject(SchematicData, SerializableObject)`](#spawnobject) | `void` | _No description_ |
 
 ## Properties
@@ -36,17 +36,23 @@ import Badge from '@site/src/components/Badge';
 
 **Type:** `bool`&emsp;**Access:** `get`
 
+Whether this pickup should be treated as infinite (no depletion).
+
 ---
 
 ### `ItemToSpawn`
 
 **Type:** `ItemType`&emsp;**Access:** `get`
 
+The type of item that this pickup will spawn.
+
 ---
 
 ### `MaxAmount`
 
 **Type:** `UInt32`&emsp;**Access:** `get`
+
+Maximum stack/amount that the spawned pickup can contain.
 
 ---
 
@@ -60,6 +66,8 @@ import Badge from '@site/src/components/Badge';
 
 **Type:** `float`&emsp;**Access:** `get`
 
+Chance (0-100) that this pickup will actually spawn when processed.
+
 ---
 
 ## Methods
@@ -70,15 +78,18 @@ import Badge from '@site/src/components/Badge';
 public bool ParseValues(SerializableObject serializable)
 ```
 
+Parse pickup-specific values from a `ThaumielMapEditor.API.Serialization.SerializableObject`.
+Validates that the serializable is a pickup and extracts
+
 #### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `serializable` | `SerializableObject` |  |
+| `serializable` | `SerializableObject` | The serialized object to read values from. |
 
 #### Returns
 
-`bool`
+`bool` — True if all required values were parsed successfully; otherwise false.
 
 ---
 

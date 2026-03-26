@@ -17,21 +17,25 @@ import Badge from '@site/src/components/Badge';
 
 | Name | Type | Access | Description |
 |------|------|:------:|-------------|
-| [`Base`](#base) | `Scp079CameraToy` | `get` | _No description_ |
-| [`HorizontalConstraint`](#horizontalconstraint) | `Vector2` | `get` `set` | _No description_ |
-| [`Label`](#label) | `string` | `get` `set` | _No description_ |
+| [`Base`](#base) | `Scp079CameraToy` | `get` | The underlying in-game camera toy instance.
+Marked with `YamlDotNet.Serializatio… |
+| [`HorizontalConstraint`](#horizontalconstraint) | `Vector2` | `get` `set` | Horizontal rotation constraint applied to the camera.
+When set, the value is cop… |
+| [`Label`](#label) | `string` | `get` `set` | Display label for the camera. Setting this property updates the networked label… |
 | [`ObjectType`](#objecttype) | `ObjectType` | `get` `set` | _No description_ |
-| [`Room`](#room) | `Room` | `get` `set` | _No description_ |
-| [`Type`](#type) | `CameraType` | `get` | _No description_ |
-| [`VerticalConstraint`](#verticalconstraint) | `Vector2` | `get` `set` | _No description_ |
-| [`ZoomConstraint`](#zoomconstraint) | `Vector2` | `get` `set` | _No description_ |
+| [`Room`](#room) | `Room` | `get` `set` | The `ThaumielMapEditor.API.Blocks.ServerObjects.CameraObject.Room` that the came… |
+| [`Type`](#type) | `CameraType` | `get` | The camera prefab type (mapped to a specific prefab via `ThaumielMapEditor.API.B… |
+| [`VerticalConstraint`](#verticalconstraint) | `Vector2` | `get` `set` | Vertical rotation constraint applied to the camera.
+When set, the value is copie… |
+| [`ZoomConstraint`](#zoomconstraint) | `Vector2` | `get` `set` | Zoom constraint for the camera (min/max).
+When set, the value is copied to `Admi… |
 
 ### Methods
 
 | Signature | Returns | Description |
 |-----------|---------|-------------|
-| [`GetCameraPrefab(CameraType)`](#getcameraprefab) | `Scp079CameraToy` | _No description_ |
-| [`ParseValues(SerializableObject)`](#parsevalues) | `void` | _No description_ |
+| [`GetCameraPrefab(CameraType)`](#getcameraprefab) | `Scp079CameraToy` | Returns the corresponding camera prefab instance for the provided `type`. |
+| [`ParseValues(SerializableObject)`](#parsevalues) | `void` | Parses values from a `ThaumielMapEditor.API.Serialization.SerializableObject` an… |
 | [`SpawnObject(SchematicData, SerializableObject)`](#spawnobject) | `void` | _No description_ |
 
 ## Properties
@@ -40,17 +44,26 @@ import Badge from '@site/src/components/Badge';
 
 **Type:** `Scp079CameraToy`&emsp;**Access:** `get`
 
+The underlying in-game camera toy instance.
+Marked with `YamlDotNet.Serialization.YamlIgnoreAttribute` so the runtime
+
 ---
 
 ### `HorizontalConstraint`
 
 **Type:** `Vector2`&emsp;**Access:** `get` `set`
 
+Horizontal rotation constraint applied to the camera.
+When set, the value is copied to `AdminToys.Scp079CameraToy.NetworkHorizontalConstraint`.
+
 ---
 
 ### `Label`
 
 **Type:** `string`&emsp;**Access:** `get` `set`
+
+Display label for the camera. Setting this property updates the networked label on
+the underlying `ThaumielMapEditor.API.Blocks.ServerObjects.CameraObject.Base` when available.
 
 ---
 
@@ -64,11 +77,17 @@ import Badge from '@site/src/components/Badge';
 
 **Type:** `Room`&emsp;**Access:** `get` `set`
 
+The `ThaumielMapEditor.API.Blocks.ServerObjects.CameraObject.Room` that the camera belongs to.
+Setting this property updates `AdminToys.Scp079CameraToy.NetworkRoom` on `ThaumielMapEditor.API.Blocks.ServerObjects.CameraObject.Base`.
+Defaults to the first room returned by `Room.Get(RoomName.Outside)`.
+
 ---
 
 ### `Type`
 
 **Type:** `CameraType`&emsp;**Access:** `get`
+
+The camera prefab type (mapped to a specific prefab via `ThaumielMapEditor.API.Blocks.ServerObjects.CameraObject.GetCameraPrefab(ThaumielMapEditor.API.Enums.CameraType)`).
 
 ---
 
@@ -76,11 +95,17 @@ import Badge from '@site/src/components/Badge';
 
 **Type:** `Vector2`&emsp;**Access:** `get` `set`
 
+Vertical rotation constraint applied to the camera.
+When set, the value is copied to `AdminToys.Scp079CameraToy.NetworkVerticalConstraint`.
+
 ---
 
 ### `ZoomConstraint`
 
 **Type:** `Vector2`&emsp;**Access:** `get` `set`
+
+Zoom constraint for the camera (min/max).
+When set, the value is copied to `AdminToys.Scp079CameraToy.NetworkZoomConstraint`.
 
 ---
 
@@ -92,15 +117,23 @@ import Badge from '@site/src/components/Badge';
 public Scp079CameraToy GetCameraPrefab(CameraType type)
 ```
 
+Returns the corresponding camera prefab instance for the provided `type`.
+
 #### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `type` | `CameraType` |  |
+| `type` | `CameraType` | The camera type to resolve to a prefab. |
 
 #### Returns
 
-`Scp079CameraToy`
+`Scp079CameraToy` — The matching `AdminToys.Scp079CameraToy` prefab from `ThaumielMapEditor.API.Helpers.PrefabHelper`.
+
+#### Exceptions
+
+:::warning
+- ``System.ArgumentOutOfRangeException` — Thrown when an unknown `type` is provided.`
+:::
 
 ---
 
@@ -110,11 +143,20 @@ public Scp079CameraToy GetCameraPrefab(CameraType type)
 public void ParseValues(SerializableObject serializable)
 ```
 
+Parses values from a `ThaumielMapEditor.API.Serialization.SerializableObject` and applies them to this instance.
+Expected serialized keys:
+- "Label": string
+- "Room": `MapGeneration.RoomName` (will be resolved via `LabApi.Features.Wrappers.Room.Get(MapGeneration.RoomIdentifier)`)
+- "VerticalConstraint", "HorizontalConstraint", "ZoomConstraint": optionally provided
+as dictionaries with keys "x" and "y" (numeric), which map to `UnityEngine.Vector2` values.
+
+Any parsing failure results in a warning via `ThaumielMapEditor.API.Helpers.LogManager.Warn(System.String)` and aborts parsing.
+
 #### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `serializable` | `SerializableObject` |  |
+| `serializable` | `SerializableObject` | The serialized camera object to parse. |
 
 ---
 
