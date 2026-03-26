@@ -48,17 +48,21 @@ type IconKey = keyof typeof iconMap;
 
 function transform(content: string): string {
     return content.replace(
-      /^([\u{1F300}-\u{1FAFF}⚙️📄🔷🟠🟢🟣🔵])\s+(.+)$/gu,
-      (
-        _: string,
-        icon: string,
-        name: string
-      ): string => {
-        const kind = iconMap[icon as keyof typeof iconMap];
-  
-        if (!kind) return `${icon} ${name}`;
-  
-        return `<KindIcon kind="${kind}" /> ${name}`;
-      }
+        /^([\u{1F300}-\u{1FAFF}⚙️📄🔷🟠🟢🟣🔵])\s+(.+)$/gu,
+        (
+            _: string,
+            icon: string,
+            name: string
+        ): string => {
+            const kind = iconMap[icon as keyof typeof iconMap];
+
+            if (!kind) return `${icon} ${name}`;
+
+            return `<KindIcon kind="${kind}" /> ${name}`;
+        }
     );
-  }
+}
+export function KindIcon({ kind, width = 16, height = 16, }: KindIconProps) {
+    const Icon = KindIconMap[kind];
+    return <Icon width={width} height={height} />;
+}
