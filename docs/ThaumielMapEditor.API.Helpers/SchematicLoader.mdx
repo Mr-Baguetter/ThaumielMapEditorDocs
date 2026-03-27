@@ -36,7 +36,7 @@ import Badge from '@site/src/components/Badge';
 | Signature | Returns | Description |
 |-----------|---------|-------------|
 | [`CreateCollisionMesh(PrimitiveObject)`](#createcollisionmesh) | `void` | Creates the colliders for primitives |
-| [`GenerateExampleSchematic()`](#generateexampleschematic) | `void` | _No description_ |
+| [`DestroySchematic(SchematicData)`](#destroyschematic) | `void` | Destroys the specified `ThaumielMapEditor.API.Data.SchematicData` |
 | [`GetId()`](#getid) | `UInt32` | Gets a unique id for all `ThaumielMapEditor.API.Data.SchematicData` |
 | [`GetSchematicById(UInt32)`](#getschematicbyid) | `SchematicData` | Gets the `ThaumielMapEditor.API.Data.SchematicData` by its id. |
 | [`Init()`](#init) | `void` | Initializes the `ThaumielMapEditor.API.Helpers.SchematicLoader` |
@@ -134,11 +134,19 @@ Creates the colliders for primitives
 
 ---
 
-### `GenerateExampleSchematic`
+### `DestroySchematic`
 
-```csharp title="GenerateExampleSchematic"
-public void GenerateExampleSchematic()
+```csharp title="DestroySchematic"
+public void DestroySchematic(SchematicData data)
 ```
+
+Destroys the specified `ThaumielMapEditor.API.Data.SchematicData`
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `data` | `SchematicData` | The schematic to be destroyed |
 
 ---
 

@@ -28,7 +28,6 @@ import Badge from '@site/src/components/Badge';
 | [`CameraSz`](#camerasz) | `Scp079CameraToy` | `get` | The registered Surface Zone `AdminToys.Scp079CameraToy` prefab. |
 | [`Capybara`](#capybara) | `CapybaraToy` | `get` | The registered `AdminToys.CapybaraToy` prefab. |
 | [`CullingParent`](#cullingparent) | `SpawnableCullingParent` | `get` | The registered `AdminToys.SpawnableCullingParent` prefab. |
-| [`CullingParentAssetId`](#cullingparentassetid) | `UInt32` | `get` | _No description_ |
 | [`DoorEz`](#doorez) | `DoorVariant` | `get` | The registered Entrance Zone `Interactables.Interobjects.DoorUtils.DoorVariant` prefab. |
 | [`DoorGate`](#doorgate) | `DoorVariant` | `get` | The registered Gate `Interactables.Interobjects.DoorUtils.DoorVariant` prefab. |
 | [`DoorHcz`](#doorhcz) | `DoorVariant` | `get` | The registered Heavy Containment Zone `Interactables.Interobjects.DoorUtils.DoorVariant` prefab. |
@@ -36,7 +35,6 @@ import Badge from '@site/src/components/Badge';
 | [`DoorLcz`](#doorlcz) | `DoorVariant` | `get` | The registered Light Containment Zone `Interactables.Interobjects.DoorUtils.DoorVariant` prefab. |
 | [`HugeOrangePipes`](#hugeorangepipes) | `GameObject` | `get` | The registered huge orange pipes clutter `UnityEngine.GameObject` prefab. |
 | [`Interactable`](#interactable) | `InvisibleInteractableToy` | `get` | The registered `AdminToys.InvisibleInteractableToy` prefab. |
-| [`LightAssetId`](#lightassetid) | `UInt32` | `get` | _No description_ |
 | [`LightSource`](#lightsource) | `LightSourceToy` | `get` | The registered `AdminToys.LightSourceToy` prefab. |
 | [`LockerAdrenalineMedkit`](#lockeradrenalinemedkit) | `Locker` | `get` | The registered adrenaline medkit `MapGeneration.Distributors.Locker` prefab. |
 | [`LockerExperimentalWeapon`](#lockerexperimentalweapon) | `Locker` | `get` | The registered experimental weapon `MapGeneration.Distributors.Locker` prefab. |
@@ -56,7 +54,6 @@ import Badge from '@site/src/components/Badge';
 | [`SimpleBoxes`](#simpleboxes) | `GameObject` | `get` | The registered simple boxes clutter `UnityEngine.GameObject` prefab. |
 | [`TankSupportedShelf`](#tanksupportedshelf) | `GameObject` | `get` | The registered tank-supported shelf clutter `UnityEngine.GameObject` prefab. |
 | [`TextToy`](#texttoy) | `TextToy` | `get` | The registered `ThaumielMapEditor.API.Helpers.PrefabHelper.TextToy` prefab. |
-| [`TextToyAssetId`](#texttoyassetid) | `UInt32` | `get` | _No description_ |
 | [`WaypointToy`](#waypointtoy) | `WaypointToy` | `get` | The registered `ThaumielMapEditor.API.Helpers.PrefabHelper.WaypointToy` prefab. |
 | [`Workstation`](#workstation) | `WorkstationController` | `get` | The registered `InventorySystem.Items.Firearms.Attachments.WorkstationController` prefab. |
 
@@ -64,6 +61,7 @@ import Badge from '@site/src/components/Badge';
 
 | Name | Type | Description |
 |------|------|-------------|
+| [`PrefabColliders`](#prefabcolliders) | `List<PrefabCollidersData>` | A list of all registered prefabs and their associated collider data. |
 | [`RanRegister`](#ranregister) | `bool` | Indicates whether `ThaumielMapEditor.API.Helpers.PrefabHelper.RegisterPrefabs` h… |
 
 ### Methods
@@ -162,12 +160,6 @@ The registered `AdminToys.SpawnableCullingParent` prefab.
 
 ---
 
-### `CullingParentAssetId`
-
-**Type:** `UInt32`&emsp;**Access:** `get`
-
----
-
 ### `DoorEz`
 
 **Type:** `DoorVariant`&emsp;**Access:** `get`
@@ -221,12 +213,6 @@ The registered huge orange pipes clutter `UnityEngine.GameObject` prefab.
 **Type:** `InvisibleInteractableToy`&emsp;**Access:** `get`
 
 The registered `AdminToys.InvisibleInteractableToy` prefab.
-
----
-
-### `LightAssetId`
-
-**Type:** `UInt32`&emsp;**Access:** `get`
 
 ---
 
@@ -382,12 +368,6 @@ The registered `ThaumielMapEditor.API.Helpers.PrefabHelper.TextToy` prefab.
 
 ---
 
-### `TextToyAssetId`
-
-**Type:** `UInt32`&emsp;**Access:** `get`
-
----
-
 ### `WaypointToy`
 
 **Type:** `WaypointToy`&emsp;**Access:** `get`
@@ -405,6 +385,14 @@ The registered `InventorySystem.Items.Firearms.Attachments.WorkstationController
 ---
 
 ## Fields
+
+### `PrefabColliders`
+
+**Type:** `List<PrefabCollidersData>`
+
+A list of all registered prefabs and their associated collider data.
+
+---
 
 ### `RanRegister`
 

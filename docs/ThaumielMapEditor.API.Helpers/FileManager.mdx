@@ -17,52 +17,13 @@ import Badge from '@site/src/components/Badge';
 
 | Signature | Returns | Description |
 |-----------|---------|-------------|
-| [`CreateDefaultFile(string, string)`](#createdefaultfile) | `void` | _No description_ |
-| [`CreateDefaultFiles(string, List<ValueTuple<string, T>>)`](#createdefaultfiles) | `void` | _No description_ |
 | [`Dir()`](#dir) | `string` | Gets the Thaumiel directory |
 | [`Dir(string[])`](#dir) | `string` | Gets the Thaumiel directory plus the inputed directories |
 | [`GetFilesInDirectory(string, string)`](#getfilesindirectory) | `string[]` | Gets all the file paths in the Thaumiel directory combined with the specified di… |
-| [`ParseYamlFiles(string, Action<T>)`](#parseyamlfiles) | `void` | _No description_ |
 | [`TryCreateDirectory(string)`](#trycreatedirectory) | `void` | Tries to create a directory with the inputted name |
 | [`TryCreateDirectory(string[])`](#trycreatedirectory) | `void` | Tries to create a directory at the path |
 
 ## Methods
-
-### `CreateDefaultFile`
-
-```csharp title="CreateDefaultFile"
-public void CreateDefaultFile(
-    string name,
-    string fileName
-)
-```
-
-#### Parameters
-
-| Name | Type | Description |
-|------|------|-------------|
-| `name` | `string` |  |
-| `fileName` | `string` |  |
-
----
-
-### `CreateDefaultFiles`
-
-```csharp title="CreateDefaultFiles"
-public void CreateDefaultFiles(
-    string name,
-    List<ValueTuple<string, T>> items
-)
-```
-
-#### Parameters
-
-| Name | Type | Description |
-|------|------|-------------|
-| `name` | `string` |  |
-| `items` | `List<ValueTuple<string, T>>` |  |
-
----
 
 ### `Dir`
 
@@ -119,24 +80,6 @@ Gets all the file paths in the Thaumiel directory combined with the specified di
 #### Returns
 
 `string[]` — An array of file paths matching the `filter` in the resolved directory.
-
----
-
-### `ParseYamlFiles`
-
-```csharp title="ParseYamlFiles"
-public void ParseYamlFiles(
-    string name,
-    Action<T> onParsed
-)
-```
-
-#### Parameters
-
-| Name | Type | Description |
-|------|------|-------------|
-| `name` | `string` |  |
-| `onParsed` | `Action<T>` |  |
 
 ---
 

@@ -1,0 +1,98 @@
+---
+title: ColliderHelper
+sidebar_label: 🔷 ColliderHelper
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Badge from '@site/src/components/Badge';
+
+# 🔷 ColliderHelper
+
+<Badge color="blue">class</Badge> <Badge color="secondary">`ThaumielMapEditor.API.Helpers`</Badge>
+
+## Overview
+
+### Methods
+
+| Signature | Returns | Description |
+|-----------|---------|-------------|
+| [`CreateClientObjectColliders(ClientSideObjectBase, SchematicData)`](#createclientobjectcolliders) | `void` | Creates the colliders on the server for the client side objects. |
+| [`DisableColliders(ClientSideObjectBase)`](#disablecolliders) | `void` | Disables all the colliders on the specified `ThaumielMapEditor.API.Blocks.Client… |
+| [`EnableColliders(ClientSideObjectBase)`](#enablecolliders) | `void` | Enables all the colliders on the specified `ThaumielMapEditor.API.Blocks.ClientS… |
+| [`SetColliders(ClientSideObjectBase, bool)`](#setcolliders) | `void` | If `enabled` is `true` colliders will be enabled else if `enabled` is `false` co… |
+
+## Methods
+
+### `CreateClientObjectColliders`
+
+```csharp title="CreateClientObjectColliders"
+public void CreateClientObjectColliders(
+    ClientSideObjectBase clientObject,
+    SchematicData schematic
+)
+```
+
+Creates the colliders on the server for the client side objects.
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `clientObject` | `ClientSideObjectBase` | The `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` to create colliders for. |
+| `schematic` | `SchematicData` | The `ThaumielMapEditor.API.Data.SchematicData` that the colliders will be parented to. |
+
+---
+
+### `DisableColliders`
+
+```csharp title="DisableColliders"
+public void DisableColliders(ClientSideObjectBase clientObject)
+```
+
+Disables all the colliders on the specified `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase`.
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `clientObject` | `ClientSideObjectBase` | The client side object to disable the server side colliders on. |
+
+---
+
+### `EnableColliders`
+
+```csharp title="EnableColliders"
+public void EnableColliders(ClientSideObjectBase clientObject)
+```
+
+Enables all the colliders on the specified `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase`.
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `clientObject` | `ClientSideObjectBase` | The client side object to enable the server side colliders on. |
+
+---
+
+### `SetColliders`
+
+```csharp title="SetColliders"
+public void SetColliders(
+    ClientSideObjectBase clientObject,
+    bool enabled
+)
+```
+
+If `enabled` is `true` colliders will be enabled else if `enabled` is `false` colliders will be disabled.
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `clientObject` | `ClientSideObjectBase` |  |
+| `enabled` | `bool` |  |
+
+---
+

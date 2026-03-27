@@ -1,0 +1,113 @@
+---
+title: ColliderData
+sidebar_label: 🔷 ColliderData
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Badge from '@site/src/components/Badge';
+
+# 🔷 ColliderData
+
+<Badge color="blue">class</Badge> <Badge color="secondary">`ThaumielMapEditor.API.Data`</Badge>
+
+## Overview
+
+### Properties
+
+| Name | Type | Access | Description |
+|------|------|:------:|-------------|
+| [`LocalPosition`](#localposition) | `Vector3` | `get` `set` | Gets or sets the position of the collider local to its parent object. |
+| [`Rotation`](#rotation) | `Quaternion` | `get` `set` | Gets or sets the rotaion of the collider |
+| [`Size`](#size) | `Vector3` | `get` `set` | Gets or sets the size of the collider. |
+| [`Type`](#type) | `ColliderType` | `get` `set` | The `ThaumielMapEditor.API.Enums.ColliderType` of this collider. |
+
+### Methods
+
+| Signature | Returns | Description |
+|-----------|---------|-------------|
+| [`GetTypeFromCollider(Collider)`](#gettypefromcollider) | `ColliderType` | Determines the specific collider type for the given Unity collider instance. |
+| [`ParseObjectColliders(GameObject)`](#parseobjectcolliders) | `IEnumerable<ColliderData>` | Parses all of the `UnityEngine.Collider`s from a `UnityEngine.GameObject` into `… |
+
+## Properties
+
+### `LocalPosition`
+
+**Type:** `Vector3`&emsp;**Access:** `get` `set`
+
+Gets or sets the position of the collider local to its parent object.
+
+---
+
+### `Rotation`
+
+**Type:** `Quaternion`&emsp;**Access:** `get` `set`
+
+Gets or sets the rotaion of the collider
+
+---
+
+### `Size`
+
+**Type:** `Vector3`&emsp;**Access:** `get` `set`
+
+Gets or sets the size of the collider.
+
+---
+
+### `Type`
+
+**Type:** `ColliderType`&emsp;**Access:** `get` `set`
+
+The `ThaumielMapEditor.API.Enums.ColliderType` of this collider.
+
+---
+
+## Methods
+
+### `GetTypeFromCollider`
+
+```csharp title="GetTypeFromCollider"
+public ColliderType GetTypeFromCollider(Collider collider)
+```
+
+Determines the specific collider type for the given Unity collider instance.
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `collider` | `Collider` | The collider instance to evaluate. Must be a non-null instance of a supported Unity collider type. |
+
+#### Returns
+
+`ColliderType` — A value of the ColliderType enumeration that corresponds to the type of the provided collider.
+
+---
+
+### `ParseObjectColliders`
+
+```csharp title="ParseObjectColliders"
+public IEnumerable<ColliderData> ParseObjectColliders(GameObject gameObject)
+```
+
+Parses all of the `UnityEngine.Collider`s from a `UnityEngine.GameObject` into `ThaumielMapEditor.API.Data.ColliderData`s
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `gameObject` | `GameObject` | The `UnityEngine.GameObject` to parse. |
+
+#### Returns
+
+`IEnumerable<ColliderData>` — A enumerable containing all of the `UnityEngine.Collider`s
+
+#### Exceptions
+
+:::warning
+- ``System.NotSupportedException` — Throws when a unsupported collider is parsed by `ThaumielMapEditor.API.Data.ColliderData.GetTypeFromCollider(UnityEngine.Collider)``
+:::
+
+---
+

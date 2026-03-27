@@ -22,10 +22,13 @@ import Badge from '@site/src/components/Badge';
 | [`Clutter`](#clutter) | `IEnumerable<ClutterObject>` | `get` | Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.ClutterObject`s belonging to this schematic. |
 | [`ContainsAnimator`](#containsanimator) | `bool` | `get` `set` | Gets or sets whether or not this `ThaumielMapEditor.API.Data.SchematicData` has a animator in it when built from unity. |
 | [`Doors`](#doors) | `IEnumerable<DoorObject>` | `get` | Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.DoorObject`s belonging to this schematic. |
+| [`FileName`](#filename) | `string` | `get` | Gets or sets the file name. |
+| [`Id`](#id) | `UInt32` | `get` `set` | Gets or sets the id |
 | [`Interactables`](#interactables) | `IEnumerable<InteractionObject>` | `get` | Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.InteractionObject`s belonging to this schematic. |
 | [`Lights`](#lights) | `IEnumerable<LightObject>` | `get` | Gets all spawned `ThaumielMapEditor.API.Blocks.ClientSide.LightObject`s belonging to this schematic. |
 | [`Pickups`](#pickups) | `IEnumerable<PickupObject>` | `get` | Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.PickupObject`s belonging to this schematic. |
 | [`Position`](#position) | `Vector3` | `get` `set` | Gets or sets the position of this `ThaumielMapEditor.API.Data.SchematicData` instance. |
+| [`Primitive`](#primitive) | `PrimitiveObjectToy` | `get` | Gets the base `LabApi.Features.Wrappers.PrimitiveObjectToy` that all client primtives will be parented to. |
 | [`Primitives`](#primitives) | `IEnumerable<PrimitiveObject>` | `get` | Gets all spawned `ThaumielMapEditor.API.Blocks.ClientSide.PrimitiveObject`s belonging to this schematic. |
 | [`RootObjectId`](#rootobjectid) | `int` | `get` | Gets the root object id. |
 | [`Rotation`](#rotation) | `Quaternion` | `get` `set` | Gets or sets the rotation of this `ThaumielMapEditor.API.Data.SchematicData` instance. |
@@ -39,9 +42,6 @@ import Badge from '@site/src/components/Badge';
 
 | Name | Type | Description |
 |------|------|-------------|
-| [`FileName`](#filename) | `string` | _No description_ |
-| [`Id`](#id) | `UInt32` | _No description_ |
-| [`Primitive`](#primitive) | `PrimitiveObjectToy` | _No description_ |
 | [`SpawnedAreas`](#spawnedareas) | `List<AreaObject>` | A list of all spawned `ThaumielMapEditor.API.Blocks.Areas.AreaObject` instances. |
 | [`SpawnedClientObjects`](#spawnedclientobjects) | `List<ClientSideObjectBase>` | A list of all spawned `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectB… |
 | [`SpawnedServerObjects`](#spawnedserverobjects) | `List<ServerObject>` | A list of all spawned `ThaumielMapEditor.API.Blocks.ServerObject` instances. |
@@ -94,6 +94,22 @@ Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.DoorObject`s belong
 
 ---
 
+### `FileName`
+
+**Type:** `string`&emsp;**Access:** `get`
+
+Gets or sets the file name.
+
+---
+
+### `Id`
+
+**Type:** `UInt32`&emsp;**Access:** `get` `set`
+
+Gets or sets the id
+
+---
+
 ### `Interactables`
 
 **Type:** `IEnumerable<InteractionObject>`&emsp;**Access:** `get`
@@ -123,6 +139,14 @@ Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.PickupObject`s belo
 **Type:** `Vector3`&emsp;**Access:** `get` `set`
 
 Gets or sets the position of this `ThaumielMapEditor.API.Data.SchematicData` instance.
+
+---
+
+### `Primitive`
+
+**Type:** `PrimitiveObjectToy`&emsp;**Access:** `get`
+
+Gets the base `LabApi.Features.Wrappers.PrimitiveObjectToy` that all client primtives will be parented to.
 
 ---
 
@@ -191,24 +215,6 @@ Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.WorkstationObject`s
 ---
 
 ## Fields
-
-### `FileName`
-
-**Type:** `string`
-
----
-
-### `Id`
-
-**Type:** `UInt32`
-
----
-
-### `Primitive`
-
-**Type:** `PrimitiveObjectToy`
-
----
 
 ### `SpawnedAreas`
 

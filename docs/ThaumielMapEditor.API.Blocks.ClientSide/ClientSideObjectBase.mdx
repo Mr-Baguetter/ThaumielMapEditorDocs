@@ -22,15 +22,26 @@ import Badge from '@site/src/components/Badge';
 | [`MovementSmoothing`](#movementsmoothing) | `byte` | `get` `set` | Gets or sets the sync interval of the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase`. |
 | [`NetId`](#netid) | `UInt32` | `get` `set` | Gets or sets the netid of the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance. |
 | [`ObjectType`](#objecttype) | `ObjectType` | `get` `set` | Gets or sets the object type of the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance. |
+| [`Parent`](#parent) | `GameObject` | `get` | Gets or sets the `UnityEngine.GameObject` the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` is parented to on the client. |
+| [`ParentId`](#parentid) | `UInt32` | `get` | Gets or sets the netId of the `UnityEngine.GameObject` this `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` is parented to. |
 | [`Position`](#position) | `Vector3` | `get` `set` | Gets or sets the position of the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance. |
 | [`Rotation`](#rotation) | `Quaternion` | `get` `set` | Gets or sets the rotation of the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance. |
 | [`Scale`](#scale) | `Vector3` | `get` `set` | Gets or sets the scale of the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance. |
-| [`SpawnedPlayers`](#spawnedplayers) | `HashSet<Player>` | `get` `set` | All the `LabApi.Features.Wrappers.Player`s that this `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance has been spawned for. |
+| [`ServerColliders`](#servercolliders) | `Collider[]` | `get` `set` | Gets or sets the colliders of the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance. |
+| [`SpawnedPlayers`](#spawnedplayers) | `HashSet<Player>` | `get` | All the `LabApi.Features.Wrappers.Player`s that this `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance has been spawned for. |
 
 ### Methods
 
 | Signature | Returns | Description |
 |-----------|---------|-------------|
+| [`DespawnForAllPlayers()`](#despawnforallplayers) | `UInt32` | _No description_ |
+| [`DespawnForPlayer(Player)`](#despawnforplayer) | `void` | _No description_ |
+| [`DestroyForAllPlayers()`](#destroyforallplayers) | `void` | Destroys this `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` ins… |
+| [`DestroyForPlayer(Player)`](#destroyforplayer) | `void` | Destroys this `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` ins… |
+| [`GetValue(SerializableObject, string)`](#getvalue) | `T` | _No description_ |
+| [`HideForPlayer(Player)`](#hideforplayer) | `void` | _No description_ |
+| [`SetParent(Player, UInt32)`](#setparent) | `void` | Sets the parent of the |
+| [`ShowForPlayer(Player)`](#showforplayer) | `void` | _No description_ |
 | [`SpawnForPlayer(Player)`](#spawnforplayer) | `void` | Spawns the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instan… |
 
 ## Properties
@@ -75,6 +86,22 @@ Gets or sets the object type of the `ThaumielMapEditor.API.Blocks.ClientSide.Cli
 
 ---
 
+### `Parent`
+
+**Type:** `GameObject`&emsp;**Access:** `get`
+
+Gets or sets the `UnityEngine.GameObject` the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` is parented to on the client.
+
+---
+
+### `ParentId`
+
+**Type:** `UInt32`&emsp;**Access:** `get`
+
+Gets or sets the netId of the `UnityEngine.GameObject` this `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` is parented to.
+
+---
+
 ### `Position`
 
 **Type:** `Vector3`&emsp;**Access:** `get` `set`
@@ -111,15 +138,145 @@ This will be automatically synced to players.
 
 ---
 
+### `ServerColliders`
+
+**Type:** `Collider[]`&emsp;**Access:** `get` `set`
+
+Gets or sets the colliders of the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance.
+
+---
+
 ### `SpawnedPlayers`
 
-**Type:** `HashSet<Player>`&emsp;**Access:** `get` `set`
+**Type:** `HashSet<Player>`&emsp;**Access:** `get`
 
 All the `LabApi.Features.Wrappers.Player`s that this `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance has been spawned for.
 
 ---
 
 ## Methods
+
+### `DespawnForAllPlayers`
+
+```csharp title="DespawnForAllPlayers"
+public UInt32 DespawnForAllPlayers()
+```
+
+#### Returns
+
+`UInt32`
+
+---
+
+### `DespawnForPlayer`
+
+```csharp title="DespawnForPlayer"
+public void DespawnForPlayer(Player player)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `player` | `Player` |  |
+
+---
+
+### `DestroyForAllPlayers`
+
+```csharp title="DestroyForAllPlayers"
+public void DestroyForAllPlayers()
+```
+
+Destroys this `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance for all `LabApi.Features.Wrappers.Player`s
+
+---
+
+### `DestroyForPlayer`
+
+```csharp title="DestroyForPlayer"
+public void DestroyForPlayer(Player player)
+```
+
+Destroys this `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance for the specified `LabApi.Features.Wrappers.Player`
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `player` | `Player` | The `LabApi.Features.Wrappers.Player` to destroy this object on. |
+
+---
+
+### `GetValue`
+
+```csharp title="GetValue"
+public T GetValue(
+    SerializableObject serializable,
+    string key
+)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `serializable` | `SerializableObject` |  |
+| `key` | `string` |  |
+
+#### Returns
+
+`T`
+
+---
+
+### `HideForPlayer`
+
+```csharp title="HideForPlayer"
+public void HideForPlayer(Player player)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `player` | `Player` |  |
+
+---
+
+### `SetParent`
+
+```csharp title="SetParent"
+public void SetParent(
+    Player player,
+    UInt32 parentId
+)
+```
+
+Sets the parent of the
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `player` | `Player` | The `LabApi.Features.Wrappers.Player` that will recive the parent message= |
+| `parentId` | `UInt32` | The `Mirror.NetworkBehaviour.netId` of the parent |
+
+---
+
+### `ShowForPlayer`
+
+```csharp title="ShowForPlayer"
+public void ShowForPlayer(Player player)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `player` | `Player` |  |
+
+---
 
 ### `SpawnForPlayer`
 
