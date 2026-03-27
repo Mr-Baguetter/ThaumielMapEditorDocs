@@ -19,12 +19,12 @@ import Badge from '@site/src/components/Badge';
 |-----------|---------|-------------|
 | [`CreateDefaultFile(string, string)`](#createdefaultfile) | `void` | _No description_ |
 | [`CreateDefaultFiles(string, List<ValueTuple<string, T>>)`](#createdefaultfiles) | `void` | _No description_ |
-| [`Dir()`](#dir) | `string` | _No description_ |
-| [`Dir(string[])`](#dir) | `string` | _No description_ |
-| [`GetFilesInDirectory(string, string)`](#getfilesindirectory) | `string[]` | _No description_ |
+| [`Dir()`](#dir) | `string` | Gets the Thaumiel directory |
+| [`Dir(string[])`](#dir) | `string` | Gets the Thaumiel directory plus the inputed directories |
+| [`GetFilesInDirectory(string, string)`](#getfilesindirectory) | `string[]` | Gets all the file paths in the Thaumiel directory combined with the specified di… |
 | [`ParseYamlFiles(string, Action<T>)`](#parseyamlfiles) | `void` | _No description_ |
-| [`TryCreateDirectory(string)`](#trycreatedirectory) | `void` | _No description_ |
-| [`TryCreateDirectory(string[])`](#trycreatedirectory) | `void` | _No description_ |
+| [`TryCreateDirectory(string)`](#trycreatedirectory) | `void` | Tries to create a directory with the inputted name |
+| [`TryCreateDirectory(string[])`](#trycreatedirectory) | `void` | Tries to create a directory at the path |
 
 ## Methods
 
@@ -70,9 +70,11 @@ public void CreateDefaultFiles(
 public string Dir()
 ```
 
+Gets the Thaumiel directory
+
 #### Returns
 
-`string`
+`string` — Directory path to the Thaumiel directory
 
 ---
 
@@ -82,15 +84,17 @@ public string Dir()
 public string Dir(string[] path)
 ```
 
+Gets the Thaumiel directory plus the inputed directories
+
 #### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `path` | `string[]` |  |
+| `path` | `string[]` | The path of directories |
 
 #### Returns
 
-`string`
+`string` — Directory path to the Thaumiel directory plus the inputed directories
 
 ---
 
@@ -103,16 +107,18 @@ public string[] GetFilesInDirectory(
 )
 ```
 
+Gets all the file paths in the Thaumiel directory combined with the specified directory path.
+
 #### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `name` | `string` |  |
-| `filter` | `string` |  |
+| `name` | `string` | The directory path relative to the Thaumiel directory. |
+| `filter` | `string` | The search pattern to filter files by. Defaults to `*` which returns all files. |
 
 #### Returns
 
-`string[]`
+`string[]` — An array of file paths matching the `filter` in the resolved directory.
 
 ---
 
@@ -140,11 +146,13 @@ public void ParseYamlFiles(
 public void TryCreateDirectory(string name)
 ```
 
+Tries to create a directory with the inputted name
+
 #### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `name` | `string` |  |
+| `name` | `string` | The name of the directory |
 
 ---
 
@@ -154,11 +162,13 @@ public void TryCreateDirectory(string name)
 public void TryCreateDirectory(string[] path)
 ```
 
+Tries to create a directory at the path
+
 #### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `path` | `string[]` |  |
+| `path` | `string[]` | The directory path to make |
 
 ---
 

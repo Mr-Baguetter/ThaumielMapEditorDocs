@@ -17,14 +17,14 @@ import Badge from '@site/src/components/Badge';
 
 | Name | Type | Access | Description |
 |------|------|:------:|-------------|
-| [`ParentSchematic`](#parentschematic) | `SchematicData` | `get` `set` | _No description_ |
-| [`Values`](#values) | `Dictionary<string, object>` | `get` `set` | _No description_ |
+| [`ParentSchematic`](#parentschematic) | `SchematicData` | `get` `set` | Gets or sets the `ThaumielMapEditor.API.Data.SchematicData` this area is assigned to. |
+| [`Values`](#values) | `Dictionary<string, object>` | `get` `set` | Gets or sets the loadded values this area instance loaded |
 
 ### Methods
 
 | Signature | Returns | Description |
 |-----------|---------|-------------|
-| [`ParseValues()`](#parsevalues) | `void` | _No description_ |
+| [`ParseValues()`](#parsevalues) | `void` | Parses the values from `ThaumielMapEditor.API.Blocks.Areas.AreaObject.Values` in… |
 
 ## Properties
 
@@ -32,11 +32,15 @@ import Badge from '@site/src/components/Badge';
 
 **Type:** `SchematicData`&emsp;**Access:** `get` `set`
 
+Gets or sets the `ThaumielMapEditor.API.Data.SchematicData` this area is assigned to.
+
 ---
 
 ### `Values`
 
 **Type:** `Dictionary<string, object>`&emsp;**Access:** `get` `set`
+
+Gets or sets the loadded values this area instance loaded
 
 ---
 
@@ -47,6 +51,8 @@ import Badge from '@site/src/components/Badge';
 ```csharp title="ParseValues"
 public void ParseValues()
 ```
+
+Parses the values from `ThaumielMapEditor.API.Blocks.Areas.AreaObject.Values` into the `properies` of the parent class
 
 ---
 

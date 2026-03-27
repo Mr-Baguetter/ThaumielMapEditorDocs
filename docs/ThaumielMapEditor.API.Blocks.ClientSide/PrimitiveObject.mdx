@@ -17,20 +17,20 @@ import Badge from '@site/src/components/Badge';
 
 | Name | Type | Access | Description |
 |------|------|:------:|-------------|
-| [`AssetId`](#assetid) | `UInt32` | `get` `set` | _No description_ |
+| [`AssetId`](#assetid) | `UInt32` | `get` `set` | Gets or sets the asset id of the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance. |
 | [`Color`](#color) | `Color` | `get` `set` | _No description_ |
-| [`IsStatic`](#isstatic) | `bool` | `get` `set` | _No description_ |
-| [`MovementSmoothing`](#movementsmoothing) | `byte` | `get` `set` | _No description_ |
+| [`IsStatic`](#isstatic) | `bool` | `get` `set` | Gets or sets |
+| [`MovementSmoothing`](#movementsmoothing) | `byte` | `get` `set` | Gets or sets the sync interval of the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase`. |
 | [`Name`](#name) | `string` | `get` `set` | _No description_ |
-| [`NetId`](#netid) | `UInt32` | `get` `set` | _No description_ |
-| [`ObjectType`](#objecttype) | `ObjectType` | `get` `set` | _No description_ |
+| [`NetId`](#netid) | `UInt32` | `get` `set` | Gets or sets the netid of the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance. |
+| [`ObjectType`](#objecttype) | `ObjectType` | `get` `set` | Gets or sets the object type of the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance. |
 | [`Parent`](#parent) | `GameObject` | `get` `set` | _No description_ |
 | [`ParentId`](#parentid) | `UInt32` | `get` `set` | _No description_ |
-| [`Position`](#position) | `Vector3` | `get` `set` | _No description_ |
+| [`Position`](#position) | `Vector3` | `get` `set` | Gets or sets the position of the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance. |
 | [`PrimitiveFlags`](#primitiveflags) | `PrimitiveFlags` | `get` `set` | _No description_ |
 | [`PrimitiveType`](#primitivetype) | `PrimitiveType` | `get` `set` | _No description_ |
-| [`Rotation`](#rotation) | `Quaternion` | `get` `set` | _No description_ |
-| [`Scale`](#scale) | `Vector3` | `get` `set` | _No description_ |
+| [`Rotation`](#rotation) | `Quaternion` | `get` `set` | Gets or sets the rotation of the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance. |
+| [`Scale`](#scale) | `Vector3` | `get` `set` | Gets or sets the scale of the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance. |
 | [`Schematic`](#schematic) | `SchematicData` | `get` `set` | _No description_ |
 | [`ServerCollider`](#servercollider) | `MeshCollider` | `get` `set` | _No description_ |
 
@@ -51,13 +51,15 @@ import Badge from '@site/src/components/Badge';
 | [`HideForPlayer(Player)`](#hideforplayer) | `void` | _No description_ |
 | [`SetParent(Player, UInt32)`](#setparent) | `void` | _No description_ |
 | [`ShowForPlayer(Player)`](#showforplayer) | `void` | _No description_ |
-| [`SpawnForPlayer(Player)`](#spawnforplayer) | `void` | _No description_ |
+| [`SpawnForPlayer(Player)`](#spawnforplayer) | `void` | Spawns the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instan… |
 
 ## Properties
 
 ### `AssetId`
 
 **Type:** `UInt32`&emsp;**Access:** `get` `set`
+
+Gets or sets the asset id of the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance.
 
 ---
 
@@ -71,11 +73,15 @@ import Badge from '@site/src/components/Badge';
 
 **Type:** `bool`&emsp;**Access:** `get` `set`
 
+Gets or sets
+
 ---
 
 ### `MovementSmoothing`
 
 **Type:** `byte`&emsp;**Access:** `get` `set`
+
+Gets or sets the sync interval of the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase`.
 
 ---
 
@@ -89,11 +95,15 @@ import Badge from '@site/src/components/Badge';
 
 **Type:** `UInt32`&emsp;**Access:** `get` `set`
 
+Gets or sets the netid of the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance.
+
 ---
 
 ### `ObjectType`
 
 **Type:** `ObjectType`&emsp;**Access:** `get` `set`
+
+Gets or sets the object type of the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance.
 
 ---
 
@@ -113,6 +123,12 @@ import Badge from '@site/src/components/Badge';
 
 **Type:** `Vector3`&emsp;**Access:** `get` `set`
 
+Gets or sets the position of the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance.
+
+:::note
+This will be automatically synced to players.
+:::
+
 ---
 
 ### `PrimitiveFlags`
@@ -131,11 +147,23 @@ import Badge from '@site/src/components/Badge';
 
 **Type:** `Quaternion`&emsp;**Access:** `get` `set`
 
+Gets or sets the rotation of the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance.
+
+:::note
+This will be automatically synced to players.
+:::
+
 ---
 
 ### `Scale`
 
 **Type:** `Vector3`&emsp;**Access:** `get` `set`
+
+Gets or sets the scale of the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance.
+
+:::note
+This will be automatically synced to players.
+:::
 
 ---
 
@@ -260,6 +288,8 @@ public void ShowForPlayer(Player player)
 ```csharp title="SpawnForPlayer"
 public void SpawnForPlayer(Player player)
 ```
+
+Spawns the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance for the specified player.
 
 #### Parameters
 

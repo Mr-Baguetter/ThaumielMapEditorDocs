@@ -17,7 +17,7 @@ import Badge from '@site/src/components/Badge';
 
 | Signature | Returns | Description |
 |-----------|---------|-------------|
-| [`ConvertSchematicAsync(PMERRoot)`](#convertschematicasync) | `Task<SerializableSchematic>` | _No description_ |
+| [`ConvertSchematicAsync(PMERRoot)`](#convertschematicasync) | `Task<SerializableSchematic>` | Converts a PMER schematic into a TME schematic |
 
 ## Methods
 
@@ -27,11 +27,13 @@ import Badge from '@site/src/components/Badge';
 public Task<SerializableSchematic> ConvertSchematicAsync(PMERRoot root)
 ```
 
+Converts a PMER schematic into a TME schematic
+
 #### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `root` | `PMERRoot` |  |
+| `root` | `PMERRoot` | The PMER schematic root |
 
 #### Returns
 

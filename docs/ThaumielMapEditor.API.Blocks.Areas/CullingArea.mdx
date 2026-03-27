@@ -17,27 +17,29 @@ import Badge from '@site/src/components/Badge';
 
 | Name | Type | Access | Description |
 |------|------|:------:|-------------|
-| [`Bounds`](#bounds) | `Vector3` | `get` `set` | _No description_ |
+| [`Bounds`](#bounds) | `Vector3` | `get` `set` | Gets or sets the bounds of the `ThaumielMapEditor.API.Blocks.Areas.CullingArea` instance. |
 
 ### Fields
 
 | Name | Type | Description |
 |------|------|-------------|
-| [`CullingObject`](#cullingobject) | `GameObject` | _No description_ |
+| [`CullingObject`](#cullingobject) | `GameObject` | The `UnityEngine.GameObject` instance tied to this `ThaumielMapEditor.API.Blocks… |
 
 ### Methods
 
 | Signature | Returns | Description |
 |-----------|---------|-------------|
-| [`CreateCullingZone()`](#createcullingzone) | `void` | _No description_ |
+| [`CreateCullingZone()`](#createcullingzone) | `void` | Creates the CullingArea `UnityEngine.GameObject` and adds the `ThaumielMapEditor… |
 | [`DestroyCullingZone()`](#destroycullingzone) | `void` | _No description_ |
-| [`ParseValues()`](#parsevalues) | `void` | _No description_ |
+| [`ParseValues()`](#parsevalues) | `void` | Parses the values from `ThaumielMapEditor.API.Blocks.Areas.AreaObject.Values` in… |
 
 ## Properties
 
 ### `Bounds`
 
 **Type:** `Vector3`&emsp;**Access:** `get` `set`
+
+Gets or sets the bounds of the `ThaumielMapEditor.API.Blocks.Areas.CullingArea` instance.
 
 ---
 
@@ -46,6 +48,8 @@ import Badge from '@site/src/components/Badge';
 ### `CullingObject`
 
 **Type:** `GameObject`
+
+The `UnityEngine.GameObject` instance tied to this `ThaumielMapEditor.API.Blocks.Areas.CullingArea` instance.
 
 ---
 
@@ -56,6 +60,8 @@ import Badge from '@site/src/components/Badge';
 ```csharp title="CreateCullingZone"
 public void CreateCullingZone()
 ```
+
+Creates the CullingArea `UnityEngine.GameObject` and adds the `ThaumielMapEditor.API.Components.CullingTrigger` component.
 
 ---
 
@@ -72,6 +78,8 @@ public void DestroyCullingZone()
 ```csharp title="ParseValues"
 public void ParseValues()
 ```
+
+Parses the values from `ThaumielMapEditor.API.Blocks.Areas.AreaObject.Values` into the `properies` of the parent class
 
 ---
 

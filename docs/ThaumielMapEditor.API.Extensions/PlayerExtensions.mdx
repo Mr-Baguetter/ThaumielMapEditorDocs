@@ -17,8 +17,8 @@ import Badge from '@site/src/components/Badge';
 
 | Signature | Returns | Description |
 |-----------|---------|-------------|
-| [`SendFakeRPC(Player, UInt32, Type, string, int, object[])`](#sendfakerpc) | `void` | _No description_ |
-| [`TryGet(ReferenceHub, Player&)`](#tryget) | `bool` | _No description_ |
+| [`SendFakeRPC(Player, UInt32, Type, string, int, object[])`](#sendfakerpc) | `void` | Sends a fake RPC message to a `LabApi.Features.Wrappers.Player` |
+| [`TryGet(ReferenceHub, Player&)`](#tryget) | `bool` | Tries to get a `LabApi.Features.Wrappers.Player` from a `ReferenceHub` |
 
 ## Methods
 
@@ -35,16 +35,18 @@ public void SendFakeRPC(
 )
 ```
 
+Sends a fake RPC message to a `LabApi.Features.Wrappers.Player`
+
 #### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `player` | `Player` |  |
-| `netId` | `UInt32` |  |
-| `type` | `Type` |  |
-| `functionName` | `string` |  |
+| `player` | `Player` | The `LabApi.Features.Wrappers.Player` to send the RPC to |
+| `netId` | `UInt32` | The netid of the object that will be affected. |
+| `type` | `Type` | The `System.Type` of the RPC message. |
+| `functionName` | `string` | The name of the RPC message method |
 | `componentIndex` | `int` |  |
-| `objects` | `object[]` |  |
+| `objects` | `object[]` | The |
 
 ---
 
@@ -57,16 +59,18 @@ public bool TryGet(
 )
 ```
 
+Tries to get a `LabApi.Features.Wrappers.Player` from a `ReferenceHub`
+
 #### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `hub` | `ReferenceHub` |  |
-| `player` | `Player&` |  |
+| `hub` | `ReferenceHub` | The `ReferenceHub` to check. |
+| `player` | `Player&` | The `LabApi.Features.Wrappers.Player` if found. |
 
 #### Returns
 
-`bool`
+`bool` — `true` if the `LabApi.Features.Wrappers.Player` was found else returns `false` if no `LabApi.Features.Wrappers.Player` was found.
 
 ---
 

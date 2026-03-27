@@ -18,18 +18,18 @@ import Badge from '@site/src/components/Badge';
 | Name | Type | Access | Description |
 |------|------|:------:|-------------|
 | [`Cameras`](#cameras) | `IEnumerable<CameraObject>` | `get` | Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.CameraObject`s belonging to this schematic. |
-| [`Capybaras`](#capybaras) | `IEnumerable<CapybaraObject>` | `get` | Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.CapybaraObject`s belonging to this schematic. |
+| [`Capybaras`](#capybaras) | `IEnumerable<CapybaraObject>` | `get` | Gets all spawned `ThaumielMapEditor.API.Blocks.ClientSide.CapybaraObject`s belonging to this schematic. |
 | [`Clutter`](#clutter) | `IEnumerable<ClutterObject>` | `get` | Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.ClutterObject`s belonging to this schematic. |
-| [`ContainsAnimator`](#containsanimator) | `bool` | `get` `set` | _No description_ |
+| [`ContainsAnimator`](#containsanimator) | `bool` | `get` `set` | Gets or sets whether or not this `ThaumielMapEditor.API.Data.SchematicData` has a animator in it when built from unity. |
 | [`Doors`](#doors) | `IEnumerable<DoorObject>` | `get` | Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.DoorObject`s belonging to this schematic. |
 | [`Interactables`](#interactables) | `IEnumerable<InteractionObject>` | `get` | Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.InteractionObject`s belonging to this schematic. |
-| [`Lights`](#lights) | `IEnumerable<LightObject>` | `get` | Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.LightObject`s belonging to this schematic. |
+| [`Lights`](#lights) | `IEnumerable<LightObject>` | `get` | Gets all spawned `ThaumielMapEditor.API.Blocks.ClientSide.LightObject`s belonging to this schematic. |
 | [`Pickups`](#pickups) | `IEnumerable<PickupObject>` | `get` | Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.PickupObject`s belonging to this schematic. |
-| [`Position`](#position) | `Vector3` | `get` `set` | _No description_ |
+| [`Position`](#position) | `Vector3` | `get` `set` | Gets or sets the position of this `ThaumielMapEditor.API.Data.SchematicData` instance. |
 | [`Primitives`](#primitives) | `IEnumerable<PrimitiveObject>` | `get` | Gets all spawned `ThaumielMapEditor.API.Blocks.ClientSide.PrimitiveObject`s belonging to this schematic. |
-| [`RootObjectId`](#rootobjectid) | `int` | `get` | _No description_ |
-| [`Rotation`](#rotation) | `Quaternion` | `get` `set` | _No description_ |
-| [`Scale`](#scale) | `Vector3` | `get` `set` | _No description_ |
+| [`RootObjectId`](#rootobjectid) | `int` | `get` | Gets the root object id. |
+| [`Rotation`](#rotation) | `Quaternion` | `get` `set` | Gets or sets the rotation of this `ThaumielMapEditor.API.Data.SchematicData` instance. |
+| [`Scale`](#scale) | `Vector3` | `get` `set` | Gets or sets the scale of this `ThaumielMapEditor.API.Data.SchematicData` instance. |
 | [`TargetDummies`](#targetdummies) | `IEnumerable<TargetDummyObject>` | `get` | Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.TargetDummyObject`s belonging to this schematic. |
 | [`TextToys`](#texttoys) | `IEnumerable<TextToyObject>` | `get` | Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.TextToyObject`s belonging to this schematic. |
 | [`Waypoints`](#waypoints) | `IEnumerable<WaypointObject>` | `get` | Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.WaypointObject`s belonging to this schematic. |
@@ -42,15 +42,15 @@ import Badge from '@site/src/components/Badge';
 | [`FileName`](#filename) | `string` | _No description_ |
 | [`Id`](#id) | `UInt32` | _No description_ |
 | [`Primitive`](#primitive) | `PrimitiveObjectToy` | _No description_ |
-| [`SpawnedAreas`](#spawnedareas) | `List<AreaObject>` | _No description_ |
-| [`SpawnedClientObjects`](#spawnedclientobjects) | `List<ClientSideObjectBase>` | _No description_ |
-| [`SpawnedServerObjects`](#spawnedserverobjects) | `List<ServerObject>` | _No description_ |
+| [`SpawnedAreas`](#spawnedareas) | `List<AreaObject>` | A list of all spawned `ThaumielMapEditor.API.Blocks.Areas.AreaObject` instances. |
+| [`SpawnedClientObjects`](#spawnedclientobjects) | `List<ClientSideObjectBase>` | A list of all spawned `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectB… |
+| [`SpawnedServerObjects`](#spawnedserverobjects) | `List<ServerObject>` | A list of all spawned `ThaumielMapEditor.API.Blocks.ServerObject` instances. |
 
 ### Methods
 
 | Signature | Returns | Description |
 |-----------|---------|-------------|
-| [`SyncWithPlayer(Player)`](#syncwithplayer) | `void` | _No description_ |
+| [`SyncWithPlayer(Player)`](#syncwithplayer) | `void` | Syncs the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` of this… |
 
 ## Properties
 
@@ -66,7 +66,7 @@ Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.CameraObject`s belo
 
 **Type:** `IEnumerable<CapybaraObject>`&emsp;**Access:** `get`
 
-Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.CapybaraObject`s belonging to this schematic.
+Gets all spawned `ThaumielMapEditor.API.Blocks.ClientSide.CapybaraObject`s belonging to this schematic.
 
 ---
 
@@ -81,6 +81,8 @@ Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.ClutterObject`s bel
 ### `ContainsAnimator`
 
 **Type:** `bool`&emsp;**Access:** `get` `set`
+
+Gets or sets whether or not this `ThaumielMapEditor.API.Data.SchematicData` has a animator in it when built from unity.
 
 ---
 
@@ -104,7 +106,7 @@ Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.InteractionObject`s
 
 **Type:** `IEnumerable<LightObject>`&emsp;**Access:** `get`
 
-Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.LightObject`s belonging to this schematic.
+Gets all spawned `ThaumielMapEditor.API.Blocks.ClientSide.LightObject`s belonging to this schematic.
 
 ---
 
@@ -120,6 +122,8 @@ Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.PickupObject`s belo
 
 **Type:** `Vector3`&emsp;**Access:** `get` `set`
 
+Gets or sets the position of this `ThaumielMapEditor.API.Data.SchematicData` instance.
+
 ---
 
 ### `Primitives`
@@ -134,17 +138,23 @@ Gets all spawned `ThaumielMapEditor.API.Blocks.ClientSide.PrimitiveObject`s belo
 
 **Type:** `int`&emsp;**Access:** `get`
 
+Gets the root object id.
+
 ---
 
 ### `Rotation`
 
 **Type:** `Quaternion`&emsp;**Access:** `get` `set`
 
+Gets or sets the rotation of this `ThaumielMapEditor.API.Data.SchematicData` instance.
+
 ---
 
 ### `Scale`
 
 **Type:** `Vector3`&emsp;**Access:** `get` `set`
+
+Gets or sets the scale of this `ThaumielMapEditor.API.Data.SchematicData` instance.
 
 ---
 
@@ -204,17 +214,23 @@ Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.WorkstationObject`s
 
 **Type:** `List<AreaObject>`
 
+A list of all spawned `ThaumielMapEditor.API.Blocks.Areas.AreaObject` instances.
+
 ---
 
 ### `SpawnedClientObjects`
 
 **Type:** `List<ClientSideObjectBase>`
 
+A list of all spawned `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instances.
+
 ---
 
 ### `SpawnedServerObjects`
 
 **Type:** `List<ServerObject>`
+
+A list of all spawned `ThaumielMapEditor.API.Blocks.ServerObject` instances.
 
 ---
 
@@ -226,11 +242,13 @@ Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.WorkstationObject`s
 public void SyncWithPlayer(Player player)
 ```
 
+Syncs the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` of this `ThaumielMapEditor.API.Data.SchematicData` with the specified `LabApi.Features.Wrappers.Player`.
+
 #### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `player` | `Player` |  |
+| `player` | `Player` | The `LabApi.Features.Wrappers.Player` to sync with. |
 
 ---
 

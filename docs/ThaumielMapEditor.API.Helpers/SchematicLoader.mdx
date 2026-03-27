@@ -17,12 +17,12 @@ import Badge from '@site/src/components/Badge';
 
 | Name | Type | Access | Description |
 |------|------|:------:|-------------|
-| [`Deserializer`](#deserializer) | `IDeserializer` | `get` | _No description_ |
-| [`MapsById`](#mapsbyid) | `Dictionary<Guid, MapData>` | `get` `set` | _No description_ |
-| [`SchematicsById`](#schematicsbyid) | `Dictionary<UInt32, SchematicData>` | `get` `set` | _No description_ |
-| [`Serializer`](#serializer) | `ISerializer` | `get` | _No description_ |
-| [`SpawnedMaps`](#spawnedmaps) | `IEnumerable<MapData>` | `get` | _No description_ |
-| [`SpawnedSchematics`](#spawnedschematics) | `IEnumerable<SchematicData>` | `get` | _No description_ |
+| [`Deserializer`](#deserializer) | `IDeserializer` | `get` | The YAML deserializer used to parse schematic and map files |
+| [`MapsById`](#mapsbyid) | `Dictionary<Guid, MapData>` | `get` `set` | A dictionary of all spawned `ThaumielMapEditor.API.Data.MapData` instances, keyed by their `System.Guid`. |
+| [`SchematicsById`](#schematicsbyid) | `Dictionary<UInt32, SchematicData>` | `get` `set` | A dictionary of all spawned `ThaumielMapEditor.API.Data.SchematicData` instances, keyed by their ID. |
+| [`Serializer`](#serializer) | `ISerializer` | `get` | The YAML serializer used to write schematic and map files, configured with Pascal case naming and custom type converters. |
+| [`SpawnedMaps`](#spawnedmaps) | `IEnumerable<MapData>` | `get` | An enumerable of all currently spawned `ThaumielMapEditor.API.Data.MapData` instances. |
+| [`SpawnedSchematics`](#spawnedschematics) | `IEnumerable<SchematicData>` | `get` | An enumerable of all currently spawned `ThaumielMapEditor.API.Data.SchematicData` instances. |
 
 ### Fields
 
@@ -35,18 +35,18 @@ import Badge from '@site/src/components/Badge';
 
 | Signature | Returns | Description |
 |-----------|---------|-------------|
-| [`CreateCollisionMesh(PrimitiveObject)`](#createcollisionmesh) | `void` | _No description_ |
+| [`CreateCollisionMesh(PrimitiveObject)`](#createcollisionmesh) | `void` | Creates the colliders for primitives |
 | [`GenerateExampleSchematic()`](#generateexampleschematic) | `void` | _No description_ |
-| [`GetId()`](#getid) | `UInt32` | _No description_ |
-| [`GetSchematicById(UInt32)`](#getschematicbyid) | `SchematicData` | _No description_ |
-| [`Init()`](#init) | `void` | _No description_ |
-| [`LoadMaps()`](#loadmaps) | `void` | _No description_ |
-| [`LoadSchematics()`](#loadschematics) | `void` | _No description_ |
-| [`ReloadSchematics()`](#reloadschematics) | `void` | _No description_ |
-| [`SaveMap(MapData)`](#savemap) | `SerializableMap` | _No description_ |
-| [`SpawnMap(SerializableMap)`](#spawnmap) | `MapData` | _No description_ |
-| [`SpawnSchematic(SerializableSchematic, Vector3)`](#spawnschematic) | `SchematicData` | _No description_ |
-| [`TryGetSchematicById(UInt32, SchematicData&)`](#trygetschematicbyid) | `bool` | _No description_ |
+| [`GetId()`](#getid) | `UInt32` | Gets a unique id for all `ThaumielMapEditor.API.Data.SchematicData` |
+| [`GetSchematicById(UInt32)`](#getschematicbyid) | `SchematicData` | Gets the `ThaumielMapEditor.API.Data.SchematicData` by its id. |
+| [`Init()`](#init) | `void` | Initializes the `ThaumielMapEditor.API.Helpers.SchematicLoader` |
+| [`LoadMaps()`](#loadmaps) | `void` | Loads the maps |
+| [`LoadSchematics()`](#loadschematics) | `void` | Loads the schematics |
+| [`ReloadSchematics()`](#reloadschematics) | `void` | Reloads all loaded schematics |
+| [`SaveMap(MapData)`](#savemap) | `SerializableMap` | Saves a map |
+| [`SpawnMap(SerializableMap)`](#spawnmap) | `MapData` | Spawns a map |
+| [`SpawnSchematic(SerializableSchematic, Vector3)`](#spawnschematic) | `SchematicData` | Spawns a schematic |
+| [`TryGetSchematicById(UInt32, SchematicData&)`](#trygetschematicbyid) | `bool` | Tries to get the `ThaumielMapEditor.API.Data.SchematicData` by its Id. |
 
 ## Properties
 
@@ -54,11 +54,15 @@ import Badge from '@site/src/components/Badge';
 
 **Type:** `IDeserializer`&emsp;**Access:** `get`
 
+The YAML deserializer used to parse schematic and map files
+
 ---
 
 ### `MapsById`
 
 **Type:** `Dictionary<Guid, MapData>`&emsp;**Access:** `get` `set`
+
+A dictionary of all spawned `ThaumielMapEditor.API.Data.MapData` instances, keyed by their `System.Guid`.
 
 ---
 
@@ -66,11 +70,15 @@ import Badge from '@site/src/components/Badge';
 
 **Type:** `Dictionary<UInt32, SchematicData>`&emsp;**Access:** `get` `set`
 
+A dictionary of all spawned `ThaumielMapEditor.API.Data.SchematicData` instances, keyed by their ID.
+
 ---
 
 ### `Serializer`
 
 **Type:** `ISerializer`&emsp;**Access:** `get`
+
+The YAML serializer used to write schematic and map files, configured with Pascal case naming and custom type converters.
 
 ---
 
@@ -78,11 +86,15 @@ import Badge from '@site/src/components/Badge';
 
 **Type:** `IEnumerable<MapData>`&emsp;**Access:** `get`
 
+An enumerable of all currently spawned `ThaumielMapEditor.API.Data.MapData` instances.
+
 ---
 
 ### `SpawnedSchematics`
 
 **Type:** `IEnumerable<SchematicData>`&emsp;**Access:** `get`
+
+An enumerable of all currently spawned `ThaumielMapEditor.API.Data.SchematicData` instances.
 
 ---
 
@@ -112,6 +124,8 @@ This list contains all the schematics loaded by `ThaumielMapEditor.API.Helpers.S
 public void CreateCollisionMesh(PrimitiveObject primitive)
 ```
 
+Creates the colliders for primitives
+
 #### Parameters
 
 | Name | Type | Description |
@@ -134,9 +148,11 @@ public void GenerateExampleSchematic()
 public UInt32 GetId()
 ```
 
+Gets a unique id for all `ThaumielMapEditor.API.Data.SchematicData`
+
 #### Returns
 
-`UInt32`
+`UInt32` — `System.UInt32` id
 
 ---
 
@@ -146,15 +162,17 @@ public UInt32 GetId()
 public SchematicData GetSchematicById(UInt32 id)
 ```
 
+Gets the `ThaumielMapEditor.API.Data.SchematicData` by its id.
+
 #### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `id` | `UInt32` |  |
+| `id` | `UInt32` | The id to get |
 
 #### Returns
 
-`SchematicData`
+`SchematicData` — `ThaumielMapEditor.API.Data.SchematicData` if found else returns `null`
 
 ---
 
@@ -164,6 +182,8 @@ public SchematicData GetSchematicById(UInt32 id)
 public void Init()
 ```
 
+Initializes the `ThaumielMapEditor.API.Helpers.SchematicLoader`
+
 ---
 
 ### `LoadMaps`
@@ -171,6 +191,8 @@ public void Init()
 ```csharp title="LoadMaps"
 public void LoadMaps()
 ```
+
+Loads the maps
 
 ---
 
@@ -180,6 +202,8 @@ public void LoadMaps()
 public void LoadSchematics()
 ```
 
+Loads the schematics
+
 ---
 
 ### `ReloadSchematics`
@@ -187,6 +211,12 @@ public void LoadSchematics()
 ```csharp title="ReloadSchematics"
 public void ReloadSchematics()
 ```
+
+Reloads all loaded schematics
+
+:::info Remarks
+This does not automatically respawn schematics
+:::
 
 ---
 
@@ -196,15 +226,17 @@ public void ReloadSchematics()
 public SerializableMap SaveMap(MapData data)
 ```
 
+Saves a map
+
 #### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `data` | `MapData` |  |
+| `data` | `MapData` | The `ThaumielMapEditor.API.Data.MapData` to save |
 
 #### Returns
 
-`SerializableMap`
+`SerializableMap` — `ThaumielMapEditor.API.Serialization.SerializableMap`
 
 ---
 
@@ -214,15 +246,17 @@ public SerializableMap SaveMap(MapData data)
 public MapData SpawnMap(SerializableMap map)
 ```
 
+Spawns a map
+
 #### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `map` | `SerializableMap` |  |
+| `map` | `SerializableMap` | The serialized map to spawn |
 
 #### Returns
 
-`MapData`
+`MapData` — `ThaumielMapEditor.API.Data.MapData`
 
 ---
 
@@ -235,16 +269,18 @@ public SchematicData SpawnSchematic(
 )
 ```
 
+Spawns a schematic
+
 #### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `schematic` | `SerializableSchematic` |  |
-| `position` | `Vector3` |  |
+| `schematic` | `SerializableSchematic` | The serialized schematic to spawn |
+| `position` | `Vector3` | The position to place the schematic at |
 
 #### Returns
 
-`SchematicData`
+`SchematicData` — `ThaumielMapEditor.API.Data.SchematicData`
 
 ---
 
@@ -257,16 +293,18 @@ public bool TryGetSchematicById(
 )
 ```
 
+Tries to get the `ThaumielMapEditor.API.Data.SchematicData` by its Id.
+
 #### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `id` | `UInt32` |  |
-| `schematic` | `SchematicData&` |  |
+| `id` | `UInt32` | The id to get |
+| `schematic` | `SchematicData&` | The `ThaumielMapEditor.API.Data.SchematicData` if found |
 
 #### Returns
 
-`bool`
+`bool` — `true` if found else returns `false` if not
 
 ---
 

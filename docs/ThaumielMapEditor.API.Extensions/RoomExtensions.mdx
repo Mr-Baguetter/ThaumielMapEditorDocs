@@ -17,7 +17,7 @@ import Badge from '@site/src/components/Badge';
 
 | Signature | Returns | Description |
 |-----------|---------|-------------|
-| [`GetClosestRoomToPosition(Vector3)`](#getclosestroomtoposition) | `RoomIdentifier` | _No description_ |
+| [`GetClosestRoomToPosition(Vector3)`](#getclosestroomtoposition) | `RoomIdentifier` | Gets the closest room to the `UnityEngine.Vector3``pos` |
 | [`LocalPosition(Room, Vector3)`](#localposition) | `Vector3` | Returns the local space position, based on a world space position. |
 | [`WorldPosition(Room, Vector3)`](#worldposition) | `Vector3` | Returns the World position, based on a local space position. |
 
@@ -29,15 +29,17 @@ import Badge from '@site/src/components/Badge';
 public RoomIdentifier GetClosestRoomToPosition(Vector3 pos)
 ```
 
+Gets the closest room to the `UnityEngine.Vector3``pos`
+
 #### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `pos` | `Vector3` |  |
+| `pos` | `Vector3` | The position to get the closest room from |
 
 #### Returns
 
-`RoomIdentifier`
+`RoomIdentifier` — `MapGeneration.RoomIdentifier` if a room was found else returns `null` if no room was found
 
 ---
 

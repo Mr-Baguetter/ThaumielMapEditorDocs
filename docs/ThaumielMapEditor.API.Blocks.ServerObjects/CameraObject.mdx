@@ -17,7 +17,7 @@ import Badge from '@site/src/components/Badge';
 
 | Name | Type | Access | Description |
 |------|------|:------:|-------------|
-| [`Base`](#base) | `Scp079CameraToy` | `get` | The underlying in-game camera toy instance. Marked with `YamlDotNet.Serialization.YamlIgnoreAttribute` so the runtime |
+| [`Base`](#base) | `Scp079CameraToy` | `get` | The underlying in game camera toy instance. |
 | [`HorizontalConstraint`](#horizontalconstraint) | `Vector2` | `get` `set` | Horizontal rotation constraint applied to the camera. When set, the value is copied to `AdminToys.Scp079CameraToy.NetworkHorizontalConstraint`. |
 | [`Label`](#label) | `string` | `get` `set` | Display label for the camera. Setting this property updates the networked label on the underlying `ThaumielMapEditor.API.Blocks.ServerObjects.CameraObject.Base` when available. |
 | [`ObjectType`](#objecttype) | `ObjectType` | `get` `set` | Gets or sets the type of the object represented by this instance. |
@@ -40,7 +40,7 @@ import Badge from '@site/src/components/Badge';
 
 **Type:** `Scp079CameraToy`&emsp;**Access:** `get`
 
-The underlying in-game camera toy instance. Marked with `YamlDotNet.Serialization.YamlIgnoreAttribute` so the runtime
+The underlying in game camera toy instance.
 
 ---
 
