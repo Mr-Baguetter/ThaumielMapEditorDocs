@@ -22,6 +22,7 @@ import Badge from '@site/src/components/Badge';
 | [`InteractionDuration`](#interactionduration) | `float` | `get` `set` | How long (in seconds) a player must hold the interaction for held interactions. |
 | [`IsLocked`](#islocked) | `bool` | `get` `set` | Whether the interactable is locked and cannot be searched by players. |
 | [`ObjectType`](#objecttype) | `ObjectType` | `get` `set` | The type of this server object. Always `ThaumielMapEditor.API.Enums.ObjectType.Interactable`. |
+| [`Permissions`](#permissions) | `DoorPermissionFlags` | `get` `set` | The permissions required to interact with this `ThaumielMapEditor.API.Blocks.ServerObjects.InteractionObject` instance. |
 | [`Shape`](#shape) | `ColliderShape` | `get` `set` | The collider shape used by the interactable toy. |
 
 ### Methods
@@ -30,6 +31,7 @@ import Badge from '@site/src/components/Badge';
 |-----------|---------|-------------|
 | [`ParseValues(SerializableObject)`](#parsevalues) | `void` | Parses configuration values from a `ThaumielMapEditor.API.Serialization.Serializ… |
 | [`SpawnObject(SchematicData, SerializableObject)`](#spawnobject) | `void` | Spawns the specified `ThaumielMapEditor.API.Blocks.ServerObject` into the server… |
+| [`TryGetInteractionObject(InvisibleInteractableToy, InteractionObject&)`](#trygetinteractionobject) | `bool` | Tries to get a `ThaumielMapEditor.API.Blocks.ServerObjects.InteractionObject` fr… |
 
 ## Properties
 
@@ -78,6 +80,14 @@ Setting this property updates the underlying `AdminToys.InvisibleInteractableToy
 **Type:** `ObjectType`&emsp;**Access:** `get` `set`
 
 The type of this server object. Always `ThaumielMapEditor.API.Enums.ObjectType.Interactable`.
+
+---
+
+### `Permissions`
+
+**Type:** `DoorPermissionFlags`&emsp;**Access:** `get` `set`
+
+The permissions required to interact with this `ThaumielMapEditor.API.Blocks.ServerObjects.InteractionObject` instance.
 
 ---
 
@@ -132,6 +142,30 @@ Spawns the specified `ThaumielMapEditor.API.Blocks.ServerObject` into the server
 |------|------|-------------|
 | `schematic` | `SchematicData` |  |
 | `serializable` | `SerializableObject` |  |
+
+---
+
+### `TryGetInteractionObject`
+
+```csharp title="TryGetInteractionObject"
+public bool TryGetInteractionObject(
+    InvisibleInteractableToy toy,
+    InteractionObject& interactionobj
+)
+```
+
+Tries to get a `ThaumielMapEditor.API.Blocks.ServerObjects.InteractionObject` from a `AdminToys.InvisibleInteractableToy`
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `toy` | `InvisibleInteractableToy` | The `AdminToys.InvisibleInteractableToy` to check for `ThaumielMapEditor.API.Blocks.ServerObjects.InteractionObject` |
+| `interactionobj` | `InteractionObject&` | The `ThaumielMapEditor.API.Blocks.ServerObjects.InteractionObject` if found. |
+
+#### Returns
+
+`bool` — `true` if found else returns `false` if not found
 
 ---
 

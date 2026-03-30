@@ -61,6 +61,7 @@ module.exports = {
         'ThaumielMapEditor.API.Blocks.ServerObjects/InteractionObject',
         'ThaumielMapEditor.API.Blocks.ServerObjects/PickupObject',
         'ThaumielMapEditor.API.Blocks.ServerObjects/TargetDummyObject',
+        'ThaumielMapEditor.API.Blocks.ServerObjects/TeleporterObject',
         'ThaumielMapEditor.API.Blocks.ServerObjects/TextToyObject',
         'ThaumielMapEditor.API.Blocks.ServerObjects/WaypointObject',
         'ThaumielMapEditor.API.Blocks.ServerObjects/WorkstationObject',
@@ -82,6 +83,8 @@ module.exports = {
       collapsed: false,
       items: [
         'ThaumielMapEditor.API.Components/CullingTrigger',
+        'ThaumielMapEditor.API.Components/LODZone',
+        'ThaumielMapEditor.API.Components/TeleporterHandler',
         'ThaumielMapEditor.API.Components/TriggerHandler',
       ],
     },
@@ -140,6 +143,7 @@ module.exports = {
       items: [
         'ThaumielMapEditor.API.Helpers/ColliderHelper',
         'ThaumielMapEditor.API.Helpers/FileManager',
+        'ThaumielMapEditor.API.Helpers/LODHelper',
         'ThaumielMapEditor.API.Helpers/Log',
         'ThaumielMapEditor.API.Helpers/PrefabHelper',
         'ThaumielMapEditor.API.Helpers/SchematicLoader',
@@ -158,11 +162,19 @@ module.exports = {
       label: 'ThaumielMapEditor.API.Serialization',
       collapsed: false,
       items: [
-        'ThaumielMapEditor.API.Serialization/MapSchematic',
         'ThaumielMapEditor.API.Serialization/SerializableArea',
         'ThaumielMapEditor.API.Serialization/SerializableMap',
         'ThaumielMapEditor.API.Serialization/SerializableObject',
         'ThaumielMapEditor.API.Serialization/SerializableSchematic',
+        'ThaumielMapEditor.API.Serialization/SerializedMapSchematic',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'ThaumielMapEditor.HarmonyPatches',
+      collapsed: false,
+      items: [
+        'ThaumielMapEditor.HarmonyPatches/InteractToyValidatePatch',
       ],
     },
   ],

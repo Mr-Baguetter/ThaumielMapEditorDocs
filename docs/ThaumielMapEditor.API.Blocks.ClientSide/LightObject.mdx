@@ -23,7 +23,6 @@ import Badge from '@site/src/components/Badge';
 | [`Intensity`](#intensity) | `float` | `get` `set` | _No description_ |
 | [`NetId`](#netid) | `UInt32` | `get` `set` | Gets or sets the netid of the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance. |
 | [`ObjectType`](#objecttype) | `ObjectType` | `get` `set` | Gets or sets the object type of the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance. |
-| [`ParentId`](#parentid) | `UInt32` | `get` `set` | _No description_ |
 | [`Range`](#range) | `float` | `get` `set` | _No description_ |
 | [`Schematic`](#schematic) | `SchematicData` | `get` `set` | _No description_ |
 | [`Shadows`](#shadows) | `LightShadows` | `get` `set` | _No description_ |
@@ -38,8 +37,6 @@ import Badge from '@site/src/components/Badge';
 | Signature | Returns | Description |
 |-----------|---------|-------------|
 | [`DeserializeValues(SerializableObject)`](#deserializevalues) | `void` | _No description_ |
-| [`DespawnForAllPlayers()`](#despawnforallplayers) | `UInt32` | _No description_ |
-| [`DespawnForPlayer(Player)`](#despawnforplayer) | `void` | _No description_ |
 | [`FlushSync()`](#flushsync) | `void` | _No description_ |
 | [`SpawnForPlayer(Player)`](#spawnforplayer) | `void` | Spawns the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instan… |
 
@@ -84,12 +81,6 @@ Gets or sets the netid of the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSid
 **Type:** `ObjectType`&emsp;**Access:** `get` `set`
 
 Gets or sets the object type of the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance.
-
----
-
-### `ParentId`
-
-**Type:** `UInt32`&emsp;**Access:** `get` `set`
 
 ---
 
@@ -154,32 +145,6 @@ public void DeserializeValues(SerializableObject serializable)
 | Name | Type | Description |
 |------|------|-------------|
 | `serializable` | `SerializableObject` |  |
-
----
-
-### `DespawnForAllPlayers`
-
-```csharp title="DespawnForAllPlayers"
-public UInt32 DespawnForAllPlayers()
-```
-
-#### Returns
-
-`UInt32`
-
----
-
-### `DespawnForPlayer`
-
-```csharp title="DespawnForPlayer"
-public void DespawnForPlayer(Player player)
-```
-
-#### Parameters
-
-| Name | Type | Description |
-|------|------|-------------|
-| `player` | `Player` |  |
 
 ---
 
