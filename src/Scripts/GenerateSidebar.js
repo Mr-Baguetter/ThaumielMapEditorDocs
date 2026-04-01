@@ -45,11 +45,12 @@ function getFrontmatterValue(content, key) {
   const line = fmMatch[1].split(/\r?\n/).find((l) => l.startsWith(`${key}:`));
   return line ? line.replace(`${key}:`, "").trim() : null;
 }
+
 // ----------------------------
 // Extract namespace from file
 // ----------------------------
 function getNamespace(content) {
-  const match = content.match(/([A-Za-z0-9_]+(\.[A-Za-z0-9_]+)+)/);
+  const match = content.match(/^namespace\s+([A-Za-z0-9_]+(?:\.[A-Za-z0-9_]+)+)/m);
   return match ? match[1] : null;
 }
 
