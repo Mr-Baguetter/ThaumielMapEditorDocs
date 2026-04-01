@@ -49,9 +49,13 @@ function getFrontmatterValue(content, key) {
 // ----------------------------
 // Extract namespace from file
 // ----------------------------
-function getNamespace(content) {
-  const match = content.match(/^namespace\s+([A-Za-z0-9_]+(?:\.[A-Za-z0-9_]+)+)/m);
-  return match ? match[1] : null;
+function getNamespace(content)
+{
+  const badgeMatch = content.match(/<Badge color="secondary">`([A-Za-z0-9_]+(?:\.[A-Za-z0-9_]+)+)`<\/Badge>/);
+  if (badgeMatch)
+    return badgeMatch[1];
+
+  return null;
 }
 
 // ----------------------------
@@ -126,7 +130,8 @@ function buildSidebar() {
     const content = fs.readFileSync(file, "utf8");
 
     const namespace = getNamespace(content);
-    if (!namespace) continue;
+    if (!namespace)
+      continue;
 
     const parts = namespace.split(".");
 
