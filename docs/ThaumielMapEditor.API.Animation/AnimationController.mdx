@@ -17,110 +17,151 @@ import Badge from '@site/src/components/Badge';
 
 | Name | Type | Access | Description |
 |------|------|:------:|-------------|
-| [`IsPlaying`](#isplaying) | `bool` | `get` | _No description_ |
-| [`Schematic`](#schematic) | `SchematicData` | `get` | _No description_ |
-
-### Fields
-
-| Name | Type | Description |
-|------|------|-------------|
-| [`AnimationSchematics`](#animationschematics) | `Dictionary<SchematicData, AnimationController>` | _No description_ |
+| [`Animators`](#animators) | `IReadOnlyList<Animator>` | `get` | Gets a read-only list of all `UnityEngine.Animator` components found on the schematic's server-side objects. |
+| [`AttachedSchematic`](#attachedschematic) | `SchematicData` | `get` | Gets the attached `ThaumielMapEditor.API.Data.SchematicData`. |
 
 ### Methods
 
 | Signature | Returns | Description |
 |-----------|---------|-------------|
-| [`Destroy()`](#destroy) | `void` | _No description_ |
-| [`GetOrCreate(SchematicData)`](#getorcreate) | `AnimationController` | _No description_ |
-| [`Play(string)`](#play) | `void` | Plays an animator state by name. Call SetController first. |
-| [`SetController(RuntimeAnimatorController)`](#setcontroller) | `void` | _No description_ |
-| [`Stop()`](#stop) | `void` | _No description_ |
+| [`Get(SchematicData)`](#get) | `AnimationController` | Gets or creates an `ThaumielMapEditor.API.Animation.AnimationController` for the… |
+| [`Play(string, int)`](#play) | `void` | Plays an animation state by name on the animator at the given index. |
+| [`Play(string, bool, int)`](#play) | `void` | Sets a boolean parameter on the animator at the given index. |
+| [`Play(string, string)`](#play) | `void` | Plays an animation state on the animator matching the given name. |
+| [`Stop(int)`](#stop) | `void` | Stops playback on the animator at the given index. |
+| [`Stop(string)`](#stop) | `void` | Stops playback on the animator matching the given name. |
 
 ## Properties
 
-### `IsPlaying`
+### `Animators`
 
-**Type:** `bool`&emsp;**Access:** `get`
+**Type:** `IReadOnlyList<Animator>`&emsp;**Access:** `get`
+
+Gets a read-only list of all `UnityEngine.Animator` components found on the schematic's server-side objects.
 
 ---
 
-### `Schematic`
+### `AttachedSchematic`
 
 **Type:** `SchematicData`&emsp;**Access:** `get`
 
----
-
-## Fields
-
-### `AnimationSchematics`
-
-**Type:** `Dictionary<SchematicData, AnimationController>`
+Gets the attached `ThaumielMapEditor.API.Data.SchematicData`.
 
 ---
 
 ## Methods
 
-### `Destroy`
+### `Get`
 
-```csharp title="Destroy"
-public void Destroy()
+```csharp title="Get"
+public AnimationController Get(SchematicData schematic)
 ```
 
----
-
-### `GetOrCreate`
-
-```csharp title="GetOrCreate"
-public AnimationController GetOrCreate(SchematicData schematic)
-```
+Gets or creates an `ThaumielMapEditor.API.Animation.AnimationController` for the given `ThaumielMapEditor.API.Data.SchematicData`.
 
 #### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `schematic` | `SchematicData` |  |
+| `schematic` | `SchematicData` | The schematic to look up. |
 
 #### Returns
 
-`AnimationController`
+`AnimationController` — The existing or newly created `ThaumielMapEditor.API.Animation.AnimationController`.
 
 ---
 
 ### `Play`
 
 ```csharp title="Play"
-public void Play(string stateName)
+public void Play(
+    string stateName,
+    int animatorIndex
+)
 ```
 
-Plays an animator state by name. Call SetController first.
+Plays an animation state by name on the animator at the given index.
 
 #### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `stateName` | `string` |  |
+| `stateName` | `string` | The state to play. |
+| `animatorIndex` | `int` | The index of the animator to use. |
 
 ---
 
-### `SetController`
+### `Play`
 
-```csharp title="SetController"
-public void SetController(RuntimeAnimatorController controller)
+```csharp title="Play"
+public void Play(
+    string animParam,
+    bool state,
+    int animatorIndex
+)
 ```
+
+Sets a boolean parameter on the animator at the given index.
 
 #### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `controller` | `RuntimeAnimatorController` |  |
+| `animParam` | `string` | The animator parameter name. |
+| `state` | `bool` | The boolean value to set. |
+| `animatorIndex` | `int` | The index of the animator to use. |
+
+---
+
+### `Play`
+
+```csharp title="Play"
+public void Play(
+    string stateName,
+    string animatorName
+)
+```
+
+Plays an animation state on the animator matching the given name.
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `stateName` | `string` | The state to play. |
+| `animatorName` | `string` | The name of the animator GameObject to target. |
 
 ---
 
 ### `Stop`
 
 ```csharp title="Stop"
-public void Stop()
+public void Stop(int animatorIndex)
 ```
+
+Stops playback on the animator at the given index.
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `animatorIndex` | `int` | The index of the animator to stop. |
+
+---
+
+### `Stop`
+
+```csharp title="Stop"
+public void Stop(string animatorName)
+```
+
+Stops playback on the animator matching the given name.
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `animatorName` | `string` | The name of the animator GameObject to stop. |
 
 ---
 

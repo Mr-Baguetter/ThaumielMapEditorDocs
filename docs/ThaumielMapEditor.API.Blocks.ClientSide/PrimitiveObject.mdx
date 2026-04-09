@@ -32,18 +32,11 @@ import Badge from '@site/src/components/Badge';
 | [`Schematic`](#schematic) | `SchematicData` | `get` `set` | _No description_ |
 | [`ServerCollider`](#servercollider) | `MeshCollider` | `get` `set` | _No description_ |
 
-### Fields
-
-| Name | Type | Description |
-|------|------|-------------|
-| [`Spawned`](#spawned) | `bool` | _No description_ |
-
 ### Methods
 
 | Signature | Returns | Description |
 |-----------|---------|-------------|
 | [`DeserializeValues(SerializableObject)`](#deserializevalues) | `void` | _No description_ |
-| [`FlushSync()`](#flushsync) | `void` | _No description_ |
 | [`SpawnForPlayer(Player)`](#spawnforplayer) | `void` | Spawns the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instan… |
 
 ## Properties
@@ -160,14 +153,6 @@ This will be automatically synced to players.
 
 ---
 
-## Fields
-
-### `Spawned`
-
-**Type:** `bool`
-
----
-
 ## Methods
 
 ### `DeserializeValues`
@@ -181,14 +166,6 @@ public void DeserializeValues(SerializableObject serializable)
 | Name | Type | Description |
 |------|------|-------------|
 | `serializable` | `SerializableObject` |  |
-
----
-
-### `FlushSync`
-
-```csharp title="FlushSync"
-public void FlushSync()
-```
 
 ---
 

@@ -18,11 +18,11 @@ import Badge from '@site/src/components/Badge';
 | Name | Type | Access | Description |
 |------|------|:------:|-------------|
 | [`Base`](#base) | `DoorVariant` | `get` | Reference to the underlying game `Interactables.Interobjects.DoorUtils.DoorVariant` object. |
-| [`Bypass2176`](#bypass2176) | `bool` | `get` `set` | If `true`, SCP-2176 (Ghostlight) can bypass this door's permissions. Syncs to the live door object when changed after spawning. |
-| [`DoorType`](#doortype) | `DoorType` | `get` `set` | The visual and functional type of this door (e.g. LCZ, HCZ, EZ, Gate, Bulkhead). |
+| [`Bypass2176`](#bypass2176) | `bool` | `get` `set` | If `true`, SCP-2176 can bypass this door's permissions. Syncs to the live door object when changed after spawning. |
+| [`DoorType`](#doortype) | `DoorType` | `get` `set` | The visual and functional type of this door. |
 | [`Health`](#health) | `float` | `get` `set` | The current remaining health of this door. Only applies to doors that extend `Interactables.Interobjects.BreakableDoor`. Silently ignored for non-breakable door types. Syncs to the live door object when changed after spawning. |
 | [`IsLocked`](#islocked) | `bool` | `get` `set` | Whether the door is locked via admin command. Syncs to the live door object when changed after spawning. |
-| [`IsOpen`](#isopen) | `bool` | `get` `set` | Whether the door is currently open. Setting this triggers the proper `Interactables.Interobjects.DoorUtils.DoorAction.Opened` or `Interactables.Interobjects.DoorUtils.DoorAction.Closed` event rather than forcing the state directly. |
+| [`IsOpen`](#isopen) | `bool` | `get` `set` | Whether the door is currently open. |
 | [`MaxHealth`](#maxhealth) | `float` | `get` `set` | The maximum health of this door. Only applies to doors that extend `Interactables.Interobjects.BreakableDoor`. Silently ignored for non-breakable door types. Syncs to the live door object when changed after spawning. |
 | [`ObjectType`](#objecttype) | `ObjectType` | `get` `set` | The object type identifier for this server object. Always `ThaumielMapEditor.API.Enums.ObjectType.Door`. |
 | [`Permissions`](#permissions) | `DoorPermissionFlags` | `get` `set` | The keycard permission flags required to interact with this door. Syncs to the live door object when changed after spawning. |
@@ -52,7 +52,7 @@ Reference to the underlying game `Interactables.Interobjects.DoorUtils.DoorVaria
 
 **Type:** `bool`&emsp;**Access:** `get` `set`
 
-If `true`, SCP-2176 (Ghostlight) can bypass this door's permissions. Syncs to the live door object when changed after spawning.
+If `true`, SCP-2176 can bypass this door's permissions. Syncs to the live door object when changed after spawning.
 
 ---
 
@@ -60,7 +60,7 @@ If `true`, SCP-2176 (Ghostlight) can bypass this door's permissions. Syncs to th
 
 **Type:** `DoorType`&emsp;**Access:** `get` `set`
 
-The visual and functional type of this door (e.g. LCZ, HCZ, EZ, Gate, Bulkhead).
+The visual and functional type of this door.
 
 ---
 
@@ -84,7 +84,7 @@ Whether the door is locked via admin command. Syncs to the live door object when
 
 **Type:** `bool`&emsp;**Access:** `get` `set`
 
-Whether the door is currently open. Setting this triggers the proper `Interactables.Interobjects.DoorUtils.DoorAction.Opened` or `Interactables.Interobjects.DoorUtils.DoorAction.Closed` event rather than forcing the state directly.
+Whether the door is currently open.
 
 ---
 

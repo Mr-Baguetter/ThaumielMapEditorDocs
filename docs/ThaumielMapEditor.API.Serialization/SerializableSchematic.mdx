@@ -21,12 +21,13 @@ This class is used to read schematic data from yaml
 | Name | Type | Access | Description |
 |------|------|:------:|-------------|
 | [`Areas`](#areas) | `List<SerializableArea>` | `get` `set` | Gets or sets the areas for the `ThaumielMapEditor.API.Serialization.SerializableSchematic` instance. |
-| [`ContainsAnimator`](#containsanimator) | `bool` | `get` `set` | Gets or sets whether the `ThaumielMapEditor.API.Serialization.SerializableSchematic` instance had a animator when built. |
 | [`FileName`](#filename) | `string` | `get` `set` | Gets or sets file name for the `ThaumielMapEditor.API.Serialization.SerializableSchematic` instance. |
+| [`LOD`](#lod) | `List<SerializableLOD>` | `get` `set` | Gets or sets the LOD Zones for the `ThaumielMapEditor.API.Serialization.SerializableSchematic` instance. |
 | [`Objects`](#objects) | `List<SerializableObject>` | `get` `set` | Gets or sets the objects for the `ThaumielMapEditor.API.Serialization.SerializableSchematic` instance. |
 | [`RootObjectId`](#rootobjectid) | `int` | `get` `set` | Gets or sets the root object id for the `ThaumielMapEditor.API.Serialization.SerializableSchematic` instance. |
 | [`Rotation`](#rotation) | `Quaternion` | `get` `set` | Gets or sets the rotation for the `ThaumielMapEditor.API.Serialization.SerializableSchematic` instance. |
 | [`Scale`](#scale) | `Vector3` | `get` `set` | Gets or sets the scale for the `ThaumielMapEditor.API.Serialization.SerializableSchematic` instance. |
+| [`ServerSideObjects`](#serversideobjects) | `List<SerializableObject>` | `get` `set` | Gets or sets the server-side objects for the `ThaumielMapEditor.API.Serialization.SerializableSchematic` instance. |
 
 ## Properties
 
@@ -38,19 +39,19 @@ Gets or sets the areas for the `ThaumielMapEditor.API.Serialization.Serializable
 
 ---
 
-### `ContainsAnimator`
-
-**Type:** `bool`&emsp;**Access:** `get` `set`
-
-Gets or sets whether the `ThaumielMapEditor.API.Serialization.SerializableSchematic` instance had a animator when built.
-
----
-
 ### `FileName`
 
 **Type:** `string`&emsp;**Access:** `get` `set`
 
 Gets or sets file name for the `ThaumielMapEditor.API.Serialization.SerializableSchematic` instance.
+
+---
+
+### `LOD`
+
+**Type:** `List<SerializableLOD>`&emsp;**Access:** `get` `set`
+
+Gets or sets the LOD Zones for the `ThaumielMapEditor.API.Serialization.SerializableSchematic` instance.
 
 ---
 
@@ -83,6 +84,14 @@ Gets or sets the rotation for the `ThaumielMapEditor.API.Serialization.Serializa
 **Type:** `Vector3`&emsp;**Access:** `get` `set`
 
 Gets or sets the scale for the `ThaumielMapEditor.API.Serialization.SerializableSchematic` instance.
+
+---
+
+### `ServerSideObjects`
+
+**Type:** `List<SerializableObject>`&emsp;**Access:** `get` `set`
+
+Gets or sets the server-side objects for the `ThaumielMapEditor.API.Serialization.SerializableSchematic` instance.
 
 ---
 

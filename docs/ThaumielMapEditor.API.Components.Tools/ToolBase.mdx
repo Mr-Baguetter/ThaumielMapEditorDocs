@@ -1,0 +1,79 @@
+---
+title: ToolBase
+sidebar_label: 🔷 ToolBase
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Badge from '@site/src/components/Badge';
+
+# 🔷 ToolBase
+
+<Badge color="blue">class</Badge> <Badge color="secondary">`ThaumielMapEditor.API.Components.Tools`</Badge>
+
+## Overview
+
+### Properties
+
+| Name | Type | Access | Description |
+|------|------|:------:|-------------|
+| [`Object`](#object) | `ServerObject` | `get` | Gets the `ThaumielMapEditor.API.Blocks.ServerObject` for this `ThaumielMapEditor.API.Components.Tools.ToolBase` instance. Null until `ThaumielMapEditor.API.Components.Tools.ToolBase.Init(ThaumielMapEditor.API.Blocks.ServerObject,ThaumielMapEditor.API.Data.SchematicData,System.Collections.Generic.Dictionary{System.String,System.Object})` is called. |
+| [`Schematic`](#schematic) | `SchematicData` | `get` | Gets the `ThaumielMapEditor.API.Blocks.ServerObject` for this `ThaumielMapEditor.API.Components.Tools.ToolBase` instance. Null until `ThaumielMapEditor.API.Components.Tools.ToolBase.Init(ThaumielMapEditor.API.Blocks.ServerObject,ThaumielMapEditor.API.Data.SchematicData,System.Collections.Generic.Dictionary{System.String,System.Object})` is called. |
+| [`Type`](#type) | `ToolType` | `get` | The `ThaumielMapEditor.API.Enums.ToolType` this `ThaumielMapEditor.API.Components.Tools.ToolBase` instance uses. |
+
+### Methods
+
+| Signature | Returns | Description |
+|-----------|---------|-------------|
+| [`Init(ServerObject, SchematicData, Dictionary<string, object>)`](#init) | `void` | Initializes the component. |
+
+## Properties
+
+### `Object`
+
+**Type:** `ServerObject`&emsp;**Access:** `get`
+
+Gets the `ThaumielMapEditor.API.Blocks.ServerObject` for this `ThaumielMapEditor.API.Components.Tools.ToolBase` instance. Null until `ThaumielMapEditor.API.Components.Tools.ToolBase.Init(ThaumielMapEditor.API.Blocks.ServerObject,ThaumielMapEditor.API.Data.SchematicData,System.Collections.Generic.Dictionary{System.String,System.Object})` is called.
+
+---
+
+### `Schematic`
+
+**Type:** `SchematicData`&emsp;**Access:** `get`
+
+Gets the `ThaumielMapEditor.API.Blocks.ServerObject` for this `ThaumielMapEditor.API.Components.Tools.ToolBase` instance. Null until `ThaumielMapEditor.API.Components.Tools.ToolBase.Init(ThaumielMapEditor.API.Blocks.ServerObject,ThaumielMapEditor.API.Data.SchematicData,System.Collections.Generic.Dictionary{System.String,System.Object})` is called.
+
+---
+
+### `Type`
+
+**Type:** `ToolType`&emsp;**Access:** `get`
+
+The `ThaumielMapEditor.API.Enums.ToolType` this `ThaumielMapEditor.API.Components.Tools.ToolBase` instance uses.
+
+---
+
+## Methods
+
+### `Init`
+
+```csharp title="Init"
+public void Init(
+    ServerObject obj,
+    SchematicData schem,
+    Dictionary<string, object> properties
+)
+```
+
+Initializes the component.
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `obj` | `ServerObject` | The `ThaumielMapEditor.API.Blocks.ServerObject` instance this was added to. |
+| `schem` | `SchematicData` | The `ThaumielMapEditor.API.Data.SchematicData` that the `ThaumielMapEditor.API.Blocks.ServerObject` was spawned from. |
+| `properties` | `Dictionary<string, object>` | The serialized properties. |
+
+---
+

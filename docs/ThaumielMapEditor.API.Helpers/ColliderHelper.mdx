@@ -18,6 +18,7 @@ import Badge from '@site/src/components/Badge';
 | Signature | Returns | Description |
 |-----------|---------|-------------|
 | [`CreateClientObjectColliders(ClientSideObjectBase, SchematicData)`](#createclientobjectcolliders) | `void` | Creates the colliders on the server for the client side objects. |
+| [`CreateCollisionMesh(PrimitiveObject)`](#createcollisionmesh) | `void` | Creates the colliders for primitives |
 | [`DisableColliders(ClientSideObjectBase)`](#disablecolliders) | `void` | Disables all the colliders on the specified `ThaumielMapEditor.API.Blocks.Client… |
 | [`EnableColliders(ClientSideObjectBase)`](#enablecolliders) | `void` | Enables all the colliders on the specified `ThaumielMapEditor.API.Blocks.ClientS… |
 | [`SetColliders(ClientSideObjectBase, bool)`](#setcolliders) | `void` | If `enabled` is `true` colliders will be enabled else if `enabled` is `false` co… |
@@ -41,6 +42,22 @@ Creates the colliders on the server for the client side objects.
 |------|------|-------------|
 | `clientObject` | `ClientSideObjectBase` | The `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` to create colliders for. |
 | `schematic` | `SchematicData` | The `ThaumielMapEditor.API.Data.SchematicData` that the colliders will be parented to. |
+
+---
+
+### `CreateCollisionMesh`
+
+```csharp title="CreateCollisionMesh"
+public void CreateCollisionMesh(PrimitiveObject primitive)
+```
+
+Creates the colliders for primitives
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `primitive` | `PrimitiveObject` |  |
 
 ---
 

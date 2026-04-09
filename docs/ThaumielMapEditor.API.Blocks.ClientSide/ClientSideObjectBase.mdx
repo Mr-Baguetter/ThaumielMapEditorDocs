@@ -28,21 +28,25 @@ import Badge from '@site/src/components/Badge';
 | [`Rotation`](#rotation) | `Quaternion` | `get` `set` | Gets or sets the rotation of the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance. |
 | [`Scale`](#scale) | `Vector3` | `get` `set` | Gets or sets the scale of the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance. |
 | [`ServerColliders`](#servercolliders) | `Collider[]` | `get` `set` | Gets or sets the colliders of the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance. |
+| [`Spawned`](#spawned) | `bool` | `get` | Gets a value indicating whether this `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` has been spawned for any players. |
 | [`SpawnedPlayers`](#spawnedplayers) | `HashSet<Player>` | `get` | All the `LabApi.Features.Wrappers.Player`s that this `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance has been spawned for. |
 
 ### Methods
 
 | Signature | Returns | Description |
 |-----------|---------|-------------|
-| [`DespawnForAllPlayers()`](#despawnforallplayers) | `UInt32` | _No description_ |
-| [`DespawnForPlayer(Player)`](#despawnforplayer) | `void` | _No description_ |
+| [`DespawnForAllPlayers()`](#despawnforallplayers) | `UInt32` | Destroys this object for all ready players. |
+| [`DespawnForPlayer(Player)`](#despawnforplayer) | `void` | Destroys this object for the specified player. |
 | [`DestroyForAllPlayers()`](#destroyforallplayers) | `void` | Destroys this `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` ins… |
 | [`DestroyForPlayer(Player)`](#destroyforplayer) | `void` | Destroys this `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` ins… |
-| [`GetValue(SerializableObject, string)`](#getvalue) | `T` | _No description_ |
-| [`HideForPlayer(Player)`](#hideforplayer) | `void` | _No description_ |
+| [`FlushSync()`](#flushsync) | `void` | Syncs all the pending bits in `ThaumielMapEditor.API.Blocks.ClientSide.ClientSid… |
+| [`GetValue(SerializableObject, string)`](#getvalue) | `T` | Gets a value from a `ThaumielMapEditor.API.Serialization.SerializableObject` by… |
+| [`HideForPlayer(Player)`](#hideforplayer) | `void` | Hides this object for the specified player. |
 | [`SetParent(Player, UInt32)`](#setparent) | `void` | Sets the parent of the |
-| [`ShowForPlayer(Player)`](#showforplayer) | `void` | _No description_ |
+| [`ShowForPlayer(Player)`](#showforplayer) | `void` | Shows this object for the specified player. |
 | [`SpawnForPlayer(Player)`](#spawnforplayer) | `void` | Spawns the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instan… |
+| [`SpawnForPlayers(NetworkIdentity)`](#spawnforplayers) | `void` | _No description_ |
+| [`SyncToPlayers(UInt64, Action<NetworkWriter>)`](#synctoplayers) | `void` | Syncs the specified bits to all `LabApi.Features.Wrappers.Player`s this `Thaumie… |
 
 ## Properties
 
@@ -146,6 +150,14 @@ Gets or sets the colliders of the `ThaumielMapEditor.API.Blocks.ClientSide.Clien
 
 ---
 
+### `Spawned`
+
+**Type:** `bool`&emsp;**Access:** `get`
+
+Gets a value indicating whether this `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` has been spawned for any players.
+
+---
+
 ### `SpawnedPlayers`
 
 **Type:** `HashSet<Player>`&emsp;**Access:** `get`
@@ -162,9 +174,11 @@ All the `LabApi.Features.Wrappers.Player`s that this `ThaumielMapEditor.API.Bloc
 public UInt32 DespawnForAllPlayers()
 ```
 
+Destroys this object for all ready players.
+
 #### Returns
 
-`UInt32`
+`UInt32` — The number of players this object was despawned for.
 
 ---
 
@@ -174,11 +188,13 @@ public UInt32 DespawnForAllPlayers()
 public void DespawnForPlayer(Player player)
 ```
 
+Destroys this object for the specified player.
+
 #### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `player` | `Player` |  |
+| `player` | `Player` | The player to despawn this object for. |
 
 ---
 
@@ -208,6 +224,16 @@ Destroys this `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` ins
 
 ---
 
+### `FlushSync`
+
+```csharp title="FlushSync"
+public void FlushSync()
+```
+
+Syncs all the pending bits in `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase._pendingWrites` and `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase._pendingDirtyBits`.
+
+---
+
 ### `GetValue`
 
 ```csharp title="GetValue"
@@ -217,16 +243,18 @@ public T GetValue(
 )
 ```
 
+Gets a value from a `ThaumielMapEditor.API.Serialization.SerializableObject` by key, converting it to the specified type.
+
 #### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `serializable` | `SerializableObject` |  |
-| `key` | `string` |  |
+| `serializable` | `SerializableObject` | The serializable object to retrieve the value from. |
+| `key` | `string` | The key of the value to retrieve. |
 
 #### Returns
 
-`T`
+`T` — The value associated with the key, converted to `T`.
 
 ---
 
@@ -236,11 +264,13 @@ public T GetValue(
 public void HideForPlayer(Player player)
 ```
 
+Hides this object for the specified player.
+
 #### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `player` | `Player` |  |
+| `player` | `Player` | The player to hide this object for. |
 
 ---
 
@@ -270,11 +300,13 @@ Sets the parent of the
 public void ShowForPlayer(Player player)
 ```
 
+Shows this object for the specified player.
+
 #### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `player` | `Player` |  |
+| `player` | `Player` | The player to show this object for. |
 
 ---
 
@@ -291,6 +323,40 @@ Spawns the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instan
 | Name | Type | Description |
 |------|------|-------------|
 | `player` | `Player` | The player to spawn the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance to. |
+
+---
+
+### `SpawnForPlayers`
+
+```csharp title="SpawnForPlayers"
+public void SpawnForPlayers(NetworkIdentity identity)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `identity` | `NetworkIdentity` |  |
+
+---
+
+### `SyncToPlayers`
+
+```csharp title="SyncToPlayers"
+public void SyncToPlayers(
+    UInt64 dirtyBits,
+    Action<NetworkWriter> writeValues
+)
+```
+
+Syncs the specified bits to all `LabApi.Features.Wrappers.Player`s this `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` is spawned for
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `dirtyBits` | `UInt64` | The bits to sync. |
+| `writeValues` | `Action<NetworkWriter>` | The writer to use. |
 
 ---
 

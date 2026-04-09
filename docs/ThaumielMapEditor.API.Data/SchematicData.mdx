@@ -17,15 +17,16 @@ import Badge from '@site/src/components/Badge';
 
 | Name | Type | Access | Description |
 |------|------|:------:|-------------|
+| [`AnimationController`](#animationcontroller) | `AnimationController` | `get` | _No description_ |
 | [`Cameras`](#cameras) | `IEnumerable<CameraObject>` | `get` | Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.CameraObject`s belonging to this schematic. |
 | [`Capybaras`](#capybaras) | `IEnumerable<CapybaraObject>` | `get` | Gets all spawned `ThaumielMapEditor.API.Blocks.ClientSide.CapybaraObject`s belonging to this schematic. |
 | [`Clutter`](#clutter) | `IEnumerable<ClutterObject>` | `get` | Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.ClutterObject`s belonging to this schematic. |
-| [`ContainsAnimator`](#containsanimator) | `bool` | `get` `set` | Gets or sets whether or not this `ThaumielMapEditor.API.Data.SchematicData` has a animator in it when built from unity. |
 | [`Doors`](#doors) | `IEnumerable<DoorObject>` | `get` | Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.DoorObject`s belonging to this schematic. |
 | [`FileName`](#filename) | `string` | `get` | Gets or sets the file name. |
 | [`Id`](#id) | `UInt32` | `get` `set` | Gets or sets the id |
 | [`Interactables`](#interactables) | `IEnumerable<InteractionObject>` | `get` | Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.InteractionObject`s belonging to this schematic. |
 | [`Lights`](#lights) | `IEnumerable<LightObject>` | `get` | Gets all spawned `ThaumielMapEditor.API.Blocks.ClientSide.LightObject`s belonging to this schematic. |
+| [`LODZones`](#lodzones) | `List<LODData>` | `get` | A list of the spawned `ThaumielMapEditor.API.Data.LODData` instances |
 | [`Pickups`](#pickups) | `IEnumerable<PickupObject>` | `get` | Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.PickupObject`s belonging to this schematic. |
 | [`Position`](#position) | `Vector3` | `get` `set` | Gets or sets the position of this `ThaumielMapEditor.API.Data.SchematicData` instance. |
 | [`Primitive`](#primitive) | `PrimitiveObjectToy` | `get` | Gets the base `LabApi.Features.Wrappers.PrimitiveObjectToy` that all client primtives will be parented to. |
@@ -55,6 +56,12 @@ import Badge from '@site/src/components/Badge';
 
 ## Properties
 
+### `AnimationController`
+
+**Type:** `AnimationController`&emsp;**Access:** `get`
+
+---
+
 ### `Cameras`
 
 **Type:** `IEnumerable<CameraObject>`&emsp;**Access:** `get`
@@ -76,14 +83,6 @@ Gets all spawned `ThaumielMapEditor.API.Blocks.ClientSide.CapybaraObject`s belon
 **Type:** `IEnumerable<ClutterObject>`&emsp;**Access:** `get`
 
 Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.ClutterObject`s belonging to this schematic.
-
----
-
-### `ContainsAnimator`
-
-**Type:** `bool`&emsp;**Access:** `get` `set`
-
-Gets or sets whether or not this `ThaumielMapEditor.API.Data.SchematicData` has a animator in it when built from unity.
 
 ---
 
@@ -124,6 +123,14 @@ Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.InteractionObject`s
 **Type:** `IEnumerable<LightObject>`&emsp;**Access:** `get`
 
 Gets all spawned `ThaumielMapEditor.API.Blocks.ClientSide.LightObject`s belonging to this schematic.
+
+---
+
+### `LODZones`
+
+**Type:** `List<LODData>`&emsp;**Access:** `get`
+
+A list of the spawned `ThaumielMapEditor.API.Data.LODData` instances
 
 ---
 

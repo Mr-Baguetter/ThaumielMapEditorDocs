@@ -1,0 +1,85 @@
+---
+title: MapLoader
+sidebar_label: 🔷 MapLoader
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Badge from '@site/src/components/Badge';
+
+# 🔷 MapLoader
+
+<Badge color="blue">class</Badge> <Badge color="secondary">`ThaumielMapEditor.API.Helpers`</Badge>
+
+## Overview
+
+### Methods
+
+| Signature | Returns | Description |
+|-----------|---------|-------------|
+| [`LoadMap(string)`](#loadmap) | `void` | Loads a map by its file name. |
+| [`ParseInput(string)`](#parseinput) | `void` | Parses an input string and executes map load or unload operations based on the p… |
+| [`UnloadMap(string)`](#unloadmap) | `void` | Unloads a currently spawned map by its file name. |
+
+## Methods
+
+### `LoadMap`
+
+```csharp title="LoadMap"
+public void LoadMap(string name)
+```
+
+Loads a map by its file name.
+
+:::info Remarks
+The method performs a case-insensitive search in the loaded maps collection. If the map is not found, a warning is logged.
+:::
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `name` | `string` | The name of the map file to load. |
+
+---
+
+### `ParseInput`
+
+```csharp title="ParseInput"
+public void ParseInput(string input)
+```
+
+Parses an input string and executes map load or unload operations based on the provided syntax.
+
+:::info Remarks
+Supported syntax: - `Load::MapName` - Loads a single map. - `Load::MapA||MapB` - Loads one random map from the list. - `Load::MapA&&MapB` - Loads all specified maps. - `Unload::MapName` - Unloads a single map. - `Unload::MapA||MapB` - Unloads one random map from the list. - `Unload::MapA&&MapB` - Unloads all specified maps.
+:::
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `input` | `string` | The input command string (e.g., "Load::MapA", "Unload::MapA\|\|MapB"). |
+
+---
+
+### `UnloadMap`
+
+```csharp title="UnloadMap"
+public void UnloadMap(string name)
+```
+
+Unloads a currently spawned map by its file name.
+
+:::info Remarks
+The method performs a case-insensitive search in the spawned maps collection. If the map is not found, a warning is logged.
+:::
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `name` | `string` | The name of the map file to unload. |
+
+---
+

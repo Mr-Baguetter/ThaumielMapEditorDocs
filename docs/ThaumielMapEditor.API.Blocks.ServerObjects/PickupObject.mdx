@@ -27,7 +27,7 @@ import Badge from '@site/src/components/Badge';
 
 | Signature | Returns | Description |
 |-----------|---------|-------------|
-| [`ParseValues(SerializableObject)`](#parsevalues) | `bool` | Parse pickup-specific values from a `ThaumielMapEditor.API.Serialization.Seriali… |
+| [`ParseValues(SerializableObject)`](#parsevalues) | `void` | Parse pickup-specific values from a `ThaumielMapEditor.API.Serialization.Seriali… |
 | [`SpawnObject(SchematicData, SerializableObject)`](#spawnobject) | `void` | Spawns the specified `ThaumielMapEditor.API.Blocks.ServerObject` into the server… |
 
 ## Properties
@@ -77,7 +77,7 @@ Chance (0-100) that this pickup will actually spawn when processed.
 ### `ParseValues`
 
 ```csharp title="ParseValues"
-public bool ParseValues(SerializableObject serializable)
+public void ParseValues(SerializableObject serializable)
 ```
 
 Parse pickup-specific values from a `ThaumielMapEditor.API.Serialization.SerializableObject`. Validates that the serializable is a pickup and extracts
@@ -87,10 +87,6 @@ Parse pickup-specific values from a `ThaumielMapEditor.API.Serialization.Seriali
 | Name | Type | Description |
 |------|------|-------------|
 | `serializable` | `SerializableObject` | The serialized object to read values from. |
-
-#### Returns
-
-`bool` — True if all required values were parsed successfully; otherwise false.
 
 ---
 

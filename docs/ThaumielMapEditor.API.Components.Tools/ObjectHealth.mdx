@@ -1,0 +1,163 @@
+---
+title: ObjectHealth
+sidebar_label: 🔷 ObjectHealth
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Badge from '@site/src/components/Badge';
+
+# 🔷 ObjectHealth
+
+<Badge color="blue">class</Badge> <Badge color="secondary">`ThaumielMapEditor.API.Components.Tools`</Badge>
+
+## Overview
+
+### Properties
+
+| Name | Type | Access | Description |
+|------|------|:------:|-------------|
+| [`DespawnTime`](#despawntime) | `float` | `get` `set` | Gets or sets the amount of time in seconds that the `ThaumielMapEditor.API.Components.Tools.ObjectHealth` instance will have untill it despawns after being destroyed. |
+| [`Force`](#force) | `Vector3` | `get` `set` | Gets or sets the launch force of the `ThaumielMapEditor.API.Components.Tools.ObjectHealth` instance that will be applied to the `UnityEngine.Rigidbody` if the `ThaumielMapEditor.API.Components.Tools.ObjectHealth.State` is `ThaumielMapEditor.API.Components.Tools.ObjectHealth.DestroyState.ApplyPhysics`. |
+| [`Health`](#health) | `float` | `get` `set` | Gets or sets the current health that the `ThaumielMapEditor.API.Components.Tools.ObjectHealth` instance has. |
+| [`HealthMax`](#healthmax) | `float` | `get` `set` | Gets or sets the max health that the `ThaumielMapEditor.API.Components.Tools.ObjectHealth` instance has. |
+| [`State`](#state) | `DestroyState` | `get` | Gets the `ThaumielMapEditor.API.Components.Tools.ObjectHealth.DestroyState` that the `ThaumielMapEditor.API.Components.Tools.ObjectHealth` instance will use when destroyed. |
+| [`StateName`](#statename) | `string` | `get` `set` | Gets or sets the animation name that the `ThaumielMapEditor.API.Components.Tools.ObjectHealth` instance will play if the `ThaumielMapEditor.API.Components.Tools.ObjectHealth.State` is `ThaumielMapEditor.API.Components.Tools.ObjectHealth.DestroyState.Animate`. |
+| [`Type`](#type) | `ToolType` | `get` | The `ThaumielMapEditor.API.Enums.ToolType` this `ThaumielMapEditor.API.Components.Tools.ToolBase` instance uses. |
+
+### Fields
+
+| Name | Type | Description |
+|------|------|-------------|
+| [`AllowedDamage`](#alloweddamage) | `List<DamageType>` | Gets or sets the allowed `ThaumielMapEditor.API.Enums.DamageType`s that the `Tha… |
+
+### Methods
+
+| Signature | Returns | Description |
+|-----------|---------|-------------|
+| [`Damage(float, DamageType)`](#damage) | `void` | Damages the `ThaumielMapEditor.API.Components.Tools.ObjectHealth` instance. |
+| [`Destroy()`](#destroy) | `void` | Destroys the `ThaumielMapEditor.API.Components.Tools.ObjectHealth` instance and… |
+| [`Init(ServerObject, SchematicData, Dictionary<string, object>)`](#init) | `void` | Initializes the component. |
+
+## Properties
+
+### `DespawnTime`
+
+**Type:** `float`&emsp;**Access:** `get` `set`
+
+Gets or sets the amount of time in seconds that the `ThaumielMapEditor.API.Components.Tools.ObjectHealth` instance will have untill it despawns after being destroyed.
+
+---
+
+### `Force`
+
+**Type:** `Vector3`&emsp;**Access:** `get` `set`
+
+Gets or sets the launch force of the `ThaumielMapEditor.API.Components.Tools.ObjectHealth` instance that will be applied to the `UnityEngine.Rigidbody` if the `ThaumielMapEditor.API.Components.Tools.ObjectHealth.State` is `ThaumielMapEditor.API.Components.Tools.ObjectHealth.DestroyState.ApplyPhysics`.
+
+---
+
+### `Health`
+
+**Type:** `float`&emsp;**Access:** `get` `set`
+
+Gets or sets the current health that the `ThaumielMapEditor.API.Components.Tools.ObjectHealth` instance has.
+
+---
+
+### `HealthMax`
+
+**Type:** `float`&emsp;**Access:** `get` `set`
+
+Gets or sets the max health that the `ThaumielMapEditor.API.Components.Tools.ObjectHealth` instance has.
+
+---
+
+### `State`
+
+**Type:** `DestroyState`&emsp;**Access:** `get`
+
+Gets the `ThaumielMapEditor.API.Components.Tools.ObjectHealth.DestroyState` that the `ThaumielMapEditor.API.Components.Tools.ObjectHealth` instance will use when destroyed.
+
+---
+
+### `StateName`
+
+**Type:** `string`&emsp;**Access:** `get` `set`
+
+Gets or sets the animation name that the `ThaumielMapEditor.API.Components.Tools.ObjectHealth` instance will play if the `ThaumielMapEditor.API.Components.Tools.ObjectHealth.State` is `ThaumielMapEditor.API.Components.Tools.ObjectHealth.DestroyState.Animate`.
+
+---
+
+### `Type`
+
+**Type:** `ToolType`&emsp;**Access:** `get`
+
+The `ThaumielMapEditor.API.Enums.ToolType` this `ThaumielMapEditor.API.Components.Tools.ToolBase` instance uses.
+
+---
+
+## Fields
+
+### `AllowedDamage`
+
+**Type:** `List<DamageType>`
+
+Gets or sets the allowed `ThaumielMapEditor.API.Enums.DamageType`s that the `ThaumielMapEditor.API.Components.Tools.ObjectHealth` instance can be damaged by.
+
+---
+
+## Methods
+
+### `Damage`
+
+```csharp title="Damage"
+public void Damage(
+    float amount,
+    DamageType type
+)
+```
+
+Damages the `ThaumielMapEditor.API.Components.Tools.ObjectHealth` instance.
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `amount` | `float` | The amount of `ThaumielMapEditor.API.Components.Tools.ObjectHealth.Health` to be removed. |
+| `type` | `DamageType` | The `ThaumielMapEditor.API.Enums.DamageType` to be used. |
+
+---
+
+### `Destroy`
+
+```csharp title="Destroy"
+public void Destroy()
+```
+
+Destroys the `ThaumielMapEditor.API.Components.Tools.ObjectHealth` instance and applies the destroy state from `ThaumielMapEditor.API.Components.Tools.ObjectHealth.State`
+
+---
+
+### `Init`
+
+```csharp title="Init"
+public void Init(
+    ServerObject obj,
+    SchematicData schem,
+    Dictionary<string, object> properties
+)
+```
+
+Initializes the component.
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `obj` | `ServerObject` |  |
+| `schem` | `SchematicData` |  |
+| `properties` | `Dictionary<string, object>` |  |
+
+---
+

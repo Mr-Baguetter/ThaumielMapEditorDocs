@@ -18,26 +18,24 @@ import Badge from '@site/src/components/Badge';
 | Name | Type | Access | Description |
 |------|------|:------:|-------------|
 | [`AssetId`](#assetid) | `UInt32` | `get` `set` | Gets or sets the asset id of the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance. |
-| [`Color`](#color) | `Color` | `get` `set` | _No description_ |
-| [`InnerSpotAngle`](#innerspotangle) | `float` | `get` `set` | _No description_ |
-| [`Intensity`](#intensity) | `float` | `get` `set` | _No description_ |
+| [`Color`](#color) | `Color` | `get` `set` | Gets or sets the color of the light. |
+| [`InnerSpotAngle`](#innerspotangle) | `float` | `get` `set` | Gets or sets the inner spot angle of the light. |
+| [`Intensity`](#intensity) | `float` | `get` `set` | Gets or sets the intensity of the light. |
 | [`NetId`](#netid) | `UInt32` | `get` `set` | Gets or sets the netid of the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance. |
 | [`ObjectType`](#objecttype) | `ObjectType` | `get` `set` | Gets or sets the object type of the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance. |
-| [`Range`](#range) | `float` | `get` `set` | _No description_ |
-| [`Schematic`](#schematic) | `SchematicData` | `get` `set` | _No description_ |
-| [`Shadows`](#shadows) | `LightShadows` | `get` `set` | _No description_ |
-| [`ShadowStrength`](#shadowstrength) | `float` | `get` `set` | _No description_ |
-| [`Shape`](#shape) | `LightShape` | `get` `set` | _No description_ |
-| [`Spawned`](#spawned) | `bool` | `get` | _No description_ |
-| [`SpotAngle`](#spotangle) | `float` | `get` `set` | _No description_ |
-| [`Type`](#type) | `LightType` | `get` `set` | _No description_ |
+| [`Range`](#range) | `float` | `get` `set` | Gets or sets the range of the light. |
+| [`Schematic`](#schematic) | `SchematicData` | `get` `set` | Gets or sets the schematic data associated with this light object. |
+| [`Shadows`](#shadows) | `LightShadows` | `get` `set` | Gets or sets the shadow type used by the light. |
+| [`ShadowStrength`](#shadowstrength) | `float` | `get` `set` | Gets or sets the strength of the shadows cast by the light. |
+| [`Shape`](#shape) | `LightShape` | `get` `set` | Gets or sets the shape of the light. |
+| [`SpotAngle`](#spotangle) | `float` | `get` `set` | Gets or sets the outer spot angle of the light. |
+| [`Type`](#type) | `LightType` | `get` `set` | Gets or sets the type of the light. |
 
 ### Methods
 
 | Signature | Returns | Description |
 |-----------|---------|-------------|
-| [`DeserializeValues(SerializableObject)`](#deserializevalues) | `void` | _No description_ |
-| [`FlushSync()`](#flushsync) | `void` | _No description_ |
+| [`DeserializeValues(SerializableObject)`](#deserializevalues) | `void` | Deserializes and applies light specific values from a `ThaumielMapEditor.API.Ser… |
 | [`SpawnForPlayer(Player)`](#spawnforplayer) | `void` | Spawns the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instan… |
 
 ## Properties
@@ -54,17 +52,23 @@ Gets or sets the asset id of the `ThaumielMapEditor.API.Blocks.ClientSide.Client
 
 **Type:** `Color`&emsp;**Access:** `get` `set`
 
+Gets or sets the color of the light.
+
 ---
 
 ### `InnerSpotAngle`
 
 **Type:** `float`&emsp;**Access:** `get` `set`
 
+Gets or sets the inner spot angle of the light.
+
 ---
 
 ### `Intensity`
 
 **Type:** `float`&emsp;**Access:** `get` `set`
+
+Gets or sets the intensity of the light.
 
 ---
 
@@ -88,11 +92,15 @@ Gets or sets the object type of the `ThaumielMapEditor.API.Blocks.ClientSide.Cli
 
 **Type:** `float`&emsp;**Access:** `get` `set`
 
+Gets or sets the range of the light.
+
 ---
 
 ### `Schematic`
 
 **Type:** `SchematicData`&emsp;**Access:** `get` `set`
+
+Gets or sets the schematic data associated with this light object.
 
 ---
 
@@ -100,11 +108,15 @@ Gets or sets the object type of the `ThaumielMapEditor.API.Blocks.ClientSide.Cli
 
 **Type:** `LightShadows`&emsp;**Access:** `get` `set`
 
+Gets or sets the shadow type used by the light.
+
 ---
 
 ### `ShadowStrength`
 
 **Type:** `float`&emsp;**Access:** `get` `set`
+
+Gets or sets the strength of the shadows cast by the light.
 
 ---
 
@@ -112,11 +124,7 @@ Gets or sets the object type of the `ThaumielMapEditor.API.Blocks.ClientSide.Cli
 
 **Type:** `LightShape`&emsp;**Access:** `get` `set`
 
----
-
-### `Spawned`
-
-**Type:** `bool`&emsp;**Access:** `get`
+Gets or sets the shape of the light.
 
 ---
 
@@ -124,11 +132,15 @@ Gets or sets the object type of the `ThaumielMapEditor.API.Blocks.ClientSide.Cli
 
 **Type:** `float`&emsp;**Access:** `get` `set`
 
+Gets or sets the outer spot angle of the light.
+
 ---
 
 ### `Type`
 
 **Type:** `LightType`&emsp;**Access:** `get` `set`
+
+Gets or sets the type of the light.
 
 ---
 
@@ -140,19 +152,13 @@ Gets or sets the object type of the `ThaumielMapEditor.API.Blocks.ClientSide.Cli
 public void DeserializeValues(SerializableObject serializable)
 ```
 
+Deserializes and applies light specific values from a `ThaumielMapEditor.API.Serialization.SerializableObject`.
+
 #### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `serializable` | `SerializableObject` |  |
-
----
-
-### `FlushSync`
-
-```csharp title="FlushSync"
-public void FlushSync()
-```
+| `serializable` | `SerializableObject` | The serialized object containing light data. |
 
 ---
 

@@ -1,0 +1,64 @@
+---
+title: Updater
+sidebar_label: 🔷 Updater
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Badge from '@site/src/components/Badge';
+
+# 🔷 Updater
+
+<Badge color="blue">class</Badge> <Badge color="secondary">`ThaumielMapEditor.API.Helpers.Networking`</Badge>
+
+## Overview
+
+### Methods
+
+| Signature | Returns | Description |
+|-----------|---------|-------------|
+| [`CheckForUpdatesCoroutine(bool)`](#checkforupdatescoroutine) | `IEnumerator<float>` | _No description_ |
+| [`UpdatePluginCoroutine(bool, bool)`](#updateplugincoroutine) | `IEnumerator<float>` | _No description_ |
+
+## Methods
+
+### `CheckForUpdatesCoroutine`
+
+```csharp title="CheckForUpdatesCoroutine"
+public IEnumerator<float> CheckForUpdatesCoroutine(bool prerelease)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `prerelease` | `bool` |  |
+
+#### Returns
+
+`IEnumerator<float>`
+
+---
+
+### `UpdatePluginCoroutine`
+
+```csharp title="UpdatePluginCoroutine"
+public IEnumerator<float> UpdatePluginCoroutine(
+    bool force,
+    bool prerelease
+)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `force` | `bool` |  |
+| `prerelease` | `bool` |  |
+
+#### Returns
+
+`IEnumerator<float>`
+
+---
+

@@ -20,6 +20,7 @@ This class is used to read object data from yaml
 
 | Name | Type | Access | Description |
 |------|------|:------:|-------------|
+| [`AnimatorName`](#animatorname) | `string` | `get` `set` | _No description_ |
 | [`IsStatic`](#isstatic) | `bool` | `get` `set` | Gets or sets whether the `ThaumielMapEditor.API.Serialization.SerializableObject` instance is static. |
 | [`MovementSmoothing`](#movementsmoothing) | `byte` | `get` `set` | Gets or sets the sync interval for the `ThaumielMapEditor.API.Serialization.SerializableObject` instance. |
 | [`Name`](#name) | `string` | `get` `set` | Gets or sets the file name for the `ThaumielMapEditor.API.Serialization.SerializableObject` instance. |
@@ -29,9 +30,16 @@ This class is used to read object data from yaml
 | [`Position`](#position) | `Vector3` | `get` `set` | Gets or sets the position for the `ThaumielMapEditor.API.Serialization.SerializableObject` instance. |
 | [`Rotation`](#rotation) | `Quaternion` | `get` `set` | Gets or sets the rotation for the `ThaumielMapEditor.API.Serialization.SerializableObject` instance. |
 | [`Scale`](#scale) | `Vector3` | `get` `set` | Gets or sets the scale for the `ThaumielMapEditor.API.Serialization.SerializableObject` instance. |
+| [`Tools`](#tools) | `List<SerializableTool>` | `get` `set` | _No description_ |
 | [`Values`](#values) | `Dictionary<string, object>` | `get` `set` | Gets or sets the values for the `ThaumielMapEditor.API.Serialization.SerializableObject` instance. |
 
 ## Properties
+
+### `AnimatorName`
+
+**Type:** `string`&emsp;**Access:** `get` `set`
+
+---
 
 ### `IsStatic`
 
@@ -102,6 +110,12 @@ Gets or sets the rotation for the `ThaumielMapEditor.API.Serialization.Serializa
 **Type:** `Vector3`&emsp;**Access:** `get` `set`
 
 Gets or sets the scale for the `ThaumielMapEditor.API.Serialization.SerializableObject` instance.
+
+---
+
+### `Tools`
+
+**Type:** `List<SerializableTool>`&emsp;**Access:** `get` `set`
 
 ---
 

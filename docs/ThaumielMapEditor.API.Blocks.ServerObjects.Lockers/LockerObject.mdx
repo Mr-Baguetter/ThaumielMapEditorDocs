@@ -26,7 +26,6 @@ import Badge from '@site/src/components/Badge';
 
 | Signature | Returns | Description |
 |-----------|---------|-------------|
-| [`ClearChambers()`](#clearchambers) | `void` | Clears any existing loot and scheduled spawns from the instantiated `ThaumielMap… |
 | [`GetPrefabFromType(LockerType)`](#getprefabfromtype) | `Locker` | Maps a `ThaumielMapEditor.API.Enums.LockerType` value to the corresponding locke… |
 | [`ParseValues(SerializableObject)`](#parsevalues) | `void` | Parses values from a `ThaumielMapEditor.API.Serialization.SerializableObject` to… |
 | [`PopulateChambers()`](#populatechambers) | `void` | Populates the runtime locker chambers based on the serialized `ThaumielMapEditor… |
@@ -67,16 +66,6 @@ The `ThaumielMapEditor.API.Enums.LockerType` variant for this locker (e.g., Medk
 ---
 
 ## Methods
-
-### `ClearChambers`
-
-```csharp title="ClearChambers"
-public void ClearChambers()
-```
-
-Clears any existing loot and scheduled spawns from the instantiated `ThaumielMapEditor.API.Blocks.ServerObjects.Lockers.LockerObject.Base` locker. Destroys spawned item pickups and clears internal lists so the locker can be repopulated.
-
----
 
 ### `GetPrefabFromType`
 

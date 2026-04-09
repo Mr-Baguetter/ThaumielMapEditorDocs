@@ -13,19 +13,35 @@ import Badge from '@site/src/components/Badge';
 
 ## Overview
 
+### Properties
+
+| Name | Type | Access | Description |
+|------|------|:------:|-------------|
+| [`Teleporter`](#teleporter) | `TeleporterObject` | `get` | Gets the `ThaumielMapEditor.API.Blocks.ServerObjects.TeleporterObject` this handler is managing. |
+
 ### Fields
 
 | Name | Type | Description |
 |------|------|-------------|
-| [`PlayerCooldowns`](#playercooldowns) | `Dictionary<Player, float>` | Tracks perplayer cooldown expiry times. |
-| [`Primitive`](#primitive) | `PrimitiveObjectToy` | _No description_ |
-| [`Teleporter`](#teleporter) | `TeleporterObject` | _No description_ |
+| [`PlayerCooldowns`](#playercooldowns) | `Dictionary<Player, float>` | Tracks per-player cooldown expiry times. Each entry maps a `LabApi.Features.Wrap… |
 
 ### Methods
 
 | Signature | Returns | Description |
 |-----------|---------|-------------|
-| [`Init(PrimitiveObjectToy, TeleporterObject)`](#init) | `void` | _No description_ |
+| [`ForcePlayerCooldown(Player, float)`](#forceplayercooldown) | `void` | Forces a minimum cooldown on a player regardless of teleporter settings, used to… |
+| [`HasFlagFast(TeleporterFlags)`](#hasflagfast) | `bool` | _No description_ |
+| [`Init(TeleporterObject)`](#init) | `void` | Initializes this `ThaumielMapEditor.API.Components.TeleporterHandler` instance w… |
+
+## Properties
+
+### `Teleporter`
+
+**Type:** `TeleporterObject`&emsp;**Access:** `get`
+
+Gets the `ThaumielMapEditor.API.Blocks.ServerObjects.TeleporterObject` this handler is managing.
+
+---
 
 ## Fields
 
@@ -33,39 +49,63 @@ import Badge from '@site/src/components/Badge';
 
 **Type:** `Dictionary<Player, float>`
 
-Tracks perplayer cooldown expiry times.
-
----
-
-### `Primitive`
-
-**Type:** `PrimitiveObjectToy`
-
----
-
-### `Teleporter`
-
-**Type:** `TeleporterObject`
+Tracks per-player cooldown expiry times. Each entry maps a `LabApi.Features.Wrappers.Player` to the `UnityEngine.Time.time` value at which their cooldown expires.
 
 ---
 
 ## Methods
 
-### `Init`
+### `ForcePlayerCooldown`
 
-```csharp title="Init"
-public void Init(
-    PrimitiveObjectToy prim,
-    TeleporterObject teleporter
+```csharp title="ForcePlayerCooldown"
+public void ForcePlayerCooldown(
+    Player player,
+    float duration
 )
+```
+
+Forces a minimum cooldown on a player regardless of teleporter settings, used to prevent immediate return teleportation.
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `player` | `Player` |  |
+| `duration` | `float` |  |
+
+---
+
+### `HasFlagFast`
+
+```csharp title="HasFlagFast"
+public bool HasFlagFast(TeleporterFlags flag)
 ```
 
 #### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `prim` | `PrimitiveObjectToy` |  |
-| `teleporter` | `TeleporterObject` |  |
+| `flag` | `TeleporterFlags` |  |
+
+#### Returns
+
+`bool`
+
+---
+
+### `Init`
+
+```csharp title="Init"
+public void Init(TeleporterObject teleporter)
+```
+
+Initializes this `ThaumielMapEditor.API.Components.TeleporterHandler` instance with the given teleporter.
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `teleporter` | `TeleporterObject` | The `ThaumielMapEditor.API.Blocks.ServerObjects.TeleporterObject` that defines this teleporter's configuration. |
 
 ---
 

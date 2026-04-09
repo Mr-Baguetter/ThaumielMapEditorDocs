@@ -10,8 +10,6 @@ module.exports = {
       collapsed: false,
       items: [
         'ThaumielMapEditor.API.Animation/AnimationController',
-        'ThaumielMapEditor.API.Animation/AssetBundleControllerLoader',
-        'ThaumielMapEditor.API.Animation/DummyAnimatable',
       ],
     },
     {
@@ -56,10 +54,13 @@ module.exports = {
       collapsed: false,
       items: [
         'ThaumielMapEditor.API.Blocks.ServerObjects/CameraObject',
+        'ThaumielMapEditor.API.Blocks.ServerObjects/CapybaraObjectServer',
         'ThaumielMapEditor.API.Blocks.ServerObjects/ClutterObject',
         'ThaumielMapEditor.API.Blocks.ServerObjects/DoorObject',
         'ThaumielMapEditor.API.Blocks.ServerObjects/InteractionObject',
+        'ThaumielMapEditor.API.Blocks.ServerObjects/LightObjectServer',
         'ThaumielMapEditor.API.Blocks.ServerObjects/PickupObject',
+        'ThaumielMapEditor.API.Blocks.ServerObjects/PrimitiveObjectServer',
         'ThaumielMapEditor.API.Blocks.ServerObjects/TargetDummyObject',
         'ThaumielMapEditor.API.Blocks.ServerObjects/TeleporterObject',
         'ThaumielMapEditor.API.Blocks.ServerObjects/TextToyObject',
@@ -90,10 +91,22 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'ThaumielMapEditor.API.Components.Tools',
+      collapsed: false,
+      items: [
+        'ThaumielMapEditor.API.Components.Tools/DestroyState',
+        'ThaumielMapEditor.API.Components.Tools/ObjectHealth',
+        'ThaumielMapEditor.API.Components.Tools/ObjectPhysics',
+        'ThaumielMapEditor.API.Components.Tools/ToolBase',
+      ],
+    },
+    {
+      type: 'category',
       label: 'ThaumielMapEditor.API.Conversion',
       collapsed: false,
       items: [
         'ThaumielMapEditor.API.Conversion/PMERBlock',
+        'ThaumielMapEditor.API.Conversion/PMERBlockType',
         'ThaumielMapEditor.API.Conversion/PMERConverter',
         'ThaumielMapEditor.API.Conversion/PMERLoader',
         'ThaumielMapEditor.API.Conversion/PMERRoot',
@@ -105,6 +118,7 @@ module.exports = {
       collapsed: false,
       items: [
         'ThaumielMapEditor.API.Data/ColliderData',
+        'ThaumielMapEditor.API.Data/LODData',
         'ThaumielMapEditor.API.Data/MapData',
         'ThaumielMapEditor.API.Data/MapSchematicData',
         'ThaumielMapEditor.API.Data/PrefabCollidersData',
@@ -120,10 +134,13 @@ module.exports = {
         'ThaumielMapEditor.API.Enums/CameraType',
         'ThaumielMapEditor.API.Enums/ClutterType',
         'ThaumielMapEditor.API.Enums/ColliderType',
+        'ThaumielMapEditor.API.Enums/DamageType',
         'ThaumielMapEditor.API.Enums/DoorType',
         'ThaumielMapEditor.API.Enums/LockerType',
         'ThaumielMapEditor.API.Enums/ObjectType',
         'ThaumielMapEditor.API.Enums/TargetType',
+        'ThaumielMapEditor.API.Enums/TeleporterFlags',
+        'ThaumielMapEditor.API.Enums/ToolType',
       ],
     },
     {
@@ -131,7 +148,7 @@ module.exports = {
       label: 'ThaumielMapEditor.API.Extensions',
       collapsed: false,
       items: [
-        'ThaumielMapEditor.API.Extensions/ColliderExtensions',
+        'ThaumielMapEditor.API.Extensions/ConvertExtensions',
         'ThaumielMapEditor.API.Extensions/PlayerExtensions',
         'ThaumielMapEditor.API.Extensions/RoomExtensions',
       ],
@@ -145,8 +162,21 @@ module.exports = {
         'ThaumielMapEditor.API.Helpers/FileManager',
         'ThaumielMapEditor.API.Helpers/LODHelper',
         'ThaumielMapEditor.API.Helpers/Log',
+        'ThaumielMapEditor.API.Helpers/MapLoader',
         'ThaumielMapEditor.API.Helpers/PrefabHelper',
         'ThaumielMapEditor.API.Helpers/SchematicLoader',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'ThaumielMapEditor.API.Helpers.Networking',
+      collapsed: false,
+      items: [
+        'ThaumielMapEditor.API.Helpers.Networking/GitHubAssetInfo',
+        'ThaumielMapEditor.API.Helpers.Networking/GitHubReleaseInfo',
+        'ThaumielMapEditor.API.Helpers.Networking/LogsUploader',
+        'ThaumielMapEditor.API.Helpers.Networking/Updater',
+        'ThaumielMapEditor.API.Helpers.Networking/UploadResponse',
       ],
     },
     {
@@ -163,10 +193,20 @@ module.exports = {
       collapsed: false,
       items: [
         'ThaumielMapEditor.API.Serialization/SerializableArea',
+        'ThaumielMapEditor.API.Serialization/SerializableLOD',
         'ThaumielMapEditor.API.Serialization/SerializableMap',
         'ThaumielMapEditor.API.Serialization/SerializableObject',
         'ThaumielMapEditor.API.Serialization/SerializableSchematic',
+        'ThaumielMapEditor.API.Serialization/SerializableTool',
         'ThaumielMapEditor.API.Serialization/SerializedMapSchematic',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'ThaumielMapEditor.Events',
+      collapsed: false,
+      items: [
+        'ThaumielMapEditor.Events/CreditTag',
       ],
     },
     {
@@ -175,6 +215,8 @@ module.exports = {
       collapsed: false,
       items: [
         'ThaumielMapEditor.HarmonyPatches/InteractToyValidatePatch',
+        'ThaumielMapEditor.HarmonyPatches/PlayerShotRaycast',
+        'ThaumielMapEditor.HarmonyPatches/ServerNamePatch',
       ],
     },
   ],

@@ -17,14 +17,18 @@ import Badge from '@site/src/components/Badge';
 
 | Signature | Returns | Description |
 |-----------|---------|-------------|
-| [`GenerateLODZones(SchematicData)`](#generatelodzones) | `void` | _No description_ |
+| [`GenerateLODZones(SchematicData, SerializableSchematic)`](#generatelodzones) | `List<LODData>` | _No description_ |
+| [`PlayersInsideZone(UInt32, SchematicData)`](#playersinsidezone) | `IEnumerable<Player>` | Gets the players that are inside of the specified `ThaumielMapEditor.API.Compone… |
 
 ## Methods
 
 ### `GenerateLODZones`
 
 ```csharp title="GenerateLODZones"
-public void GenerateLODZones(SchematicData schematic)
+public List<LODData> GenerateLODZones(
+    SchematicData schematic,
+    SerializableSchematic serializable
+)
 ```
 
 #### Parameters
@@ -32,6 +36,35 @@ public void GenerateLODZones(SchematicData schematic)
 | Name | Type | Description |
 |------|------|-------------|
 | `schematic` | `SchematicData` |  |
+| `serializable` | `SerializableSchematic` |  |
+
+#### Returns
+
+`List<LODData>`
+
+---
+
+### `PlayersInsideZone`
+
+```csharp title="PlayersInsideZone"
+public IEnumerable<Player> PlayersInsideZone(
+    UInt32 index,
+    SchematicData schematic
+)
+```
+
+Gets the players that are inside of the specified `ThaumielMapEditor.API.Components.LODZone` index.
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `index` | `UInt32` |  |
+| `schematic` | `SchematicData` |  |
+
+#### Returns
+
+`IEnumerable<Player>`
 
 ---
 

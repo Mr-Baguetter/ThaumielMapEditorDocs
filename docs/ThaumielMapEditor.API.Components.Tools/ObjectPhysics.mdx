@@ -1,0 +1,136 @@
+---
+title: ObjectPhysics
+sidebar_label: 🔷 ObjectPhysics
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Badge from '@site/src/components/Badge';
+
+# 🔷 ObjectPhysics
+
+<Badge color="blue">class</Badge> <Badge color="secondary">`ThaumielMapEditor.API.Components.Tools`</Badge>
+
+## Overview
+
+### Properties
+
+| Name | Type | Access | Description |
+|------|------|:------:|-------------|
+| [`AngularDrag`](#angulardrag) | `float` | `get` `set` | Gets or sets the rotation resistance for the `ThaumielMapEditor.API.Components.Tools.ObjectPhysics.Rigidbody`. |
+| [`CollisionMode`](#collisionmode) | `CollisionDetectionMode` | `get` `set` | Gets or sets the `UnityEngine.CollisionDetectionMode` for the `ThaumielMapEditor.API.Components.Tools.ObjectPhysics.Rigidbody`. |
+| [`Drag`](#drag) | `float` | `get` `set` | Gets or sets the drag for the `ThaumielMapEditor.API.Components.Tools.ObjectPhysics.Rigidbody`. |
+| [`Enabled`](#enabled) | `bool` | `get` `set` | Gets or sets whether the `ThaumielMapEditor.API.Components.Tools.ObjectPhysics.Rigidbody` applies physics or not |
+| [`Rigidbody`](#rigidbody) | `Rigidbody` | `get` | Gets the `UnityEngine.Rigidbody` for this `ThaumielMapEditor.API.Components.Tools.ObjectPhysics` instance. Null until `ThaumielMapEditor.API.Components.Tools.ObjectPhysics.SetupRigidbody` is called by `ThaumielMapEditor.API.Components.Tools.ObjectPhysics.Init(ThaumielMapEditor.API.Blocks.ServerObject,ThaumielMapEditor.API.Data.SchematicData,System.Collections.Generic.Dictionary{System.String,System.Object})`. |
+| [`Type`](#type) | `ToolType` | `get` | The `ThaumielMapEditor.API.Enums.ToolType` this `ThaumielMapEditor.API.Components.Tools.ToolBase` instance uses. |
+| [`Weight`](#weight) | `float` | `get` `set` | Gets or sets the mass for the `ThaumielMapEditor.API.Components.Tools.ObjectPhysics.Rigidbody`. |
+
+### Methods
+
+| Signature | Returns | Description |
+|-----------|---------|-------------|
+| [`AddForce(Vector3, ForceMode)`](#addforce) | `void` | Adds the specified force to the `ThaumielMapEditor.API.Components.Tools.ObjectPh… |
+| [`Init(ServerObject, SchematicData, Dictionary<string, object>)`](#init) | `void` | Initializes the component. |
+
+## Properties
+
+### `AngularDrag`
+
+**Type:** `float`&emsp;**Access:** `get` `set`
+
+Gets or sets the rotation resistance for the `ThaumielMapEditor.API.Components.Tools.ObjectPhysics.Rigidbody`.
+
+---
+
+### `CollisionMode`
+
+**Type:** `CollisionDetectionMode`&emsp;**Access:** `get` `set`
+
+Gets or sets the `UnityEngine.CollisionDetectionMode` for the `ThaumielMapEditor.API.Components.Tools.ObjectPhysics.Rigidbody`.
+
+---
+
+### `Drag`
+
+**Type:** `float`&emsp;**Access:** `get` `set`
+
+Gets or sets the drag for the `ThaumielMapEditor.API.Components.Tools.ObjectPhysics.Rigidbody`.
+
+---
+
+### `Enabled`
+
+**Type:** `bool`&emsp;**Access:** `get` `set`
+
+Gets or sets whether the `ThaumielMapEditor.API.Components.Tools.ObjectPhysics.Rigidbody` applies physics or not
+
+---
+
+### `Rigidbody`
+
+**Type:** `Rigidbody`&emsp;**Access:** `get`
+
+Gets the `UnityEngine.Rigidbody` for this `ThaumielMapEditor.API.Components.Tools.ObjectPhysics` instance. Null until `ThaumielMapEditor.API.Components.Tools.ObjectPhysics.SetupRigidbody` is called by `ThaumielMapEditor.API.Components.Tools.ObjectPhysics.Init(ThaumielMapEditor.API.Blocks.ServerObject,ThaumielMapEditor.API.Data.SchematicData,System.Collections.Generic.Dictionary{System.String,System.Object})`.
+
+---
+
+### `Type`
+
+**Type:** `ToolType`&emsp;**Access:** `get`
+
+The `ThaumielMapEditor.API.Enums.ToolType` this `ThaumielMapEditor.API.Components.Tools.ToolBase` instance uses.
+
+---
+
+### `Weight`
+
+**Type:** `float`&emsp;**Access:** `get` `set`
+
+Gets or sets the mass for the `ThaumielMapEditor.API.Components.Tools.ObjectPhysics.Rigidbody`.
+
+---
+
+## Methods
+
+### `AddForce`
+
+```csharp title="AddForce"
+public void AddForce(
+    Vector3 force,
+    ForceMode mode
+)
+```
+
+Adds the specified force to the `ThaumielMapEditor.API.Components.Tools.ObjectPhysics.Rigidbody`
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `force` | `Vector3` | The amount of `UnityEngine.Vector3` force to add. |
+| `mode` | `ForceMode` | The `UnityEngine.ForceMode` that will be used. |
+
+---
+
+### `Init`
+
+```csharp title="Init"
+public void Init(
+    ServerObject obj,
+    SchematicData schem,
+    Dictionary<string, object> properties
+)
+```
+
+Initializes the component.
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `obj` | `ServerObject` |  |
+| `schem` | `SchematicData` |  |
+| `properties` | `Dictionary<string, object>` |  |
+
+---
+

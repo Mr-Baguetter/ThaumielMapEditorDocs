@@ -35,7 +35,7 @@ import Badge from '@site/src/components/Badge';
 
 | Signature | Returns | Description |
 |-----------|---------|-------------|
-| [`CreateCollisionMesh(PrimitiveObject)`](#createcollisionmesh) | `void` | Creates the colliders for primitives |
+| [`DestroyMap(MapData)`](#destroymap) | `void` | Destroys a map. |
 | [`DestroySchematic(SchematicData)`](#destroyschematic) | `void` | Destroys the specified `ThaumielMapEditor.API.Data.SchematicData` |
 | [`GetId()`](#getid) | `UInt32` | Gets a unique id for all `ThaumielMapEditor.API.Data.SchematicData` |
 | [`GetSchematicById(UInt32)`](#getschematicbyid) | `SchematicData` | Gets the `ThaumielMapEditor.API.Data.SchematicData` by its id. |
@@ -45,7 +45,12 @@ import Badge from '@site/src/components/Badge';
 | [`ReloadSchematics()`](#reloadschematics) | `void` | Reloads all loaded schematics |
 | [`SaveMap(MapData)`](#savemap) | `SerializableMap` | Saves a map |
 | [`SpawnMap(SerializableMap)`](#spawnmap) | `MapData` | Spawns a map |
-| [`SpawnSchematic(SerializableSchematic, Vector3)`](#spawnschematic) | `SchematicData` | Spawns a schematic |
+| [`SpawnSchematic(SerializableSchematic, Vector3, Quaternion, Vector3)`](#spawnschematic) | `SchematicData` | Spawns a schematic at the specified position, rotation, and scale. |
+| [`SpawnSchematic(SerializableSchematic, Vector3, Quaternion)`](#spawnschematic) | `SchematicData` | Spawns a schematic at the specified position and rotation with default scale. |
+| [`SpawnSchematic(SerializableSchematic, Vector3)`](#spawnschematic) | `SchematicData` | Spawns a schematic at the specified position with default rotation and scale. |
+| [`SpawnSchematic(string, Vector3)`](#spawnschematic) | `SchematicData` | Spawns a loaded schematic by name at the specified position with default rotatio… |
+| [`SpawnSchematic(string, Vector3, Quaternion)`](#spawnschematic) | `SchematicData` | Spawns a loaded schematic by name at the specified position and rotation with de… |
+| [`SpawnSchematic(string, Vector3, Quaternion, Vector3)`](#spawnschematic) | `SchematicData` | Spawns a loaded schematic by name at the specified position, rotation, and scale… |
 | [`TryGetSchematicById(UInt32, SchematicData&)`](#trygetschematicbyid) | `bool` | Tries to get the `ThaumielMapEditor.API.Data.SchematicData` by its Id. |
 
 ## Properties
@@ -118,19 +123,19 @@ This list contains all the schematics loaded by `ThaumielMapEditor.API.Helpers.S
 
 ## Methods
 
-### `CreateCollisionMesh`
+### `DestroyMap`
 
-```csharp title="CreateCollisionMesh"
-public void CreateCollisionMesh(PrimitiveObject primitive)
+```csharp title="DestroyMap"
+public void DestroyMap(MapData map)
 ```
 
-Creates the colliders for primitives
+Destroys a map.
 
 #### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `primitive` | `PrimitiveObject` |  |
+| `map` | `MapData` | The `ThaumielMapEditor.API.Data.MapData` to be destroyed. |
 
 ---
 
@@ -273,22 +278,154 @@ Spawns a map
 ```csharp title="SpawnSchematic"
 public SchematicData SpawnSchematic(
     SerializableSchematic schematic,
-    Vector3 position
+    Vector3 position,
+    Quaternion rotation,
+    Vector3 scale
 )
 ```
 
-Spawns a schematic
+Spawns a schematic at the specified position, rotation, and scale.
 
 #### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `schematic` | `SerializableSchematic` | The serialized schematic to spawn |
-| `position` | `Vector3` | The position to place the schematic at |
+| `schematic` | `SerializableSchematic` | The serialized schematic to spawn. |
+| `position` | `Vector3` | The world position at which to place the schematic. |
+| `rotation` | `Quaternion` | The rotation to apply to the schematic. |
+| `scale` | `Vector3` | The scale to apply to the schematic. |
 
 #### Returns
 
-`SchematicData` — `ThaumielMapEditor.API.Data.SchematicData`
+`SchematicData` — A `ThaumielMapEditor.API.Data.SchematicData` instance representing the spawned schematic.
+
+---
+
+### `SpawnSchematic`
+
+```csharp title="SpawnSchematic"
+public SchematicData SpawnSchematic(
+    SerializableSchematic schematic,
+    Vector3 position,
+    Quaternion rotation
+)
+```
+
+Spawns a schematic at the specified position and rotation with default scale.
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `schematic` | `SerializableSchematic` | The serialized schematic to spawn. |
+| `position` | `Vector3` | The world position at which to place the schematic. |
+| `rotation` | `Quaternion` | The rotation to apply to the schematic. |
+
+#### Returns
+
+`SchematicData` — A `ThaumielMapEditor.API.Data.SchematicData` instance representing the spawned schematic.
+
+---
+
+### `SpawnSchematic`
+
+```csharp title="SpawnSchematic"
+public SchematicData SpawnSchematic(
+    SerializableSchematic schematic,
+    Vector3 position
+)
+```
+
+Spawns a schematic at the specified position with default rotation and scale.
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `schematic` | `SerializableSchematic` | The serialized schematic to spawn. |
+| `position` | `Vector3` | The world position at which to place the schematic. |
+
+#### Returns
+
+`SchematicData` — A `ThaumielMapEditor.API.Data.SchematicData` instance representing the spawned schematic.
+
+---
+
+### `SpawnSchematic`
+
+```csharp title="SpawnSchematic"
+public SchematicData SpawnSchematic(
+    string schematicname,
+    Vector3 position
+)
+```
+
+Spawns a loaded schematic by name at the specified position with default rotation and scale.
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `schematicname` | `string` | The file name of the schematic to spawn. Must match a schematic in `ThaumielMapEditor.API.Helpers.SchematicLoader.LoadedSchematics`. |
+| `position` | `Vector3` | The world position at which to place the schematic. |
+
+#### Returns
+
+`SchematicData` — A `ThaumielMapEditor.API.Data.SchematicData` instance representing the spawned schematic.
+
+---
+
+### `SpawnSchematic`
+
+```csharp title="SpawnSchematic"
+public SchematicData SpawnSchematic(
+    string schematicname,
+    Vector3 position,
+    Quaternion rotation
+)
+```
+
+Spawns a loaded schematic by name at the specified position and rotation with default scale.
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `schematicname` | `string` | The file name of the schematic to spawn. Must match a schematic in `ThaumielMapEditor.API.Helpers.SchematicLoader.LoadedSchematics`. |
+| `position` | `Vector3` | The world position at which to place the schematic. |
+| `rotation` | `Quaternion` | The rotation to apply to the schematic. |
+
+#### Returns
+
+`SchematicData` — A `ThaumielMapEditor.API.Data.SchematicData` instance representing the spawned schematic.
+
+---
+
+### `SpawnSchematic`
+
+```csharp title="SpawnSchematic"
+public SchematicData SpawnSchematic(
+    string schematicname,
+    Vector3 position,
+    Quaternion rotation,
+    Vector3 scale
+)
+```
+
+Spawns a loaded schematic by name at the specified position, rotation, and scale.
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `schematicname` | `string` | The file name of the schematic to spawn. Must match a schematic in `ThaumielMapEditor.API.Helpers.SchematicLoader.LoadedSchematics`. |
+| `position` | `Vector3` | The world position at which to place the schematic. |
+| `rotation` | `Quaternion` | The rotation to apply to the schematic. |
+| `scale` | `Vector3` | The scale to apply to the schematic. |
+
+#### Returns
+
+`SchematicData` — A `ThaumielMapEditor.API.Data.SchematicData` instance representing the spawned schematic.
 
 ---
 

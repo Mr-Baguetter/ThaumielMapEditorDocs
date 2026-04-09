@@ -1,0 +1,102 @@
+---
+title: PrimitiveObjectServer
+sidebar_label: 🔷 PrimitiveObjectServer
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Badge from '@site/src/components/Badge';
+
+# 🔷 PrimitiveObjectServer
+
+<Badge color="blue">class</Badge> <Badge color="secondary">`ThaumielMapEditor.API.Blocks.ServerObjects`</Badge>
+
+## Overview
+
+### Properties
+
+| Name | Type | Access | Description |
+|------|------|:------:|-------------|
+| [`Base`](#base) | `PrimitiveObjectToy` | `get` | _No description_ |
+| [`Color`](#color) | `Color` | `get` `set` | _No description_ |
+| [`ObjectType`](#objecttype) | `ObjectType` | `get` `set` | Gets or sets the type of the object represented by this instance. |
+| [`PrimitiveFlags`](#primitiveflags) | `PrimitiveFlags` | `get` `set` | _No description_ |
+| [`PrimitiveType`](#primitivetype) | `PrimitiveType` | `get` `set` | _No description_ |
+
+### Methods
+
+| Signature | Returns | Description |
+|-----------|---------|-------------|
+| [`ParseValues(SerializableObject)`](#parsevalues) | `void` | _No description_ |
+| [`SpawnObject(SchematicData, SerializableObject)`](#spawnobject) | `void` | Spawns the specified `ThaumielMapEditor.API.Blocks.ServerObject` into the server… |
+
+## Properties
+
+### `Base`
+
+**Type:** `PrimitiveObjectToy`&emsp;**Access:** `get`
+
+---
+
+### `Color`
+
+**Type:** `Color`&emsp;**Access:** `get` `set`
+
+---
+
+### `ObjectType`
+
+**Type:** `ObjectType`&emsp;**Access:** `get` `set`
+
+Gets or sets the type of the object represented by this instance.
+
+---
+
+### `PrimitiveFlags`
+
+**Type:** `PrimitiveFlags`&emsp;**Access:** `get` `set`
+
+---
+
+### `PrimitiveType`
+
+**Type:** `PrimitiveType`&emsp;**Access:** `get` `set`
+
+---
+
+## Methods
+
+### `ParseValues`
+
+```csharp title="ParseValues"
+public void ParseValues(SerializableObject serializable)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `serializable` | `SerializableObject` |  |
+
+---
+
+### `SpawnObject`
+
+```csharp title="SpawnObject"
+public void SpawnObject(
+    SchematicData schematic,
+    SerializableObject serializable
+)
+```
+
+Spawns the specified `ThaumielMapEditor.API.Blocks.ServerObject` into the server and adds it to the provided `ThaumielMapEditor.API.Data.SchematicData`'s `ThaumielMapEditor.API.Data.SchematicData.SpawnedServerObjects` list.
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `schematic` | `SchematicData` |  |
+| `serializable` | `SerializableObject` |  |
+
+---
+

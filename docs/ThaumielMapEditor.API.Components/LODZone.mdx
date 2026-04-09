@@ -13,30 +13,43 @@ import Badge from '@site/src/components/Badge';
 
 ## Overview
 
-### Fields
+### Properties
 
-| Name | Type | Description |
-|------|------|-------------|
-| [`PrimitivestoUnload`](#primitivestounload) | `List<PrimitiveType>` | _No description_ |
-| [`Schematic`](#schematic) | `SchematicData` | _No description_ |
+| Name | Type | Access | Description |
+|------|------|:------:|-------------|
+| [`Index`](#index) | `UInt32` | `get` | Gets the index of this `ThaumielMapEditor.API.Components.LODZone` within its `ThaumielMapEditor.API.Data.SchematicData`. |
+| [`PrimitivestoUnload`](#primitivestounload) | `List<PrimitiveType>` | `get` | Gets the list of `UnityEngine.PrimitiveType`s that should be spawned and despawned when a `LabApi.Features.Wrappers.Player` enters or exits this zone. |
+| [`Schematic`](#schematic) | `SchematicData` | `get` | Gets the `ThaumielMapEditor.API.Data.SchematicData` this zone belongs to. |
 
 ### Methods
 
 | Signature | Returns | Description |
 |-----------|---------|-------------|
-| [`Init(SchematicData, List<PrimitiveType>)`](#init) | `void` | _No description_ |
+| [`Init(SchematicData, List<PrimitiveType>, UInt32)`](#init) | `void` | Initializes this `ThaumielMapEditor.API.Components.LODZone` instance and subscri… |
 
-## Fields
+## Properties
+
+### `Index`
+
+**Type:** `UInt32`&emsp;**Access:** `get`
+
+Gets the index of this `ThaumielMapEditor.API.Components.LODZone` within its `ThaumielMapEditor.API.Data.SchematicData`.
+
+---
 
 ### `PrimitivestoUnload`
 
-**Type:** `List<PrimitiveType>`
+**Type:** `List<PrimitiveType>`&emsp;**Access:** `get`
+
+Gets the list of `UnityEngine.PrimitiveType`s that should be spawned and despawned when a `LabApi.Features.Wrappers.Player` enters or exits this zone.
 
 ---
 
 ### `Schematic`
 
-**Type:** `SchematicData`
+**Type:** `SchematicData`&emsp;**Access:** `get`
+
+Gets the `ThaumielMapEditor.API.Data.SchematicData` this zone belongs to.
 
 ---
 
@@ -47,16 +60,20 @@ import Badge from '@site/src/components/Badge';
 ```csharp title="Init"
 public void Init(
     SchematicData schematic,
-    List<PrimitiveType> unload
+    List<PrimitiveType> unload,
+    UInt32 index
 )
 ```
+
+Initializes this `ThaumielMapEditor.API.Components.LODZone` instance and subscribes to the trigger enter and exit events.
 
 #### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `schematic` | `SchematicData` |  |
-| `unload` | `List<PrimitiveType>` |  |
+| `schematic` | `SchematicData` | The `ThaumielMapEditor.API.Data.SchematicData` this zone belongs to. |
+| `unload` | `List<PrimitiveType>` | The list of `UnityEngine.PrimitiveType`s to spawn and despawn as players enter and exit. |
+| `index` | `UInt32` | The index of this zone within the schematic. |
 
 ---
 
