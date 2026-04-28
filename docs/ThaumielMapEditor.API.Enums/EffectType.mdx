@@ -1,0 +1,544 @@
+---
+title: EffectType
+sidebar_label: 🟣 EffectType
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Badge from '@site/src/components/Badge';
+
+# 🟣 EffectType
+
+<Badge color="purple">enum</Badge> <Badge color="secondary">`ThaumielMapEditor.API.Enums`</Badge>
+
+## Overview
+
+### Fields
+
+| Name | Type | Description |
+|------|------|-------------|
+| [`AmnesiaItems`](#amnesiaitems) | `EffectType` | Prevents the player from reloading weapons and using medical items. |
+| [`AmnesiaVision`](#amnesiavision) | `EffectType` | Makes SCP-939 invisible to players under its effect. Visibility is temporarily r… |
+| [`AnomalousRegeneration`](#anomalousregeneration) | `EffectType` | `CustomPlayerEffects.AnomalousRegeneration`. |
+| [`AnomalousTarget`](#anomaloustarget) | `EffectType` | `CustomPlayerEffects.AnomalousTarget`. |
+| [`AntiScp207`](#antiscp207) | `EffectType` | It slows down the player, providing a passive health regeneration and saving the… |
+| [`Asphyxiated`](#asphyxiated) | `EffectType` | Drains the player's stamina and then health. |
+| [`Bleeding`](#bleeding) | `EffectType` | Damages the player over time. |
+| [`Blindness`](#blindness) | `EffectType` | Make the player screen darker. |
+| [`Blurred`](#blurred) | `EffectType` | Blurs the player's screen. |
+| [`BodyshotReduction`](#bodyshotreduction) | `EffectType` | Reduces damage taken by body shots. |
+| [`Burned`](#burned) | `EffectType` | Increases damage the player receives. Does not apply any standalone damage. |
+| [`CardiacArrest`](#cardiacarrest) | `EffectType` | Effect given to player after being hurt by SCP-049. |
+| [`Concussed`](#concussed) | `EffectType` | Blurs the player's screen while rotating. |
+| [`Corroding`](#corroding) | `EffectType` | Effect given to player after being hurt by SCP-106. |
+| [`DamageReduction`](#damagereduction) | `EffectType` | Reduces overall damage taken. |
+| [`Deafened`](#deafened) | `EffectType` | Deafens the player. |
+| [`Decontaminating`](#decontaminating) | `EffectType` | Removes 10% of the player's health per second. |
+| [`Disabled`](#disabled) | `EffectType` | Slows down the player's movement. |
+| [`Ensnared`](#ensnared) | `EffectType` | Prevents the player from moving. |
+| [`Exhausted`](#exhausted) | `EffectType` | Halves the player's maximum stamina and stamina regeneration rate. |
+| [`Fade`](#fade) | `EffectType` | `CustomPlayerEffects.Fade`. |
+| [`Flashed`](#flashed) | `EffectType` | Flashes the player. |
+| [`FocusedVision`](#focusedvision) | `EffectType` | `CustomPlayerEffects.FocusedVision`. |
+| [`FogControl`](#fogcontrol) | `EffectType` | Manipulate wish Fog player will have. You can choose fog with `CustomRendering.F… |
+| [`Ghostly`](#ghostly) | `EffectType` | Makes the player nearly invisible, and allows them to pass through doors. |
+| [`HeavyFooted`](#heavyfooted) | `EffectType` | `CustomPlayerEffects.HeavyFooted`. |
+| [`Hemorrhage`](#hemorrhage) | `EffectType` | Drains the player's health while sprinting. |
+| [`Hypothermia`](#hypothermia) | `EffectType` | Cause the player to slowly take damage, reduces bullet accuracy, and increases i… |
+| [`InsufficientLighting`](#insufficientlighting) | `EffectType` | Cause the lighting in the facility to dim heavily for the player. |
+| [`Invigorated`](#invigorated) | `EffectType` | Reduces the player's FOV, gives infinite stamina and gives the effect of underwa… |
+| [`Invisible`](#invisible) | `EffectType` | Makes the player invisible. |
+| [`Lightweight`](#lightweight) | `EffectType` | `CustomPlayerEffects.Lightweight`. |
+| [`Marshmallow`](#marshmallow) | `EffectType` | Makes you a marshmallow guy. |
+| [`MovementBoost`](#movementboost) | `EffectType` | Increases movement speed. |
+| [`NightVision`](#nightvision) | `EffectType` | `CustomPlayerEffects.NightVision`. |
+| [`None`](#none) | `EffectType` | This EffectType do not exist it's only use when not found or error. |
+| [`PitDeath`](#pitdeath) | `EffectType` | `CustomPlayerEffects.PitDeath`. |
+| [`PocketCorroding`](#pocketcorroding) | `EffectType` | Teleports the player to the pocket dimension and drains health until the player… |
+| [`Poisoned`](#poisoned) | `EffectType` | Damages the player every 5 seconds, starting low and increasing over time. |
+| [`RainbowTaste`](#rainbowtaste) | `EffectType` | Reduces the severity of negative effects. |
+| [`Scanned`](#scanned) | `EffectType` | The effect that SCP-079 gives the scanned player with the Breach Scanner. |
+| [`Scp1344`](#scp1344) | `EffectType` | `CustomPlayerEffects.Scp1344`. |
+| [`Scp1344Detected`](#scp1344detected) | `EffectType` | `CustomPlayerEffects.Scp1344Detected`. |
+| [`Scp1509Resurrected`](#scp1509resurrected) | `EffectType` | `CustomPlayerEffects.Scp1509Resurrected`. |
+| [`Scp1576`](#scp1576) | `EffectType` | `CustomPlayerEffects.Scp1576`. |
+| [`Scp1853`](#scp1853) | `EffectType` | Increases the player's motor function, causing the player to reduce the weapon d… |
+| [`Scp207`](#scp207) | `EffectType` | Increases the speed of the player while also draining health. |
+| [`SeveredEyes`](#severedeyes) | `EffectType` | `CustomPlayerEffects.SeveredEyes`. |
+| [`SeveredHands`](#severedhands) | `EffectType` | Drops the player's current item, disables interaction with objects, and deals da… |
+| [`SilentWalk`](#silentwalk) | `EffectType` | Reduces walking sound by 10%. |
+| [`SinkHole`](#sinkhole) | `EffectType` | Slows down the player's movement with the SCP-106 sinkhole effect. |
+| [`Slowness`](#slowness) | `EffectType` | `CustomPlayerEffects.Slowness`. |
+| [`SoundtrackMute`](#soundtrackmute) | `EffectType` | Disable ambient sound. |
+| [`SpawnProtected`](#spawnprotected) | `EffectType` | Protects players from enemy damage if the config is enabled. |
+| [`Stained`](#stained) | `EffectType` | Prevents the player from sprinting and reduces movement speed by 20%. |
+| [`Strangled`](#strangled) | `EffectType` | The effect that is given to the player when getting attacked by SCP-3114's Stran… |
+| [`Traumatized`](#traumatized) | `EffectType` | Make Scp106 able to see you when he is in the ground (stalking), causes the play… |
+| [`Vitality`](#vitality) | `EffectType` | Causes the player to become gain immunity to certain negative status effects. |
+
+## Fields
+
+### `AmnesiaItems`
+
+**Type:** `EffectType`
+
+Prevents the player from reloading weapons and using medical items.
+
+---
+
+### `AmnesiaVision`
+
+**Type:** `EffectType`
+
+Makes SCP-939 invisible to players under its effect. Visibility is temporarily restored when SCP-939 takes damage or attacks.
+
+---
+
+### `AnomalousRegeneration`
+
+**Type:** `EffectType`
+
+`CustomPlayerEffects.AnomalousRegeneration`.
+
+---
+
+### `AnomalousTarget`
+
+**Type:** `EffectType`
+
+`CustomPlayerEffects.AnomalousTarget`.
+
+---
+
+### `AntiScp207`
+
+**Type:** `EffectType`
+
+It slows down the player, providing a passive health regeneration and saving the player from death once.
+
+---
+
+### `Asphyxiated`
+
+**Type:** `EffectType`
+
+Drains the player's stamina and then health.
+
+---
+
+### `Bleeding`
+
+**Type:** `EffectType`
+
+Damages the player over time.
+
+---
+
+### `Blindness`
+
+**Type:** `EffectType`
+
+Make the player screen darker.
+
+---
+
+### `Blurred`
+
+**Type:** `EffectType`
+
+Blurs the player's screen.
+
+---
+
+### `BodyshotReduction`
+
+**Type:** `EffectType`
+
+Reduces damage taken by body shots.
+
+---
+
+### `Burned`
+
+**Type:** `EffectType`
+
+Increases damage the player receives. Does not apply any standalone damage.
+
+---
+
+### `CardiacArrest`
+
+**Type:** `EffectType`
+
+Effect given to player after being hurt by SCP-049.
+
+---
+
+### `Concussed`
+
+**Type:** `EffectType`
+
+Blurs the player's screen while rotating.
+
+---
+
+### `Corroding`
+
+**Type:** `EffectType`
+
+Effect given to player after being hurt by SCP-106.
+
+---
+
+### `DamageReduction`
+
+**Type:** `EffectType`
+
+Reduces overall damage taken.
+
+---
+
+### `Deafened`
+
+**Type:** `EffectType`
+
+Deafens the player.
+
+---
+
+### `Decontaminating`
+
+**Type:** `EffectType`
+
+Removes 10% of the player's health per second.
+
+---
+
+### `Disabled`
+
+**Type:** `EffectType`
+
+Slows down the player's movement.
+
+---
+
+### `Ensnared`
+
+**Type:** `EffectType`
+
+Prevents the player from moving.
+
+---
+
+### `Exhausted`
+
+**Type:** `EffectType`
+
+Halves the player's maximum stamina and stamina regeneration rate.
+
+---
+
+### `Fade`
+
+**Type:** `EffectType`
+
+`CustomPlayerEffects.Fade`.
+
+---
+
+### `Flashed`
+
+**Type:** `EffectType`
+
+Flashes the player.
+
+---
+
+### `FocusedVision`
+
+**Type:** `EffectType`
+
+`CustomPlayerEffects.FocusedVision`.
+
+---
+
+### `FogControl`
+
+**Type:** `EffectType`
+
+Manipulate wish Fog player will have. You can choose fog with `CustomRendering.FogType` and putting it on intensity.
+
+---
+
+### `Ghostly`
+
+**Type:** `EffectType`
+
+Makes the player nearly invisible, and allows them to pass through doors.
+
+---
+
+### `HeavyFooted`
+
+**Type:** `EffectType`
+
+`CustomPlayerEffects.HeavyFooted`.
+
+---
+
+### `Hemorrhage`
+
+**Type:** `EffectType`
+
+Drains the player's health while sprinting.
+
+---
+
+### `Hypothermia`
+
+**Type:** `EffectType`
+
+Cause the player to slowly take damage, reduces bullet accuracy, and increases item pickup time.
+
+---
+
+### `InsufficientLighting`
+
+**Type:** `EffectType`
+
+Cause the lighting in the facility to dim heavily for the player.
+
+---
+
+### `Invigorated`
+
+**Type:** `EffectType`
+
+Reduces the player's FOV, gives infinite stamina and gives the effect of underwater sound.
+
+---
+
+### `Invisible`
+
+**Type:** `EffectType`
+
+Makes the player invisible.
+
+---
+
+### `Lightweight`
+
+**Type:** `EffectType`
+
+`CustomPlayerEffects.Lightweight`.
+
+---
+
+### `Marshmallow`
+
+**Type:** `EffectType`
+
+Makes you a marshmallow guy.
+
+---
+
+### `MovementBoost`
+
+**Type:** `EffectType`
+
+Increases movement speed.
+
+---
+
+### `NightVision`
+
+**Type:** `EffectType`
+
+`CustomPlayerEffects.NightVision`.
+
+---
+
+### `None`
+
+**Type:** `EffectType`
+
+This EffectType do not exist it's only use when not found or error.
+
+---
+
+### `PitDeath`
+
+**Type:** `EffectType`
+
+`CustomPlayerEffects.PitDeath`.
+
+---
+
+### `PocketCorroding`
+
+**Type:** `EffectType`
+
+Teleports the player to the pocket dimension and drains health until the player escapes or is killed. The amount of damage recieved increases the longer the effect is applied.
+
+---
+
+### `Poisoned`
+
+**Type:** `EffectType`
+
+Damages the player every 5 seconds, starting low and increasing over time.
+
+---
+
+### `RainbowTaste`
+
+**Type:** `EffectType`
+
+Reduces the severity of negative effects.
+
+---
+
+### `Scanned`
+
+**Type:** `EffectType`
+
+The effect that SCP-079 gives the scanned player with the Breach Scanner.
+
+---
+
+### `Scp1344`
+
+**Type:** `EffectType`
+
+`CustomPlayerEffects.Scp1344`.
+
+---
+
+### `Scp1344Detected`
+
+**Type:** `EffectType`
+
+`CustomPlayerEffects.Scp1344Detected`.
+
+---
+
+### `Scp1509Resurrected`
+
+**Type:** `EffectType`
+
+`CustomPlayerEffects.Scp1509Resurrected`.
+
+---
+
+### `Scp1576`
+
+**Type:** `EffectType`
+
+`CustomPlayerEffects.Scp1576`.
+
+---
+
+### `Scp1853`
+
+**Type:** `EffectType`
+
+Increases the player's motor function, causing the player to reduce the weapon draw time, reload spead, item pickup speed, and medical item usage.
+
+---
+
+### `Scp207`
+
+**Type:** `EffectType`
+
+Increases the speed of the player while also draining health.
+
+---
+
+### `SeveredEyes`
+
+**Type:** `EffectType`
+
+`CustomPlayerEffects.SeveredEyes`.
+
+---
+
+### `SeveredHands`
+
+**Type:** `EffectType`
+
+Drops the player's current item, disables interaction with objects, and deals damage while effect is active.
+
+---
+
+### `SilentWalk`
+
+**Type:** `EffectType`
+
+Reduces walking sound by 10%.
+
+---
+
+### `SinkHole`
+
+**Type:** `EffectType`
+
+Slows down the player's movement with the SCP-106 sinkhole effect.
+
+---
+
+### `Slowness`
+
+**Type:** `EffectType`
+
+`CustomPlayerEffects.Slowness`.
+
+---
+
+### `SoundtrackMute`
+
+**Type:** `EffectType`
+
+Disable ambient sound.
+
+---
+
+### `SpawnProtected`
+
+**Type:** `EffectType`
+
+Protects players from enemy damage if the config is enabled.
+
+---
+
+### `Stained`
+
+**Type:** `EffectType`
+
+Prevents the player from sprinting and reduces movement speed by 20%.
+
+---
+
+### `Strangled`
+
+**Type:** `EffectType`
+
+The effect that is given to the player when getting attacked by SCP-3114's Strangle ability.
+
+---
+
+### `Traumatized`
+
+**Type:** `EffectType`
+
+Make Scp106 able to see you when he is in the ground (stalking), causes the player's screens to become monochromatic when seeing Scp106, and instantly killed if attacked by Scp106.
+
+---
+
+### `Vitality`
+
+**Type:** `EffectType`
+
+Causes the player to become gain immunity to certain negative status effects.
+
+---
+

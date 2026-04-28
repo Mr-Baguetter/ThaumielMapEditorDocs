@@ -18,32 +18,25 @@ import Badge from '@site/src/components/Badge';
 | Name | Type | Access | Description |
 |------|------|:------:|-------------|
 | [`AnimationController`](#animationcontroller) | `AnimationController` | `get` | _No description_ |
-| [`Cameras`](#cameras) | `IEnumerable<CameraObject>` | `get` | Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.CameraObject`s belonging to this schematic. |
-| [`Capybaras`](#capybaras) | `IEnumerable<CapybaraObject>` | `get` | Gets all spawned `ThaumielMapEditor.API.Blocks.ClientSide.CapybaraObject`s belonging to this schematic. |
-| [`Clutter`](#clutter) | `IEnumerable<ClutterObject>` | `get` | Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.ClutterObject`s belonging to this schematic. |
-| [`Doors`](#doors) | `IEnumerable<DoorObject>` | `get` | Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.DoorObject`s belonging to this schematic. |
+| [`EulerAngles`](#eulerangles) | `Vector3` | `get` `set` | Gets or sets the global euler angles of this `ThaumielMapEditor.API.Data.SchematicData` instance. |
+| [`Executor`](#executor) | `BlockExecutor` | `get` | The `ThaumielMapEditor.API.Helpers.BlockExecutor` of this schematic. |
 | [`FileName`](#filename) | `string` | `get` | Gets or sets the file name. |
+| [`GameObject`](#gameobject) | `GameObject` | `get` | Gets the `ThaumielMapEditor.API.Data.SchematicData.GameObject` of the base `ThaumielMapEditor.API.Blocks.ClientSide.PrimitiveObject` of this Schematic |
 | [`Id`](#id) | `UInt32` | `get` `set` | Gets or sets the id |
-| [`Interactables`](#interactables) | `IEnumerable<InteractionObject>` | `get` | Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.InteractionObject`s belonging to this schematic. |
-| [`Lights`](#lights) | `IEnumerable<LightObject>` | `get` | Gets all spawned `ThaumielMapEditor.API.Blocks.ClientSide.LightObject`s belonging to this schematic. |
 | [`LODZones`](#lodzones) | `List<LODData>` | `get` | A list of the spawned `ThaumielMapEditor.API.Data.LODData` instances |
-| [`Pickups`](#pickups) | `IEnumerable<PickupObject>` | `get` | Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.PickupObject`s belonging to this schematic. |
 | [`Position`](#position) | `Vector3` | `get` `set` | Gets or sets the position of this `ThaumielMapEditor.API.Data.SchematicData` instance. |
 | [`Primitive`](#primitive) | `PrimitiveObjectToy` | `get` | Gets the base `LabApi.Features.Wrappers.PrimitiveObjectToy` that all client primtives will be parented to. |
-| [`Primitives`](#primitives) | `IEnumerable<PrimitiveObject>` | `get` | Gets all spawned `ThaumielMapEditor.API.Blocks.ClientSide.PrimitiveObject`s belonging to this schematic. |
+| [`Room`](#room) | `Room` | `get` | Gets the room this `ThaumielMapEditor.API.Data.SchematicData` instance was spawned in. |
 | [`RootObjectId`](#rootobjectid) | `int` | `get` | Gets the root object id. |
 | [`Rotation`](#rotation) | `Quaternion` | `get` `set` | Gets or sets the rotation of this `ThaumielMapEditor.API.Data.SchematicData` instance. |
 | [`Scale`](#scale) | `Vector3` | `get` `set` | Gets or sets the scale of this `ThaumielMapEditor.API.Data.SchematicData` instance. |
-| [`TargetDummies`](#targetdummies) | `IEnumerable<TargetDummyObject>` | `get` | Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.TargetDummyObject`s belonging to this schematic. |
-| [`TextToys`](#texttoys) | `IEnumerable<TextToyObject>` | `get` | Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.TextToyObject`s belonging to this schematic. |
-| [`Waypoints`](#waypoints) | `IEnumerable<WaypointObject>` | `get` | Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.WaypointObject`s belonging to this schematic. |
-| [`Workstations`](#workstations) | `IEnumerable<WorkstationObject>` | `get` | Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.WorkstationObject`s belonging to this schematic. |
+| [`ServerNetworkIdentities`](#servernetworkidentities) | `IReadOnlyList<NetworkIdentity>` | `get` | Gets all of the `ThaumielMapEditor.API.Data.SchematicData.SpawnedServerObjects` that have a `Mirror.NetworkIdentity` as a component. |
 
 ### Fields
 
 | Name | Type | Description |
 |------|------|-------------|
-| [`SpawnedAreas`](#spawnedareas) | `List<AreaObject>` | A list of all spawned `ThaumielMapEditor.API.Blocks.Areas.AreaObject` instances. |
+| [`ServerSideTransforms`](#serversidetransforms) | `Dictionary<int, Transform>` | _No description_ |
 | [`SpawnedClientObjects`](#spawnedclientobjects) | `List<ClientSideObjectBase>` | A list of all spawned `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectB… |
 | [`SpawnedServerObjects`](#spawnedserverobjects) | `List<ServerObject>` | A list of all spawned `ThaumielMapEditor.API.Blocks.ServerObject` instances. |
 
@@ -52,6 +45,8 @@ import Badge from '@site/src/components/Badge';
 | Signature | Returns | Description |
 |-----------|---------|-------------|
 | [`Destroy()`](#destroy) | `void` | Destroys this `ThaumielMapEditor.API.Data.SchematicData` instance. |
+| [`GetClientObject()`](#getclientobject) | `IEnumerable<T>` | Retrieves all spawned `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectB… |
+| [`GetServerObject()`](#getserverobject) | `IEnumerable<T>` | Retrieves all spawned `ThaumielMapEditor.API.Blocks.ServerObject`s of the specif… |
 | [`SyncWithPlayer(Player)`](#syncwithplayer) | `void` | Syncs the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` of this… |
 
 ## Properties
@@ -62,35 +57,19 @@ import Badge from '@site/src/components/Badge';
 
 ---
 
-### `Cameras`
+### `EulerAngles`
 
-**Type:** `IEnumerable<CameraObject>`&emsp;**Access:** `get`
+**Type:** `Vector3`&emsp;**Access:** `get` `set`
 
-Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.CameraObject`s belonging to this schematic.
-
----
-
-### `Capybaras`
-
-**Type:** `IEnumerable<CapybaraObject>`&emsp;**Access:** `get`
-
-Gets all spawned `ThaumielMapEditor.API.Blocks.ClientSide.CapybaraObject`s belonging to this schematic.
+Gets or sets the global euler angles of this `ThaumielMapEditor.API.Data.SchematicData` instance.
 
 ---
 
-### `Clutter`
+### `Executor`
 
-**Type:** `IEnumerable<ClutterObject>`&emsp;**Access:** `get`
+**Type:** `BlockExecutor`&emsp;**Access:** `get`
 
-Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.ClutterObject`s belonging to this schematic.
-
----
-
-### `Doors`
-
-**Type:** `IEnumerable<DoorObject>`&emsp;**Access:** `get`
-
-Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.DoorObject`s belonging to this schematic.
+The `ThaumielMapEditor.API.Helpers.BlockExecutor` of this schematic.
 
 ---
 
@@ -102,6 +81,14 @@ Gets or sets the file name.
 
 ---
 
+### `GameObject`
+
+**Type:** `GameObject`&emsp;**Access:** `get`
+
+Gets the `ThaumielMapEditor.API.Data.SchematicData.GameObject` of the base `ThaumielMapEditor.API.Blocks.ClientSide.PrimitiveObject` of this Schematic
+
+---
+
 ### `Id`
 
 **Type:** `UInt32`&emsp;**Access:** `get` `set`
@@ -110,35 +97,11 @@ Gets or sets the id
 
 ---
 
-### `Interactables`
-
-**Type:** `IEnumerable<InteractionObject>`&emsp;**Access:** `get`
-
-Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.InteractionObject`s belonging to this schematic.
-
----
-
-### `Lights`
-
-**Type:** `IEnumerable<LightObject>`&emsp;**Access:** `get`
-
-Gets all spawned `ThaumielMapEditor.API.Blocks.ClientSide.LightObject`s belonging to this schematic.
-
----
-
 ### `LODZones`
 
 **Type:** `List<LODData>`&emsp;**Access:** `get`
 
 A list of the spawned `ThaumielMapEditor.API.Data.LODData` instances
-
----
-
-### `Pickups`
-
-**Type:** `IEnumerable<PickupObject>`&emsp;**Access:** `get`
-
-Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.PickupObject`s belonging to this schematic.
 
 ---
 
@@ -158,11 +121,11 @@ Gets the base `LabApi.Features.Wrappers.PrimitiveObjectToy` that all client prim
 
 ---
 
-### `Primitives`
+### `Room`
 
-**Type:** `IEnumerable<PrimitiveObject>`&emsp;**Access:** `get`
+**Type:** `Room`&emsp;**Access:** `get`
 
-Gets all spawned `ThaumielMapEditor.API.Blocks.ClientSide.PrimitiveObject`s belonging to this schematic.
+Gets the room this `ThaumielMapEditor.API.Data.SchematicData` instance was spawned in.
 
 ---
 
@@ -190,45 +153,19 @@ Gets or sets the scale of this `ThaumielMapEditor.API.Data.SchematicData` instan
 
 ---
 
-### `TargetDummies`
+### `ServerNetworkIdentities`
 
-**Type:** `IEnumerable<TargetDummyObject>`&emsp;**Access:** `get`
+**Type:** `IReadOnlyList<NetworkIdentity>`&emsp;**Access:** `get`
 
-Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.TargetDummyObject`s belonging to this schematic.
-
----
-
-### `TextToys`
-
-**Type:** `IEnumerable<TextToyObject>`&emsp;**Access:** `get`
-
-Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.TextToyObject`s belonging to this schematic.
-
----
-
-### `Waypoints`
-
-**Type:** `IEnumerable<WaypointObject>`&emsp;**Access:** `get`
-
-Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.WaypointObject`s belonging to this schematic.
-
----
-
-### `Workstations`
-
-**Type:** `IEnumerable<WorkstationObject>`&emsp;**Access:** `get`
-
-Gets all spawned `ThaumielMapEditor.API.Blocks.ServerObjects.WorkstationObject`s belonging to this schematic.
+Gets all of the `ThaumielMapEditor.API.Data.SchematicData.SpawnedServerObjects` that have a `Mirror.NetworkIdentity` as a component.
 
 ---
 
 ## Fields
 
-### `SpawnedAreas`
+### `ServerSideTransforms`
 
-**Type:** `List<AreaObject>`
-
-A list of all spawned `ThaumielMapEditor.API.Blocks.Areas.AreaObject` instances.
+**Type:** `Dictionary<int, Transform>`
 
 ---
 
@@ -257,6 +194,34 @@ public void Destroy()
 ```
 
 Destroys this `ThaumielMapEditor.API.Data.SchematicData` instance.
+
+---
+
+### `GetClientObject`
+
+```csharp title="GetClientObject"
+public IEnumerable<T> GetClientObject()
+```
+
+Retrieves all spawned `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase`s of the specified type.
+
+#### Returns
+
+`IEnumerable<T>` — An `System.Collections.Generic.IEnumerable`1` containing all `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase`s that match type `T`.
+
+---
+
+### `GetServerObject`
+
+```csharp title="GetServerObject"
+public IEnumerable<T> GetServerObject()
+```
+
+Retrieves all spawned `ThaumielMapEditor.API.Blocks.ServerObject`s of the specified type.
+
+#### Returns
+
+`IEnumerable<T>` — An `System.Collections.Generic.IEnumerable`1` containing all `ThaumielMapEditor.API.Blocks.ServerObject`s that match type `T`.
 
 ---
 

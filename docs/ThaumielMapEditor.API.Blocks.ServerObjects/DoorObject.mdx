@@ -36,6 +36,7 @@ import Badge from '@site/src/components/Badge';
 | [`GetDoorFromType(DoorType)`](#getdoorfromtype) | `DoorVariant` | Returns the `Interactables.Interobjects.DoorUtils.DoorVariant` prefab that corre… |
 | [`ParseValues(SerializableObject)`](#parsevalues) | `void` | Reads and parses all door properties from the provided `ThaumielMapEditor.API.Se… |
 | [`SpawnObject(SchematicData, SerializableObject)`](#spawnobject) | `void` | Spawns the specified `ThaumielMapEditor.API.Blocks.ServerObject` into the server… |
+| [`SpawnObject(SchematicData)`](#spawnobject) | `void` | _No description_ |
 | [`ToString()`](#tostring) | `string` | Returns a string representation of this door object's current state. |
 
 ## Properties
@@ -197,6 +198,20 @@ Spawns the specified `ThaumielMapEditor.API.Blocks.ServerObject` into the server
 |------|------|-------------|
 | `schematic` | `SchematicData` |  |
 | `serializable` | `SerializableObject` |  |
+
+---
+
+### `SpawnObject`
+
+```csharp title="SpawnObject"
+public void SpawnObject(SchematicData schematic)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `schematic` | `SchematicData` |  |
 
 ---
 

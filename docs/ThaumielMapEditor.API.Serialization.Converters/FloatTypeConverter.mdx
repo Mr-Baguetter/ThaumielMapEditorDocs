@@ -1,0 +1,133 @@
+---
+title: FloatTypeConverter
+sidebar_label: 🔷 FloatTypeConverter
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Badge from '@site/src/components/Badge';
+
+# 🔷 FloatTypeConverter
+
+<Badge color="blue">class</Badge> <Badge color="secondary">`ThaumielMapEditor.API.Serialization.Converters`</Badge>
+
+## Overview
+
+### Methods
+
+| Signature | Returns | Description |
+|-----------|---------|-------------|
+| [`Accepts(Type)`](#accepts) | `bool` | _No description_ |
+| [`ReadYaml(IParser, Type)`](#readyaml) | `object` | _No description_ |
+| [`ReadYaml(IParser, Type, ObjectDeserializer)`](#readyaml) | `object` | _No description_ |
+| [`WriteYaml(IEmitter, object, Type)`](#writeyaml) | `void` | _No description_ |
+| [`WriteYaml(IEmitter, object, Type, ObjectSerializer)`](#writeyaml) | `void` | _No description_ |
+
+## Methods
+
+### `Accepts`
+
+```csharp title="Accepts"
+public bool Accepts(Type type)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `type` | `Type` |  |
+
+#### Returns
+
+`bool`
+
+---
+
+### `ReadYaml`
+
+```csharp title="ReadYaml"
+public object ReadYaml(
+    IParser parser,
+    Type type
+)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `parser` | `IParser` |  |
+| `type` | `Type` |  |
+
+#### Returns
+
+`object`
+
+---
+
+### `ReadYaml`
+
+```csharp title="ReadYaml"
+public object ReadYaml(
+    IParser parser,
+    Type type,
+    ObjectDeserializer rootDeserializer
+)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `parser` | `IParser` |  |
+| `type` | `Type` |  |
+| `rootDeserializer` | `ObjectDeserializer` |  |
+
+#### Returns
+
+`object`
+
+---
+
+### `WriteYaml`
+
+```csharp title="WriteYaml"
+public void WriteYaml(
+    IEmitter emitter,
+    object value,
+    Type type
+)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `emitter` | `IEmitter` |  |
+| `value` | `object` |  |
+| `type` | `Type` |  |
+
+---
+
+### `WriteYaml`
+
+```csharp title="WriteYaml"
+public void WriteYaml(
+    IEmitter emitter,
+    object value,
+    Type type,
+    ObjectSerializer serializer
+)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `emitter` | `IEmitter` |  |
+| `value` | `object` |  |
+| `type` | `Type` |  |
+| `serializer` | `ObjectSerializer` |  |
+
+---
+

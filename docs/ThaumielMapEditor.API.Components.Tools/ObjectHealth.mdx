@@ -17,10 +17,12 @@ import Badge from '@site/src/components/Badge';
 
 | Name | Type | Access | Description |
 |------|------|:------:|-------------|
+| [`CenterOfMass`](#centerofmass) | `Vector3` | `get` | Gets the center of mass of the `ThaumielMapEditor.API.Components.Tools.ObjectHealth` instance. |
 | [`DespawnTime`](#despawntime) | `float` | `get` `set` | Gets or sets the amount of time in seconds that the `ThaumielMapEditor.API.Components.Tools.ObjectHealth` instance will have untill it despawns after being destroyed. |
 | [`Force`](#force) | `Vector3` | `get` `set` | Gets or sets the launch force of the `ThaumielMapEditor.API.Components.Tools.ObjectHealth` instance that will be applied to the `UnityEngine.Rigidbody` if the `ThaumielMapEditor.API.Components.Tools.ObjectHealth.State` is `ThaumielMapEditor.API.Components.Tools.ObjectHealth.DestroyState.ApplyPhysics`. |
 | [`Health`](#health) | `float` | `get` `set` | Gets or sets the current health that the `ThaumielMapEditor.API.Components.Tools.ObjectHealth` instance has. |
 | [`HealthMax`](#healthmax) | `float` | `get` `set` | Gets or sets the max health that the `ThaumielMapEditor.API.Components.Tools.ObjectHealth` instance has. |
+| [`NetworkId`](#networkid) | `UInt32` | `get` | Gets the NetworkId. Required by `IDestructible` |
 | [`State`](#state) | `DestroyState` | `get` | Gets the `ThaumielMapEditor.API.Components.Tools.ObjectHealth.DestroyState` that the `ThaumielMapEditor.API.Components.Tools.ObjectHealth` instance will use when destroyed. |
 | [`StateName`](#statename) | `string` | `get` `set` | Gets or sets the animation name that the `ThaumielMapEditor.API.Components.Tools.ObjectHealth` instance will play if the `ThaumielMapEditor.API.Components.Tools.ObjectHealth.State` is `ThaumielMapEditor.API.Components.Tools.ObjectHealth.DestroyState.Animate`. |
 | [`Type`](#type) | `ToolType` | `get` | The `ThaumielMapEditor.API.Enums.ToolType` this `ThaumielMapEditor.API.Components.Tools.ToolBase` instance uses. |
@@ -35,11 +37,19 @@ import Badge from '@site/src/components/Badge';
 
 | Signature | Returns | Description |
 |-----------|---------|-------------|
-| [`Damage(float, DamageType)`](#damage) | `void` | Damages the `ThaumielMapEditor.API.Components.Tools.ObjectHealth` instance. |
+| [`Damage(float, DamageHandlerBase, Vector3)`](#damage) | `bool` | Attempts to damage the `ThaumielMapEditor.API.Components.Tools.ObjectHealth` ins… |
 | [`Destroy()`](#destroy) | `void` | Destroys the `ThaumielMapEditor.API.Components.Tools.ObjectHealth` instance and… |
 | [`Init(ServerObject, SchematicData, Dictionary<string, object>)`](#init) | `void` | Initializes the component. |
 
 ## Properties
+
+### `CenterOfMass`
+
+**Type:** `Vector3`&emsp;**Access:** `get`
+
+Gets the center of mass of the `ThaumielMapEditor.API.Components.Tools.ObjectHealth` instance.
+
+---
 
 ### `DespawnTime`
 
@@ -70,6 +80,14 @@ Gets or sets the current health that the `ThaumielMapEditor.API.Components.Tools
 **Type:** `float`&emsp;**Access:** `get` `set`
 
 Gets or sets the max health that the `ThaumielMapEditor.API.Components.Tools.ObjectHealth` instance has.
+
+---
+
+### `NetworkId`
+
+**Type:** `UInt32`&emsp;**Access:** `get`
+
+Gets the NetworkId. Required by `IDestructible`
 
 ---
 
@@ -112,20 +130,26 @@ Gets or sets the allowed `ThaumielMapEditor.API.Enums.DamageType`s that the `Tha
 ### `Damage`
 
 ```csharp title="Damage"
-public void Damage(
-    float amount,
-    DamageType type
+public bool Damage(
+    float damage,
+    DamageHandlerBase handler,
+    Vector3 exactHitPos
 )
 ```
 
-Damages the `ThaumielMapEditor.API.Components.Tools.ObjectHealth` instance.
+Attempts to damage the `ThaumielMapEditor.API.Components.Tools.ObjectHealth` instance if the `handler` matches an allowed `ThaumielMapEditor.API.Enums.DamageType`.
 
 #### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `amount` | `float` | The amount of `ThaumielMapEditor.API.Components.Tools.ObjectHealth.Health` to be removed. |
-| `type` | `DamageType` | The `ThaumielMapEditor.API.Enums.DamageType` to be used. |
+| `damage` | `float` | The amount of health to subtract from `ThaumielMapEditor.API.Components.Tools.ObjectHealth.Health`. |
+| `handler` | `DamageHandlerBase` | The source of the damage. |
+| `exactHitPos` | `Vector3` | The position of the hit. |
+
+#### Returns
+
+`bool` — `true` if the damage was applied otherwise `false`.
 
 ---
 

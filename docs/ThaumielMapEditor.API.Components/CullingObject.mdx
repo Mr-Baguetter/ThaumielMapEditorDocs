@@ -1,0 +1,156 @@
+---
+title: CullingObject
+sidebar_label: 🔷 CullingObject
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Badge from '@site/src/components/Badge';
+
+# 🔷 CullingObject
+
+<Badge color="blue">class</Badge> <Badge color="secondary">`ThaumielMapEditor.API.Components`</Badge>
+
+## Overview
+
+### Fields
+
+| Name | Type | Description |
+|------|------|-------------|
+| [`AllInstances`](#allinstances) | `HashSet<CullingObject>` | _No description_ |
+| [`Bounds`](#bounds) | `Vector3` | _No description_ |
+| [`ClientObject`](#clientobject) | `ClientSideObjectBase` | _No description_ |
+| [`NetworkIdentity`](#networkidentity) | `NetworkIdentity` | _No description_ |
+| [`PlayersInside`](#playersinside) | `HashSet<Player>` | _No description_ |
+| [`ServerObject`](#serverobject) | `ServerObject` | _No description_ |
+
+### Methods
+
+| Signature | Returns | Description |
+|-----------|---------|-------------|
+| [`Init(ClientSideObjectBase, Vector3)`](#init) | `void` | _No description_ |
+| [`Init(ServerObject, Vector3)`](#init) | `void` | _No description_ |
+| [`IsInsideCollider(Vector3)`](#isinsidecollider) | `bool` | _No description_ |
+| [`Setup()`](#setup) | `void` | _No description_ |
+| [`ToggleVisibility(Player, bool)`](#togglevisibility) | `void` | _No description_ |
+
+## Fields
+
+### `AllInstances`
+
+**Type:** `HashSet<CullingObject>`
+
+---
+
+### `Bounds`
+
+**Type:** `Vector3`
+
+---
+
+### `ClientObject`
+
+**Type:** `ClientSideObjectBase`
+
+---
+
+### `NetworkIdentity`
+
+**Type:** `NetworkIdentity`
+
+---
+
+### `PlayersInside`
+
+**Type:** `HashSet<Player>`
+
+---
+
+### `ServerObject`
+
+**Type:** `ServerObject`
+
+---
+
+## Methods
+
+### `Init`
+
+```csharp title="Init"
+public void Init(
+    ClientSideObjectBase client,
+    Vector3 bounds
+)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `client` | `ClientSideObjectBase` |  |
+| `bounds` | `Vector3` |  |
+
+---
+
+### `Init`
+
+```csharp title="Init"
+public void Init(
+    ServerObject server,
+    Vector3 bounds
+)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `server` | `ServerObject` |  |
+| `bounds` | `Vector3` |  |
+
+---
+
+### `IsInsideCollider`
+
+```csharp title="IsInsideCollider"
+public bool IsInsideCollider(Vector3 pos)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `pos` | `Vector3` |  |
+
+#### Returns
+
+`bool`
+
+---
+
+### `Setup`
+
+```csharp title="Setup"
+public void Setup()
+```
+
+---
+
+### `ToggleVisibility`
+
+```csharp title="ToggleVisibility"
+public void ToggleVisibility(
+    Player player,
+    bool show
+)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `player` | `Player` |  |
+| `show` | `bool` |  |
+
+---
+

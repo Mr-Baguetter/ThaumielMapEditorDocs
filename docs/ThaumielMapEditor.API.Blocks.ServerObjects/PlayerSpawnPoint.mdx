@@ -1,0 +1,152 @@
+---
+title: PlayerSpawnPoint
+sidebar_label: 🔷 PlayerSpawnPoint
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Badge from '@site/src/components/Badge';
+
+# 🔷 PlayerSpawnPoint
+
+<Badge color="blue">class</Badge> <Badge color="secondary">`ThaumielMapEditor.API.Blocks.ServerObjects`</Badge>
+
+## Overview
+
+### Properties
+
+| Name | Type | Access | Description |
+|------|------|:------:|-------------|
+| [`AllowedRoles`](#allowedroles) | `List<RoleTypeId>` | `get` `set` | The collection that defines the list of `PlayerRoles.RoleTypeId`s allowed to spawn here. |
+| [`Chance`](#chance) | `float` | `get` `set` | The percent chance of spawning here. (0 - 100) |
+| [`Disable`](#disable) | `DisableFlags` | `get` `set` | The flags that specify if this will be disabled. |
+| [`Disabled`](#disabled) | `bool` | `get` `set` | _No description_ |
+| [`Instances`](#instances) | `List<PlayerSpawnPoint>` | `get` | _No description_ |
+| [`ObjectType`](#objecttype) | `ObjectType` | `get` | Gets or sets the type of the object represented by this instance. |
+
+### Fields
+
+| Name | Type | Description |
+|------|------|-------------|
+| [`Schematic`](#schematic) | `SchematicData` | The `ThaumielMapEditor.API.Data.SchematicData` this `ThaumielMapEditor.API.Block… |
+
+### Methods
+
+| Signature | Returns | Description |
+|-----------|---------|-------------|
+| [`DestroyObject(SchematicData)`](#destroyobject) | `void` | Destroys the associated networked object and removes it from the specified schem… |
+| [`HasFlagFast(DisableFlags)`](#hasflagfast) | `bool` | _No description_ |
+| [`SpawnObject(SchematicData, SerializableObject)`](#spawnobject) | `void` | Spawns the specified `ThaumielMapEditor.API.Blocks.ServerObject` into the server… |
+
+## Properties
+
+### `AllowedRoles`
+
+**Type:** `List<RoleTypeId>`&emsp;**Access:** `get` `set`
+
+The collection that defines the list of `PlayerRoles.RoleTypeId`s allowed to spawn here.
+
+---
+
+### `Chance`
+
+**Type:** `float`&emsp;**Access:** `get` `set`
+
+The percent chance of spawning here. (0 - 100)
+
+---
+
+### `Disable`
+
+**Type:** `DisableFlags`&emsp;**Access:** `get` `set`
+
+The flags that specify if this will be disabled.
+
+---
+
+### `Disabled`
+
+**Type:** `bool`&emsp;**Access:** `get` `set`
+
+---
+
+### `Instances`
+
+**Type:** `List<PlayerSpawnPoint>`&emsp;**Access:** `get`
+
+---
+
+### `ObjectType`
+
+**Type:** `ObjectType`&emsp;**Access:** `get`
+
+Gets or sets the type of the object represented by this instance.
+
+---
+
+## Fields
+
+### `Schematic`
+
+**Type:** `SchematicData`
+
+The `ThaumielMapEditor.API.Data.SchematicData` this `ThaumielMapEditor.API.Blocks.ServerObjects.PlayerSpawnPoint` was spawned from.
+
+---
+
+## Methods
+
+### `DestroyObject`
+
+```csharp title="DestroyObject"
+public void DestroyObject(SchematicData schematic)
+```
+
+Destroys the associated networked object and removes it from the specified schematic's collection of spawned server objects.
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `schematic` | `SchematicData` |  |
+
+---
+
+### `HasFlagFast`
+
+```csharp title="HasFlagFast"
+public bool HasFlagFast(DisableFlags flag)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `flag` | `DisableFlags` |  |
+
+#### Returns
+
+`bool`
+
+---
+
+### `SpawnObject`
+
+```csharp title="SpawnObject"
+public void SpawnObject(
+    SchematicData schematic,
+    SerializableObject serializable
+)
+```
+
+Spawns the specified `ThaumielMapEditor.API.Blocks.ServerObject` into the server and adds it to the provided `ThaumielMapEditor.API.Data.SchematicData`'s `ThaumielMapEditor.API.Data.SchematicData.SpawnedServerObjects` list.
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `schematic` | `SchematicData` |  |
+| `serializable` | `SerializableObject` |  |
+
+---
+

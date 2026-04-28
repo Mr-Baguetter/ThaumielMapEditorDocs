@@ -21,15 +21,19 @@ import Badge from '@site/src/components/Badge';
 | [`IsStatic`](#isstatic) | `bool` | `get` `set` | Gets or sets |
 | [`MovementSmoothing`](#movementsmoothing) | `byte` | `get` `set` | Gets or sets the sync interval of the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase`. |
 | [`NetId`](#netid) | `UInt32` | `get` `set` | Gets or sets the netid of the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance. |
+| [`ObjectId`](#objectid) | `int` | `get` | Gets the object id from the `ThaumielMapEditor.API.Serialization.SerializableObject` this `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance was generated from. |
 | [`ObjectType`](#objecttype) | `ObjectType` | `get` `set` | Gets or sets the object type of the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance. |
 | [`Parent`](#parent) | `GameObject` | `get` | Gets or sets the `UnityEngine.GameObject` the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` is parented to on the client. |
-| [`ParentId`](#parentid) | `UInt32` | `get` | Gets or sets the netId of the `UnityEngine.GameObject` this `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` is parented to. |
+| [`ParentId`](#parentid) | `int` | `get` | Gets the parent id from the `ThaumielMapEditor.API.Serialization.SerializableObject` this `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance was generated from. |
+| [`ParentNetId`](#parentnetid) | `UInt32` | `get` | Gets or sets the netId of the `UnityEngine.GameObject` this `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` is parented to. |
 | [`Position`](#position) | `Vector3` | `get` `set` | Gets or sets the position of the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance. |
 | [`Rotation`](#rotation) | `Quaternion` | `get` `set` | Gets or sets the rotation of the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance. |
 | [`Scale`](#scale) | `Vector3` | `get` `set` | Gets or sets the scale of the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance. |
 | [`ServerColliders`](#servercolliders) | `Collider[]` | `get` `set` | Gets or sets the colliders of the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance. |
 | [`Spawned`](#spawned) | `bool` | `get` | Gets a value indicating whether this `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` has been spawned for any players. |
 | [`SpawnedPlayers`](#spawnedplayers) | `HashSet<Player>` | `get` | All the `LabApi.Features.Wrappers.Player`s that this `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance has been spawned for. |
+| [`WorldPosition`](#worldposition) | `Vector3` | `get` `set` | Gets or sets the world position of the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance. |
+| [`WorldRotation`](#worldrotation) | `Quaternion` | `get` `set` | Gets or sets the world rotation of the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance. |
 
 ### Methods
 
@@ -45,7 +49,7 @@ import Badge from '@site/src/components/Badge';
 | [`SetParent(Player, UInt32)`](#setparent) | `void` | Sets the parent of the |
 | [`ShowForPlayer(Player)`](#showforplayer) | `void` | Shows this object for the specified player. |
 | [`SpawnForPlayer(Player)`](#spawnforplayer) | `void` | Spawns the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instan… |
-| [`SpawnForPlayers(NetworkIdentity)`](#spawnforplayers) | `void` | _No description_ |
+| [`SpawnForPlayer(GameObject, Player)`](#spawnforplayer) | `bool` | Spawns a `UnityEngine.GameObject` to the specified `LabApi.Features.Wrappers.Pla… |
 | [`SyncToPlayers(UInt64, Action<NetworkWriter>)`](#synctoplayers) | `void` | Syncs the specified bits to all `LabApi.Features.Wrappers.Player`s this `Thaumie… |
 
 ## Properties
@@ -82,6 +86,14 @@ Gets or sets the netid of the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSid
 
 ---
 
+### `ObjectId`
+
+**Type:** `int`&emsp;**Access:** `get`
+
+Gets the object id from the `ThaumielMapEditor.API.Serialization.SerializableObject` this `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance was generated from.
+
+---
+
 ### `ObjectType`
 
 **Type:** `ObjectType`&emsp;**Access:** `get` `set`
@@ -99,6 +111,14 @@ Gets or sets the `UnityEngine.GameObject` the `ThaumielMapEditor.API.Blocks.Clie
 ---
 
 ### `ParentId`
+
+**Type:** `int`&emsp;**Access:** `get`
+
+Gets the parent id from the `ThaumielMapEditor.API.Serialization.SerializableObject` this `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance was generated from.
+
+---
+
+### `ParentNetId`
 
 **Type:** `UInt32`&emsp;**Access:** `get`
 
@@ -163,6 +183,22 @@ Gets a value indicating whether this `ThaumielMapEditor.API.Blocks.ClientSide.Cl
 **Type:** `HashSet<Player>`&emsp;**Access:** `get`
 
 All the `LabApi.Features.Wrappers.Player`s that this `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance has been spawned for.
+
+---
+
+### `WorldPosition`
+
+**Type:** `Vector3`&emsp;**Access:** `get` `set`
+
+Gets or sets the world position of the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance.
+
+---
+
+### `WorldRotation`
+
+**Type:** `Quaternion`&emsp;**Access:** `get` `set`
+
+Gets or sets the world rotation of the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instance.
 
 ---
 
@@ -326,17 +362,27 @@ Spawns the `ThaumielMapEditor.API.Blocks.ClientSide.ClientSideObjectBase` instan
 
 ---
 
-### `SpawnForPlayers`
+### `SpawnForPlayer`
 
-```csharp title="SpawnForPlayers"
-public void SpawnForPlayers(NetworkIdentity identity)
+```csharp title="SpawnForPlayer"
+public bool SpawnForPlayer(
+    GameObject obj,
+    Player player
+)
 ```
+
+Spawns a `UnityEngine.GameObject` to the specified `LabApi.Features.Wrappers.Player`.
 
 #### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `identity` | `NetworkIdentity` |  |
+| `obj` | `GameObject` | The `UnityEngine.GameObject` to be spawned. |
+| `player` | `Player` | The `LabApi.Features.Wrappers.Player` to be spawned for. |
+
+#### Returns
+
+`bool` — `true` if it is successfully spawned otherwise returns `false`
 
 ---
 

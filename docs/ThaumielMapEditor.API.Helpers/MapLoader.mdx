@@ -52,7 +52,7 @@ public void ParseInput(string input)
 Parses an input string and executes map load or unload operations based on the provided syntax.
 
 :::info Remarks
-Supported syntax: - `Load::MapName` - Loads a single map. - `Load::MapA||MapB` - Loads one random map from the list. - `Load::MapA&&MapB` - Loads all specified maps. - `Unload::MapName` - Unloads a single map. - `Unload::MapA||MapB` - Unloads one random map from the list. - `Unload::MapA&&MapB` - Unloads all specified maps.
+Supported syntax: - `Load::MapName` - Loads a single map. - `Load::MapA||MapB` - Loads one random map from the list. - `Load::MapA&&MapB` - Loads all specified maps. - `Unload::MapName` - Unloads a single map. - `Unload::MapA||MapB` - Unloads one random map from the list. - `Unload::MapA&&MapB` - Unloads all specified maps. - `LoadIf::MapName::IsLoaded::ConditionMap` - Loads a map if the condition map is currently loaded. - `LoadIf::MapName::IsNotLoaded::ConditionMap` - Loads a map if the condition map is not currently loaded. - `UnloadIf::MapName::IsLoaded::ConditionMap` - Unloads a map if the condition map is currently loaded. - `UnloadIf::MapName::IsNotLoaded::ConditionMap` - Unloads a map if the condition map is not currently loaded.
 :::
 
 #### Parameters

@@ -1,0 +1,85 @@
+---
+title: BlockExecutor
+sidebar_label: 🔷 BlockExecutor
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Badge from '@site/src/components/Badge';
+
+# 🔷 BlockExecutor
+
+<Badge color="blue">class</Badge> <Badge color="secondary">`ThaumielMapEditor.API.Helpers`</Badge>
+
+## Overview
+
+### Properties
+
+| Name | Type | Access | Description |
+|------|------|:------:|-------------|
+| [`Procedures`](#procedures) | `Dictionary<string, MethodBlock>` | `get` | _No description_ |
+
+### Fields
+
+| Name | Type | Description |
+|------|------|-------------|
+| [`Entries`](#entries) | `Dictionary<BlockBase, List<object>>` | _No description_ |
+| [`Schematic`](#schematic) | `SchematicData` | _No description_ |
+| [`Scopes`](#scopes) | `Stack<Dictionary<string, object>>` | _No description_ |
+
+### Methods
+
+| Signature | Returns | Description |
+|-----------|---------|-------------|
+| [`Execute(List<object>, Player, Nullable<EventType>)`](#execute) | `void` | _No description_ |
+
+## Properties
+
+### `Procedures`
+
+**Type:** `Dictionary<string, MethodBlock>`&emsp;**Access:** `get`
+
+---
+
+## Fields
+
+### `Entries`
+
+**Type:** `Dictionary<BlockBase, List<object>>`
+
+---
+
+### `Schematic`
+
+**Type:** `SchematicData`
+
+---
+
+### `Scopes`
+
+**Type:** `Stack<Dictionary<string, object>>`
+
+---
+
+## Methods
+
+### `Execute`
+
+```csharp title="Execute"
+public void Execute(
+    List<object> blocks,
+    Player player,
+    Nullable<EventType> eventType
+)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `blocks` | `List<object>` |  |
+| `player` | `Player` |  |
+| `eventType` | `Nullable<EventType>` |  |
+
+---
+

@@ -22,7 +22,9 @@ import Badge from '@site/src/components/Badge';
 | [`Name`](#name) | `string` | `get` `set` | _No description_ |
 | [`NetId`](#netid) | `UInt32` | `get` | The NetId of the spawned ServerObject. |
 | [`Object`](#object) | `GameObject` | `get` | Gets or sets the associated game object instance. |
+| [`ObjectId`](#objectid) | `int` | `get` | Gets the object id from the `ThaumielMapEditor.API.Serialization.SerializableObject` this `ThaumielMapEditor.API.Blocks.ServerObject` instance was generated from. |
 | [`ObjectType`](#objecttype) | `ObjectType` | `get` `set` | Gets or sets the type of the object represented by this instance. |
+| [`ParentId`](#parentid) | `int` | `get` | Gets the parent id from the `ThaumielMapEditor.API.Serialization.SerializableObject` this `ThaumielMapEditor.API.Blocks.ServerObject` instance was generated from. |
 | [`Position`](#position) | `Vector3` | `get` `set` | Gets or sets the Position of the ServerObject |
 | [`Rotation`](#rotation) | `Quaternion` | `get` `set` | Gets or sets the Rotation of the ServerObject |
 | [`Scale`](#scale) | `Vector3` | `get` `set` | Gets or sets the Scale of the ServerObject |
@@ -81,11 +83,27 @@ Gets or sets the associated game object instance.
 
 ---
 
+### `ObjectId`
+
+**Type:** `int`&emsp;**Access:** `get`
+
+Gets the object id from the `ThaumielMapEditor.API.Serialization.SerializableObject` this `ThaumielMapEditor.API.Blocks.ServerObject` instance was generated from.
+
+---
+
 ### `ObjectType`
 
 **Type:** `ObjectType`&emsp;**Access:** `get` `set`
 
 Gets or sets the type of the object represented by this instance.
+
+---
+
+### `ParentId`
+
+**Type:** `int`&emsp;**Access:** `get`
+
+Gets the parent id from the `ThaumielMapEditor.API.Serialization.SerializableObject` this `ThaumielMapEditor.API.Blocks.ServerObject` instance was generated from.
 
 ---
 

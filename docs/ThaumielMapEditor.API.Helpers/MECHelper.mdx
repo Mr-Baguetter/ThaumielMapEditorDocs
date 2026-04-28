@@ -1,0 +1,173 @@
+---
+title: MECHelper
+sidebar_label: 🔷 MECHelper
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Badge from '@site/src/components/Badge';
+
+# 🔷 MECHelper
+
+<Badge color="blue">class</Badge> <Badge color="secondary">`ThaumielMapEditor.API.Helpers`</Badge>
+
+## Overview
+
+### Methods
+
+| Signature | Returns | Description |
+|-----------|---------|-------------|
+| [`StopAll()`](#stopall) | `void` | _No description_ |
+| [`StopCoroutine(string)`](#stopcoroutine) | `void` | _No description_ |
+| [`TryRunCoroutine(IEnumerator<float>, string)`](#tryruncoroutine) | `bool` | _No description_ |
+| [`TryRunCoroutine(IEnumerator<float>, CoroutineHandle&, string)`](#tryruncoroutine) | `bool` | _No description_ |
+| [`WaitForFiveFrames(Action)`](#waitforfiveframes) | `void` | _No description_ |
+| [`WaitForFourFrames(Action)`](#waitforfourframes) | `void` | _No description_ |
+| [`WaitForFrames(UInt32, Action)`](#waitforframes) | `void` | _No description_ |
+| [`WaitForThreeFrames(Action)`](#waitforthreeframes) | `void` | _No description_ |
+| [`WaitForTwoFrames(Action)`](#waitfortwoframes) | `void` | _No description_ |
+
+## Methods
+
+### `StopAll`
+
+```csharp title="StopAll"
+public void StopAll()
+```
+
+---
+
+### `StopCoroutine`
+
+```csharp title="StopCoroutine"
+public void StopCoroutine(string key)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `key` | `string` |  |
+
+---
+
+### `TryRunCoroutine`
+
+```csharp title="TryRunCoroutine"
+public bool TryRunCoroutine(
+    IEnumerator<float> coroutine,
+    string key
+)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `coroutine` | `IEnumerator<float>` |  |
+| `key` | `string` |  |
+
+#### Returns
+
+`bool`
+
+---
+
+### `TryRunCoroutine`
+
+```csharp title="TryRunCoroutine"
+public bool TryRunCoroutine(
+    IEnumerator<float> coroutine,
+    CoroutineHandle& handle,
+    string key
+)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `coroutine` | `IEnumerator<float>` |  |
+| `handle` | `CoroutineHandle&` |  |
+| `key` | `string` |  |
+
+#### Returns
+
+`bool`
+
+---
+
+### `WaitForFiveFrames`
+
+```csharp title="WaitForFiveFrames"
+public void WaitForFiveFrames(Action onComplete)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `onComplete` | `Action` |  |
+
+---
+
+### `WaitForFourFrames`
+
+```csharp title="WaitForFourFrames"
+public void WaitForFourFrames(Action onComplete)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `onComplete` | `Action` |  |
+
+---
+
+### `WaitForFrames`
+
+```csharp title="WaitForFrames"
+public void WaitForFrames(
+    UInt32 frames,
+    Action onComplete
+)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `frames` | `UInt32` |  |
+| `onComplete` | `Action` |  |
+
+---
+
+### `WaitForThreeFrames`
+
+```csharp title="WaitForThreeFrames"
+public void WaitForThreeFrames(Action onComplete)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `onComplete` | `Action` |  |
+
+---
+
+### `WaitForTwoFrames`
+
+```csharp title="WaitForTwoFrames"
+public void WaitForTwoFrames(Action onComplete)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `onComplete` | `Action` |  |
+
+---
+

@@ -1,0 +1,147 @@
+---
+title: InteractableTrigger
+sidebar_label: 🔷 InteractableTrigger
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Badge from '@site/src/components/Badge';
+
+# 🔷 InteractableTrigger
+
+<Badge color="blue">class</Badge> <Badge color="secondary">`ThaumielMapEditor.API.Components.Tools`</Badge>
+
+## Overview
+
+### Properties
+
+| Name | Type | Access | Description |
+|------|------|:------:|-------------|
+| [`Type`](#type) | `ToolType` | `get` | _No description_ |
+
+### Fields
+
+| Name | Type | Description |
+|------|------|-------------|
+| [`Bounds`](#bounds) | `Vector3` | _No description_ |
+| [`Interactable`](#interactable) | `InteractionObject` | _No description_ |
+| [`InteractionTime`](#interactiontime) | `float` | _No description_ |
+| [`OnInteracted`](#oninteracted) | `InteractableClasses` | _No description_ |
+| [`OnInteractionDenied`](#oninteractiondenied) | `InteractableClasses` | _No description_ |
+| [`Permissions`](#permissions) | `Permission` | _No description_ |
+| [`Shape`](#shape) | `ColliderShape` | _No description_ |
+
+### Methods
+
+| Signature | Returns | Description |
+|-----------|---------|-------------|
+| [`Init(ServerObject, SchematicData, Dictionary<string, object>)`](#init) | `void` | _No description_ |
+| [`Interacted(InteractionObject, Player)`](#interacted) | `void` | _No description_ |
+| [`ParseValues(Dictionary<string, object>)`](#parsevalues) | `void` | _No description_ |
+
+## Properties
+
+### `Type`
+
+**Type:** `ToolType`&emsp;**Access:** `get`
+
+---
+
+## Fields
+
+### `Bounds`
+
+**Type:** `Vector3`
+
+---
+
+### `Interactable`
+
+**Type:** `InteractionObject`
+
+---
+
+### `InteractionTime`
+
+**Type:** `float`
+
+---
+
+### `OnInteracted`
+
+**Type:** `InteractableClasses`
+
+---
+
+### `OnInteractionDenied`
+
+**Type:** `InteractableClasses`
+
+---
+
+### `Permissions`
+
+**Type:** `Permission`
+
+---
+
+### `Shape`
+
+**Type:** `ColliderShape`
+
+---
+
+## Methods
+
+### `Init`
+
+```csharp title="Init"
+public void Init(
+    ServerObject obj,
+    SchematicData schem,
+    Dictionary<string, object> properties
+)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `obj` | `ServerObject` |  |
+| `schem` | `SchematicData` |  |
+| `properties` | `Dictionary<string, object>` |  |
+
+---
+
+### `Interacted`
+
+```csharp title="Interacted"
+public void Interacted(
+    InteractionObject obj,
+    Player player
+)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `obj` | `InteractionObject` |  |
+| `player` | `Player` |  |
+
+---
+
+### `ParseValues`
+
+```csharp title="ParseValues"
+public void ParseValues(Dictionary<string, object> properties)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `properties` | `Dictionary<string, object>` |  |
+
+---
+

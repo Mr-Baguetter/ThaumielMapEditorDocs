@@ -1,0 +1,134 @@
+---
+title: SilentCommandSender
+sidebar_label: 🔷 SilentCommandSender
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Badge from '@site/src/components/Badge';
+
+# 🔷 SilentCommandSender
+
+<Badge color="blue">class</Badge> <Badge color="secondary">`ThaumielMapEditor.Commands`</Badge>
+
+## Overview
+
+### Properties
+
+| Name | Type | Access | Description |
+|------|------|:------:|-------------|
+| [`FullPermissions`](#fullpermissions) | `bool` | `get` | _No description_ |
+| [`KickPower`](#kickpower) | `byte` | `get` | _No description_ |
+| [`Nickname`](#nickname) | `string` | `get` | _No description_ |
+| [`Permissions`](#permissions) | `UInt64` | `get` | _No description_ |
+| [`SenderId`](#senderid) | `string` | `get` | _No description_ |
+
+### Methods
+
+| Signature | Returns | Description |
+|-----------|---------|-------------|
+| [`Available()`](#available) | `bool` | _No description_ |
+| [`Print(string)`](#print) | `void` | _No description_ |
+| [`RaReply(string, bool, bool, string)`](#rareply) | `void` | _No description_ |
+| [`Respond(string, bool)`](#respond) | `void` | _No description_ |
+
+## Properties
+
+### `FullPermissions`
+
+**Type:** `bool`&emsp;**Access:** `get`
+
+---
+
+### `KickPower`
+
+**Type:** `byte`&emsp;**Access:** `get`
+
+---
+
+### `Nickname`
+
+**Type:** `string`&emsp;**Access:** `get`
+
+---
+
+### `Permissions`
+
+**Type:** `UInt64`&emsp;**Access:** `get`
+
+---
+
+### `SenderId`
+
+**Type:** `string`&emsp;**Access:** `get`
+
+---
+
+## Methods
+
+### `Available`
+
+```csharp title="Available"
+public bool Available()
+```
+
+#### Returns
+
+`bool`
+
+---
+
+### `Print`
+
+```csharp title="Print"
+public void Print(string text)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `text` | `string` |  |
+
+---
+
+### `RaReply`
+
+```csharp title="RaReply"
+public void RaReply(
+    string text,
+    bool success,
+    bool logToConsole,
+    string overrideDisplay
+)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `text` | `string` |  |
+| `success` | `bool` |  |
+| `logToConsole` | `bool` |  |
+| `overrideDisplay` | `string` |  |
+
+---
+
+### `Respond`
+
+```csharp title="Respond"
+public void Respond(
+    string message,
+    bool success
+)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `message` | `string` |  |
+| `success` | `bool` |  |
+
+---
+

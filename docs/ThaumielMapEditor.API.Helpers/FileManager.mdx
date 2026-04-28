@@ -20,6 +20,7 @@ import Badge from '@site/src/components/Badge';
 | [`Dir()`](#dir) | `string` | Gets the Thaumiel directory |
 | [`Dir(string[])`](#dir) | `string` | Gets the Thaumiel directory plus the inputed directories |
 | [`GetFilesInDirectory(string, string)`](#getfilesindirectory) | `string[]` | Gets all the file paths in the Thaumiel directory combined with the specified di… |
+| [`ReadFileInBackground(string, Action<string>)`](#readfileinbackground) | `void` | Reads the specified file at the file path in the background. |
 | [`TryCreateDirectory(string)`](#trycreatedirectory) | `void` | Tries to create a directory with the inputted name |
 | [`TryCreateDirectory(string[])`](#trycreatedirectory) | `void` | Tries to create a directory at the path |
 
@@ -80,6 +81,26 @@ Gets all the file paths in the Thaumiel directory combined with the specified di
 #### Returns
 
 `string[]` — An array of file paths matching the `filter` in the resolved directory.
+
+---
+
+### `ReadFileInBackground`
+
+```csharp title="ReadFileInBackground"
+public void ReadFileInBackground(
+    string path,
+    Action<string> onComplete
+)
+```
+
+Reads the specified file at the file path in the background.
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `path` | `string` |  |
+| `onComplete` | `Action<string>` | Fired when the reading is complete with the read text |
 
 ---
 

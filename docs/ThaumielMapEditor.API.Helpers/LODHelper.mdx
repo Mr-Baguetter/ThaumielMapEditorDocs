@@ -13,12 +13,29 @@ import Badge from '@site/src/components/Badge';
 
 ## Overview
 
+### Properties
+
+| Name | Type | Access | Description |
+|------|------|:------:|-------------|
+| [`PlayersInLODZones`](#playersinlodzones) | `Dictionary<Player, HashSet<LODZone>>` | `get` `set` | Gets or sets the `LabApi.Features.Wrappers.Player`s that are in a `ThaumielMapEditor.API.Components.LODZone` |
+
 ### Methods
 
 | Signature | Returns | Description |
 |-----------|---------|-------------|
 | [`GenerateLODZones(SchematicData, SerializableSchematic)`](#generatelodzones) | `List<LODData>` | _No description_ |
+| [`GetPlayersInZone(LODZone)`](#getplayersinzone) | `IEnumerable<Player>` | Gets the `LabApi.Features.Wrappers.Player`s in the specified `ThaumielMapEditor.… |
 | [`PlayersInsideZone(UInt32, SchematicData)`](#playersinsidezone) | `IEnumerable<Player>` | Gets the players that are inside of the specified `ThaumielMapEditor.API.Compone… |
+
+## Properties
+
+### `PlayersInLODZones`
+
+**Type:** `Dictionary<Player, HashSet<LODZone>>`&emsp;**Access:** `get` `set`
+
+Gets or sets the `LabApi.Features.Wrappers.Player`s that are in a `ThaumielMapEditor.API.Components.LODZone`
+
+---
 
 ## Methods
 
@@ -41,6 +58,26 @@ public List<LODData> GenerateLODZones(
 #### Returns
 
 `List<LODData>`
+
+---
+
+### `GetPlayersInZone`
+
+```csharp title="GetPlayersInZone"
+public IEnumerable<Player> GetPlayersInZone(LODZone zone)
+```
+
+Gets the `LabApi.Features.Wrappers.Player`s in the specified `ThaumielMapEditor.API.Components.LODZone`
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `zone` | `LODZone` |  |
+
+#### Returns
+
+`IEnumerable<Player>`
 
 ---
 

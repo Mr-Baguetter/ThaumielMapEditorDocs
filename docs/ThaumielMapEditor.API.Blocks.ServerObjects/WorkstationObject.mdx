@@ -17,6 +17,8 @@ import Badge from '@site/src/components/Badge';
 
 | Name | Type | Access | Description |
 |------|------|:------:|-------------|
+| [`AllowedRoles`](#allowedroles) | `List<RoleTypeId>` | `get` `set` | Gets or sets the `PlayerRoles.RoleTypeId`s that are allowed to use this `ThaumielMapEditor.API.Blocks.ServerObjects.WorkstationObject` instance. |
+| [`AllowInteractions`](#allowinteractions) | `bool` | `get` `set` | Gets or sets whether players can use this `ThaumielMapEditor.API.Blocks.ServerObjects.WorkstationObject` instance. |
 | [`Base`](#base) | `WorkstationController` | `get` | The instantiated `InventorySystem.Items.Firearms.Attachments.WorkstationController` that backs this server object. It will be null until `ThaumielMapEditor.API.Blocks.ServerObjects.WorkstationObject.SpawnObject(ThaumielMapEditor.API.Data.SchematicData,ThaumielMapEditor.API.Serialization.SerializableObject)` successfully instantiates the prefab. |
 | [`ObjectType`](#objecttype) | `ObjectType` | `get` `set` | Gets or sets the type of the object represented by this instance. |
 
@@ -24,9 +26,26 @@ import Badge from '@site/src/components/Badge';
 
 | Signature | Returns | Description |
 |-----------|---------|-------------|
+| [`ParseValues(SerializableObject)`](#parsevalues) | `void` | _No description_ |
 | [`SpawnObject(SchematicData, SerializableObject)`](#spawnobject) | `void` | Spawns the specified `ThaumielMapEditor.API.Blocks.ServerObject` into the server… |
 
 ## Properties
+
+### `AllowedRoles`
+
+**Type:** `List<RoleTypeId>`&emsp;**Access:** `get` `set`
+
+Gets or sets the `PlayerRoles.RoleTypeId`s that are allowed to use this `ThaumielMapEditor.API.Blocks.ServerObjects.WorkstationObject` instance.
+
+---
+
+### `AllowInteractions`
+
+**Type:** `bool`&emsp;**Access:** `get` `set`
+
+Gets or sets whether players can use this `ThaumielMapEditor.API.Blocks.ServerObjects.WorkstationObject` instance.
+
+---
 
 ### `Base`
 
@@ -45,6 +64,20 @@ Gets or sets the type of the object represented by this instance.
 ---
 
 ## Methods
+
+### `ParseValues`
+
+```csharp title="ParseValues"
+public void ParseValues(SerializableObject serializable)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `serializable` | `SerializableObject` |  |
+
+---
 
 ### `SpawnObject`
 

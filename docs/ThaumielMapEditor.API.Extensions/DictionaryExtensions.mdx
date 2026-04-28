@@ -1,0 +1,185 @@
+---
+title: DictionaryExtensions
+sidebar_label: 📄 DictionaryExtensions
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Badge from '@site/src/components/Badge';
+
+# 📄 DictionaryExtensions
+
+<Badge color="gray">static class</Badge> <Badge color="secondary">`ThaumielMapEditor.API.Extensions`</Badge>
+
+## Overview
+
+### Methods
+
+| Signature | Returns | Description |
+|-----------|---------|-------------|
+| [`ConvertTo(Dictionary<string, object>)`](#convertto) | `T` | _No description_ |
+| [`GetConvertedValueOrDefault(Dictionary<TKey, TValue>, TKey, T)`](#getconvertedvalueordefault) | `T` | _No description_ |
+| [`GetConvertValue(Dictionary<string, object>, string)`](#getconvertvalue) | `T` | _No description_ |
+| [`GetValueOrDefault(Dictionary<string, object>, string)`](#getvalueordefault) | `object` | _No description_ |
+| [`TryConvertTo(Dictionary<string, object>, T&)`](#tryconvertto) | `bool` | _No description_ |
+| [`TryConvertValue(Dictionary<TKey, TValue>, TKey, T&)`](#tryconvertvalue) | `bool` | _No description_ |
+| [`TryConvertValue(Dictionary<string, object>, string, T&)`](#tryconvertvalue) | `bool` | _No description_ |
+
+## Methods
+
+### `ConvertTo`
+
+```csharp title="ConvertTo"
+public T ConvertTo(Dictionary<string, object> dict)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `dict` | `Dictionary<string, object>` |  |
+
+#### Returns
+
+`T`
+
+---
+
+### `GetConvertedValueOrDefault`
+
+```csharp title="GetConvertedValueOrDefault"
+public T GetConvertedValueOrDefault(
+    Dictionary<TKey, TValue> dict,
+    TKey key,
+    T defaultValue
+)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `dict` | `Dictionary<TKey, TValue>` |  |
+| `key` | `TKey` |  |
+| `defaultValue` | `T` |  |
+
+#### Returns
+
+`T`
+
+---
+
+### `GetConvertValue`
+
+```csharp title="GetConvertValue"
+public T GetConvertValue(
+    Dictionary<string, object> dict,
+    string key
+)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `dict` | `Dictionary<string, object>` |  |
+| `key` | `string` |  |
+
+#### Returns
+
+`T`
+
+---
+
+### `GetValueOrDefault`
+
+```csharp title="GetValueOrDefault"
+public object GetValueOrDefault(
+    Dictionary<string, object> dict,
+    string key
+)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `dict` | `Dictionary<string, object>` |  |
+| `key` | `string` |  |
+
+#### Returns
+
+`object`
+
+---
+
+### `TryConvertTo`
+
+```csharp title="TryConvertTo"
+public bool TryConvertTo(
+    Dictionary<string, object> dict,
+    T& result
+)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `dict` | `Dictionary<string, object>` |  |
+| `result` | `T&` |  |
+
+#### Returns
+
+`bool`
+
+---
+
+### `TryConvertValue`
+
+```csharp title="TryConvertValue"
+public bool TryConvertValue(
+    Dictionary<TKey, TValue> dict,
+    TKey key,
+    T& result
+)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `dict` | `Dictionary<TKey, TValue>` |  |
+| `key` | `TKey` |  |
+| `result` | `T&` |  |
+
+#### Returns
+
+`bool`
+
+---
+
+### `TryConvertValue`
+
+```csharp title="TryConvertValue"
+public bool TryConvertValue(
+    Dictionary<string, object> dict,
+    string key,
+    T& result
+)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `dict` | `Dictionary<string, object>` |  |
+| `key` | `string` |  |
+| `result` | `T&` |  |
+
+#### Returns
+
+`bool`
+
+---
+

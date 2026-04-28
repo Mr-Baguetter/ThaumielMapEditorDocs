@@ -26,6 +26,8 @@ import Badge from '@site/src/components/Badge';
 | Signature | Returns | Description |
 |-----------|---------|-------------|
 | [`Init(ServerObject, SchematicData, Dictionary<string, object>)`](#init) | `void` | Initializes the component. |
+| [`IsLocalFile(string)`](#islocalfile) | `bool` | _No description_ |
+| [`MapToObject(object)`](#maptoobject) | `T` | _No description_ |
 
 ## Properties
 
@@ -74,6 +76,42 @@ Initializes the component.
 | `obj` | `ServerObject` | The `ThaumielMapEditor.API.Blocks.ServerObject` instance this was added to. |
 | `schem` | `SchematicData` | The `ThaumielMapEditor.API.Data.SchematicData` that the `ThaumielMapEditor.API.Blocks.ServerObject` was spawned from. |
 | `properties` | `Dictionary<string, object>` | The serialized properties. |
+
+---
+
+### `IsLocalFile`
+
+```csharp title="IsLocalFile"
+public bool IsLocalFile(string path)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `path` | `string` |  |
+
+#### Returns
+
+`bool`
+
+---
+
+### `MapToObject`
+
+```csharp title="MapToObject"
+public T MapToObject(object data)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `data` | `object` |  |
+
+#### Returns
+
+`T`
 
 ---
 

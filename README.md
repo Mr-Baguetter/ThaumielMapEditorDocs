@@ -39,3 +39,6 @@ GIT_USER=<Your GitHub username> yarn deploy
 ```
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+
+update command:
+C:\Users\Superuser\source\repos\DocusaurusCSharpGenerator\bin\Debug\net10.0\DocusaurusCSharpGenerator.exe C:\Users\Superuser\source\repos\ThaumielMapEditor\ThaumielMapEditor\bin\Debug\net48\ThaumielMapEditor.dll .\docs --xml C:\Users\Superuser\source\repos\ThaumielMapEditor\ThaumielMapEditor\bin\Debug\net48\ThaumielMapEditor.xml

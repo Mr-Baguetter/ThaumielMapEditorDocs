@@ -29,12 +29,15 @@ import Badge from '@site/src/components/Badge';
 | Name | Type | Description |
 |------|------|-------------|
 | [`LoadedMaps`](#loadedmaps) | `List<SerializableMap>` | This list contains all the maps loaded by `ThaumielMapEditor.API.Helpers.Schemat… |
-| [`LoadedSchematics`](#loadedschematics) | `List<SerializableSchematic>` | This list contains all the schematics loaded by `ThaumielMapEditor.API.Helpers.S… |
+| [`LoadedSchematics`](#loadedschematics) | `Dictionary<string, SerializableSchematic>` | This list contains all the schematics loaded by `ThaumielMapEditor.API.Helpers.S… |
+| [`SchematicLODZones`](#schematiclodzones) | `Dictionary<LODZone, SchematicData>` | dodad2 |
+| [`ServerSideTransforms`](#serversidetransforms) | `Dictionary<int, Transform>` | _No description_ |
 
 ### Methods
 
 | Signature | Returns | Description |
 |-----------|---------|-------------|
+| [`Cleanup()`](#cleanup) | `void` | _No description_ |
 | [`DestroyMap(MapData)`](#destroymap) | `void` | Destroys a map. |
 | [`DestroySchematic(SchematicData)`](#destroyschematic) | `void` | Destroys the specified `ThaumielMapEditor.API.Data.SchematicData` |
 | [`GetId()`](#getid) | `UInt32` | Gets a unique id for all `ThaumielMapEditor.API.Data.SchematicData` |
@@ -42,8 +45,11 @@ import Badge from '@site/src/components/Badge';
 | [`Init()`](#init) | `void` | Initializes the `ThaumielMapEditor.API.Helpers.SchematicLoader` |
 | [`LoadMaps()`](#loadmaps) | `void` | Loads the maps |
 | [`LoadSchematics()`](#loadschematics) | `void` | Loads the schematics |
+| [`LoadSchematicsFromDirectory(string)`](#loadschematicsfromdirectory) | `void` | Loads all schematics from a custom directory into `ThaumielMapEditor.API.Helpers… |
 | [`ReloadSchematics()`](#reloadschematics) | `void` | Reloads all loaded schematics |
 | [`SaveMap(MapData)`](#savemap) | `SerializableMap` | Saves a map |
+| [`SetupCulling(SerializableObject, ServerObject, SchematicData)`](#setupculling) | `void` | _No description_ |
+| [`SetupCulling(SerializableObject, ClientSideObjectBase, SchematicData)`](#setupculling) | `void` | _No description_ |
 | [`SpawnMap(SerializableMap)`](#spawnmap) | `MapData` | Spawns a map |
 | [`SpawnSchematic(SerializableSchematic, Vector3, Quaternion, Vector3)`](#spawnschematic) | `SchematicData` | Spawns a schematic at the specified position, rotation, and scale. |
 | [`SpawnSchematic(SerializableSchematic, Vector3, Quaternion)`](#spawnschematic) | `SchematicData` | Spawns a schematic at the specified position and rotation with default scale. |
@@ -51,6 +57,12 @@ import Badge from '@site/src/components/Badge';
 | [`SpawnSchematic(string, Vector3)`](#spawnschematic) | `SchematicData` | Spawns a loaded schematic by name at the specified position with default rotatio… |
 | [`SpawnSchematic(string, Vector3, Quaternion)`](#spawnschematic) | `SchematicData` | Spawns a loaded schematic by name at the specified position and rotation with de… |
 | [`SpawnSchematic(string, Vector3, Quaternion, Vector3)`](#spawnschematic) | `SchematicData` | Spawns a loaded schematic by name at the specified position, rotation, and scale… |
+| [`SpawnSchematicFromDirectory(string, string, Vector3)`](#spawnschematicfromdirectory) | `SchematicData` | Spawns a schematic by name from a custom directory at the specified position wit… |
+| [`SpawnSchematicFromDirectory(string, string, Vector3, Quaternion)`](#spawnschematicfromdirectory) | `SchematicData` | Spawns a schematic by name from a custom directory at the specified position and… |
+| [`SpawnSchematicFromDirectory(string, string, Vector3, Quaternion, Vector3)`](#spawnschematicfromdirectory) | `SchematicData` | Spawns a schematic by name from a custom directory at the specified position, ro… |
+| [`SpawnSchematicFromPath(string, Vector3)`](#spawnschematicfrompath) | `SchematicData` | Spawns a schematic from a file path at the specified position with default rotat… |
+| [`SpawnSchematicFromPath(string, Vector3, Quaternion)`](#spawnschematicfrompath) | `SchematicData` | Spawns a schematic from a file path at the specified position and rotation with… |
+| [`SpawnSchematicFromPath(string, Vector3, Quaternion, Vector3)`](#spawnschematicfrompath) | `SchematicData` | Spawns a schematic from a file path at the specified position, rotation, and sca… |
 | [`TryGetSchematicById(UInt32, SchematicData&)`](#trygetschematicbyid) | `bool` | Tries to get the `ThaumielMapEditor.API.Data.SchematicData` by its Id. |
 
 ## Properties
@@ -115,13 +127,35 @@ This list contains all the maps loaded by `ThaumielMapEditor.API.Helpers.Schemat
 
 ### `LoadedSchematics`
 
-**Type:** `List<SerializableSchematic>`
+**Type:** `Dictionary<string, SerializableSchematic>`
 
 This list contains all the schematics loaded by `ThaumielMapEditor.API.Helpers.SchematicLoader.LoadSchematics` Use `ThaumielMapEditor.API.Helpers.SchematicLoader.SpawnedSchematics` to get the spawned schematics.
 
 ---
 
+### `SchematicLODZones`
+
+**Type:** `Dictionary<LODZone, SchematicData>`
+
+dodad2
+
+---
+
+### `ServerSideTransforms`
+
+**Type:** `Dictionary<int, Transform>`
+
+---
+
 ## Methods
+
+### `Cleanup`
+
+```csharp title="Cleanup"
+public void Cleanup()
+```
+
+---
 
 ### `DestroyMap`
 
@@ -219,6 +253,22 @@ Loads the schematics
 
 ---
 
+### `LoadSchematicsFromDirectory`
+
+```csharp title="LoadSchematicsFromDirectory"
+public void LoadSchematicsFromDirectory(string directory)
+```
+
+Loads all schematics from a custom directory into `ThaumielMapEditor.API.Helpers.SchematicLoader.LoadedSchematics`.
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `directory` | `string` | The full path to the directory to load schematics from. |
+
+---
+
 ### `ReloadSchematics`
 
 ```csharp title="ReloadSchematics"
@@ -250,6 +300,46 @@ Saves a map
 #### Returns
 
 `SerializableMap` — `ThaumielMapEditor.API.Serialization.SerializableMap`
+
+---
+
+### `SetupCulling`
+
+```csharp title="SetupCulling"
+public void SetupCulling(
+    SerializableObject serializable,
+    ServerObject obj,
+    SchematicData schematic
+)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `serializable` | `SerializableObject` |  |
+| `obj` | `ServerObject` |  |
+| `schematic` | `SchematicData` |  |
+
+---
+
+### `SetupCulling`
+
+```csharp title="SetupCulling"
+public void SetupCulling(
+    SerializableObject serializable,
+    ClientSideObjectBase obj,
+    SchematicData schematic
+)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `serializable` | `SerializableObject` |  |
+| `obj` | `ClientSideObjectBase` |  |
+| `schematic` | `SchematicData` |  |
 
 ---
 
@@ -426,6 +516,168 @@ Spawns a loaded schematic by name at the specified position, rotation, and scale
 #### Returns
 
 `SchematicData` — A `ThaumielMapEditor.API.Data.SchematicData` instance representing the spawned schematic.
+
+---
+
+### `SpawnSchematicFromDirectory`
+
+```csharp title="SpawnSchematicFromDirectory"
+public SchematicData SpawnSchematicFromDirectory(
+    string directory,
+    string schematicName,
+    Vector3 position
+)
+```
+
+Spawns a schematic by name from a custom directory at the specified position with default rotation and scale.
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `directory` | `string` | The full path to the directory containing the schematic. |
+| `schematicName` | `string` | The file name of the schematic (without extension). |
+| `position` | `Vector3` | The world position at which to place the schematic. |
+
+#### Returns
+
+`SchematicData` — A `ThaumielMapEditor.API.Data.SchematicData` instance representing the spawned schematic, or `null` if the schematic could not be loaded.
+
+---
+
+### `SpawnSchematicFromDirectory`
+
+```csharp title="SpawnSchematicFromDirectory"
+public SchematicData SpawnSchematicFromDirectory(
+    string directory,
+    string schematicName,
+    Vector3 position,
+    Quaternion rotation
+)
+```
+
+Spawns a schematic by name from a custom directory at the specified position and rotation with default scale.
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `directory` | `string` | The full path to the directory containing the schematic. |
+| `schematicName` | `string` | The file name of the schematic (without extension). |
+| `position` | `Vector3` | The world position at which to place the schematic. |
+| `rotation` | `Quaternion` | The rotation to apply to the schematic. |
+
+#### Returns
+
+`SchematicData` — A `ThaumielMapEditor.API.Data.SchematicData` instance representing the spawned schematic, or `null` if the schematic could not be loaded.
+
+---
+
+### `SpawnSchematicFromDirectory`
+
+```csharp title="SpawnSchematicFromDirectory"
+public SchematicData SpawnSchematicFromDirectory(
+    string directory,
+    string schematicName,
+    Vector3 position,
+    Quaternion rotation,
+    Vector3 scale
+)
+```
+
+Spawns a schematic by name from a custom directory at the specified position, rotation, and scale.
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `directory` | `string` | The full path to the directory containing the schematic. |
+| `schematicName` | `string` | The file name of the schematic (without extension). |
+| `position` | `Vector3` | The world position at which to place the schematic. |
+| `rotation` | `Quaternion` | The rotation to apply to the schematic. |
+| `scale` | `Vector3` | The scale to apply to the schematic. |
+
+#### Returns
+
+`SchematicData` — A `ThaumielMapEditor.API.Data.SchematicData` instance representing the spawned schematic, or `null` if the schematic could not be loaded.
+
+---
+
+### `SpawnSchematicFromPath`
+
+```csharp title="SpawnSchematicFromPath"
+public SchematicData SpawnSchematicFromPath(
+    string path,
+    Vector3 position
+)
+```
+
+Spawns a schematic from a file path at the specified position with default rotation and scale.
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `path` | `string` | The full file path to the schematic YAML file. |
+| `position` | `Vector3` | The world position at which to place the schematic. |
+
+#### Returns
+
+`SchematicData` — A `ThaumielMapEditor.API.Data.SchematicData` instance representing the spawned schematic, or `null` if the file could not be loaded.
+
+---
+
+### `SpawnSchematicFromPath`
+
+```csharp title="SpawnSchematicFromPath"
+public SchematicData SpawnSchematicFromPath(
+    string path,
+    Vector3 position,
+    Quaternion rotation
+)
+```
+
+Spawns a schematic from a file path at the specified position and rotation with default scale.
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `path` | `string` | The full file path to the schematic YAML file. |
+| `position` | `Vector3` | The world position at which to place the schematic. |
+| `rotation` | `Quaternion` | The rotation to apply to the schematic. |
+
+#### Returns
+
+`SchematicData` — A `ThaumielMapEditor.API.Data.SchematicData` instance representing the spawned schematic, or `null` if the file could not be loaded.
+
+---
+
+### `SpawnSchematicFromPath`
+
+```csharp title="SpawnSchematicFromPath"
+public SchematicData SpawnSchematicFromPath(
+    string path,
+    Vector3 position,
+    Quaternion rotation,
+    Vector3 scale
+)
+```
+
+Spawns a schematic from a file path at the specified position, rotation, and scale.
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `path` | `string` | The full file path to the schematic YAML file. |
+| `position` | `Vector3` | The world position at which to place the schematic. |
+| `rotation` | `Quaternion` | The rotation to apply to the schematic. |
+| `scale` | `Vector3` | The scale to apply to the schematic. |
+
+#### Returns
+
+`SchematicData` — A `ThaumielMapEditor.API.Data.SchematicData` instance representing the spawned schematic, or `null` if the file could not be loaded.
 
 ---
 

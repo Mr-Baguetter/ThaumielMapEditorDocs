@@ -1,0 +1,69 @@
+---
+title: ArgumentsParser
+sidebar_label: 🔷 ArgumentsParser
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Badge from '@site/src/components/Badge';
+
+# 🔷 ArgumentsParser
+
+<Badge color="blue">class</Badge> <Badge color="secondary">`ThaumielMapEditor.API.Helpers`</Badge>
+
+## Overview
+
+### Properties
+
+| Name | Type | Access | Description |
+|------|------|:------:|-------------|
+| [`Cache`](#cache) | `Dictionary<BlockyPayload, List<object>>` | `get` `set` | _No description_ |
+
+### Fields
+
+| Name | Type | Description |
+|------|------|-------------|
+| [`Deserializer`](#deserializer) | `IDeserializer` | _No description_ |
+
+### Methods
+
+| Signature | Returns | Description |
+|-----------|---------|-------------|
+| [`Load(BlockyPayload)`](#load) | `List<object>` | _No description_ |
+
+## Properties
+
+### `Cache`
+
+**Type:** `Dictionary<BlockyPayload, List<object>>`&emsp;**Access:** `get` `set`
+
+---
+
+## Fields
+
+### `Deserializer`
+
+**Type:** `IDeserializer`
+
+---
+
+## Methods
+
+### `Load`
+
+```csharp title="Load"
+public List<object> Load(BlockyPayload payload)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `payload` | `BlockyPayload` |  |
+
+#### Returns
+
+`List<object>`
+
+---
+

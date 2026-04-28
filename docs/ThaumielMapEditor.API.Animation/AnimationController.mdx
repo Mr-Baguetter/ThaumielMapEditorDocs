@@ -26,8 +26,11 @@ import Badge from '@site/src/components/Badge';
 |-----------|---------|-------------|
 | [`Get(SchematicData)`](#get) | `AnimationController` | Gets or creates an `ThaumielMapEditor.API.Animation.AnimationController` for the… |
 | [`Play(string, int)`](#play) | `void` | Plays an animation state by name on the animator at the given index. |
+| [`Play(string, float, int)`](#play) | `void` | Plays an animation state by name on the animator at the given index. |
 | [`Play(string, bool, int)`](#play) | `void` | Sets a boolean parameter on the animator at the given index. |
+| [`Play(string, bool, float, int)`](#play) | `void` | Sets a boolean parameter on the animator at the given index. |
 | [`Play(string, string)`](#play) | `void` | Plays an animation state on the animator matching the given name. |
+| [`Play(string, string, float)`](#play) | `void` | Plays an animation state on the animator matching the given name. |
 | [`Stop(int)`](#stop) | `void` | Stops playback on the animator at the given index. |
 | [`Stop(string)`](#stop) | `void` | Stops playback on the animator matching the given name. |
 
@@ -95,6 +98,28 @@ Plays an animation state by name on the animator at the given index.
 
 ```csharp title="Play"
 public void Play(
+    string stateName,
+    float speed,
+    int animatorIndex
+)
+```
+
+Plays an animation state by name on the animator at the given index.
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `stateName` | `string` | The state to play. |
+| `speed` | `float` | The speed to play the animation at. |
+| `animatorIndex` | `int` | The index of the animator to use. |
+
+---
+
+### `Play`
+
+```csharp title="Play"
+public void Play(
     string animParam,
     bool state,
     int animatorIndex
@@ -117,6 +142,30 @@ Sets a boolean parameter on the animator at the given index.
 
 ```csharp title="Play"
 public void Play(
+    string animParam,
+    bool state,
+    float speed,
+    int animatorIndex
+)
+```
+
+Sets a boolean parameter on the animator at the given index.
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `animParam` | `string` | The animator parameter name. |
+| `state` | `bool` | The boolean value to set. |
+| `speed` | `float` | The speed to play the animation at. |
+| `animatorIndex` | `int` | The index of the animator to use. |
+
+---
+
+### `Play`
+
+```csharp title="Play"
+public void Play(
     string stateName,
     string animatorName
 )
@@ -130,6 +179,28 @@ Plays an animation state on the animator matching the given name.
 |------|------|-------------|
 | `stateName` | `string` | The state to play. |
 | `animatorName` | `string` | The name of the animator GameObject to target. |
+
+---
+
+### `Play`
+
+```csharp title="Play"
+public void Play(
+    string stateName,
+    string animatorName,
+    float speed
+)
+```
+
+Plays an animation state on the animator matching the given name.
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `stateName` | `string` | The state to play. |
+| `animatorName` | `string` | The name of the animator GameObject to target. |
+| `speed` | `float` | The speed to play the animation at. |
 
 ---
 

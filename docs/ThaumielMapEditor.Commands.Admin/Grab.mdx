@@ -1,0 +1,119 @@
+---
+title: Grab
+sidebar_label: 🔷 Grab
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Badge from '@site/src/components/Badge';
+
+# 🔷 Grab
+
+<Badge color="blue">class</Badge> <Badge color="secondary">`ThaumielMapEditor.Commands.Admin`</Badge>
+
+## Overview
+
+### Properties
+
+| Name | Type | Access | Description |
+|------|------|:------:|-------------|
+| [`Aliases`](#aliases) | `string[]` | `get` | _No description_ |
+| [`Description`](#description) | `string` | `get` | _No description_ |
+| [`Name`](#name) | `string` | `get` | _No description_ |
+| [`RequiredArgsCount`](#requiredargscount) | `int` | `get` | _No description_ |
+| [`RequiredPermission`](#requiredpermission) | `string` | `get` | _No description_ |
+| [`VisibleArgs`](#visibleargs) | `string` | `get` | _No description_ |
+
+### Methods
+
+| Signature | Returns | Description |
+|-----------|---------|-------------|
+| [`Execute(ArraySegment<string>, ICommandSender, String&)`](#execute) | `bool` | _No description_ |
+| [`GrabCoroutine(Player, SchematicData)`](#grabcoroutine) | `IEnumerator<float>` | _No description_ |
+
+## Properties
+
+### `Aliases`
+
+**Type:** `string[]`&emsp;**Access:** `get`
+
+---
+
+### `Description`
+
+**Type:** `string`&emsp;**Access:** `get`
+
+---
+
+### `Name`
+
+**Type:** `string`&emsp;**Access:** `get`
+
+---
+
+### `RequiredArgsCount`
+
+**Type:** `int`&emsp;**Access:** `get`
+
+---
+
+### `RequiredPermission`
+
+**Type:** `string`&emsp;**Access:** `get`
+
+---
+
+### `VisibleArgs`
+
+**Type:** `string`&emsp;**Access:** `get`
+
+---
+
+## Methods
+
+### `Execute`
+
+```csharp title="Execute"
+public bool Execute(
+    ArraySegment<string> arguments,
+    ICommandSender sender,
+    String& response
+)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `arguments` | `ArraySegment<string>` |  |
+| `sender` | `ICommandSender` |  |
+| `response` | `String&` |  |
+
+#### Returns
+
+`bool`
+
+---
+
+### `GrabCoroutine`
+
+```csharp title="GrabCoroutine"
+public IEnumerator<float> GrabCoroutine(
+    Player player,
+    SchematicData schematic
+)
+```
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `player` | `Player` |  |
+| `schematic` | `SchematicData` |  |
+
+#### Returns
+
+`IEnumerator<float>`
+
+---
+

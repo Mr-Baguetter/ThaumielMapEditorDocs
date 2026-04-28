@@ -1,0 +1,104 @@
+---
+title: RagdollSpawner
+sidebar_label: 🔷 RagdollSpawner
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Badge from '@site/src/components/Badge';
+
+# 🔷 RagdollSpawner
+
+<Badge color="blue">class</Badge> <Badge color="secondary">`ThaumielMapEditor.API.Blocks.ServerObjects`</Badge>
+
+## Overview
+
+### Properties
+
+| Name | Type | Access | Description |
+|------|------|:------:|-------------|
+| [`Base`](#base) | `Ragdoll` | `get` | Gets or sets the base `LabApi.Features.Wrappers.Ragdoll` instance associated with this spawner. |
+| [`DeathReason`](#deathreason) | `string` | `get` `set` | Gets or sets the death reason displayed on the ragdoll. |
+| [`DollName`](#dollname) | `string` | `get` `set` | Gets or sets the name displayed on the ragdoll. |
+| [`ObjectType`](#objecttype) | `ObjectType` | `get` | Gets or sets the type of the object represented by this instance. |
+| [`RoleType`](#roletype) | `RoleTypeId` | `get` `set` | Gets or sets the `PlayerRoles.RoleTypeId` used to determine the ragdoll's appearance. |
+| [`SpawnChance`](#spawnchance) | `float` | `get` `set` | Gets or sets the chance (0-100) that this ragdoll will spawn. |
+
+### Methods
+
+| Signature | Returns | Description |
+|-----------|---------|-------------|
+| [`SpawnObject(SchematicData, SerializableObject)`](#spawnobject) | `void` | Spawns the specified `ThaumielMapEditor.API.Blocks.ServerObject` into the server… |
+
+## Properties
+
+### `Base`
+
+**Type:** `Ragdoll`&emsp;**Access:** `get`
+
+Gets or sets the base `LabApi.Features.Wrappers.Ragdoll` instance associated with this spawner.
+
+---
+
+### `DeathReason`
+
+**Type:** `string`&emsp;**Access:** `get` `set`
+
+Gets or sets the death reason displayed on the ragdoll.
+
+---
+
+### `DollName`
+
+**Type:** `string`&emsp;**Access:** `get` `set`
+
+Gets or sets the name displayed on the ragdoll.
+
+---
+
+### `ObjectType`
+
+**Type:** `ObjectType`&emsp;**Access:** `get`
+
+Gets or sets the type of the object represented by this instance.
+
+---
+
+### `RoleType`
+
+**Type:** `RoleTypeId`&emsp;**Access:** `get` `set`
+
+Gets or sets the `PlayerRoles.RoleTypeId` used to determine the ragdoll's appearance.
+
+---
+
+### `SpawnChance`
+
+**Type:** `float`&emsp;**Access:** `get` `set`
+
+Gets or sets the chance (0-100) that this ragdoll will spawn.
+
+---
+
+## Methods
+
+### `SpawnObject`
+
+```csharp title="SpawnObject"
+public void SpawnObject(
+    SchematicData schematic,
+    SerializableObject serializable
+)
+```
+
+Spawns the specified `ThaumielMapEditor.API.Blocks.ServerObject` into the server and adds it to the provided `ThaumielMapEditor.API.Data.SchematicData`'s `ThaumielMapEditor.API.Data.SchematicData.SpawnedServerObjects` list.
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `schematic` | `SchematicData` |  |
+| `serializable` | `SerializableObject` |  |
+
+---
+

@@ -17,7 +17,9 @@ import Badge from '@site/src/components/Badge';
 
 | Signature | Returns | Description |
 |-----------|---------|-------------|
-| [`GetClosestRoomToPosition(Vector3)`](#getclosestroomtoposition) | `RoomIdentifier` | Gets the closest room to the `UnityEngine.Vector3``pos` |
+| [`GetClosestRoomToPosition(Vector3)`](#getclosestroomtoposition) | `Room` | Gets the closest `LabApi.Features.Wrappers.Room` to the `UnityEngine.Vector3``po… |
+| [`GetMaps(Room)`](#getmaps) | `IEnumerable<MapData>` | Gets all the spawned maps in this `LabApi.Features.Wrappers.Room`. |
+| [`GetSchematics(Room)`](#getschematics) | `IEnumerable<SchematicData>` | Gets all the spawned schematics in this `LabApi.Features.Wrappers.Room`. |
 | [`LocalPosition(Room, Vector3)`](#localposition) | `Vector3` | Returns the local space position, based on a world space position. |
 | [`WorldPosition(Room, Vector3)`](#worldposition) | `Vector3` | Returns the World position, based on a local space position. |
 
@@ -26,10 +28,10 @@ import Badge from '@site/src/components/Badge';
 ### `GetClosestRoomToPosition`
 
 ```csharp title="GetClosestRoomToPosition"
-public RoomIdentifier GetClosestRoomToPosition(Vector3 pos)
+public Room GetClosestRoomToPosition(Vector3 pos)
 ```
 
-Gets the closest room to the `UnityEngine.Vector3``pos`
+Gets the closest `LabApi.Features.Wrappers.Room` to the `UnityEngine.Vector3``pos`
 
 #### Parameters
 
@@ -39,7 +41,47 @@ Gets the closest room to the `UnityEngine.Vector3``pos`
 
 #### Returns
 
-`RoomIdentifier` — `MapGeneration.RoomIdentifier` if a room was found else returns `null` if no room was found
+`Room` — `LabApi.Features.Wrappers.Room` if a room was found else returns `null` if no room was found
+
+---
+
+### `GetMaps`
+
+```csharp title="GetMaps"
+public IEnumerable<MapData> GetMaps(Room room)
+```
+
+Gets all the spawned maps in this `LabApi.Features.Wrappers.Room`.
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `room` | `Room` |  |
+
+#### Returns
+
+`IEnumerable<MapData>`
+
+---
+
+### `GetSchematics`
+
+```csharp title="GetSchematics"
+public IEnumerable<SchematicData> GetSchematics(Room room)
+```
+
+Gets all the spawned schematics in this `LabApi.Features.Wrappers.Room`.
+
+#### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| `room` | `Room` |  |
+
+#### Returns
+
+`IEnumerable<SchematicData>`
 
 ---
 
